@@ -201,6 +201,13 @@ ul {
 .nav-logo {
     display: flex;
     align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
 }
 
 .logo-text {
@@ -1111,6 +1118,19 @@ ul {
     align-items: center;
     padding-bottom: var(--spacing-xl);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.logo-mark {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .footer-brand .logo-text {
