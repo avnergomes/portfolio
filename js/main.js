@@ -54,7 +54,7 @@ function setLanguage(lang) {
         const key = element.dataset.i18n;
         const translation = getNestedTranslation(translations[lang], key);
 
-        if (translation) {
+        if (translation !== undefined && translation !== null) {
             element.textContent = translation;
         }
     });
@@ -64,6 +64,13 @@ function setLanguage(lang) {
 }
 
 function getNestedTranslation(obj, key) {
+    if (!obj) return undefined;
+
+    // Support both nested objects and flat keys with dot notation
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        return obj[key];
+    }
+
     return key.split('.').reduce((o, k) => (o || {})[k], obj);
 }
 
