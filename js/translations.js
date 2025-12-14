@@ -1,4 +1,4 @@
-// Translations for English and Spanish
+// Translations for English, Spanish, and Portuguese
 const translations = {
     en: {
         // Navigation
@@ -372,6 +372,193 @@ const translations = {
         // Footer
         'footer.tagline': 'Ingeniero Forestal y Cientifico de Datos',
         'footer.rights': 'Todos los derechos reservados.'
+    },
+
+    pt: {
+        // Navigation
+        'nav.home': 'Início',
+        'nav.about': 'Sobre Mim',
+        'nav.services': 'Serviços',
+        'nav.projects': 'Projetos',
+        'nav.clients': 'Clientes',
+        'nav.contact': 'Contato',
+
+        // Hero
+        'hero.greeting': 'Olá, sou',
+        'hero.role1': 'Engenheiro Florestal',
+        'hero.role2': 'Cientista de Dados',
+        'hero.description': 'Transformando dados complexos em insights acionáveis. Especializado em Geo Data Science, Recursos Florestais, Créditos de Carbono e Analítica de Marketing Digital.',
+        'hero.viewWork': 'Ver Meus Trabalhos',
+        'hero.getInTouch': 'Entre em Contato',
+        'hero.scroll': 'Role para Baixo',
+
+        // About
+        'about.title': 'Sobre Mim',
+        'about.p1': 'Sou Engenheiro Florestal com mestrado em Ciência de Dados, combinando vasta experiência em gestão de recursos naturais com capacidades analíticas avançadas. Minha formação única me permite conectar ciência ambiental e tomada de decisão orientada por dados.',
+        'about.p2': 'Com experiência em instituições governamentais, consultorias e projetos freelance internacionais, entrego soluções ponta a ponta desde a coleta de dados até visualização e insights estratégicos.',
+        'about.education': 'Educação',
+        'about.edu1.title': 'Mestrado em Ciência de Dados',
+        'about.edu1.school': 'Nuclio Digital School, 2023',
+        'about.edu2.title': 'MBA | Gestão Florestal de Precisão',
+        'about.edu2.school': 'UFPR, 2018',
+        'about.edu3.title': 'Engenharia Florestal',
+        'about.edu3.school': 'UFPR, 2013',
+        'about.stats.years': 'Anos de Experiência',
+        'about.stats.projects': 'Projetos Entregues',
+        'about.stats.countries': 'Países Atendidos',
+        'about.stats.satisfaction': 'Satisfação do Cliente',
+        'about.skills': 'Habilidades Técnicas',
+
+        // Skills
+        'skills.data': 'Ciência de Dados',
+        'skills.geo': 'Geoespacial',
+        'skills.bi': 'Business Intelligence',
+        'skills.marketing': 'Marketing Digital',
+
+        // Services
+        'services.title': 'Serviços',
+        'services.subtitle': 'Soluções completas de dados adaptadas às necessidades do seu negócio',
+        'services.geo.title': 'Geo Data Science',
+        'services.geo.desc': 'Análise geoespacial avançada, processamento de imagens de satélite, modelagem de terreno e insights baseados em localização para tomada de decisão estratégica.',
+        'services.geo.f1': 'Análise de Sensoriamento Remoto',
+        'services.geo.f2': 'Desenvolvimento WebGIS',
+        'services.geo.f3': 'Processamento de Dados Espaciais',
+        'services.geo.f4': 'Visualização 3D de Terreno',
+        'services.forest.title': 'Recursos Florestais',
+        'services.forest.desc': 'Consultoria especializada em inventário florestal, planejamento de manejo, certificação FSC e práticas florestais sustentáveis.',
+        'services.forest.f1': 'Inventário Florestal',
+        'services.forest.f2': 'Planejamento de Manejo',
+        'services.forest.f3': 'Suporte à Certificação FSC',
+        'services.forest.f4': 'Análise de Plantações',
+        'services.carbon.title': 'Créditos de Carbono',
+        'services.carbon.desc': 'Estudos de viabilidade para projetos de restauração florestal e geração de créditos de carbono, incluindo monitoramento de desmatamento e estimativa de sequestro.',
+        'services.carbon.f1': 'Estimativa de Sequestro de Carbono',
+        'services.carbon.f2': 'Análise de Desmatamento',
+        'services.carbon.f3': 'Viabilidade de Restauração',
+        'services.carbon.f4': 'Avaliação de Viabilidade',
+        'services.marketing.title': 'Analítica de Marketing Digital',
+        'services.marketing.desc': 'Analítica de publicidade multicanal, análise de dados de CRM e otimização de performance nas plataformas Google, Meta e TikTok.',
+        'services.marketing.f1': 'Análise de Anúncios Multiplataforma',
+        'services.marketing.f2': 'Otimização de ROI e ROAS',
+        'services.marketing.f3': 'Integração de Dados CRM',
+        'services.marketing.f4': 'Dashboards de Performance de Vendas',
+        'services.bi.title': 'Business Intelligence',
+        'services.bi.desc': 'Desenvolvimento de dashboards personalizados, criação de pipelines de dados e relatórios automatizados usando Power BI, Tableau e Looker Studio.',
+        'services.routing.title': 'Otimização de Rotas',
+        'services.routing.desc': 'Desenvolvimento de matrizes de distância e duração, otimização de planejamento de rotas e análise logística para operações eficientes.',
+
+        // Projects
+        'projects.title': 'Projetos em Destaque',
+        'projects.subtitle': 'Uma seleção do meu trabalho recente em diferentes áreas',
+        'projects.filter.all': 'Todos',
+        'projects.filter.geo': 'Geoespacial',
+        'projects.filter.bi': 'Business Intelligence',
+        'projects.filter.marketing': 'Marketing',
+        'projects.filter.forest': 'Florestal/Carbono',
+        'projects.cat.bi': 'Business Intelligence',
+        'projects.cat.ds': 'Ciência de Dados',
+        'projects.cat.geo': 'Geoespacial',
+        'projects.cat.carbon': 'Créditos de Carbono',
+        'projects.cat.marketing': 'Analítica de Marketing',
+        'project.stages': 'Etapas de Desenvolvimento',
+        'project.benefit': 'Benefício Principal',
+
+        // Project 1
+        'project1.title': 'Dashboard de Valor Bruto de Produção - Paraná',
+        'project1.desc': 'Dashboard completo para análise de produção agrícola apoiando planejamento institucional e estratégias de cooperação municipal.',
+        'project1.stage1': 'Web scraping e pipeline ETL',
+        'project1.stage2': 'Limpeza e transformação de dados',
+        'project1.stage3': 'Visualização interativa',
+        'project1.benefit': 'Apoio na definição de cadeias produtivas prioritárias para Planejamento Institucional e elaboração de Termos de Cooperação com Municípios.',
+
+        // Project 2
+        'project2.title': 'DSMarket - Projeto de Conclusão de Mestrado',
+        'project2.desc': 'Pipeline de ciência de dados ponta a ponta para otimizar estratégia de reabastecimento de supermercados usando clustering e previsão de séries temporais.',
+        'project2.stage1': 'Análise Exploratória de Dados (EDA)',
+        'project2.stage2': 'Clustering de Clientes/Produtos',
+        'project2.stage3': 'Previsão de Séries Temporais',
+        'project2.stage4': 'Implantação do Modelo',
+        'project2.benefit': 'Auxiliou na definição de estratégia piloto de reabastecimento para supermercados com pipeline completo de dados brutos a insights acionáveis.',
+
+        // Project 3
+        'project3.title': 'Plano de Desenvolvimento Florestal',
+        'project3.desc': 'Análise geoespacial multilayer para identificar áreas ótimas para implementação de plantações florestais considerando custos e acesso ao mercado.',
+        'project3.stage1': 'Interseção de camadas georreferenciadas',
+        'project3.stage2': 'Modelagem de custos e riscos',
+        'project3.stage3': 'Análise de custos de transporte',
+        'project3.benefit': 'Identificação de áreas de maior risco com base em custos de implementação e redução de preços devido aos custos de transporte.',
+
+        // Project 4
+        'project4.title': 'Avaliação de Geração de Créditos de Carbono',
+        'project4.desc': 'Estudo de viabilidade para restauração florestal e geração de créditos de carbono incluindo monitoramento de desmatamento e estimativa de sequestro.',
+        'project4.stage1': 'Identificação da área e coleta de dados',
+        'project4.stage2': 'Aquisição de imagens temporais',
+        'project4.stage3': 'Medição de desmatamento',
+        'project4.stage4': 'Estimativa de sequestro de carbono',
+        'project4.benefit': 'Verificação da viabilidade do projeto baseada na capacidade de armazenamento e nos custos de compra de terra e plantio de mudas.',
+
+        // Project 5
+        'project5.title': 'Dashboard de Vendas Internacionais em BI',
+        'project5.desc': 'Dashboard completo de análise de vendas para mercados europeus com padrões de distribuição espacial por produto, cliente e região.',
+        'project5.stage1': 'Limpeza e transformação de dados',
+        'project5.stage2': 'Dashboard personalizado conforme necessidades do cliente',
+        'project5.benefit': 'Padrões de distribuição espacial por produto, cliente, região e colaborador para tomada de decisão baseada em dados.',
+
+        // Project 6
+        'project6.title': 'Comparação de Market Share e Analítica de CRM',
+        'project6.desc': 'Visualização de dados de contato de clientes e comparação de market share para o setor de vestuário e acessórios em mercados dos EUA.',
+        'project6.stage1': 'Limpeza e visualização de dados de CRM',
+        'project6.stage2': 'Comparação de market share por CBSA',
+        'project6.benefit': 'Apoio à tomada de decisão para equipe de atendimento ao cliente e planejamento de marketing em diferentes regiões.',
+
+        // Project 7
+        'project7.title': 'Consultoria para Plataforma WebGIS',
+        'project7.desc': 'Testes de usabilidade e sugestões de melhoria para plataforma WebGIS de visualização de imagens de satélite e geração de indicadores.',
+        'project7.stage1': 'Testes de usabilidade na perspectiva do cliente',
+        'project7.stage2': 'Sugestões de melhoria e novas ideias',
+        'project7.benefit': 'Apoio ao desenvolvimento da plataforma com sugestões acionáveis e ideias inovadoras.',
+
+        // Project 8
+        'project8.title': 'Analítica Multicanal de Anúncios e Vendas de Ingressos',
+        'project8.desc': 'Fluxo completo para analítica de anúncios em múltiplas plataformas (Google, Meta, TikTok) com análise de desempenho de vendas de ingressos por show e cidade.',
+        'project8.stage1': 'Extração de dados das plataformas de anúncios',
+        'project8.stage2': 'Limpeza e integração',
+        'project8.stage3': 'Transformação de métricas padronizadas',
+        'project8.stage4': 'Dashboard de análise de desempenho',
+        'project8.benefit': 'Visão clara da eficiência do investimento em anúncios e desempenho de vendas de ingressos apoiando otimização de ROI baseada em dados.',
+
+        // Project 9
+        'project9.title': 'Matriz de Distância e Duração para Planejamento de Rotas',
+        'project9.desc': 'Desenvolvimento de matrizes validadas de distância e duração a partir de coordenadas brutas para otimização logística e planejamento de rotas.',
+        'project9.stage1': 'Limpeza e validação de dados',
+        'project9.stage2': 'Cálculo de rotas com fallback',
+        'project9.stage3': 'Tratamento de erros e relatórios',
+        'project9.benefit': 'Matriz confiável de tempo de viagem e distância melhorando eficiência do planejamento de rotas e precisão nas decisões.',
+
+        // Project 10
+        'project10.title': 'Processamento Geoespacial e Visualização 3D',
+        'project10.desc': 'Processamento LiDAR/DEM, análise de terreno e geração de modelos 3D (STL) para planejamento de desenvolvimento de terras.',
+        'project10.stage1': 'Análise de terreno com LiDAR/DEM',
+        'project10.stage2': 'Mapeamento de infraestrutura',
+        'project10.stage3': 'Mapas esquemáticos e de satélite',
+        'project10.stage4': 'Geração de modelo 3D de terreno',
+        'project10.benefit': 'Mapas claros e modelo 3D para orientar decisões de planejamento e desenvolvimento.',
+
+        // Clients
+        'clients.title': 'Empresas que Confiam',
+        'clients.subtitle': 'Empresas e organizações com as quais tive o prazer de trabalhar',
+
+        // Contact
+        'contact.title': 'Entre em Contato',
+        'contact.subtitle': 'Pronto para transformar seus dados em insights? Vamos falar sobre seu projeto.',
+        'contact.email': 'Email',
+        'contact.cta.title': 'Vamos Trabalhar Juntos',
+        'contact.cta.desc': 'Seja para análise geoespacial, visualização de dados, avaliação de créditos de carbono ou analítica de marketing, estou aqui para ajudar a transformar seus dados em insights acionáveis.',
+        'contact.cta.button': 'Enviar Mensagem',
+
+        // Footer
+        'footer.tagline': 'Engenheiro Florestal e Cientista de Dados',
+        'footer.rights': 'Todos os direitos reservados.'
     }
 };
 
