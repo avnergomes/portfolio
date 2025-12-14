@@ -201,13 +201,13 @@ ul {
 .nav-logo {
     display: flex;
     align-items: center;
+    gap: var(--spacing-sm);
 }
 
-.logo-text {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--color-primary);
+.logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
 }
 
 .nav-menu {
@@ -1113,10 +1113,17 @@ ul {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-brand .logo-text {
-    color: white;
-    margin-bottom: var(--spacing-sm);
-    display: block;
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.logo-mark {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .footer-brand p {
