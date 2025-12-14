@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avner Gomes - Forest Engineer & Data Scientist specializing in Geo Data Science, Forest Resources, Carbon Credits, and Digital Marketing Analytics">
+    <meta name="keywords" content="Data Science, GIS, Forest Engineering, Carbon Credits, Business Intelligence, Google Ads, Meta Ads, Remote Sensing">
+    <meta name="author" content="Avner Gomes">
+
+    <title>Avner Gomes | Forest Engineer & Data Scientist</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-text">AG</span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#clients" class="nav-link" data-i18n="nav.clients">Clients</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting" data-i18n="hero.greeting">Hello, I'm</p>
+                <h1 class="hero-title">Avner Gomes</h1>
+                <h2 class="hero-subtitle">
+                    <span data-i18n="hero.role1">Forest Engineer</span> &
+                    <span data-i18n="hero.role2">Data Scientist</span>
+                </h2>
+                <p class="hero-description" data-i18n="hero.description">
+                    Transforming complex data into actionable insights. Specialized in Geo Data Science,
+                    Forest Resources, Carbon Credits, and Digital Marketing Analytics.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero.viewWork">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.getInTouch">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <img src="assets/profile.jpg" alt="Avner Gomes" class="profile-img" onerror="this.src='assets/images/profile-placeholder.svg'">
+                    <div class="profile-decoration"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#about" class="scroll-indicator">
+                <span data-i18n="hero.scroll">Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-i18n="about.p1">
+                        I am a Forest Engineer with a Master's degree in Data Science, combining deep expertise
+                        in natural resource management with advanced analytical capabilities. My unique background
+                        allows me to bridge the gap between environmental science and data-driven decision making.
+                    </p>
+                    <p data-i18n="about.p2">
+                        With experience spanning government institutions, consulting firms, and international
+                        freelance projects, I deliver end-to-end solutions from data collection to visualization
+                        and strategic insights.
+                    </p>
+
+                    <div class="education">
+                        <h3 data-i18n="about.education">Education</h3>
+                        <ul class="education-list">
+                            <li>
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <strong data-i18n="about.edu1.title">Master in Data Science</strong>
+                                    <span data-i18n="about.edu1.school">Nuclio Digital School, 2023</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <strong data-i18n="about.edu2.title">MBA | Forest Precision Management</strong>
+                                    <span data-i18n="about.edu2.school">UFPR, 2018</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <strong data-i18n="about.edu3.title">Forest Engineering</strong>
+                                    <span data-i18n="about.edu3.school">UFPR, 2013</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label" data-i18n="about.stats.years">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label" data-i18n="about.stats.projects">Projects Delivered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">7+</div>
+                        <div class="stat-label" data-i18n="about.stats.countries">Countries Served</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label" data-i18n="about.stats.satisfaction">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="skills-section">
+                <h3 data-i18n="about.skills">Technical Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4><i class="fas fa-database"></i> <span data-i18n="skills.data">Data Science</span></h4>
+                        <div class="skill-tags">
+                            <span>Python</span>
+                            <span>R</span>
+                            <span>SQL</span>
+                            <span>Machine Learning</span>
+                            <span>Time Series</span>
+                            <span>Clustering</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-globe"></i> <span data-i18n="skills.geo">Geospatial</span></h4>
+                        <div class="skill-tags">
+                            <span>QGIS</span>
+                            <span>ArcGIS</span>
+                            <span>Google Earth Engine</span>
+                            <span>Remote Sensing</span>
+                            <span>LiDAR</span>
+                            <span>WebGIS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-chart-bar"></i> <span data-i18n="skills.bi">Business Intelligence</span></h4>
+                        <div class="skill-tags">
+                            <span>Power BI</span>
+                            <span>Tableau</span>
+                            <span>Looker Studio</span>
+                            <span>ETL</span>
+                            <span>Data Visualization</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4><i class="fas fa-bullhorn"></i> <span data-i18n="skills.marketing">Digital Marketing</span></h4>
+                        <div class="skill-tags">
+                            <span>Google Ads</span>
+                            <span>Meta Ads</span>
+                            <span>TikTok Ads</span>
+                            <span>CRM Analytics</span>
+                            <span>ROI Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+        <div class="container">
+            <h2 class="section-title" data-i18n="services.title">Services</h2>
+            <p class="section-subtitle" data-i18n="services.subtitle">
+                Comprehensive data solutions tailored to your business needs
+            </p>
+
+            <div class="services-grid">
+                <div class="service-card featured">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 data-i18n="services.geo.title">Geo Data Science</h3>
+                    <p data-i18n="services.geo.desc">
+                        Advanced geospatial analysis, satellite imagery processing, terrain modeling,
+                        and location-based insights for strategic decision-making.
+                    </p>
+                    <ul class="service-features">
+                        <li data-i18n="services.geo.f1">Remote Sensing Analysis</li>
+                        <li data-i18n="services.geo.f2">WebGIS Development</li>
+                        <li data-i18n="services.geo.f3">Spatial Data Processing</li>
+                        <li data-i18n="services.geo.f4">3D Terrain Visualization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 data-i18n="services.forest.title">Forest Resources</h3>
+                    <p data-i18n="services.forest.desc">
+                        Expert consulting in forest inventory, management planning, FSC certification,
+                        and sustainable forestry practices.
+                    </p>
+                    <ul class="service-features">
+                        <li data-i18n="services.forest.f1">Forest Inventory</li>
+                        <li data-i18n="services.forest.f2">Management Planning</li>
+                        <li data-i18n="services.forest.f3">FSC Certification Support</li>
+                        <li data-i18n="services.forest.f4">Plantation Analysis</li>
+                    </ul>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 data-i18n="services.carbon.title">Carbon Credits</h3>
+                    <p data-i18n="services.carbon.desc">
+                        Feasibility studies for forest restoration and carbon credit generation projects,
+                        including deforestation monitoring and sequestration estimation.
+                    </p>
+                    <ul class="service-features">
+                        <li data-i18n="services.carbon.f1">Carbon Sequestration Estimation</li>
+                        <li data-i18n="services.carbon.f2">Deforestation Analysis</li>
+                        <li data-i18n="services.carbon.f3">Restoration Feasibility</li>
+                        <li data-i18n="services.carbon.f4">Project Viability Assessment</li>
+                    </ul>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 data-i18n="services.marketing.title">Digital Marketing Analytics</h3>
+                    <p data-i18n="services.marketing.desc">
+                        Multi-channel advertising analytics, CRM data analysis, and performance
+                        optimization across Google, Meta, and TikTok platforms.
+                    </p>
+                    <ul class="service-features">
+                        <li data-i18n="services.marketing.f1">Multi-Platform Ad Analysis</li>
+                        <li data-i18n="services.marketing.f2">ROI & ROAS Optimization</li>
+                        <li data-i18n="services.marketing.f3">CRM Data Integration</li>
+                        <li data-i18n="services.marketing.f4">Sales Performance Dashboards</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 data-i18n="services.bi.title">Business Intelligence</h3>
+                    <p data-i18n="services.bi.desc">
+                        Custom dashboard development, data pipeline creation, and automated reporting
+                        solutions using Power BI, Tableau, and Looker Studio.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3 data-i18n="services.routing.title">Route Optimization</h3>
+                    <p data-i18n="services.routing.desc">
+                        Distance and duration matrix development, route planning optimization,
+                        and logistics analysis for efficient operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">
+                A selection of my recent work across different domains
+            </p>
+
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">All</button>
+                <button class="filter-btn" data-filter="geo" data-i18n="projects.filter.geo">Geospatial</button>
+                <button class="filter-btn" data-filter="bi" data-i18n="projects.filter.bi">Business Intelligence</button>
+                <button class="filter-btn" data-filter="marketing" data-i18n="projects.filter.marketing">Marketing</button>
+                <button class="filter-btn" data-filter="forest" data-i18n="projects.filter.forest">Forest/Carbon</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+
+                <!-- Project 1: VBP Dashboard -->
+                <div class="project-card" data-category="bi geo">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #2d5a27 0%, #4a7c43 100%);">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-i18n="projects.cat.bi">Business Intelligence</span>
+                        <h3 data-i18n="project1.title">Gross Production Value Dashboard - Parana</h3>
+                        <p data-i18n="project1.desc">
+                            Comprehensive dashboard for agricultural production analysis supporting institutional
+                            planning and municipal cooperation strategies.
+                        </p>
+                        <div class="project-tech">
+                            <span>Power BI</span>
+                            <span>Web Scraping</span>
+                            <span>ETL</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-details">
+                            <h4 data-i18n="project.stages">Development Stages</h4>
+                            <ul>
+                                <li data-i18n="project1.stage1">Web scraping and ETL pipeline</li>
+                                <li data-i18n="project1.stage2">Data cleaning and transformation</li>
+                                <li data-i18n="project1.stage3">Interactive visualization</li>
+                            </ul>
+                            <h4 data-i18n="project.benefit">Main Benefit</h4>
+                            <p data-i18n="project1.benefit">
+                                Support in defining priority production chains for Institutional Planning
+                                and drafting Cooperation Terms with Municipalities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: DSMarket Capstone -->
+                <div class="project-card" data-category="bi">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-i18n="projects.cat.ds">Data Science</span>
+                        <h3 data-i18n="project2.title">DSMarket - Master's Capstone Project</h3>
+                        <p data-i18n="project2.desc">
+                            End-to-end data science pipeline for supermarket re-supply strategy optimization
+                            using clustering and time series forecasting.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>LSTM</span>
+                            <span>Random Forest</span>
+                            <span>Clustering</span>
+                        </div>
+                        <div class="project-details">
+                            <h4 data-i18n="project.stages">Development Stages</h4>
+                            <ul>
+                                <li data-i18n="project2.stage1">Exploratory Data Analysis (EDA)</li>
+                                <li data-i18n="project2.stage2">Customer/Product Clustering</li>
+                                <li data-i18n="project2.stage3">Time Series Forecasting</li>
+                                <li data-i18n="project2.stage4">Model Deployment</li>
+                            </ul>
+                            <h4 data-i18n="project.benefit">Main Benefit</h4>
+                            <p data-i18n="project2.benefit">
+                                Helped design a pilot re-supply strategy for supermarkets with a full
+                                end-to-end pipeline from raw data to actionable insights.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Forest Development Plan -->
+                <div class="project-card" data-category="geo forest">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #22543d 0%, #38a169 100%);">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-i18n="projects.cat.geo">Geospatial</span>
+                        <h3 data-i18n="project3.title">Forest Development Plan</h3>
+                        <p data-i18n="project3.desc">
+                            Multi-layer geospatial analysis to identify optimal areas for forest plantation
+                            implementation considering costs and market access.
+                        </p>
+                        <div class="project-tech">
+                            <span>QGIS</span>
+                            <span>Spatial Analysis</span>
+                            <span>Risk Assessment</span>
+                        </div>
+                        <div class="project-details">
+                            <h4 data-i18n="project.stages">Development Stages</h4>
+                            <ul>
+                                <li data-i18n="project3.stage1">Intersection of georeferenced layers</li>
+                                <li data-i18n="project3.stage2">Cost and risk modeling</li>
+                                <li data-i18n="project3.stage3">Transportation cost analysis</li>
+                            </ul>
+                            <h4 data-i18n="project.benefit">Main Benefit</h4>
+                            <p data-i18n="project3.benefit">
+                                Identification of higher-risk areas based on implementation costs and
+                                price decline due to transportation costs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Carbon Credit Assessment -->
+                <div class="project-card" data-category="geo forest">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #065f46 0%, #059669 100%);">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-i18n="projects.cat.carbon">Carbon Credits</span>
+                        <h3 data-i18n="project4.title">Carbon Credit Generation Assessment</h3>
+                        <p data-i18n="project4.desc">
+                            Feasibility study for forest restoration and carbon credit generation
+                            including deforestation monitoring and sequestration estimation.
+                        </p>
+                        <div class="project-tech">
+                            <span>Remote Sensing</span>
+                            <span>GEE</span>
+                            <span>Watershed Modeling</span>
+                        </div>
+                        <div class="project-details">
+                            <h4 data-i18n="project.stages">Development Stages</h4>
+                            <ul>
+                                <li data-i18n="project4.stage1">Area identification and data collection</li>
+                                <li data-i18n="project4.stage2">Temporal image acquisition</li>
+                                <li data-i18n="project4.stage3">Deforestation measurement</li>
+                                <li data-i18n="project4.stage4">Carbon sequestration estimation</li>
+                            </ul>
+                            <h4 data-i18n="project.benefit">Main Benefit</h4>
+                            <p data-i18n="project4.benefit">
+                                Project feasibility verification based on storage capacity and
+                                costs of land purchase and seedling planting.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: BI International -->
+                <div class="project-card" data-category="bi">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #44337a 0%, #805ad5 100%);">
+                            <i class="fas fa-globe-europe"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-i18n="projects.cat.bi">Business Intelligence</span>
+                        <h3 data-i18n="project5.title">International Sales BI Dashboard</h3>
+                        <p data-i18n="project5.desc">
+                            Comprehensive sales analytics dashboard for European markets with spatial
+                            distribution patterns by product, customer, and region.
+                        </p>
+                        <div class="project-tech">
+                            <span>Power BI</span>
+                            <span>Geospatial</span>
+                            <span>Sales Analytics</span>
+                        </div>
+                        <div class="project-details">
+                            <h4 data-i18n="project.stages">Development Stages</h4>
+                            <ul>
+                                <li data-i18n="project5.stage1">Data cleaning and transformation</li>
+                                <li data-i18n="project5.stage2">Custom dashboard based on client needs</li>
+                            </ul>
+                            <h4 data-i18n="project.benefit">Main Benefit</h4>
+                            <p data-i18n="project5.benefit">
+                                Spatial distribution patterns by product, customer, region, and employee
+                                for data-driven decision making.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Market Share Analysis -->
+                <div class="project-card" data-category="bi marketing">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #742a2a 0%, #c53030 100%);">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-i18n="projects.cat.marketing">Marketing Analytics</span>
+                        <h3 data-i18n="project6.title">Market Share Comparison & CRM Analytics</h3>
+                        <p data-i18n="project6.desc">
+                            Customer contact data visualization and market share comparison for
+                            apparel and accessories sector across US markets.
+                        </p>
+                        <div class="project-tech">
+                            <span>CRM Analytics</span>
+                            <span>Market Analysis</span>
+                            <span>Heatmaps</span>
+                        </div>
+                        <div class="project-details">
+                            <h4 data-i18n="project.stages">Development Stages</h4>
+                            <ul>
+                                <li data-i18n="project6.stage1">CRM data cleaning and visualization</li>
+                                <li data-i18n="project6.stage2">Market share comparison by CBSA</li>
+                            </ul>
+                            <h4 data-i18n="project.benefit">Main Benefit</h4>
+                            <p data-i18n="project6.benefit">
+                                Support in decision-making for customer service team and marketing
+                                planning across different regions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: WebGIS Consulting -->
+                <div class="project-card" data-category="geo">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #1a4731 0%, #276749 100%);">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-i18n="projects.cat.geo">Geospatial</span>
+                        <h3 data-i18n="project7.title">WebGIS Platform Consulting</h3>
+                        <p data-i18n="project7.desc">
+                            Usability testing and improvement suggestions for a WebGIS platform
+                            for satellite imagery visualization and indicator generation.
+                        </p>
+                        <div class="project-tech">
+                            <span>WebGIS</span>
+                            <span>UX Testing</span>
+                            <span>Satellite Imagery</span>
+                        </div>
+                        <div class="project-details">
+                            <h4 data-i18n="project.stages">Development Stages</h4>
+                            <ul>
+                                <li data-i18n="project7.stage1">Customer perspective usability testing</li>
+                                <li data-i18n="project7.stage2">Improvement suggestions and new ideas</li>
+                            </ul>
+                            <h4 data-i18n="project.benefit">Main Benefit</h4>
+                            <p data-i18n="project7.benefit">
+                                Platform development support with actionable suggestions and innovative ideas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8: Multi-Channel Ads Analytics -->
+                <div class="project-card" data-category="marketing bi">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #7b341e 0%, #dd6b20 100%);">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-i18n="projects.cat.marketing">Marketing Analytics</span>
+                        <h3 data-i18n="project8.title">Multi-Channel Ads & Ticket Sales Analytics</h3>
+                        <p data-i18n="project8.desc">
+                            End-to-end workflow for multi-platform ad analytics (Google, Meta, TikTok)
+                            with ticket sales performance analysis by show and city.
+                        </p>
+                        <div class="project-tech">
+                            <span>Google Ads</span>
+                            <span>Meta Ads</span>
+                            <span>TikTok Ads</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-details">
+                            <h4 data-i18n="project.stages">Development Stages</h4>
+                            <ul>
+                                <li data-i18n="project8.stage1">Data extraction across ad platforms</li>
+                                <li data-i18n="project8.stage2">Cleaning and integration</li>
+                                <li data-i18n="project8.stage3">Standardized metrics transformation</li>
+                                <li data-i18n="project8.stage4">Performance analysis dashboard</li>
+                            </ul>
+                            <h4 data-i18n="project.benefit">Main Benefit</h4>
+                            <p data-i18n="project8.benefit">
+                                Clear visibility of ad spend efficiency and ticket sales performance
+                                supporting data-driven ROI optimization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 9: Route Planning Matrix -->
+                <div class="project-card" data-category="geo">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-i18n="projects.cat.geo">Geospatial</span>
+                        <h3 data-i18n="project9.title">Distance & Duration Matrix for Route Planning</h3>
+                        <p data-i18n="project9.desc">
+                            Development of validated distance and duration matrices from raw coordinates
+                            for logistics and route planning optimization.
+                        </p>
+                        <div class="project-tech">
+                            <span>OSMnx</span>
+                            <span>ORS API</span>
+                            <span>Python</span>
+                            <span>GeoPackage</span>
+                        </div>
+                        <div class="project-details">
+                            <h4 data-i18n="project.stages">Development Stages</h4>
+                            <ul>
+                                <li data-i18n="project9.stage1">Data cleaning and validation</li>
+                                <li data-i18n="project9.stage2">Route calculation with fallback</li>
+                                <li data-i18n="project9.stage3">Error handling and reporting</li>
+                            </ul>
+                            <h4 data-i18n="project.benefit">Main Benefit</h4>
+                            <p data-i18n="project9.benefit">
+                                Reliable travel time and distance matrix improving route planning
+                                efficiency and decision-making accuracy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 10: 3D Land Development -->
+                <div class="project-card" data-category="geo">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #1a202c 0%, #4a5568 100%);">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-i18n="projects.cat.geo">Geospatial</span>
+                        <h3 data-i18n="project10.title">Geospatial Processing & 3D Visualization</h3>
+                        <p data-i18n="project10.desc">
+                            LiDAR/DEM processing, terrain analysis, and 3D model generation (STL)
+                            for land development planning.
+                        </p>
+                        <div class="project-tech">
+                            <span>LiDAR</span>
+                            <span>DEM</span>
+                            <span>3D Modeling</span>
+                            <span>STL</span>
+                        </div>
+                        <div class="project-details">
+                            <h4 data-i18n="project.stages">Development Stages</h4>
+                            <ul>
+                                <li data-i18n="project10.stage1">LiDAR/DEM terrain analysis</li>
+                                <li data-i18n="project10.stage2">Infrastructure mapping</li>
+                                <li data-i18n="project10.stage3">Schematic and satellite maps</li>
+                                <li data-i18n="project10.stage4">3D terrain model generation</li>
+                            </ul>
+                            <h4 data-i18n="project.benefit">Main Benefit</h4>
+                            <p data-i18n="project10.benefit">
+                                Clear maps and 3D model to guide planning and development decisions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients section" id="clients">
+        <div class="container">
+            <h2 class="section-title" data-i18n="clients.title">Trusted By</h2>
+            <p class="section-subtitle" data-i18n="clients.subtitle">
+                Companies and organizations I've had the pleasure to work with
+            </p>
+
+            <div class="clients-grid">
+                <div class="client-logo">
+                    <div class="client-placeholder">J.W. Hulme Co.</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-placeholder">Orbify</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-placeholder">aDryada</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-placeholder">IDR-Parana</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-placeholder">Sequoia Highland Camp</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-placeholder">Doggy Dates</div>
+                </div>
+                <div class="client-logo">
+                    <div class="client-placeholder">KOBE Interior Fabrics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">
+                Ready to transform your data into insights? Let's discuss your project.
+            </p>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4 data-i18n="contact.email">Email</h4>
+                            <a href="mailto:avnerpaesgomes@gmail.com">avnerpaesgomes@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/avner-gomes-32556018/" target="_blank" rel="noopener">
+                                Avner Gomes
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Upwork</h4>
+                            <a href="https://freelancerprofilenuxt.mesh.prod.platform.usw2.upwork/freelancers/avnergomes?mp_source=share" target="_blank" rel="noopener">
+                                Avner Gomes - Freelancer
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/avnergomes" target="_blank" rel="noopener">
+                                avnergomes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <div class="cta-card">
+                        <h3 data-i18n="contact.cta.title">Let's Work Together</h3>
+                        <p data-i18n="contact.cta.desc">
+                            Whether you need geospatial analysis, data visualization, carbon credit assessment,
+                            or marketing analytics, I'm here to help turn your data into actionable insights.
+                        </p>
+                        <a href="mailto:avnerpaesgomes@gmail.com" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-i18n="contact.cta.button">Send Message</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-text">AG</span>
+                    <p data-i18n="footer.tagline">Forest Engineer & Data Scientist</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#home" data-i18n="nav.home">Home</a>
+                    <a href="#about" data-i18n="nav.about">About</a>
+                    <a href="#services" data-i18n="nav.services">Services</a>
+                    <a href="#projects" data-i18n="nav.projects">Projects</a>
+                    <a href="#contact" data-i18n="nav.contact">Contact</a>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/avner-gomes-32556018/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:avnerpaesgomes@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Avner Gomes. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
