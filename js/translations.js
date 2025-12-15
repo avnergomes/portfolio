@@ -184,7 +184,8 @@ const translations = {
 
         // Footer
         'footer.tagline': 'Forest Engineer & Data Scientist',
-        'footer.rights': 'All rights reserved.'
+        'footer.rights': 'All rights reserved.',
+        'footer.visitors': 'Visitors:'
     },
 
     es: {
@@ -371,7 +372,8 @@ const translations = {
 
         // Footer
         'footer.tagline': 'Ingeniero Forestal y Cientifico de Datos',
-        'footer.rights': 'Todos los derechos reservados.'
+        'footer.rights': 'Todos los derechos reservados.',
+        'footer.visitors': 'Visitantes:'
     },
 
     pt: {
@@ -558,7 +560,8 @@ const translations = {
 
         // Footer
         'footer.tagline': 'Engenheiro Florestal e Cientista de Dados',
-        'footer.rights': 'Todos os direitos reservados.'
+        'footer.rights': 'Todos os direitos reservados.',
+        'footer.visitors': 'Visitantes:'
     }
 };
 

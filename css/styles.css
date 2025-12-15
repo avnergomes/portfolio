@@ -1178,6 +1178,25 @@ ul {
     font-size: 0.875rem;
 }
 
+.visitor-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8125rem;
+}
+
+.visitor-counter i {
+    color: var(--color-primary);
+}
+
+#visitor-count {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+}
+
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;

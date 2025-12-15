@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectFilters();
     initCurrentYear();
     initRevealAnimations();
+    initVisitorCounter();
 });
 
 // ===== Language System =====
@@ -172,6 +173,27 @@ function initCurrentYear() {
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
+}
+
+// ===== Visitor Counter =====
+function initVisitorCounter() {
+    const counterElement = document.getElementById('visitor-count');
+    if (!counterElement) return;
+
+    const namespace = 'avnergomes-portfolio';
+    const key = 'visitors';
+
+    // Fetch and increment visitor count
+    fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.count !== undefined) {
+                counterElement.textContent = data.count.toLocaleString();
+            }
+        })
+        .catch(() => {
+            // Silently fail - keep showing "--"
+        });
 }
 
 // ===== Reveal Animations =====
