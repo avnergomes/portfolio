@@ -180,15 +180,8 @@ function initVisitorCounter() {
     const counterElement = document.getElementById('visitor-count');
     if (!counterElement) return;
 
-    // Google Apps Script Web App URL (replace with your deployed URL)
-    const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
-
-    // Check if URL is configured
-    if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-        console.warn('Visit tracker not configured. Please update SCRIPT_URL in main.js');
-        counterElement.textContent = '--';
-        return;
-    }
+    // Google Apps Script Web App URL
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz8NznOVFVYolyNWF7ZEE55PAvDsRIh2HYEJgjehKuVU2zt5da5m6-a1AsEC57EDw/exec';
 
     // Gather tracking data
     const trackingData = {
