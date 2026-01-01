@@ -180,20 +180,108 @@ function initVisitorCounter() {
     const counterElement = document.getElementById('visitor-count');
     if (!counterElement) return;
 
-    const namespace = 'avnergomes-portfolio';
-    const key = 'visitors';
+    // Google Apps Script Web App URL (replace with your deployed URL)
+    const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
 
-    // Fetch and increment visitor count
-    fetch(`https://api.counterapi.dev/v1/${namespace}/${key}/up`)
-        .then(response => response.json())
+    // Check if URL is configured
+    if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+        console.warn('Visit tracker not configured. Please update SCRIPT_URL in main.js');
+        counterElement.textContent = '--';
+        return;
+    }
+
+    // Gather tracking data
+    const trackingData = {
+        page: 'portfolio',
+        referrer: document.referrer || 'direct',
+        ua: navigator.userAgent.substring(0, 200) // Limit UA string length
+    };
+
+    // Build URL with parameters
+    const params = new URLSearchParams(trackingData);
+    const fullUrl = `${SCRIPT_URL}?${params.toString()}`;
+
+    // Show loading state
+    counterElement.textContent = '...';
+    counterElement.classList.add('loading');
+
+    // Fetch and increment visitor count from Google Sheets
+    fetch(fullUrl, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-cache'
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
-            if (data && data.count !== undefined) {
-                counterElement.textContent = data.count.toLocaleString();
+            counterElement.classList.remove('loading');
+
+            if (data && data.success && data.count !== undefined) {
+                // Animate the counter
+                animateCounter(counterElement, data.count);
+
+                // Store count in sessionStorage to avoid duplicate tracking
+                sessionStorage.setItem('portfolio_visit_tracked', 'true');
+
+                // Log analytics (optional)
+                if (window.console && data.timestamp) {
+                    console.log(`Visit tracked: #${data.count} at ${data.timestamp}`);
+                }
+            } else {
+                throw new Error('Invalid response format');
             }
         })
-        .catch(() => {
-            // Silently fail - keep showing "--"
+        .catch(error => {
+            console.error('Visit tracker error:', error);
+            counterElement.classList.remove('loading');
+            counterElement.textContent = '--';
+
+            // Fallback: Try to get cached count
+            const cachedCount = sessionStorage.getItem('portfolio_visit_count');
+            if (cachedCount) {
+                counterElement.textContent = parseInt(cachedCount).toLocaleString();
+            }
         });
+}
+
+/**
+ * Animate counter from 0 to target value
+ */
+function animateCounter(element, targetValue) {
+    const duration = 1000; // 1 second
+    const startTime = performance.now();
+    const startValue = 0;
+
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Easing function (easeOutCubic)
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+
+        const currentValue = Math.floor(startValue + (targetValue - startValue) * easeProgress);
+        element.textContent = currentValue.toLocaleString();
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            // Cache the final count
+            sessionStorage.setItem('portfolio_visit_count', targetValue);
+        }
+    }
+
+    requestAnimationFrame(update);
+}
+
+/**
+ * Check if visit was already tracked in this session
+ */
+function wasVisitTracked() {
+    return sessionStorage.getItem('portfolio_visit_tracked') === 'true';
 }
 
 // ===== Reveal Animations =====
