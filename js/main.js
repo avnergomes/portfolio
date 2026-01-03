@@ -186,27 +186,41 @@ function initVisitorCounter() {
     // Gather comprehensive tracking data
     const trackingData = gatherUserData();
 
-    // Build URL with parameters
-    const params = new URLSearchParams(trackingData);
-    const fullUrl = `${SCRIPT_URL}?${params.toString()}`;
-
     // Show loading state
     counterElement.textContent = '...';
     counterElement.classList.add('loading');
 
-    // Fetch and increment visitor count from Google Sheets
-    fetch(fullUrl, {
-        method: 'GET',
+    // Log tracking data for debugging
+    console.log('Tracking data:', trackingData);
+    console.log('Tracking data size:', JSON.stringify(trackingData).length, 'bytes');
+
+    // Send tracking data via POST to avoid URL length limits
+    fetch(SCRIPT_URL, {
+        method: 'POST',
         mode: 'cors',
-        cache: 'no-cache'
+        cache: 'no-cache',
+        headers: {
+            'Content-Type': 'text/plain'
+        },
+        body: JSON.stringify(trackingData)
     })
         .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
+            console.log('Response status:', response.status);
+            console.log('Response OK:', response.ok);
+            return response.text();
+        })
+        .then(text => {
+            console.log('Response text:', text);
+            // Parse JSON response
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                console.error('JSON parse error:', e);
+                throw new Error('Failed to parse response as JSON: ' + text);
             }
-            return response.json();
         })
         .then(data => {
+            console.log('Parsed data:', data);
             counterElement.classList.remove('loading');
 
             if (data && data.success && data.count !== undefined) {
@@ -216,16 +230,19 @@ function initVisitorCounter() {
                 // Store count in sessionStorage to avoid duplicate tracking
                 sessionStorage.setItem('portfolio_visit_tracked', 'true');
 
-                // Log analytics (optional)
-                if (window.console && data.timestamp) {
-                    console.log(`Visit tracked: #${data.count} at ${data.timestamp}`);
-                }
+                // Log analytics
+                console.log(`✓ Visit tracked successfully: #${data.count} at ${data.timestamp}`);
             } else {
+                console.error('Invalid response format:', data);
                 throw new Error('Invalid response format');
             }
         })
         .catch(error => {
             console.error('Visit tracker error:', error);
+            console.error('Error details:', {
+                message: error.message,
+                stack: error.stack
+            });
             counterElement.classList.remove('loading');
             counterElement.textContent = '--';
 
