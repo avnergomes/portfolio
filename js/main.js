@@ -186,25 +186,24 @@ function initVisitorCounter() {
     // Gather comprehensive tracking data
     const trackingData = gatherUserData();
 
-    // Build URL with parameters
-    const params = new URLSearchParams(trackingData);
-    const fullUrl = `${SCRIPT_URL}?${params.toString()}`;
-
     // Show loading state
     counterElement.textContent = '...';
     counterElement.classList.add('loading');
 
-    // Fetch and increment visitor count from Google Sheets
-    fetch(fullUrl, {
-        method: 'GET',
+    // Send tracking data via POST to avoid URL length limits
+    fetch(SCRIPT_URL, {
+        method: 'POST',
         mode: 'cors',
-        cache: 'no-cache'
+        cache: 'no-cache',
+        headers: {
+            'Content-Type': 'text/plain'
+        },
+        body: JSON.stringify(trackingData)
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
-            return response.json();
+        .then(response => response.text())
+        .then(text => {
+            // Parse JSON response
+            return JSON.parse(text);
         })
         .then(data => {
             counterElement.classList.remove('loading');
