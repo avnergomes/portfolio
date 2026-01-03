@@ -190,6 +190,10 @@ function initVisitorCounter() {
     counterElement.textContent = '...';
     counterElement.classList.add('loading');
 
+    // Log tracking data for debugging
+    console.log('Tracking data:', trackingData);
+    console.log('Tracking data size:', JSON.stringify(trackingData).length, 'bytes');
+
     // Send tracking data via POST to avoid URL length limits
     fetch(SCRIPT_URL, {
         method: 'POST',
@@ -200,12 +204,23 @@ function initVisitorCounter() {
         },
         body: JSON.stringify(trackingData)
     })
-        .then(response => response.text())
+        .then(response => {
+            console.log('Response status:', response.status);
+            console.log('Response OK:', response.ok);
+            return response.text();
+        })
         .then(text => {
+            console.log('Response text:', text);
             // Parse JSON response
-            return JSON.parse(text);
+            try {
+                return JSON.parse(text);
+            } catch (e) {
+                console.error('JSON parse error:', e);
+                throw new Error('Failed to parse response as JSON: ' + text);
+            }
         })
         .then(data => {
+            console.log('Parsed data:', data);
             counterElement.classList.remove('loading');
 
             if (data && data.success && data.count !== undefined) {
@@ -215,16 +230,19 @@ function initVisitorCounter() {
                 // Store count in sessionStorage to avoid duplicate tracking
                 sessionStorage.setItem('portfolio_visit_tracked', 'true');
 
-                // Log analytics (optional)
-                if (window.console && data.timestamp) {
-                    console.log(`Visit tracked: #${data.count} at ${data.timestamp}`);
-                }
+                // Log analytics
+                console.log(`✓ Visit tracked successfully: #${data.count} at ${data.timestamp}`);
             } else {
+                console.error('Invalid response format:', data);
                 throw new Error('Invalid response format');
             }
         })
         .catch(error => {
             console.error('Visit tracker error:', error);
+            console.error('Error details:', {
+                message: error.message,
+                stack: error.stack
+            });
             counterElement.classList.remove('loading');
             counterElement.textContent = '--';
 
