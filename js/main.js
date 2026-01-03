@@ -183,12 +183,8 @@ function initVisitorCounter() {
     // Google Apps Script Web App URL
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz8NznOVFVYolyNWF7ZEE55PAvDsRIh2HYEJgjehKuVU2zt5da5m6-a1AsEC57EDw/exec';
 
-    // Gather tracking data
-    const trackingData = {
-        page: 'portfolio',
-        referrer: document.referrer || 'direct',
-        ua: navigator.userAgent.substring(0, 200) // Limit UA string length
-    };
+    // Gather comprehensive tracking data
+    const trackingData = gatherUserData();
 
     // Build URL with parameters
     const params = new URLSearchParams(trackingData);
@@ -239,6 +235,157 @@ function initVisitorCounter() {
                 counterElement.textContent = parseInt(cachedCount).toLocaleString();
             }
         });
+}
+
+/**
+ * Gather comprehensive user data legally from browser APIs
+ */
+function gatherUserData() {
+    // Detect device type based on screen width and user agent
+    function getDeviceType() {
+        const width = window.innerWidth;
+        const ua = navigator.userAgent.toLowerCase();
+
+        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+            return 'tablet';
+        }
+        if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+            return 'mobile';
+        }
+        return width <= 768 ? 'mobile' : (width <= 1024 ? 'tablet' : 'desktop');
+    }
+
+    // Extract browser name and version
+    function getBrowserInfo() {
+        const ua = navigator.userAgent;
+        let browser = 'Unknown';
+        let version = 'Unknown';
+
+        if (ua.indexOf('Firefox') > -1) {
+            browser = 'Firefox';
+            version = ua.match(/Firefox\/([0-9.]+)/)?.[1] || 'Unknown';
+        } else if (ua.indexOf('Edg') > -1) {
+            browser = 'Edge';
+            version = ua.match(/Edg\/([0-9.]+)/)?.[1] || 'Unknown';
+        } else if (ua.indexOf('Chrome') > -1 && ua.indexOf('Edg') === -1) {
+            browser = 'Chrome';
+            version = ua.match(/Chrome\/([0-9.]+)/)?.[1] || 'Unknown';
+        } else if (ua.indexOf('Safari') > -1 && ua.indexOf('Chrome') === -1) {
+            browser = 'Safari';
+            version = ua.match(/Version\/([0-9.]+)/)?.[1] || 'Unknown';
+        } else if (ua.indexOf('MSIE') > -1 || ua.indexOf('Trident') > -1) {
+            browser = 'IE';
+            version = ua.match(/(MSIE |rv:)([0-9.]+)/)?.[2] || 'Unknown';
+        }
+
+        return { browser, version };
+    }
+
+    // Extract OS information
+    function getOS() {
+        const ua = navigator.userAgent;
+        if (ua.indexOf('Win') > -1) return 'Windows';
+        if (ua.indexOf('Mac') > -1) return 'MacOS';
+        if (ua.indexOf('Linux') > -1) return 'Linux';
+        if (ua.indexOf('Android') > -1) return 'Android';
+        if (ua.indexOf('like Mac') > -1) return 'iOS';
+        return 'Unknown';
+    }
+
+    // Get connection type if available
+    function getConnectionType() {
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        if (connection) {
+            return connection.effectiveType || connection.type || 'Unknown';
+        }
+        return 'Unknown';
+    }
+
+    // Get page load time
+    function getPageLoadTime() {
+        if (window.performance && window.performance.timing) {
+            const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+            return loadTime > 0 ? Math.round(loadTime) : 0;
+        }
+        return 0;
+    }
+
+    const browserInfo = getBrowserInfo();
+
+    // Compile all tracking data
+    return {
+        // Page info
+        page: 'portfolio',
+        url: window.location.href.substring(0, 200),
+        referrer: document.referrer || 'direct',
+
+        // Timestamp & Session
+        timestamp: new Date().toISOString(),
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
+
+        // Language
+        language: navigator.language || navigator.userLanguage || 'Unknown',
+        languages: navigator.languages ? navigator.languages.join(',').substring(0, 100) : 'Unknown',
+
+        // Browser info
+        browser: browserInfo.browser,
+        browserVersion: browserInfo.version,
+        userAgent: navigator.userAgent.substring(0, 200),
+        platform: navigator.platform || 'Unknown',
+        os: getOS(),
+
+        // Device info
+        deviceType: getDeviceType(),
+        isMobile: /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry/.test(navigator.userAgent) ? 'true' : 'false',
+        touchSupport: ('ontouchstart' in window || navigator.maxTouchPoints > 0) ? 'true' : 'false',
+
+        // Screen info
+        screenWidth: window.screen.width,
+        screenHeight: window.screen.height,
+        screenAvailWidth: window.screen.availWidth,
+        screenAvailHeight: window.screen.availHeight,
+        colorDepth: window.screen.colorDepth,
+        pixelRatio: window.devicePixelRatio || 1,
+
+        // Viewport info
+        viewportWidth: window.innerWidth || document.documentElement.clientWidth,
+        viewportHeight: window.innerHeight || document.documentElement.clientHeight,
+
+        // Browser capabilities
+        cookieEnabled: navigator.cookieEnabled ? 'true' : 'false',
+        doNotTrack: navigator.doNotTrack || 'Unknown',
+        onlineStatus: navigator.onLine ? 'online' : 'offline',
+
+        // Connection & Performance
+        connectionType: getConnectionType(),
+        pageLoadTime: getPageLoadTime(),
+
+        // Hardware info (if available)
+        hardwareConcurrency: navigator.hardwareConcurrency || 'Unknown',
+        deviceMemory: navigator.deviceMemory || 'Unknown',
+
+        // Session info
+        sessionId: getOrCreateSessionId(),
+        isReturningVisitor: localStorage.getItem('portfolio_visited') ? 'true' : 'false'
+    };
+}
+
+/**
+ * Get or create a unique session ID
+ */
+function getOrCreateSessionId() {
+    let sessionId = sessionStorage.getItem('portfolio_session_id');
+
+    if (!sessionId) {
+        // Generate a simple session ID based on timestamp and random number
+        sessionId = Date.now().toString(36) + Math.random().toString(36).substring(2, 9);
+        sessionStorage.setItem('portfolio_session_id', sessionId);
+    }
+
+    // Mark as visited for returning visitor detection
+    localStorage.setItem('portfolio_visited', 'true');
+
+    return sessionId;
 }
 
 /**
