@@ -171,7 +171,7 @@ const translations = {
         'project10.benefit': 'Clear maps and 3D model to guide planning and development decisions.',
 
         // Project 11
-        'project11.title': 'Des Arts Wine Bar - Location Assessment WebGIS',
+        'project11.title': 'Wine Bar Location Assessment WebGIS',
         'project11.desc': 'Interactive WebGIS platform for investment due diligence, combining spatial analysis, competitive intelligence, and tourism data for wine bar acquisition in Lucca, Italy.',
         'project11.stage1': 'Tourism data collection and spatial framework',
         'project11.stage2': 'Walking isochrones and catchment mapping',
@@ -368,7 +368,7 @@ const translations = {
         'project10.benefit': 'Mapas claros y modelo 3D para guiar decisiones de planificacion y desarrollo.',
 
         // Project 11
-        'project11.title': 'Des Arts Wine Bar - WebGIS de Evaluacion de Ubicacion',
+        'project11.title': 'WebGIS de Evaluacion de Ubicacion para Bar de Vinos',
         'project11.desc': 'Plataforma WebGIS interactiva para due diligence de inversion, combinando analisis espacial, inteligencia competitiva y datos de turismo para adquisicion de bar de vinos en Lucca, Italia.',
         'project11.stage1': 'Recoleccion de datos turisticos y marco espacial',
         'project11.stage2': 'Isocronas peatonales y mapeo de areas de influencia',
@@ -565,7 +565,7 @@ const translations = {
         'project10.benefit': 'Mapas claros e modelo 3D para orientar decisões de planejamento e desenvolvimento.',
 
         // Project 11
-        'project11.title': 'Des Arts Wine Bar - WebGIS de Avaliação de Localização',
+        'project11.title': 'WebGIS de Avaliação de Localização para Bar de Vinhos',
         'project11.desc': 'Plataforma WebGIS interativa para due diligence de investimento, combinando análise espacial, inteligência competitiva e dados de turismo para aquisição de bar de vinhos em Lucca, Itália.',
         'project11.stage1': 'Coleta de dados turísticos e estrutura espacial',
         'project11.stage2': 'Isócronas de caminhada e mapeamento de área de influência',
