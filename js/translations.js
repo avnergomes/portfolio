@@ -170,6 +170,15 @@ const translations = {
         'project10.stage4': '3D terrain model generation',
         'project10.benefit': 'Clear maps and 3D model to guide planning and development decisions.',
 
+        // Project 11
+        'project11.title': 'Des Arts Wine Bar - Location Assessment WebGIS',
+        'project11.desc': 'Interactive WebGIS platform for investment due diligence, combining spatial analysis, competitive intelligence, and tourism data for wine bar acquisition in Lucca, Italy.',
+        'project11.stage1': 'Tourism data collection and spatial framework',
+        'project11.stage2': 'Walking isochrones and catchment mapping',
+        'project11.stage3': 'Competitor positioning and footfall analysis',
+        'project11.stage4': 'Interactive WebGIS dashboard development',
+        'project11.benefit': 'Data-driven investment due diligence with location intelligence, competitive landscape analysis, and demand modeling for business acquisition decisions.',
+
         // Clients
         'clients.title': 'Trusted By',
         'clients.subtitle': 'Companies and organizations I\'ve had the pleasure to work with',
@@ -358,6 +367,15 @@ const translations = {
         'project10.stage4': 'Generacion de modelo de terreno 3D',
         'project10.benefit': 'Mapas claros y modelo 3D para guiar decisiones de planificacion y desarrollo.',
 
+        // Project 11
+        'project11.title': 'Des Arts Wine Bar - WebGIS de Evaluacion de Ubicacion',
+        'project11.desc': 'Plataforma WebGIS interactiva para due diligence de inversion, combinando analisis espacial, inteligencia competitiva y datos de turismo para adquisicion de bar de vinos en Lucca, Italia.',
+        'project11.stage1': 'Recoleccion de datos turisticos y marco espacial',
+        'project11.stage2': 'Isocronas peatonales y mapeo de areas de influencia',
+        'project11.stage3': 'Posicionamiento competitivo y analisis de afluencia',
+        'project11.stage4': 'Desarrollo de dashboard WebGIS interactivo',
+        'project11.benefit': 'Due diligence de inversion basada en datos con inteligencia de ubicacion, analisis del panorama competitivo y modelado de demanda para decisiones de adquisicion de negocios.',
+
         // Clients
         'clients.title': 'Confian en Mi',
         'clients.subtitle': 'Empresas y organizaciones con las que he tenido el placer de trabajar',
@@ -545,6 +563,15 @@ const translations = {
         'project10.stage3': 'Mapas esquemáticos e de satélite',
         'project10.stage4': 'Geração de modelo 3D de terreno',
         'project10.benefit': 'Mapas claros e modelo 3D para orientar decisões de planejamento e desenvolvimento.',
+
+        // Project 11
+        'project11.title': 'Des Arts Wine Bar - WebGIS de Avaliação de Localização',
+        'project11.desc': 'Plataforma WebGIS interativa para due diligence de investimento, combinando análise espacial, inteligência competitiva e dados de turismo para aquisição de bar de vinhos em Lucca, Itália.',
+        'project11.stage1': 'Coleta de dados turísticos e estrutura espacial',
+        'project11.stage2': 'Isócronas de caminhada e mapeamento de área de influência',
+        'project11.stage3': 'Posicionamento competitivo e análise de fluxo de pedestres',
+        'project11.stage4': 'Desenvolvimento de dashboard WebGIS interativo',
+        'project11.benefit': 'Due diligence de investimento baseada em dados com inteligência de localização, análise do cenário competitivo e modelagem de demanda para decisões de aquisição de negócios.',
 
         // Clients
         'clients.title': 'Empresas que Confiam',
