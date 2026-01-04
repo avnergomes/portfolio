@@ -179,6 +179,15 @@ const translations = {
         'project11.stage4': 'Interactive WebGIS dashboard development',
         'project11.benefit': 'Data-driven investment due diligence with location intelligence, competitive landscape analysis, and demand modeling for business acquisition decisions.',
 
+        // Project 12
+        'project12.title': 'Água Segura - Water Management WebGIS',
+        'project12.desc': 'Interactive mapping platform for sustainable water management across microbasins, coordinating multi-agency conservation efforts in Paraná, Brazil.',
+        'project12.stage1': 'Interactive thematic mapping with multi-layer visualization',
+        'project12.stage2': 'Regional filtering and institutional data integration',
+        'project12.stage3': 'Standardized documentation and tracking templates',
+        'project12.stage4': 'Power BI dashboard integration for metrics',
+        'project12.benefit': 'Coordinated watershed management enabling teams to track conservation practices from diagnosis through implementation across multiple government agencies.',
+
         // Clients
         'clients.title': 'Trusted By',
         'clients.subtitle': 'Companies and organizations I\'ve had the pleasure to work with',
@@ -376,6 +385,15 @@ const translations = {
         'project11.stage4': 'Desarrollo de dashboard WebGIS interactivo',
         'project11.benefit': 'Due diligence de inversion basada en datos con inteligencia de ubicacion, analisis del panorama competitivo y modelado de demanda para decisiones de adquisicion de negocios.',
 
+        // Project 12
+        'project12.title': 'Agua Segura - WebGIS de Gestion del Agua',
+        'project12.desc': 'Plataforma de mapeo interactivo para gestion sostenible del agua en microcuencas, coordinando esfuerzos de conservacion multi-agencia en Parana, Brasil.',
+        'project12.stage1': 'Mapeo tematico interactivo con visualizacion multicapa',
+        'project12.stage2': 'Filtrado regional e integracion de datos institucionales',
+        'project12.stage3': 'Plantillas estandarizadas de documentacion y seguimiento',
+        'project12.stage4': 'Integracion de dashboard Power BI para metricas',
+        'project12.benefit': 'Gestion coordinada de cuencas hidrograficas permitiendo a los equipos rastrear practicas de conservacion desde el diagnostico hasta la implementacion entre multiples agencias gubernamentales.',
+
         // Clients
         'clients.title': 'Confian en Mi',
         'clients.subtitle': 'Empresas y organizaciones con las que he tenido el placer de trabajar',
@@ -572,6 +590,15 @@ const translations = {
         'project11.stage3': 'Posicionamento competitivo e análise de fluxo de pedestres',
         'project11.stage4': 'Desenvolvimento de dashboard WebGIS interativo',
         'project11.benefit': 'Due diligence de investimento baseada em dados com inteligência de localização, análise do cenário competitivo e modelagem de demanda para decisões de aquisição de negócios.',
+
+        // Project 12
+        'project12.title': 'Água Segura - WebGIS de Gestão Hídrica',
+        'project12.desc': 'Plataforma de mapeamento interativo para gestão sustentável da água em microbacias, coordenando esforços de conservação multi-agência no Paraná, Brasil.',
+        'project12.stage1': 'Mapeamento temático interativo com visualização multicamada',
+        'project12.stage2': 'Filtragem regional e integração de dados institucionais',
+        'project12.stage3': 'Templates padronizados de documentação e acompanhamento',
+        'project12.stage4': 'Integração de dashboard Power BI para métricas',
+        'project12.benefit': 'Gestão coordenada de bacias hidrográficas permitindo às equipes acompanhar práticas de conservação desde o diagnóstico até a implementação entre múltiplas agências governamentais.',
 
         // Clients
         'clients.title': 'Empresas que Confiam',
