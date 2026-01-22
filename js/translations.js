@@ -216,6 +216,23 @@ const translations = {
         'project12.stage4': 'Power BI dashboard integration for metrics',
         'project12.benefit': 'Coordinated watershed management enabling teams to track conservation practices from diagnosis through implementation across multiple government agencies.',
 
+        // Project 13
+        'project13.title': 'Land Prices Dashboard - Paraná',
+        'project13.desc': 'Interactive dashboard for historical land price analysis in Paraná, built from public DERAL data with full ETL pipeline and geographic layer integration.',
+        'project13.stage1': 'PDF parsing and data extraction pipeline',
+        'project13.stage2': 'Data standardization and JSON generation',
+        'project13.stage3': 'GeoJSON territorial mapping integration',
+        'project13.stage4': 'Interactive React dashboard with filters',
+        'project13.benefit': 'Transformed scattered PDF reports into a queryable data product with territorial filtering and historical price visualization.',
+
+        // Project 14
+        'project14.title': 'Forest Prices Dashboard - Paraná',
+        'project14.desc': 'Data product for monitoring forest product prices in Paraná, transforming official public compilations into actionable visualizations.',
+        'project14.stage1': 'Public data acquisition and standardization',
+        'project14.stage2': 'Unit consistency and time series curation',
+        'project14.stage3': 'Dashboard development with historical comparison',
+        'project14.benefit': 'Consolidated scattered official price data into a single interface for quick consultation and historical trend analysis.',
+
         // Clients
         'clients.title': 'Trusted By',
         'clients.subtitle': 'Companies and organizations I\'ve had the pleasure to work with',
@@ -450,6 +467,23 @@ const translations = {
         'project12.stage4': 'Integracion de dashboard Power BI para metricas',
         'project12.benefit': 'Gestion coordinada de cuencas hidrograficas permitiendo a los equipos rastrear practicas de conservacion desde el diagnostico hasta la implementacion entre multiples agencias gubernamentales.',
 
+        // Project 13
+        'project13.title': 'Dashboard de Precios de Tierras - Paraná',
+        'project13.desc': 'Dashboard interactivo para análisis histórico de precios de tierras en Paraná, construido a partir de datos públicos del DERAL con pipeline ETL completo e integración de capa geográfica.',
+        'project13.stage1': 'Parsing de PDFs y pipeline de extracción de datos',
+        'project13.stage2': 'Estandarización de datos y generación de JSON',
+        'project13.stage3': 'Integración de mapeo territorial con GeoJSON',
+        'project13.stage4': 'Dashboard React interactivo con filtros',
+        'project13.benefit': 'Transformó informes PDF dispersos en un producto de datos consultable con filtrado territorial y visualización histórica de precios.',
+
+        // Project 14
+        'project14.title': 'Dashboard de Precios Forestales - Paraná',
+        'project14.desc': 'Producto de datos para monitorear precios de productos forestales en Paraná, transformando compilaciones públicas oficiales en visualizaciones accionables.',
+        'project14.stage1': 'Adquisición y estandarización de datos públicos',
+        'project14.stage2': 'Consistencia de unidades y curación de series temporales',
+        'project14.stage3': 'Desarrollo de dashboard con comparación histórica',
+        'project14.benefit': 'Consolidó datos de precios oficiales dispersos en una interfaz única para consulta rápida y análisis de tendencias históricas.',
+
         // Clients
         'clients.title': 'Confian en Mi',
         'clients.subtitle': 'Empresas y organizaciones con las que he tenido el placer de trabajar',
@@ -683,6 +717,23 @@ const translations = {
         'project12.stage3': 'Templates padronizados de documentação e acompanhamento',
         'project12.stage4': 'Integração de dashboard Power BI para métricas',
         'project12.benefit': 'Gestão coordenada de bacias hidrográficas permitindo às equipes acompanhar práticas de conservação desde o diagnóstico até a implementação entre múltiplas agências governamentais.',
+
+        // Project 13
+        'project13.title': 'Dashboard de Preços de Terras - Paraná',
+        'project13.desc': 'Dashboard interativo para análise histórica de preços de terras no Paraná, construído a partir de dados públicos do DERAL com pipeline ETL completo e integração de camada geográfica.',
+        'project13.stage1': 'Parsing de PDFs e pipeline de extração de dados',
+        'project13.stage2': 'Padronização de dados e geração de JSON',
+        'project13.stage3': 'Integração de mapeamento territorial com GeoJSON',
+        'project13.stage4': 'Dashboard React interativo com filtros',
+        'project13.benefit': 'Transformou relatórios PDF dispersos em um produto de dados consultável com filtro territorial e visualização histórica de preços.',
+
+        // Project 14
+        'project14.title': 'Dashboard de Preços Florestais - Paraná',
+        'project14.desc': 'Produto de dados para monitorar preços de produtos florestais no Paraná, transformando compilações públicas oficiais em visualizações acionáveis.',
+        'project14.stage1': 'Aquisição e padronização de dados públicos',
+        'project14.stage2': 'Consistência de unidades e curadoria de séries temporais',
+        'project14.stage3': 'Desenvolvimento de dashboard com comparação histórica',
+        'project14.benefit': 'Consolidou dados de preços oficiais dispersos em uma interface única para consulta rápida e análise de tendências históricas.',
 
         // Clients
         'clients.title': 'Empresas que Confiam',
