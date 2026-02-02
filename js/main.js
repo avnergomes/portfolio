@@ -331,6 +331,7 @@ function gatherUserData() {
 
     // Compile all tracking data
     return {
+        origin: window.location.origin,
         // Page info
         page: 'portfolio',
         url: window.location.href.substring(0, 200),
