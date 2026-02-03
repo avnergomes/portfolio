@@ -185,6 +185,7 @@ function initVisitorCounter() {
 
     // Gather comprehensive tracking data
     const trackingData = gatherUserData();
+    updatePageViewsCounter();
 
     // Show loading state
     counterElement.textContent = '...';
@@ -258,18 +259,23 @@ function initVisitorCounter() {
  * Gather comprehensive user data legally from browser APIs
  */
 function gatherUserData() {
+    const perfTiming = performance.timing;
+    const perfEntries = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+    const paintEntries = performance.getEntriesByType ? performance.getEntriesByType('paint') : [];
+    const urlParams = new URLSearchParams(window.location.search);
+
     // Detect device type based on screen width and user agent
     function getDeviceType() {
         const width = window.innerWidth;
         const ua = navigator.userAgent.toLowerCase();
 
         if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-            return 'tablet';
+            return 'Tablet';
         }
         if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-            return 'mobile';
+            return 'Mobile';
         }
-        return width <= 768 ? 'mobile' : (width <= 1024 ? 'tablet' : 'desktop');
+        return width <= 768 ? 'Mobile' : (width <= 1024 ? 'Tablet' : 'Desktop');
     }
 
     // Extract browser name and version
@@ -302,7 +308,7 @@ function gatherUserData() {
     function getOS() {
         const ua = navigator.userAgent;
         if (ua.indexOf('Win') > -1) return 'Windows';
-        if (ua.indexOf('Mac') > -1) return 'MacOS';
+        if (ua.indexOf('Mac') > -1) return 'macOS';
         if (ua.indexOf('Linux') > -1) return 'Linux';
         if (ua.indexOf('Android') > -1) return 'Android';
         if (ua.indexOf('like Mac') > -1) return 'iOS';
@@ -313,37 +319,50 @@ function gatherUserData() {
     function getConnectionType() {
         const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
         if (connection) {
-            return connection.effectiveType || connection.type || 'Unknown';
+            return connection.effectiveType || connection.type || 'unknown';
         }
-        return 'Unknown';
+        return 'unknown';
     }
 
-    // Get page load time
-    function getPageLoadTime() {
-        if (window.performance && window.performance.timing) {
-            const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-            return loadTime > 0 ? Math.round(loadTime) : 0;
+    // Detect returning visitor
+    function isReturning() {
+        try {
+            const hasVisitedBefore = localStorage.getItem('portfolio_visited');
+            if (!hasVisitedBefore) {
+                localStorage.setItem('portfolio_visited', 'true');
+                localStorage.setItem('portfolio_first_visit', new Date().toISOString());
+                return false;
+            }
+            return true;
+        } catch (e) {
+            return false;
         }
-        return 0;
     }
 
     const browserInfo = getBrowserInfo();
+    const ua = navigator.userAgent;
 
     // Compile all tracking data
     return {
         origin: window.location.origin,
         // Page info
-        page: 'portfolio',
+        page: window.location.pathname + window.location.hash,
+        pathname: window.location.pathname,
         url: window.location.href.substring(0, 200),
-        referrer: document.referrer || 'direct',
+        referrer: document.referrer || 'Direct',
+        pageTitle: document.title,
+        protocol: window.location.protocol,
+        hostname: window.location.hostname,
+        queryString: window.location.search || '',
 
         // Timestamp & Session
         timestamp: new Date().toISOString(),
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
+        timezoneOffset: new Date().getTimezoneOffset(),
 
         // Language
         language: navigator.language || navigator.userLanguage || 'Unknown',
-        languages: navigator.languages ? navigator.languages.join(',').substring(0, 100) : 'Unknown',
+        languages: navigator.languages ? navigator.languages.join(',').substring(0, 100) : navigator.language,
 
         // Browser info
         browser: browserInfo.browser,
@@ -351,41 +370,91 @@ function gatherUserData() {
         userAgent: navigator.userAgent.substring(0, 200),
         platform: navigator.platform || 'Unknown',
         os: getOS(),
+        vendor: navigator.vendor || 'unknown',
 
-        // Device info
+        // Device info - standardized fields
         deviceType: getDeviceType(),
-        isMobile: /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry/.test(navigator.userAgent) ? 'true' : 'false',
-        touchSupport: ('ontouchstart' in window || navigator.maxTouchPoints > 0) ? 'true' : 'false',
+        isMobile: /Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua),
+        isTablet: /iPad|Android(?!.*Mobile)/i.test(ua),
+        isDesktop: !/Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua),
+        touchSupport: navigator.maxTouchPoints > 0,
+        maxTouchPoints: navigator.maxTouchPoints || 0,
 
         // Screen info
         screenWidth: window.screen.width,
         screenHeight: window.screen.height,
-        screenAvailWidth: window.screen.availWidth,
-        screenAvailHeight: window.screen.availHeight,
+        availScreenWidth: window.screen.availWidth,
+        availScreenHeight: window.screen.availHeight,
         colorDepth: window.screen.colorDepth,
         pixelRatio: window.devicePixelRatio || 1,
+        screenOrientation: screen.orientation?.type || 'unknown',
 
         // Viewport info
         viewportWidth: window.innerWidth || document.documentElement.clientWidth,
         viewportHeight: window.innerHeight || document.documentElement.clientHeight,
 
         // Browser capabilities
-        cookieEnabled: navigator.cookieEnabled ? 'true' : 'false',
-        doNotTrack: navigator.doNotTrack || 'Unknown',
-        onlineStatus: navigator.onLine ? 'online' : 'offline',
+        cookiesEnabled: navigator.cookieEnabled,
+        doNotTrack: navigator.doNotTrack === '1',
+        onlineStatus: navigator.onLine,
 
-        // Connection & Performance
+        // Connection
         connectionType: getConnectionType(),
-        pageLoadTime: getPageLoadTime(),
+        connectionSpeed: navigator.connection?.downlink || null,
+        saveDataMode: navigator.connection?.saveData || false,
 
-        // Hardware info (if available)
-        hardwareConcurrency: navigator.hardwareConcurrency || 'Unknown',
-        deviceMemory: navigator.deviceMemory || 'Unknown',
+        // Performance timing - standardized fields
+        loadTime: perfTiming.loadEventEnd > 0 ? perfTiming.loadEventEnd - perfTiming.navigationStart : null,
+        domContentLoadedTime: perfTiming.domContentLoadedEventEnd > 0 ? perfTiming.domContentLoadedEventEnd - perfTiming.navigationStart : null,
+        domInteractiveTime: perfTiming.domInteractive > 0 ? perfTiming.domInteractive - perfTiming.navigationStart : null,
+        firstPaint: paintEntries.find(e => e.name === 'first-paint')?.startTime || null,
+        firstContentfulPaint: paintEntries.find(e => e.name === 'first-contentful-paint')?.startTime || null,
+        serverResponseTime: perfTiming.responseEnd > 0 ? perfTiming.responseEnd - perfTiming.requestStart : null,
+        dnsLookupTime: perfTiming.domainLookupEnd > 0 ? perfTiming.domainLookupEnd - perfTiming.domainLookupStart : null,
+        tcpConnectionTime: perfTiming.connectEnd > 0 ? perfTiming.connectEnd - perfTiming.connectStart : null,
+        transferSize: perfEntries?.transferSize || null,
 
-        // Session info
+        // Hardware info
+        cpuCores: navigator.hardwareConcurrency || null,
+        deviceMemory: navigator.deviceMemory || null,
+
+        // Session info - standardized field name
         sessionId: getOrCreateSessionId(),
-        isReturningVisitor: localStorage.getItem('portfolio_visited') ? 'true' : 'false'
+        returningVisitor: isReturning(),
+
+        // Session tracking
+        sessionStartTime: sessionStorage.getItem('portfolio_session_start') || (() => {
+            const start = new Date().toISOString();
+            sessionStorage.setItem('portfolio_session_start', start);
+            return start;
+        })(),
+        pageViewsInSession: parseInt(sessionStorage.getItem('portfolio_page_views') || '0') + 1,
+
+        // UTM parameters
+        utmSource: urlParams.get('utm_source') || '',
+        utmMedium: urlParams.get('utm_medium') || '',
+        utmCampaign: urlParams.get('utm_campaign') || '',
+        utmTerm: urlParams.get('utm_term') || '',
+        utmContent: urlParams.get('utm_content') || '',
+
+        // Navigation context
+        historyLength: window.history.length,
+        isIframe: window.self !== window.top,
+
+        // User preferences
+        prefersColorScheme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' :
+                           window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'no-preference',
+        prefersReducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+
+        // Security context
+        secureContext: window.isSecureContext || false,
     };
+}
+
+// Update page views counter on tracking
+function updatePageViewsCounter() {
+    const views = parseInt(sessionStorage.getItem('portfolio_page_views') || '0') + 1;
+    sessionStorage.setItem('portfolio_page_views', views.toString());
 }
 
 /**
