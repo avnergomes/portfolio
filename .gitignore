@@ -33,3 +33,6 @@ build/
 # Temp files
 *.tmp
 *.temp
+
+# Google Apps Script (secrets)
+*.gs
