@@ -180,8 +180,8 @@ function initVisitorCounter() {
     const counterElement = document.getElementById('visitor-count');
     if (!counterElement) return;
 
-    // Google Apps Script Web App URL
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz8NznOVFVYolyNWF7ZEE55PAvDsRIh2HYEJgjehKuVU2zt5da5m6-a1AsEC57EDw/exec';
+    // Google Apps Script Web App URL (unificado com DataGeo)
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyk8VzLygqFmid0cSB5Qge8yRKRV-hJNvWlCSZBPrOCnyJyTd21d-6mNRjyJ7NIr_-36Q/exec';
 
     // Gather comprehensive tracking data
     const trackingData = gatherUserData();
@@ -190,10 +190,6 @@ function initVisitorCounter() {
     // Show loading state
     counterElement.textContent = '...';
     counterElement.classList.add('loading');
-
-    // Log tracking data for debugging
-    console.log('Tracking data:', trackingData);
-    console.log('Tracking data size:', JSON.stringify(trackingData).length, 'bytes');
 
     // Send tracking data via POST to avoid URL length limits
     fetch(SCRIPT_URL, {
