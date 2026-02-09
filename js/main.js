@@ -201,45 +201,27 @@ function initVisitorCounter() {
         },
         body: JSON.stringify(trackingData)
     })
-        .then(response => {
-            console.log('Response status:', response.status);
-            console.log('Response OK:', response.ok);
-            return response.text();
-        })
+        .then(response => response.text())
         .then(text => {
-            console.log('Response text:', text);
-            // Parse JSON response
             try {
                 return JSON.parse(text);
             } catch (e) {
                 console.error('JSON parse error:', e);
-                throw new Error('Failed to parse response as JSON: ' + text);
+                throw new Error('Failed to parse response as JSON');
             }
         })
         .then(data => {
-            console.log('Parsed data:', data);
             counterElement.classList.remove('loading');
 
             if (data && data.success && data.count !== undefined) {
-                // Animate the counter
                 animateCounter(counterElement, data.count);
-
-                // Store count in sessionStorage to avoid duplicate tracking
                 sessionStorage.setItem('portfolio_visit_tracked', 'true');
-
-                // Log analytics
-                console.log(`✓ Visit tracked successfully: #${data.count} at ${data.timestamp}`);
             } else {
-                console.error('Invalid response format:', data);
                 throw new Error('Invalid response format');
             }
         })
         .catch(error => {
             console.error('Visit tracker error:', error);
-            console.error('Error details:', {
-                message: error.message,
-                stack: error.stack
-            });
             counterElement.classList.remove('loading');
             counterElement.textContent = '--';
 
