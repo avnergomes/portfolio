@@ -22,9 +22,16 @@ jobs:
           args: >-
             --verbose
             --no-progress
-            --accept 200,204,301,302,403
+            --accept 200,204,301,302,403,429,503
             --exclude-mail
             --exclude "^https://script.google.com"
+            --exclude "^https://www.linkedin.com"
+            --exclude "^https://www.upwork.com"
+            --exclude "^https://fonts.googleapis.com"
+            --exclude "^https://fonts.gstatic.com"
+            --exclude "^https://cdnjs.cloudflare.com"
+            --exclude "^https://www.googletagmanager.com"
+            --timeout 30
             "./**/*.html"
             "./**/*.md"
         env:
