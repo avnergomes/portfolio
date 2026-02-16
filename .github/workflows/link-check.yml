@@ -23,7 +23,7 @@ jobs:
             --verbose
             --no-progress
             --accept 200,204,301,302,403,429,503
-            --exclude-mail
+            --exclude "^mailto:"
             --exclude "^https://script.google.com"
             --exclude "^https://www.linkedin.com"
             --exclude "^https://www.upwork.com"
