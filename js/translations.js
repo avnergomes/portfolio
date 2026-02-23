@@ -233,6 +233,55 @@ const translations = {
         'project14.stage3': 'Dashboard development with historical comparison',
         'project14.benefit': 'One place to check today\'s prices, compare trends, and see where the market is heading — updated daily.',
 
+        // DataGeo Paraná Ecosystem
+        'projectDatageo.title': 'DataGeo Paraná - Agricultural Data Ecosystem',
+        'projectDatageo.desc': 'Integrated platform with 9 interactive dashboards about Paraná agriculture. Complete architecture with landing page, LGPD-compliant tracking system, optimized SEO (meta tags, Open Graph, JSON-LD), and unified control panel.',
+        'projectDatageo.stage1': 'Data architecture and automated ETL pipelines',
+        'projectDatageo.stage2': 'Development of 9 React dashboards with D3.js/Recharts',
+        'projectDatageo.stage3': 'Custom analytics system (Google Apps Script + Sheets)',
+        'projectDatageo.stage4': 'Complete SEO and architecture documentation',
+        'projectDatageo.benefit': 'Public ecosystem of Paraná agricultural data with 50k+ views, tracking 19 anonymous metrics, and documented architecture for replication.',
+
+        // Credito Rural
+        'projectCredito.title': 'Rural Credit Paraná - BCB/SICOR',
+        'projectCredito.desc': 'Dashboard of agricultural financing from Brazil Central Bank (SICOR) since 2013. Sankey, Treemap, Bump Chart and Lollipop visualizations for program, purpose and municipality analysis.',
+        'projectCredito.stage1': 'Integration with Central Bank Olinda API',
+        'projectCredito.stage2': 'Data pipeline and aggregations by program/purpose',
+        'projectCredito.stage3': 'Interactive visualizations with D3.js and Recharts',
+        'projectCredito.benefit': 'First integrated public visualization of SICOR data for Paraná, enabling temporal analysis of PRONAF, PRONAMP and other programs.',
+
+        // ComexStat
+        'projectComex.title': 'ComexStat Paraná - Foreign Trade',
+        'projectComex.desc': 'Dashboard of Paraná exports and imports based on MDIC/ComexStat data. Analysis by NCM, country, production chain and temporal evolution.',
+        'projectComex.stage1': 'ComexStat/MDIC data pipeline',
+        'projectComex.stage2': 'NCM to production chain mapping',
+        'projectComex.stage3': 'Trade flow visualizations and maps',
+        'projectComex.benefit': 'Consolidated view of Paraná foreign trade by production chain.',
+
+        // Emprego Agro
+        'projectEmprego.title': 'Agro Employment Paraná - CAGED',
+        'projectEmprego.desc': 'Dashboard of formal employment in Paraná agribusiness. CAGED data with analysis of admissions, dismissals, balance and seasonality by sector.',
+        'projectEmprego.stage1': 'CAGED data extraction and processing',
+        'projectEmprego.stage2': 'Seasonality and trend analysis',
+        'projectEmprego.stage3': 'Lollipop, Bump and time series visualizations',
+        'projectEmprego.benefit': 'Monitoring of Paraná agricultural labor market.',
+
+        // Censo
+        'projectCenso.title': 'Census Paraná - IBGE',
+        'projectCenso.desc': 'Dashboard of IBGE census data for Paraná municipalities. Population evolution, urbanization, age pyramids and regional comparisons.',
+        'projectCenso.stage1': 'IBGE census data processing',
+        'projectCenso.stage2': 'Demographic indicators calculation',
+        'projectCenso.stage3': 'Choropleth maps and comparative charts',
+        'projectCenso.benefit': 'Demographic analysis of 399 Paraná municipalities.',
+
+        // Precos Diarios
+        'projectDiarios.title': 'Daily Prices - DERAL/SEAB',
+        'projectDiarios.desc': 'Dashboard of daily agricultural product prices from SEAB/DERAL. Historical series, seasonality and regional comparison.',
+        'projectDiarios.stage1': 'Web scraping and ETL from DERAL data',
+        'projectDiarios.stage2': 'Seasonality and regional spread analysis',
+        'projectDiarios.stage3': 'Interactive time series and filters',
+        'projectDiarios.benefit': 'Agricultural price tracking with daily automatic updates.',
+
         // Clients
         'clients.title': 'Trusted By',
         'clients.subtitle': 'From startups to government agencies — a few of the teams I\'ve worked with',
@@ -484,6 +533,55 @@ const translations = {
         'project14.stage3': 'Desarrollo de dashboard con comparación histórica',
         'project14.benefit': 'Un solo lugar para consultar precios del dia, comparar tendencias y ver hacia donde va el mercado — actualizado diariamente.',
 
+        // DataGeo Paraná Ecosystem
+        'projectDatageo.title': 'DataGeo Paraná - Ecosistema de Datos Agropecuarios',
+        'projectDatageo.desc': 'Plataforma integrada con 9 dashboards interactivos sobre agricultura paranaense. Arquitectura completa con landing page, sistema de tracking compatible con LGPD, SEO optimizado (meta tags, Open Graph, JSON-LD) y panel de control unificado.',
+        'projectDatageo.stage1': 'Arquitectura de datos y pipelines ETL automatizados',
+        'projectDatageo.stage2': 'Desarrollo de 9 dashboards React con D3.js/Recharts',
+        'projectDatageo.stage3': 'Sistema de analytics propio (Google Apps Script + Sheets)',
+        'projectDatageo.stage4': 'SEO completo y documentación de arquitectura',
+        'projectDatageo.benefit': 'Ecosistema público de datos agrícolas de Paraná con +50k visualizaciones, seguimiento de 19 métricas anónimas y arquitectura documentada para replicación.',
+
+        // Crédito Rural
+        'projectCredito.title': 'Crédito Rural Paraná - BCB/SICOR',
+        'projectCredito.desc': 'Dashboard de financiamientos agropecuarios del Banco Central de Brasil (SICOR) desde 2013. Visualizaciones Sankey, Treemap, Bump Chart y Lollipop para análisis de programas, finalidades y municipios.',
+        'projectCredito.stage1': 'Integración con API Olinda del Banco Central',
+        'projectCredito.stage2': 'Pipeline de datos y agregaciones por programa/finalidad',
+        'projectCredito.stage3': 'Visualizaciones interactivas con D3.js y Recharts',
+        'projectCredito.benefit': 'Primera visualización pública integrada de datos SICOR para Paraná, permitiendo análisis temporal de PRONAF, PRONAMP y otros programas.',
+
+        // ComexStat
+        'projectComex.title': 'ComexStat Paraná - Comercio Exterior',
+        'projectComex.desc': 'Dashboard de exportaciones e importaciones de Paraná basado en datos MDIC/ComexStat. Análisis por NCM, país, cadena productiva y evolución temporal.',
+        'projectComex.stage1': 'Pipeline de datos ComexStat/MDIC',
+        'projectComex.stage2': 'Mapeo de NCM a cadenas productivas',
+        'projectComex.stage3': 'Visualizaciones de flujo comercial y mapas',
+        'projectComex.benefit': 'Visión consolidada del comercio exterior paranaense por cadena productiva.',
+
+        // Emprego Agro
+        'projectEmprego.title': 'Empleo Agro Paraná - CAGED',
+        'projectEmprego.desc': 'Dashboard de empleo formal en el agronegocio paranaense. Datos CAGED con análisis de admisiones, despidos, saldo y estacionalidad por sector.',
+        'projectEmprego.stage1': 'Extracción y procesamiento de datos CAGED',
+        'projectEmprego.stage2': 'Análisis de estacionalidad y tendencias',
+        'projectEmprego.stage3': 'Visualizaciones Lollipop, Bump y series temporales',
+        'projectEmprego.benefit': 'Monitoreo del mercado laboral agropecuario de Paraná.',
+
+        // Censo
+        'projectCenso.title': 'Censo Paraná - IBGE',
+        'projectCenso.desc': 'Dashboard de datos censales del IBGE para municipios de Paraná. Evolución poblacional, urbanización, pirámides etarias y comparaciones regionales.',
+        'projectCenso.stage1': 'Procesamiento de datos censales IBGE',
+        'projectCenso.stage2': 'Cálculo de indicadores demográficos',
+        'projectCenso.stage3': 'Mapas coropléticos y gráficos comparativos',
+        'projectCenso.benefit': 'Análisis demográfico de los 399 municipios paranaenses.',
+
+        // Precios Diarios
+        'projectDiarios.title': 'Precios Diarios - DERAL/SEAB',
+        'projectDiarios.desc': 'Dashboard de precios diarios de productos agropecuarios de SEAB/DERAL. Series históricas, estacionalidad y comparación regional.',
+        'projectDiarios.stage1': 'Web scraping y ETL de datos DERAL',
+        'projectDiarios.stage2': 'Análisis de estacionalidad y spread regional',
+        'projectDiarios.stage3': 'Series temporales interactivas y filtros',
+        'projectDiarios.benefit': 'Seguimiento de precios agrícolas con actualización diaria automática.',
+
         // Clients
         'clients.title': 'Confian en Mi',
         'clients.subtitle': 'De startups a agencias gubernamentales — algunos de los equipos con los que he trabajado',
@@ -734,6 +832,55 @@ const translations = {
         'project14.stage2': 'Consistência de unidades e curadoria de séries temporais',
         'project14.stage3': 'Desenvolvimento de dashboard com comparação histórica',
         'project14.benefit': 'Um lugar só pra checar preços do dia, comparar tendências e ver pra onde o mercado aponta — atualizado diariamente.',
+
+        // DataGeo Paraná Ecosystem
+        'projectDatageo.title': 'DataGeo Paraná - Ecossistema de Dados Agropecuários',
+        'projectDatageo.desc': 'Plataforma integrada com 9 dashboards interativos sobre agropecuária paranaense. Arquitetura completa com landing page, sistema de tracking LGPD-compliant, SEO otimizado (meta tags, Open Graph, JSON-LD) e painel de controle unificado.',
+        'projectDatageo.stage1': 'Arquitetura de dados e ETL pipelines automatizados',
+        'projectDatageo.stage2': 'Desenvolvimento de 9 dashboards React com D3.js/Recharts',
+        'projectDatageo.stage3': 'Sistema de analytics próprio (Google Apps Script + Sheets)',
+        'projectDatageo.stage4': 'SEO completo e documentação de arquitetura',
+        'projectDatageo.benefit': 'Ecossistema público de dados agrícolas do Paraná com +50k visualizações, tracking de 19 métricas anônimas e arquitetura documentada para replicação.',
+
+        // Crédito Rural
+        'projectCredito.title': 'Crédito Rural Paraná - BCB/SICOR',
+        'projectCredito.desc': 'Dashboard de financiamentos agropecuários do Banco Central (SICOR) desde 2013. Visualizações Sankey, Treemap, Bump Chart e Lollipop para análise de programas, finalidades e municípios.',
+        'projectCredito.stage1': 'Integração com API Olinda do Banco Central',
+        'projectCredito.stage2': 'Pipeline de dados e agregações por programa/finalidade',
+        'projectCredito.stage3': 'Visualizações interativas com D3.js e Recharts',
+        'projectCredito.benefit': 'Primeira visualização pública integrada dos dados SICOR para o Paraná, permitindo análise temporal de PRONAF, PRONAMP e outros programas.',
+
+        // ComexStat
+        'projectComex.title': 'ComexStat Paraná - Comércio Exterior',
+        'projectComex.desc': 'Dashboard de exportações e importações do Paraná baseado em dados MDIC/ComexStat. Análise por NCM, país, cadeia produtiva e evolução temporal.',
+        'projectComex.stage1': 'Pipeline de dados ComexStat/MDIC',
+        'projectComex.stage2': 'Mapeamento NCM para cadeias produtivas',
+        'projectComex.stage3': 'Visualizações de fluxo comercial e mapas',
+        'projectComex.benefit': 'Visão consolidada do comércio exterior paranaense por cadeia produtiva.',
+
+        // Emprego Agro
+        'projectEmprego.title': 'Emprego Agro Paraná - CAGED',
+        'projectEmprego.desc': 'Dashboard de emprego formal no agronegócio paranaense. Dados CAGED com análise de admissões, desligamentos, saldo e sazonalidade por setor.',
+        'projectEmprego.stage1': 'Extração e processamento de dados CAGED',
+        'projectEmprego.stage2': 'Análise de sazonalidade e tendências',
+        'projectEmprego.stage3': 'Visualizações Lollipop, Bump e séries temporais',
+        'projectEmprego.benefit': 'Monitoramento do mercado de trabalho agropecuário do Paraná.',
+
+        // Censo
+        'projectCenso.title': 'Censo Paraná - IBGE',
+        'projectCenso.desc': 'Dashboard de dados censitários do IBGE para municípios do Paraná. Evolução populacional, urbanização, pirâmides etárias e comparativos regionais.',
+        'projectCenso.stage1': 'Processamento de dados censitários IBGE',
+        'projectCenso.stage2': 'Cálculo de indicadores demográficos',
+        'projectCenso.stage3': 'Mapas coropléticos e gráficos comparativos',
+        'projectCenso.benefit': 'Análise demográfica dos 399 municípios paranaenses.',
+
+        // Preços Diários
+        'projectDiarios.title': 'Preços Diários - DERAL/SEAB',
+        'projectDiarios.desc': 'Dashboard de preços diários de produtos agropecuários da SEAB/DERAL. Séries históricas, sazonalidade e comparativo regional.',
+        'projectDiarios.stage1': 'Web scraping e ETL de dados DERAL',
+        'projectDiarios.stage2': 'Análise de sazonalidade e spread regional',
+        'projectDiarios.stage3': 'Séries temporais interativas e filtros',
+        'projectDiarios.benefit': 'Acompanhamento de preços agrícolas com atualização diária automática.',
 
         // Clients
         'clients.title': 'Empresas que Confiam',
