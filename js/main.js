@@ -180,8 +180,12 @@ function initVisitorCounter() {
     const counterElement = document.getElementById('visitor-count');
     if (!counterElement) return;
 
-    // Google Apps Script Web App URL (unificado com DataGeo)
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyk8VzLygqFmid0cSB5Qge8yRKRV-hJNvWlCSZBPrOCnyJyTd21d-6mNRjyJ7NIr_-36Q/exec';
+    // URL deve ser configurada via window.TRACKING_CONFIG no index.html ou config.local.js
+    const SCRIPT_URL = window.TRACKING_CONFIG?.url || '';
+    if (!SCRIPT_URL) {
+        console.warn('TRACKING_CONFIG.url não configurado - tracking desativado');
+        return;
+    }
 
     // Gather comprehensive tracking data
     const trackingData = gatherUserData();

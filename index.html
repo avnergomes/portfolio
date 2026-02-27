@@ -1376,6 +1376,12 @@
     </footer>
 
     <!-- Scripts -->
+    <!-- Configure TRACKING_CONFIG.url via config.local.js ou CI -->
+    <script>
+        // URL do Google Apps Script para tracking - configure em config.local.js
+        window.TRACKING_CONFIG = window.TRACKING_CONFIG || { url: '' };
+    </script>
+    <script src="config.local.js" onerror=""></script>
     <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
