@@ -175,6 +175,11 @@ function initCurrentYear() {
     }
 }
 
+// ===== LGPD Consent Check =====
+function hasLGPDConsent() {
+    return localStorage.getItem('lgpd-consent') === 'accepted';
+}
+
 // ===== Visitor Counter =====
 function initVisitorCounter() {
     const counterElement = document.getElementById('visitor-count');
@@ -184,6 +189,13 @@ function initVisitorCounter() {
     const SCRIPT_URL = window.TRACKING_CONFIG?.url || '';
     if (!SCRIPT_URL) {
         console.warn('TRACKING_CONFIG.url não configurado - tracking desativado');
+        return;
+    }
+
+    // Only track if user consented to LGPD
+    if (!hasLGPDConsent()) {
+        console.log('[Tracking] LGPD consent not given - tracking disabled');
+        counterElement.textContent = '--';
         return;
     }
 
@@ -236,6 +248,9 @@ function initVisitorCounter() {
             }
         });
 }
+
+// Make initTracking available globally for LGPD banner
+window.initTracking = initVisitorCounter;
 
 /**
  * Gather comprehensive user data legally from browser APIs
