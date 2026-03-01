@@ -183,7 +183,6 @@ function hasLGPDConsent() {
 // ===== Visitor Counter =====
 function initVisitorCounter() {
     const counterElement = document.getElementById('visitor-count');
-    if (!counterElement) return;
 
     // URL deve ser configurada via window.TRACKING_CONFIG no index.html ou config.local.js
     const SCRIPT_URL = window.TRACKING_CONFIG?.url || '';
@@ -195,7 +194,7 @@ function initVisitorCounter() {
     // Only track if user consented to LGPD
     if (!hasLGPDConsent()) {
         console.log('[Tracking] LGPD consent not given - tracking disabled');
-        counterElement.textContent = '--';
+        if (counterElement) counterElement.textContent = '--';
         return;
     }
 
@@ -203,49 +202,22 @@ function initVisitorCounter() {
     const trackingData = gatherUserData();
     updatePageViewsCounter();
 
-    // Show loading state
-    counterElement.textContent = '...';
-    counterElement.classList.add('loading');
-
-    // Send tracking data via POST to avoid URL length limits
+    // Send tracking data via POST (no-cors like other dashboards)
     fetch(SCRIPT_URL, {
         method: 'POST',
-        mode: 'cors',
-        cache: 'no-cache',
+        mode: 'no-cors',
         headers: {
-            'Content-Type': 'text/plain'
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(trackingData)
+        body: JSON.stringify(trackingData),
+        keepalive: true
     })
-        .then(response => response.text())
-        .then(text => {
-            try {
-                return JSON.parse(text);
-            } catch (e) {
-                console.error('JSON parse error:', e);
-                throw new Error('Failed to parse response as JSON');
-            }
-        })
-        .then(data => {
-            counterElement.classList.remove('loading');
-
-            if (data && data.success && data.count !== undefined) {
-                animateCounter(counterElement, data.count);
-                sessionStorage.setItem('portfolio_visit_tracked', 'true');
-            } else {
-                throw new Error('Invalid response format');
-            }
+        .then(() => {
+            console.log('[Tracking] Data sent');
+            sessionStorage.setItem('portfolio_visit_tracked', 'true');
         })
         .catch(error => {
-            console.error('Visit tracker error:', error);
-            counterElement.classList.remove('loading');
-            counterElement.textContent = '--';
-
-            // Fallback: Try to get cached count
-            const cachedCount = sessionStorage.getItem('portfolio_visit_count');
-            if (cachedCount) {
-                counterElement.textContent = parseInt(cachedCount).toLocaleString();
-            }
+            console.log('[Tracking] Error (ignored):', error.message);
         });
 }
 
