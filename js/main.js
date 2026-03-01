@@ -334,7 +334,7 @@ function gatherUserData() {
         browser: browserInfo.browser,
         browserVersion: browserInfo.version,
         userAgent: navigator.userAgent.substring(0, 200),
-        platform: navigator.platform || 'Unknown',
+        platform: navigator.userAgentData?.platform || navigator.platform || 'Unknown',
         os: getOS(),
         vendor: navigator.vendor || 'unknown',
 
