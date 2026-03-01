@@ -256,8 +256,8 @@ window.initTracking = initVisitorCounter;
  * Gather comprehensive user data legally from browser APIs
  */
 function gatherUserData() {
-    const perfTiming = performance.timing;
-    const perfEntries = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+    // Navigation Timing Level 2 API (replaces deprecated performance.timing)
+    const navEntry = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
     const paintEntries = performance.getEntriesByType ? performance.getEntriesByType('paint') : [];
     const urlParams = new URLSearchParams(window.location.search);
 
@@ -400,16 +400,16 @@ function gatherUserData() {
         connectionSpeed: navigator.connection?.downlink || null,
         saveDataMode: navigator.connection?.saveData || false,
 
-        // Performance timing - standardized fields
-        loadTime: perfTiming.loadEventEnd > 0 ? perfTiming.loadEventEnd - perfTiming.navigationStart : null,
-        domContentLoadedTime: perfTiming.domContentLoadedEventEnd > 0 ? perfTiming.domContentLoadedEventEnd - perfTiming.navigationStart : null,
-        domInteractiveTime: perfTiming.domInteractive > 0 ? perfTiming.domInteractive - perfTiming.navigationStart : null,
+        // Performance timing - Navigation Timing L2 API
+        loadTime: navEntry && navEntry.loadEventEnd > 0 ? Math.round(navEntry.loadEventEnd) : null,
+        domContentLoadedTime: navEntry && navEntry.domContentLoadedEventEnd > 0 ? Math.round(navEntry.domContentLoadedEventEnd) : null,
+        domInteractiveTime: navEntry && navEntry.domInteractive > 0 ? Math.round(navEntry.domInteractive) : null,
         firstPaint: paintEntries.find(e => e.name === 'first-paint')?.startTime || null,
         firstContentfulPaint: paintEntries.find(e => e.name === 'first-contentful-paint')?.startTime || null,
-        serverResponseTime: perfTiming.responseEnd > 0 ? perfTiming.responseEnd - perfTiming.requestStart : null,
-        dnsLookupTime: perfTiming.domainLookupEnd > 0 ? perfTiming.domainLookupEnd - perfTiming.domainLookupStart : null,
-        tcpConnectionTime: perfTiming.connectEnd > 0 ? perfTiming.connectEnd - perfTiming.connectStart : null,
-        transferSize: perfEntries?.transferSize || null,
+        serverResponseTime: navEntry && navEntry.responseEnd > 0 ? Math.round(navEntry.responseEnd - navEntry.requestStart) : null,
+        dnsLookupTime: navEntry && navEntry.domainLookupEnd > 0 ? Math.round(navEntry.domainLookupEnd - navEntry.domainLookupStart) : null,
+        tcpConnectionTime: navEntry && navEntry.connectEnd > 0 ? Math.round(navEntry.connectEnd - navEntry.connectStart) : null,
+        transferSize: navEntry?.transferSize || null,
 
         // Hardware info
         cpuCores: navigator.hardwareConcurrency || null,
