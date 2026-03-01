@@ -444,42 +444,6 @@ function getOrCreateSessionId() {
     return sessionId;
 }
 
-/**
- * Animate counter from 0 to target value
- */
-function animateCounter(element, targetValue) {
-    const duration = 1000; // 1 second
-    const startTime = performance.now();
-    const startValue = 0;
-
-    function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        // Easing function (easeOutCubic)
-        const easeProgress = 1 - Math.pow(1 - progress, 3);
-
-        const currentValue = Math.floor(startValue + (targetValue - startValue) * easeProgress);
-        element.textContent = currentValue.toLocaleString();
-
-        if (progress < 1) {
-            requestAnimationFrame(update);
-        } else {
-            // Cache the final count
-            sessionStorage.setItem('portfolio_visit_count', targetValue);
-        }
-    }
-
-    requestAnimationFrame(update);
-}
-
-/**
- * Check if visit was already tracked in this session
- */
-function wasVisitTracked() {
-    return sessionStorage.getItem('portfolio_visit_tracked') === 'true';
-}
-
 // ===== Reveal Animations =====
 function initRevealAnimations() {
     const revealElements = document.querySelectorAll('.section-title, .section-subtitle, .service-card, .project-card, .stat-card, .skill-category');

@@ -1191,64 +1191,6 @@ ul {
     font-size: 0.875rem;
 }
 
-.visitor-counter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
-    margin-top: var(--spacing-sm);
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.8125rem;
-    cursor: help;
-    transition: all 0.3s ease;
-}
-
-.visitor-counter:hover {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.visitor-counter i {
-    color: var(--color-primary);
-    transition: transform 0.3s ease;
-}
-
-.visitor-counter:hover i {
-    transform: scale(1.1);
-}
-
-.count-value {
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.7);
-    min-width: 3ch;
-    display: inline-block;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-.visitor-counter:hover .count-value {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* Loading animation */
-.count-value.loading {
-    animation: pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
-/* Legacy support for old ID selector */
-#visitor-count {
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.7);
-}
-
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
