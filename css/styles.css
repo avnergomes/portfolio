@@ -878,6 +878,11 @@ ul {
     color: var(--color-primary);
 }
 
+.project-private {
+    opacity: 0.5;
+    cursor: default;
+}
+
 .project-content {
     padding: var(--spacing-xl);
 }
