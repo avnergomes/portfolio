@@ -1,53 +1,115 @@
-# Avner Gomes - Portfolio
+# Portfolio — Avner Gomes
 
-Personal portfolio website showcasing my work as a Forest Engineer and Data Scientist.
+Site pessoal e portfólio profissional de Avner Gomes, Engenheiro Florestal e Cientista de Dados. Desenvolvido com HTML5, CSS3 e JavaScript puro — sem frameworks ou etapas de build.
 
-## Live Site
+**🔗 [Acessar](https://avnergomes.github.io/portfolio/)**
 
-Visit: [https://avnergomes.github.io/portfolio](https://avnergomes.github.io/portfolio)
+---
 
-## Features
+## Sobre
 
-- Responsive design for all devices
-- Multi-language support (English / Spanish)
-- Project filtering by category
-- Smooth animations and transitions
-- SEO optimized
+O site reúne apresentação profissional, habilidades, serviços, projetos e formas de contato em uma página multilíngue (Português, Inglês e Espanhol). Todo o conteúdo é servido estaticamente via GitHub Pages, com foco em performance, acessibilidade e boas práticas de SEO.
 
-## Areas of Expertise
+---
 
-- **Geo Data Science**: Remote sensing, WebGIS, spatial analysis
-- **Forest Resources**: Inventory, management, FSC certification
-- **Carbon Credits**: Sequestration estimation, deforestation monitoring
-- **Digital Marketing**: Multi-platform ad analytics, CRM integration
+## Tecnologias
 
-## Technologies Used
+| Categoria | Tecnologia |
+|-----------|-----------|
+| Marcação | HTML5 |
+| Estilização | CSS3 |
+| Interatividade | JavaScript puro (vanilla) |
+| Hospedagem | GitHub Pages |
+| CI/CD | GitHub Actions |
+| SEO | Meta tags, Open Graph, JSON-LD, sitemap.xml, robots.txt |
 
-- HTML5
-- CSS3 (Custom Properties, Flexbox, Grid)
-- Vanilla JavaScript
-- Font Awesome Icons
-- Google Fonts
+Não utiliza npm, Node.js, frameworks JS ou etapa de build. Basta abrir o `index.html` em qualquer navegador.
 
-## Setup
+---
 
-1. Clone this repository
-2. Add your profile image as `assets/profile.jpg` or `assets/profile.png`
-3. Push to GitHub
-4. Enable GitHub Pages in repository settings (Settings > Pages > Source: main branch)
+## Estrutura do Projeto
 
-## Customization
+```
+portfolio/
+├── index.html                  # Página principal
+├── 404.html                    # Página de erro personalizada
+├── sitemap.xml                 # Sitemap para SEO
+├── robots.txt                  # Diretrizes para crawlers
+├── config.local.js.example     # Exemplo de configuração local (tracking)
+├── css/
+│   └── styles.css              # Estilos globais
+├── js/
+│   ├── main.js                 # Lógica principal (filtros, UI, tracking)
+│   └── translations.js         # Sistema de tradução PT/EN/ES
+├── images/
+│   ├── profile.jpg             # Foto de perfil
+│   ├── logo.*                  # Arquivos de logo
+│   ├── clients/                # Logos de clientes
+│   └── projects/               # Screenshots dos projetos
+├── TRACKING_DATA.md            # Documentação do sistema de analytics
+├── SEO_REPORT.md               # Relatório de otimização SEO
+└── .github/
+    └── workflows/
+        ├── deploy.yml          # Deploy no GitHub Pages
+        ├── lighthouse.yml      # Auditoria de performance (Lighthouse)
+        ├── link-check.yml      # Verificação de links quebrados
+        └── seo-check.yml       # Checagem automatizada de SEO
+```
 
-- Edit `js/translations.js` to update content in both languages
-- Modify `css/styles.css` to change colors and styling
-- Update links in `index.html` for contact information
+---
 
-## License
+## Funcionalidades
 
-MIT License
+- **Multilíngue** — alternância dinâmica entre Português (PT), Inglês (EN) e Espanhol (ES) sem recarregar a página
+- **Seções completas** — About, Skills, Services, Projects, Clients e Contact
+- **Filtros de projetos** — filtragem de project cards por categoria
+- **SEO otimizado** — meta tags completas, Open Graph para redes sociais, dados estruturados JSON-LD e sitemap XML
+- **Rastreamento LGPD-compliant** — analytics respeitando a legislação brasileira de proteção de dados
+- **Página 404 personalizada** — mantém identidade visual em acessos inválidos
+- **CI/CD automatizado** — deploy, auditoria Lighthouse, verificação de links e checagem de SEO via GitHub Actions
 
-## Contact
+---
 
-- Email: avnerpaesgomes@gmail.com
-- LinkedIn: [Avner Gomes](https://www.linkedin.com/in/avner-gomes-32556018/)
-- Upwork: [Avner Gomes](https://www.upwork.com/freelancers/avnergomes)
+## Desenvolvimento Local
+
+Por ser um site estático puro, não é necessária nenhuma instalação.
+
+### Opção 1 — Abrir diretamente
+
+```bash
+# Clonar o repositório
+git clone https://github.com/avnergomes/portfolio.git
+cd portfolio
+
+# Abrir no navegador
+open index.html
+# ou simplesmente arraste index.html para o navegador
+```
+
+### Opção 2 — Servidor local (recomendado para evitar restrições de CORS)
+
+```bash
+# Com Python (já vem instalado na maioria dos sistemas)
+python -m http.server 8000
+# Acesse: http://localhost:8000
+
+# Com Node.js (se disponível)
+npx serve .
+# Acesse: http://localhost:3000
+```
+
+### Configuração de tracking local (opcional)
+
+```bash
+# Copiar o arquivo de exemplo
+cp config.local.js.example config.local.js
+
+# Editar com suas configurações
+# O arquivo config.local.js é ignorado pelo .gitignore
+```
+
+---
+
+## Licença
+
+MIT License — consulte o arquivo `LICENSE` no repositório para detalhes.
