@@ -175,11 +175,6 @@ function initCurrentYear() {
     }
 }
 
-// ===== LGPD Consent Check =====
-function hasLGPDConsent() {
-    return localStorage.getItem('lgpd-consent') === 'accepted';
-}
-
 // ===== Visitor Counter =====
 function initVisitorCounter() {
     const counterElement = document.getElementById('visitor-count');
@@ -191,12 +186,7 @@ function initVisitorCounter() {
         return;
     }
 
-    // Only track if user consented to LGPD
-    if (!hasLGPDConsent()) {
-        console.log('[Tracking] LGPD consent not given - tracking disabled');
-        if (counterElement) counterElement.textContent = '--';
-        return;
-    }
+    // Tracking dispara sempre - dados anonimizados nao exigem consentimento (Art. 12 LGPD)
 
     // Gather comprehensive tracking data
     const trackingData = gatherUserData();
