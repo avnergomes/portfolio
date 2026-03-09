@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IOF Technology Framework - Geospatial data pipeline for forest monitoring and carbon verification in the Amazon basin">
+    <meta name="robots" content="index,follow">
+    <title>IOF Technology Framework | Avner Gomes</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="IOF Technology Framework - One Amazon">
+    <meta property="og:description" content="Comprehensive geospatial data framework for environmental monitoring across forest ecosystems">
+    <meta property="og:type" content="article">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-hero {
+            background: linear-gradient(135deg, #064e3b 0%, #059669 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            margin-top: 80px;
+        }
+        .project-hero .container {
+            max-width: 900px;
+        }
+        .project-hero h1 {
+            font-family: var(--font-display);
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+        }
+        .project-hero .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .meta-item i {
+            opacity: 0.8;
+        }
+        .project-content {
+            padding: 4rem 0;
+        }
+        .project-content .container {
+            max-width: 900px;
+        }
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        .content-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+        .content-section h3 {
+            font-size: 1.25rem;
+            color: var(--color-text);
+            margin: 1.5rem 0 0.75rem;
+        }
+        .content-section p {
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content-section li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--color-text-light);
+        }
+        .content-section li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        .tech-tag {
+            background: var(--color-bg-alt);
+            color: var(--color-text);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 1.5rem 0;
+        }
+        .highlight-box p {
+            margin: 0;
+            color: var(--color-text);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        .back-link:hover {
+            opacity: 1;
+            color: white;
+        }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .kpi-card {
+            background: var(--color-bg-alt);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+        .kpi-card .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        .kpi-card .label {
+            font-size: 0.875rem;
+            color: var(--color-text-light);
+        }
+        @media (max-width: 768px) {
+            .project-hero {
+                padding: 4rem 0 3rem;
+            }
+            .project-hero h1 {
+                font-size: 2rem;
+            }
+            .project-meta {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">AG</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="../index.html#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                <span data-i18n="project.backToProjects">Back to Projects</span>
+            </a>
+            <h1 data-i18n="projectIOF.title">IOF Technology Framework - One Amazon</h1>
+            <p class="subtitle" data-i18n="projectIOF.heroDesc">Comprehensive geospatial data framework for environmental monitoring, carbon verification, and biodiversity tracking across Amazon forest ecosystems.</p>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="fas fa-folder"></i>
+                    <span data-i18n="projects.cat.geo">Geospatial</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>2025 - 2026</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span data-i18n="projectIOF.location">Panama / Amazon Basin</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+
+            <!-- Overview -->
+            <div class="content-section">
+                <h2 data-i18n="project.overview">Project Overview</h2>
+                <p data-i18n="projectIOF.overview1">The Internet of Forests (IoF) is a comprehensive geospatial data framework designed to monitor, report, and verify (MRV) environmental conditions across forest ecosystems. The project integrates multiple satellite data sources with blockchain-based provenance for EUDR compliance and carbon credit verification.</p>
+                <p data-i18n="projectIOF.overview2">Working with One Amazon Foundation and AECOM, I developed the complete data ingestion pipeline architecture, processing 200+ geospatial layers from multiple sources and standardizing outputs to a hectare-grid model with uncertainty quantification.</p>
+
+                <div class="highlight-box">
+                    <p data-i18n="projectIOF.highlight">Supporting 29 environmental KPIs across 6 thematic groups, enabling Nature Positive Framework indicators for conservation programs covering 100,000+ hectares.</p>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="content-section">
+                <h2 data-i18n="project.keyMetrics">Key Metrics</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="number">200+</div>
+                        <div class="label" data-i18n="projectIOF.metric1">Geospatial Layers</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="number">29</div>
+                        <div class="label" data-i18n="projectIOF.metric2">Environmental KPIs</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="number">100k+</div>
+                        <div class="label" data-i18n="projectIOF.metric3">Hectares Monitored</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="number">5</div>
+                        <div class="label" data-i18n="projectIOF.metric4">Data Sources</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Approach -->
+            <div class="content-section">
+                <h2 data-i18n="project.technicalApproach">Technical Approach</h2>
+
+                <h3 data-i18n="projectIOF.dataIntegration">Data Integration Pipeline</h3>
+                <ul>
+                    <li data-i18n="projectIOF.tech1">WHISP (FAO/OpenForis) integration for 200+ geospatial variables via Google Earth Engine</li>
+                    <li data-i18n="projectIOF.tech2">CHIRPS precipitation data processing with zonal statistics calculation</li>
+                    <li data-i18n="projectIOF.tech3">WaPOR evapotranspiration and water productivity analysis</li>
+                    <li data-i18n="projectIOF.tech4">ESRI Land Cover time series for change detection (2017-2024)</li>
+                    <li data-i18n="projectIOF.tech5">Landsat NDVI deforestation detection with structural break analysis</li>
+                </ul>
+
+                <h3 data-i18n="projectIOF.kpiFramework">KPI Framework</h3>
+                <ul>
+                    <li data-i18n="projectIOF.kpi1">Forest & Land Cover: 9 indicators (extent, loss rate, fragmentation)</li>
+                    <li data-i18n="projectIOF.kpi2">Pastures & Agriculture: 5 indicators (expansion, interface analysis)</li>
+                    <li data-i18n="projectIOF.kpi3">Fire & Temperature: 6 indicators (hotspots, burned area, LST)</li>
+                    <li data-i18n="projectIOF.kpi4">Water Resources: 5 indicators (precipitation, drought index)</li>
+                    <li data-i18n="projectIOF.kpi5">Soil & Carbon: 3 indicators (SOC, biomass, total stock)</li>
+                    <li data-i18n="projectIOF.kpi6">Biodiversity: Intactness index calculations</li>
+                </ul>
+
+                <h3 data-i18n="projectIOF.blockchain">Blockchain Integration</h3>
+                <p data-i18n="projectIOF.blockchainDesc">Implemented provenance-by-design architecture using IPFS for storage and Ethereum smart contracts for immutable proof anchoring, ensuring EUDR compliance and carbon credit integrity.</p>
+            </div>
+
+            <!-- Technologies Used -->
+            <div class="content-section">
+                <h2 data-i18n="project.technologies">Technologies Used</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Google Earth Engine</span>
+                    <span class="tech-tag">GeoPandas</span>
+                    <span class="tech-tag">Rasterio</span>
+                    <span class="tech-tag">QGIS</span>
+                    <span class="tech-tag">WHISP/OpenForis</span>
+                    <span class="tech-tag">Solidity</span>
+                    <span class="tech-tag">IPFS</span>
+                    <span class="tech-tag">Ethereum</span>
+                    <span class="tech-tag">Jupyter</span>
+                </div>
+            </div>
+
+            <!-- Deliverables -->
+            <div class="content-section">
+                <h2 data-i18n="project.deliverables">Deliverables</h2>
+                <ul>
+                    <li data-i18n="projectIOF.del1">Automated data ingestion pipelines for 5 satellite data sources</li>
+                    <li data-i18n="projectIOF.del2">Standardized hectare-grid outputs with uncertainty quantification</li>
+                    <li data-i18n="projectIOF.del3">KPI calculation modules for 29 environmental indicators</li>
+                    <li data-i18n="projectIOF.del4">Technical documentation and architecture specifications</li>
+                    <li data-i18n="projectIOF.del5">Smart contract design for data provenance anchoring</li>
+                </ul>
+            </div>
+
+            <!-- Back to Projects -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#projects" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i>
+                    <span data-i18n="project.backToProjects">Back to Projects</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">AG</span>
+                    <p data-i18n="footer.tagline">Forest Engineer & Data Scientist</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnergomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Avner Gomes. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

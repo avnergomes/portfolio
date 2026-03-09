@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deep Grain - Agricultural land assessment in Ecuador combining satellite imagery, soil data, and climate analysis">
+    <meta name="robots" content="index,follow">
+    <title>Deep Grain - Agricultural Assessment | Avner Gomes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-hero { background: linear-gradient(135deg, #92400e 0%, #d97706 100%); color: white; padding: 6rem 0 4rem; margin-top: 80px; }
+        .project-hero .container { max-width: 900px; }
+        .project-hero h1 { font-family: var(--font-display); font-size: 2.75rem; margin-bottom: 1rem; }
+        .project-hero .subtitle { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; }
+        .project-meta { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item i { opacity: 0.8; }
+        .project-content { padding: 4rem 0; }
+        .project-content .container { max-width: 900px; }
+        .content-section { margin-bottom: 3rem; }
+        .content-section h2 { font-family: var(--font-display); font-size: 1.75rem; color: var(--color-primary); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border); }
+        .content-section h3 { font-size: 1.25rem; color: var(--color-text); margin: 1.5rem 0 0.75rem; }
+        .content-section p { color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem; }
+        .content-section ul { list-style: none; padding: 0; }
+        .content-section li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--color-text-light); }
+        .content-section li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #d97706; }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .tech-tag { background: var(--color-bg-alt); color: var(--color-text); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 500; }
+        .highlight-box { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border-left: 4px solid #d97706; padding: 1.5rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; }
+        .highlight-box p { margin: 0; color: var(--color-text); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: white; opacity: 0.9; margin-bottom: 1rem; font-size: 0.875rem; }
+        .back-link:hover { opacity: 1; color: white; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .kpi-card { background: var(--color-bg-alt); padding: 1.25rem; border-radius: var(--radius-md); text-align: center; }
+        .kpi-card .number { font-size: 2rem; font-weight: 700; color: #92400e; }
+        .kpi-card .label { font-size: 0.875rem; color: var(--color-text-light); }
+        @media (max-width: 768px) { .project-hero { padding: 4rem 0 3rem; } .project-hero h1 { font-size: 2rem; } .project-meta { gap: 1rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">AG</a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="../index.html#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span data-i18n="project.backToProjects">Back to Projects</span></a>
+            <h1 data-i18n="projectDeep.pageTitle">Deep Grain - Agricultural Assessment Ecuador</h1>
+            <p class="subtitle" data-i18n="projectDeep.heroDesc">Ground-truth agricultural assessment combining field photography with geospatial analysis for investment-grade land evaluation.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span data-i18n="projects.cat.geo">Geospatial</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2025</span></div>
+                <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="projectDeep.location">Ecuador</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="content-section">
+                <h2 data-i18n="project.overview">Project Overview</h2>
+                <p data-i18n="projectDeep.overview1">Conducted comprehensive agricultural land assessment in Ecuador's North Esmeraldas and Guayas/El Oro regions. The project combined geotagged field photography with satellite imagery analysis to evaluate crop suitability and yield potential for investment decisions.</p>
+                <p data-i18n="projectDeep.overview2">Field data collection involved systematic documentation of soil conditions, existing crops, infrastructure, and terrain characteristics across multiple properties.</p>
+                <div class="highlight-box">
+                    <p data-i18n="projectDeep.highlight">Investment-grade agricultural assessment supporting land acquisition decisions with verified field conditions and spatial context.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.keyMetrics">Key Metrics</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-card"><div class="number">2</div><div class="label" data-i18n="projectDeep.metric1">Regions Assessed</div></div>
+                    <div class="kpi-card"><div class="number">100+</div><div class="label" data-i18n="projectDeep.metric2">Geotagged Photos</div></div>
+                    <div class="kpi-card"><div class="number">3</div><div class="label" data-i18n="projectDeep.metric3">Data Layers Integrated</div></div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.technicalApproach">Technical Approach</h2>
+                <h3 data-i18n="projectDeep.fieldWork">Field Data Collection</h3>
+                <ul>
+                    <li data-i18n="projectDeep.tech1">Systematic geotagged photography with custom mobile app</li>
+                    <li data-i18n="projectDeep.tech2">Soil condition documentation and sampling points</li>
+                    <li data-i18n="projectDeep.tech3">Infrastructure and access road assessment</li>
+                    <li data-i18n="projectDeep.tech4">Existing crop inventory and health evaluation</li>
+                </ul>
+                <h3 data-i18n="projectDeep.spatial">Spatial Analysis</h3>
+                <ul>
+                    <li data-i18n="projectDeep.sp1">Satellite imagery processing for land cover classification</li>
+                    <li data-i18n="projectDeep.sp2">Terrain analysis using DEM data</li>
+                    <li data-i18n="projectDeep.sp3">Climate data integration for crop suitability modeling</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.technologies">Technologies Used</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">QGIS</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">GeoPandas</span>
+                    <span class="tech-tag">Satellite Imagery</span>
+                    <span class="tech-tag">Mobile GIS</span>
+                    <span class="tech-tag">DEM Analysis</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.deliverables">Deliverables</h2>
+                <ul>
+                    <li data-i18n="projectDeep.del1">Geotagged photo documentation with coordinate database</li>
+                    <li data-i18n="projectDeep.del2">Land suitability maps for target crops</li>
+                    <li data-i18n="projectDeep.del3">QGIS project with integrated field and satellite data</li>
+                    <li data-i18n="projectDeep.del4">Assessment report with investment recommendations</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#projects" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span data-i18n="project.backToProjects">Back to Projects</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><span class="footer-logo">AG</span><p data-i18n="footer.tagline">Forest Engineer & Data Scientist</p></div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnergomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Avner Gomes. <span data-i18n="footer.rights">All rights reserved.</span></p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
