@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WebGIS Platform Consulting - Usability testing and product improvement for satellite imagery startup">
+    <meta name="robots" content="index,follow">
+    <title>WebGIS Platform Consulting | Avner Gomes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-hero { background: linear-gradient(135deg, #1a4731 0%, #276749 100%); color: white; padding: 6rem 0 4rem; margin-top: 80px; }
+        .project-hero .container { max-width: 900px; }
+        .project-hero h1 { font-family: var(--font-display); font-size: 2.75rem; margin-bottom: 1rem; }
+        .project-hero .subtitle { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; }
+        .project-meta { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item i { opacity: 0.8; }
+        .project-content { padding: 4rem 0; }
+        .project-content .container { max-width: 900px; }
+        .content-section { margin-bottom: 3rem; }
+        .content-section h2 { font-family: var(--font-display); font-size: 1.75rem; color: var(--color-primary); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border); }
+        .content-section h3 { font-size: 1.25rem; color: var(--color-text); margin: 1.5rem 0 0.75rem; }
+        .content-section p { color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem; }
+        .content-section ul { list-style: none; padding: 0; }
+        .content-section li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--color-text-light); }
+        .content-section li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #276749; }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .tech-tag { background: var(--color-bg-alt); color: var(--color-text); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 500; }
+        .highlight-box { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left: 4px solid #276749; padding: 1.5rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; }
+        .highlight-box p { margin: 0; color: var(--color-text); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: white; opacity: 0.9; margin-bottom: 1rem; font-size: 0.875rem; }
+        .back-link:hover { opacity: 1; color: white; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .kpi-card { background: var(--color-bg-alt); padding: 1.25rem; border-radius: var(--radius-md); text-align: center; }
+        .kpi-card .number { font-size: 2rem; font-weight: 700; color: #1a4731; }
+        .kpi-card .label { font-size: 0.875rem; color: var(--color-text-light); }
+        @media (max-width: 768px) { .project-hero { padding: 4rem 0 3rem; } .project-hero h1 { font-size: 2rem; } .project-meta { gap: 1rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">AG</a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="../index.html#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span data-i18n="project.backToProjects">Back to Projects</span></a>
+            <h1 data-i18n="project7.pageTitle">WebGIS Platform Consulting</h1>
+            <p class="subtitle" data-i18n="project7.heroDesc">User experience evaluation and product improvement consulting for a satellite imagery startup, providing actionable feedback from a real user perspective.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span data-i18n="projects.cat.geo">Geospatial</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2024</span></div>
+                <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="project7.location">Cambodia / Remote</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="content-section">
+                <h2 data-i18n="project.overview">Project Overview</h2>
+                <p data-i18n="project7.overview1">Engaged by a satellite imagery startup to provide comprehensive platform evaluation from an end-user perspective. The project involved using their WebGIS platform as a real customer would, testing workflows, identifying pain points, and proposing improvements.</p>
+                <p data-i18n="project7.overview2">The assessment covered user interface design, data processing workflows, export functionality, and overall user experience, resulting in a prioritized list of actionable recommendations.</p>
+                <div class="highlight-box">
+                    <p data-i18n="project7.highlight">Delivered prioritized list of UX improvements and feature ideas, several of which were implemented in the next platform release.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.keyMetrics">Key Metrics</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-card"><div class="number">20+</div><div class="label" data-i18n="project7.metric1">Issues Identified</div></div>
+                    <div class="kpi-card"><div class="number">15+</div><div class="label" data-i18n="project7.metric2">Feature Suggestions</div></div>
+                    <div class="kpi-card"><div class="number">5</div><div class="label" data-i18n="project7.metric3">Implemented Changes</div></div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.technicalApproach">Technical Approach</h2>
+                <h3 data-i18n="project7.testing">Usability Testing</h3>
+                <ul>
+                    <li data-i18n="project7.tech1">End-to-end workflow testing as real user</li>
+                    <li data-i18n="project7.tech2">Data upload and processing evaluation</li>
+                    <li data-i18n="project7.tech3">Export functionality assessment</li>
+                    <li data-i18n="project7.tech4">Mobile responsiveness testing</li>
+                </ul>
+                <h3 data-i18n="project7.analysis">Product Analysis</h3>
+                <ul>
+                    <li data-i18n="project7.an1">Competitive feature comparison</li>
+                    <li data-i18n="project7.an2">User journey mapping</li>
+                    <li data-i18n="project7.an3">Pain point documentation</li>
+                    <li data-i18n="project7.an4">Priority matrix for improvements</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.technologies">Technologies Used</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">WebGIS</span>
+                    <span class="tech-tag">Satellite Imagery</span>
+                    <span class="tech-tag">UX Analysis</span>
+                    <span class="tech-tag">QGIS</span>
+                    <span class="tech-tag">GeoTIFF</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.deliverables">Deliverables</h2>
+                <ul>
+                    <li data-i18n="project7.del1">Comprehensive usability assessment report</li>
+                    <li data-i18n="project7.del2">Prioritized improvement recommendations</li>
+                    <li data-i18n="project7.del3">Feature enhancement suggestions</li>
+                    <li data-i18n="project7.del4">Competitive analysis summary</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#projects" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span data-i18n="project.backToProjects">Back to Projects</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><span class="footer-logo">AG</span><p data-i18n="footer.tagline">Forest Engineer & Data Scientist</p></div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnergomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Avner Gomes. <span data-i18n="footer.rights">All rights reserved.</span></p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

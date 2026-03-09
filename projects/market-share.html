@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Market Share Analysis - CRM analytics and market position assessment for US apparel brand">
+    <meta name="robots" content="index,follow">
+    <title>Market Share Analysis | Avner Gomes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-hero { background: linear-gradient(135deg, #742a2a 0%, #c53030 100%); color: white; padding: 6rem 0 4rem; margin-top: 80px; }
+        .project-hero .container { max-width: 900px; }
+        .project-hero h1 { font-family: var(--font-display); font-size: 2.75rem; margin-bottom: 1rem; }
+        .project-hero .subtitle { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; }
+        .project-meta { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item i { opacity: 0.8; }
+        .project-content { padding: 4rem 0; }
+        .project-content .container { max-width: 900px; }
+        .content-section { margin-bottom: 3rem; }
+        .content-section h2 { font-family: var(--font-display); font-size: 1.75rem; color: var(--color-primary); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border); }
+        .content-section h3 { font-size: 1.25rem; color: var(--color-text); margin: 1.5rem 0 0.75rem; }
+        .content-section p { color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem; }
+        .content-section ul { list-style: none; padding: 0; }
+        .content-section li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--color-text-light); }
+        .content-section li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #c53030; }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .tech-tag { background: var(--color-bg-alt); color: var(--color-text); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 500; }
+        .highlight-box { background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%); border-left: 4px solid #c53030; padding: 1.5rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; }
+        .highlight-box p { margin: 0; color: var(--color-text); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: white; opacity: 0.9; margin-bottom: 1rem; font-size: 0.875rem; }
+        .back-link:hover { opacity: 1; color: white; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .kpi-card { background: var(--color-bg-alt); padding: 1.25rem; border-radius: var(--radius-md); text-align: center; }
+        .kpi-card .number { font-size: 2rem; font-weight: 700; color: #742a2a; }
+        .kpi-card .label { font-size: 0.875rem; color: var(--color-text-light); }
+        @media (max-width: 768px) { .project-hero { padding: 4rem 0 3rem; } .project-hero h1 { font-size: 2rem; } .project-meta { gap: 1rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">AG</a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="../index.html#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span data-i18n="project.backToProjects">Back to Projects</span></a>
+            <h1 data-i18n="project6.pageTitle">Market Share Comparison & CRM Analytics</h1>
+            <p class="subtitle" data-i18n="project6.heroDesc">Comprehensive market position analysis for an apparel brand, mapping CRM data against market share benchmarks across US metropolitan areas.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span data-i18n="projects.cat.bi">Business Intelligence</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2024</span></div>
+                <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="project6.location">United States</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="content-section">
+                <h2 data-i18n="project.overview">Project Overview</h2>
+                <p data-i18n="project6.overview1">Conducted market position analysis for an apparel brand seeking to understand its competitive standing across US metropolitan areas. The project mapped internal CRM sales data against external market share benchmarks by CBSA (Core Based Statistical Area).</p>
+                <p data-i18n="project6.overview2">The analysis identified underserved regions where the brand had lower penetration relative to market potential, enabling targeted sales and marketing resource allocation.</p>
+                <div class="highlight-box">
+                    <p data-i18n="project6.highlight">The sales team finally identified which regions were underserved relative to market potential, enabling marketing to plan targeted campaigns accordingly.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.keyMetrics">Key Metrics</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-card"><div class="number">50+</div><div class="label" data-i18n="project6.metric1">Metro Areas Analyzed</div></div>
+                    <div class="kpi-card"><div class="number">CBSA</div><div class="label" data-i18n="project6.metric2">Geographic Granularity</div></div>
+                    <div class="kpi-card"><div class="number">ZIP</div><div class="label" data-i18n="project6.metric3">Sales Data Level</div></div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.technicalApproach">Technical Approach</h2>
+                <h3 data-i18n="project6.crm">CRM Data Analysis</h3>
+                <ul>
+                    <li data-i18n="project6.tech1">Sales data extraction and cleaning by ZIP code</li>
+                    <li data-i18n="project6.tech2">ZIP to CBSA geographic aggregation</li>
+                    <li data-i18n="project6.tech3">Customer segmentation by purchase frequency</li>
+                    <li data-i18n="project6.tech4">Category sales breakdown analysis</li>
+                </ul>
+                <h3 data-i18n="project6.market">Market Benchmarking</h3>
+                <ul>
+                    <li data-i18n="project6.mkt1">External market size data integration</li>
+                    <li data-i18n="project6.mkt2">Market share calculation by CBSA</li>
+                    <li data-i18n="project6.mkt3">Penetration gap identification</li>
+                    <li data-i18n="project6.mkt4">Opportunity scoring and prioritization</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.technologies">Technologies Used</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">GeoPandas</span>
+                    <span class="tech-tag">QGIS</span>
+                    <span class="tech-tag">Excel</span>
+                    <span class="tech-tag">CBSA Data</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project.deliverables">Deliverables</h2>
+                <ul>
+                    <li data-i18n="project6.del1">Market share comparison dashboard by CBSA</li>
+                    <li data-i18n="project6.del2">Underserved market opportunity report</li>
+                    <li data-i18n="project6.del3">Geographic visualization maps</li>
+                    <li data-i18n="project6.del4">Sales territory optimization recommendations</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#projects" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span data-i18n="project.backToProjects">Back to Projects</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><span class="footer-logo">AG</span><p data-i18n="footer.tagline">Forest Engineer & Data Scientist</p></div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnergomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Avner Gomes. <span data-i18n="footer.rights">All rights reserved.</span></p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
