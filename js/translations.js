@@ -282,6 +282,47 @@ const translations = {
         'projectDiarios.stage3': 'Interactive time series and filters',
         'projectDiarios.benefit': 'Agricultural price tracking with daily automatic updates.',
 
+        // IOF Technology Framework
+        'projectIOF.title': 'IOF Technology Framework - One Amazon',
+        'projectIOF.desc': 'Technology framework for the One Amazon Foundation supporting forest conservation and sustainable development initiatives across the Amazon basin.',
+        'projectIOF.stage1': 'Requirements analysis and architecture design',
+        'projectIOF.stage2': 'Data infrastructure and pipeline development',
+        'projectIOF.stage3': 'Dashboard and reporting system implementation',
+        'projectIOF.stage4': 'Documentation and knowledge transfer',
+        'projectIOF.benefit': 'Scalable technology foundation enabling data-driven conservation decisions across multiple Amazon initiatives.',
+
+        // Capital Certainty
+        'projectCapital.title': 'Capital Certainty - Amazon Extractive Reserve',
+        'projectCapital.desc': 'Geospatial analysis and carbon assessment for RESEX Verde Para Sempre, one of the largest extractive reserves in the Brazilian Amazon.',
+        'projectCapital.stage1': 'Satellite imagery processing and land cover analysis',
+        'projectCapital.stage2': 'Carbon stock estimation and deforestation baseline',
+        'projectCapital.stage3': 'Economic viability assessment and reporting',
+        'projectCapital.benefit': 'Data-backed investment case for conservation finance in a 1.3 million hectare protected area.',
+
+        // Flai Data
+        'projectFlai.title': 'Flai Data - Ads Audience Builder',
+        'projectFlai.desc': 'Marketing analytics platform for building custom audiences from ad platform data. Integration with Google, Meta, and TikTok APIs for cross-platform audience insights.',
+        'projectFlai.stage1': 'Multi-platform API integration and data extraction',
+        'projectFlai.stage2': 'Audience segmentation and clustering algorithms',
+        'projectFlai.stage3': 'Dashboard development with audience export features',
+        'projectFlai.benefit': 'Unified view of audience behavior across ad platforms, enabling smarter targeting and reduced ad spend waste.',
+
+        // Deep Grain
+        'projectDeep.title': 'Deep Grain - Agricultural Assessment Ecuador',
+        'projectDeep.desc': 'Agricultural land assessment in Ecuador combining satellite imagery, soil data, and climate variables to evaluate crop suitability and yield potential.',
+        'projectDeep.stage1': 'Multi-source data collection and harmonization',
+        'projectDeep.stage2': 'Suitability modeling and risk analysis',
+        'projectDeep.stage3': 'Report generation with maps and recommendations',
+        'projectDeep.benefit': 'Investment-grade agricultural assessment supporting land acquisition decisions in South America.',
+
+        // Cityview
+        'projectCity.title': 'Cityview - Urban Geocoding Pipeline',
+        'projectCity.desc': 'High-volume geocoding pipeline for DFW metropolitan area. Batch processing of addresses with validation, standardization, and enrichment.',
+        'projectCity.stage1': 'Address parsing and standardization pipeline',
+        'projectCity.stage2': 'Multi-provider geocoding with fallback logic',
+        'projectCity.stage3': 'Quality scoring and validation reporting',
+        'projectCity.benefit': 'Reliable geocoding infrastructure processing 100k+ addresses with 98%+ match rate.',
+
         // Clients
         'clients.title': 'Trusted By',
         'clients.subtitle': 'From startups to government agencies — a few of the teams I\'ve worked with',
@@ -581,6 +622,47 @@ const translations = {
         'projectDiarios.stage3': 'Series temporales interactivas y filtros',
         'projectDiarios.benefit': 'Seguimiento de precios agrícolas con actualización diaria automática.',
 
+        // IOF Technology Framework
+        'projectIOF.title': 'IOF Technology Framework - One Amazon',
+        'projectIOF.desc': 'Framework tecnológico para la Fundación One Amazon que apoya iniciativas de conservación forestal y desarrollo sostenible en toda la cuenca amazónica.',
+        'projectIOF.stage1': 'Análisis de requisitos y diseño de arquitectura',
+        'projectIOF.stage2': 'Infraestructura de datos y desarrollo de pipelines',
+        'projectIOF.stage3': 'Implementación de dashboards y sistema de reportes',
+        'projectIOF.stage4': 'Documentación y transferencia de conocimiento',
+        'projectIOF.benefit': 'Base tecnológica escalable que permite decisiones de conservación basadas en datos en múltiples iniciativas amazónicas.',
+
+        // Capital Certainty
+        'projectCapital.title': 'Capital Certainty - Reserva Extractivista Amazónica',
+        'projectCapital.desc': 'Análisis geoespacial y evaluación de carbono para RESEX Verde Para Sempre, una de las mayores reservas extractivistas de la Amazonía brasileña.',
+        'projectCapital.stage1': 'Procesamiento de imágenes satelitales y análisis de cobertura',
+        'projectCapital.stage2': 'Estimación de stock de carbono y línea base de deforestación',
+        'projectCapital.stage3': 'Evaluación de viabilidad económica y reportes',
+        'projectCapital.benefit': 'Caso de inversión respaldado por datos para financiamiento de conservación en un área protegida de 1.3 millones de hectáreas.',
+
+        // Flai Data
+        'projectFlai.title': 'Flai Data - Constructor de Audiencias de Ads',
+        'projectFlai.desc': 'Plataforma de analítica de marketing para construir audiencias personalizadas a partir de datos de plataformas publicitarias. Integración con APIs de Google, Meta y TikTok.',
+        'projectFlai.stage1': 'Integración de APIs multiplataforma y extracción de datos',
+        'projectFlai.stage2': 'Algoritmos de segmentación y clustering de audiencias',
+        'projectFlai.stage3': 'Desarrollo de dashboard con funciones de exportación',
+        'projectFlai.benefit': 'Vista unificada del comportamiento de audiencias entre plataformas, permitiendo mejor segmentación y reducción de gasto publicitario.',
+
+        // Deep Grain
+        'projectDeep.title': 'Deep Grain - Evaluación Agrícola Ecuador',
+        'projectDeep.desc': 'Evaluación de tierras agrícolas en Ecuador combinando imágenes satelitales, datos de suelo y variables climáticas para evaluar aptitud de cultivos y potencial de rendimiento.',
+        'projectDeep.stage1': 'Recolección y armonización de datos multi-fuente',
+        'projectDeep.stage2': 'Modelado de aptitud y análisis de riesgos',
+        'projectDeep.stage3': 'Generación de reportes con mapas y recomendaciones',
+        'projectDeep.benefit': 'Evaluación agrícola de grado inversor que apoya decisiones de adquisición de tierras en Sudamérica.',
+
+        // Cityview
+        'projectCity.title': 'Cityview - Pipeline de Geocodificación Urbana',
+        'projectCity.desc': 'Pipeline de geocodificación de alto volumen para el área metropolitana de DFW. Procesamiento por lotes de direcciones con validación, estandarización y enriquecimiento.',
+        'projectCity.stage1': 'Pipeline de parsing y estandarización de direcciones',
+        'projectCity.stage2': 'Geocodificación multi-proveedor con lógica de fallback',
+        'projectCity.stage3': 'Puntuación de calidad y reportes de validación',
+        'projectCity.benefit': 'Infraestructura de geocodificación confiable procesando +100k direcciones con tasa de match de +98%.',
+
         // Clients
         'clients.title': 'Confian en Mi',
         'clients.subtitle': 'De startups a agencias gubernamentales — algunos de los equipos con los que he trabajado',
@@ -879,6 +961,47 @@ const translations = {
         'projectDiarios.stage2': 'Análise de sazonalidade e spread regional',
         'projectDiarios.stage3': 'Séries temporais interativas e filtros',
         'projectDiarios.benefit': 'Acompanhamento de preços agrícolas com atualização diária automática.',
+
+        // IOF Technology Framework
+        'projectIOF.title': 'IOF Technology Framework - One Amazon',
+        'projectIOF.desc': 'Framework tecnológico para a Fundação One Amazon apoiando iniciativas de conservação florestal e desenvolvimento sustentável em toda a bacia amazônica.',
+        'projectIOF.stage1': 'Análise de requisitos e design de arquitetura',
+        'projectIOF.stage2': 'Infraestrutura de dados e desenvolvimento de pipelines',
+        'projectIOF.stage3': 'Implementação de dashboards e sistema de relatórios',
+        'projectIOF.stage4': 'Documentação e transferência de conhecimento',
+        'projectIOF.benefit': 'Base tecnológica escalável permitindo decisões de conservação baseadas em dados em múltiplas iniciativas amazônicas.',
+
+        // Capital Certainty
+        'projectCapital.title': 'Capital Certainty - Reserva Extrativista Amazônica',
+        'projectCapital.desc': 'Análise geoespacial e avaliação de carbono para RESEX Verde Para Sempre, uma das maiores reservas extrativistas da Amazônia brasileira.',
+        'projectCapital.stage1': 'Processamento de imagens de satélite e análise de cobertura',
+        'projectCapital.stage2': 'Estimativa de estoque de carbono e baseline de desmatamento',
+        'projectCapital.stage3': 'Avaliação de viabilidade econômica e relatórios',
+        'projectCapital.benefit': 'Caso de investimento respaldado por dados para financiamento de conservação em área protegida de 1,3 milhão de hectares.',
+
+        // Flai Data
+        'projectFlai.title': 'Flai Data - Construtor de Audiências de Ads',
+        'projectFlai.desc': 'Plataforma de analytics de marketing para construir audiências customizadas a partir de dados de plataformas de anúncios. Integração com APIs do Google, Meta e TikTok.',
+        'projectFlai.stage1': 'Integração de APIs multiplataforma e extração de dados',
+        'projectFlai.stage2': 'Algoritmos de segmentação e clustering de audiências',
+        'projectFlai.stage3': 'Desenvolvimento de dashboard com recursos de exportação',
+        'projectFlai.benefit': 'Visão unificada do comportamento de audiências entre plataformas, permitindo melhor segmentação e redução de desperdício de verba.',
+
+        // Deep Grain
+        'projectDeep.title': 'Deep Grain - Avaliação Agrícola Equador',
+        'projectDeep.desc': 'Avaliação de terras agrícolas no Equador combinando imagens de satélite, dados de solo e variáveis climáticas para avaliar aptidão de culturas e potencial de rendimento.',
+        'projectDeep.stage1': 'Coleta e harmonização de dados multi-fonte',
+        'projectDeep.stage2': 'Modelagem de aptidão e análise de riscos',
+        'projectDeep.stage3': 'Geração de relatórios com mapas e recomendações',
+        'projectDeep.benefit': 'Avaliação agrícola de grau investidor apoiando decisões de aquisição de terras na América do Sul.',
+
+        // Cityview
+        'projectCity.title': 'Cityview - Pipeline de Geocodificação Urbana',
+        'projectCity.desc': 'Pipeline de geocodificação de alto volume para a área metropolitana de DFW. Processamento em lote de endereços com validação, padronização e enriquecimento.',
+        'projectCity.stage1': 'Pipeline de parsing e padronização de endereços',
+        'projectCity.stage2': 'Geocodificação multi-provedor com lógica de fallback',
+        'projectCity.stage3': 'Pontuação de qualidade e relatórios de validação',
+        'projectCity.benefit': 'Infraestrutura de geocodificação confiável processando +100k endereços com taxa de match de +98%.',
 
         // Clients
         'clients.title': 'Empresas que Confiam',
