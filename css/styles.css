@@ -210,6 +210,12 @@ ul {
     display: block;
 }
 
+.logo-text {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--color-primary);
+}
+
 .nav-menu {
     display: flex;
     align-items: center;
