@@ -26,11 +26,13 @@ jobs:
             --exclude "^mailto:"
             --exclude "^https://script.google.com"
             --exclude "^https://www.linkedin.com"
+            --exclude "^https://linkedin.com"
             --exclude "^https://www.upwork.com"
             --exclude "^https://fonts.googleapis.com"
             --exclude "^https://fonts.gstatic.com"
             --exclude "^https://cdnjs.cloudflare.com"
             --exclude "^https://www.googletagmanager.com"
+            --exclude "^https://(www\\.)?planalto\\.gov\\.br"
             --timeout 30
             "./**/*.html"
             "./**/*.md"
