@@ -7,6 +7,7 @@ const translations = {
         'nav.services': 'Services',
         'nav.projects': 'Projects',
         'nav.clients': 'Clients',
+        'nav.testimonials': 'Testimonials',
         'nav.contact': 'Contact',
 
         // Hero
@@ -21,7 +22,7 @@ const translations = {
         // About
         'about.title': 'About Me',
         'about.p1': 'I started in the forest — literally. My background is in forestry, where I learned to think in layers: soil, terrain, canopy, climate. When I discovered data science, it felt like the same work with sharper tools. Today I build the pipelines, dashboards, and spatial models that turn raw data into something a team can actually act on.',
-        'about.p2': 'I\'ve worked with government agencies in Brazil, consulted for European startups, and taken on freelance projects across seven countries. What ties it all together is the same thing: someone has messy data and needs a clear answer.',
+        'about.p2': 'I\'ve worked with government agencies in Brazil, consulted for European startups, and delivered freelance projects across seven countries. Clients consistently highlight fast turnaround, clear communication, and a habit of going beyond what was asked. What ties it all together is the same thing: someone has messy data and needs a clear answer.',
         'about.education': 'Education',
         'about.edu1.title': 'Master in Data Science',
         'about.edu1.school': 'Nuclio Digital School, 2023',
@@ -662,6 +663,33 @@ const translations = {
         'clients.title': 'Trusted By',
         'clients.subtitle': 'From startups to government agencies — a few of the teams I\'ve worked with',
 
+        // Testimonials
+        'testimonials.title': 'What Clients Say',
+        'testimonials.subtitle': 'Real feedback from completed projects on Upwork',
+        'testimonials.badge.jss': '100% Job Success',
+        'testimonials.badge.toprated': 'Top Rated',
+        'testimonials.badge.rating': '5.0 / 5.0 Rating',
+        'testimonials.q.quality': 'Committed to Quality',
+        'testimonials.q.communicator': 'Clear Communicator',
+        'testimonials.q.collaborative': 'Collaborative',
+        'testimonials.q.professional': 'Professional',
+        'testimonials.q.detail': 'Detail Oriented',
+        'testimonials.q.reliable': 'Reliable',
+        'testimonials.q.solution': 'Solution Oriented',
+        'testimonials.t1.text': '"Avner is AMAZING! The best of the best. He has the skills, he has the smarts, he has the creativity. Great communication, and very dedicated. Of the 100+ hires I\'ve made on Upwork, Avner is Top 5, if not #1."',
+        'testimonials.t1.project': 'Geographic Data Visualization - BI',
+        'testimonials.t2.text': '"Avner is truly a blessing to work with. Extremely responsive and thorough. He makes difficult tasks seem easy and is a true professional. I look forward to the next opportunity we have to work together!"',
+        'testimonials.t2.project': 'LiDAR Terrain Processing',
+        'testimonials.t3.text': '"Avner was responsive, proactive and very professional - everything you need from a collaborator."',
+        'testimonials.t3.project': 'GIS Land Regularization',
+        'testimonials.t4.text': '"He showed great dedication to the work, approached every task with passion, and was always willing to learn and try different methods to solve problems."',
+        'testimonials.t4.project': 'Marketing Data Scientist',
+        'testimonials.t5.text': '"Avner is very senior. Understands the request very well. Works fast and accurate. If something is not fully clear, he directly asks for clarification. I am convinced he can do much more complex work than he did for my small job."',
+        'testimonials.t5.project': 'Heatmap Netherlands',
+        'testimonials.t6.text': '"Avner was amazing. Delivered early and included extra added functionality."',
+        'testimonials.t6.project': 'Data Cleaning & Interactive Map',
+        'testimonials.cta': 'View all reviews on Upwork',
+
         // Contact
         'contact.title': 'Get In Touch',
         'contact.subtitle': 'Have a dataset that needs sense made of it? Let\'s talk.',
@@ -682,6 +710,7 @@ const translations = {
         'nav.services': 'Servicios',
         'nav.projects': 'Proyectos',
         'nav.clients': 'Clientes',
+        'nav.testimonials': 'Testimonios',
         'nav.contact': 'Contacto',
 
         // Hero
@@ -696,7 +725,7 @@ const translations = {
         // About
         'about.title': 'Sobre Mi',
         'about.p1': 'Empece en el bosque — literalmente. Mi formacion es en ingenieria forestal, donde aprendi a pensar en capas: suelo, terreno, dosel, clima. Cuando descubri la ciencia de datos, fue el mismo trabajo con herramientas mas afiladas. Hoy construyo los pipelines, dashboards y modelos espaciales que convierten datos brutos en algo que un equipo puede usar.',
-        'about.p2': 'He trabajado con agencias gubernamentales en Brasil, consultado para startups europeas y tomado proyectos freelance en siete paises. El hilo comun siempre es el mismo: alguien tiene datos desordenados y necesita una respuesta clara.',
+        'about.p2': 'He trabajado con agencias gubernamentales en Brasil, consultado para startups europeas y entregado proyectos freelance en siete paises. Los clientes destacan consistentemente la entrega rapida, comunicacion clara y el habito de ir mas alla de lo solicitado. El hilo comun siempre es el mismo: alguien tiene datos desordenados y necesita una respuesta clara.',
         'about.education': 'Educacion',
         'about.edu1.title': 'Maestria en Ciencia de Datos',
         'about.edu1.school': 'Nuclio Digital School, 2023',
@@ -1337,6 +1366,33 @@ const translations = {
         'clients.title': 'Confian en Mi',
         'clients.subtitle': 'De startups a agencias gubernamentales — algunos de los equipos con los que he trabajado',
 
+        // Testimonials
+        'testimonials.title': 'Lo Que Dicen los Clientes',
+        'testimonials.subtitle': 'Opiniones reales de proyectos completados en Upwork',
+        'testimonials.badge.jss': '100% Job Success',
+        'testimonials.badge.toprated': 'Top Rated',
+        'testimonials.badge.rating': '5.0 / 5.0 Rating',
+        'testimonials.q.quality': 'Comprometido con la Calidad',
+        'testimonials.q.communicator': 'Comunicador Claro',
+        'testimonials.q.collaborative': 'Colaborativo',
+        'testimonials.q.professional': 'Profesional',
+        'testimonials.q.detail': 'Orientado al Detalle',
+        'testimonials.q.reliable': 'Confiable',
+        'testimonials.q.solution': 'Orientado a Soluciones',
+        'testimonials.t1.text': '"Avner es INCREIBLE! El mejor de los mejores. Tiene las habilidades, la inteligencia y la creatividad. Excelente comunicacion y muy dedicado. De las 100+ contrataciones que he hecho en Upwork, Avner esta en el Top 5, si no el #1."',
+        'testimonials.t1.project': 'Visualizacion de Datos Geograficos - BI',
+        'testimonials.t2.text': '"Avner es una bendicion para trabajar. Extremadamente receptivo y minucioso. Hace que las tareas dificiles parezcan faciles y es un verdadero profesional."',
+        'testimonials.t2.project': 'Procesamiento de Terreno LiDAR',
+        'testimonials.t3.text': '"Avner fue receptivo, proactivo y muy profesional - todo lo que necesitas de un colaborador."',
+        'testimonials.t3.project': 'Regularizacion de Tierras GIS',
+        'testimonials.t4.text': '"Mostro gran dedicacion al trabajo, abordo cada tarea con pasion y siempre estuvo dispuesto a aprender y probar diferentes metodos para resolver problemas."',
+        'testimonials.t4.project': 'Cientifico de Datos de Marketing',
+        'testimonials.t5.text': '"Avner es muy senior. Entiende muy bien la solicitud. Trabaja rapido y preciso. Si algo no esta completamente claro, pregunta directamente. Estoy convencido de que puede hacer trabajo mucho mas complejo."',
+        'testimonials.t5.project': 'Mapa de Calor Paises Bajos',
+        'testimonials.t6.text': '"Avner fue increible. Entrego antes de tiempo e incluyo funcionalidad adicional."',
+        'testimonials.t6.project': 'Limpieza de Datos y Mapa Interactivo',
+        'testimonials.cta': 'Ver todas las resenas en Upwork',
+
         // Contact
         'contact.title': 'Contactame',
         'contact.subtitle': 'Tienes un dataset que necesita orden? Hablemos.',
@@ -1357,6 +1413,7 @@ const translations = {
         'nav.services': 'Serviços',
         'nav.projects': 'Projetos',
         'nav.clients': 'Clientes',
+        'nav.testimonials': 'Depoimentos',
         'nav.contact': 'Contato',
 
         // Hero
@@ -1371,7 +1428,7 @@ const translations = {
         // About
         'about.title': 'Sobre Mim',
         'about.p1': 'Comecei na floresta — literalmente. Minha formação é em engenharia florestal, onde aprendi a pensar em camadas: solo, terreno, dossel, clima. Quando descobri ciência de dados, pareceu o mesmo trabalho com ferramentas mais afiadas. Hoje construo os pipelines, dashboards e modelos espaciais que transformam dados brutos em algo que uma equipe consegue usar.',
-        'about.p2': 'Já trabalhei com órgãos de governo no Brasil, consultei para startups europeias e peguei projetos freelance em sete países. O que conecta tudo é sempre a mesma coisa: alguém tem dados bagunçados e precisa de uma resposta clara.',
+        'about.p2': 'Já trabalhei com órgãos de governo no Brasil, consultei para startups europeias e entreguei projetos freelance em sete países. Os clientes destacam consistentemente a entrega rápida, comunicação clara e o hábito de ir além do solicitado. O que conecta tudo é sempre a mesma coisa: alguém tem dados bagunçados e precisa de uma resposta clara.',
         'about.education': 'Educação',
         'about.edu1.title': 'Mestrado em Ciência de Dados',
         'about.edu1.school': 'Nuclio Digital School, 2023',
@@ -2011,6 +2068,33 @@ const translations = {
         // Clients
         'clients.title': 'Empresas que Confiam',
         'clients.subtitle': 'De startups a órgãos de governo — algumas das equipes com quem já trabalhei',
+
+        // Testimonials
+        'testimonials.title': 'O Que os Clientes Dizem',
+        'testimonials.subtitle': 'Feedback real de projetos concluidos no Upwork',
+        'testimonials.badge.jss': '100% Job Success',
+        'testimonials.badge.toprated': 'Top Rated',
+        'testimonials.badge.rating': '5.0 / 5.0 Rating',
+        'testimonials.q.quality': 'Comprometido com Qualidade',
+        'testimonials.q.communicator': 'Comunicador Claro',
+        'testimonials.q.collaborative': 'Colaborativo',
+        'testimonials.q.professional': 'Profissional',
+        'testimonials.q.detail': 'Orientado a Detalhes',
+        'testimonials.q.reliable': 'Confiavel',
+        'testimonials.q.solution': 'Orientado a Solucoes',
+        'testimonials.t1.text': '"Avner e INCRIVEL! O melhor dos melhores. Tem as habilidades, a inteligencia e a criatividade. Otima comunicacao e muito dedicado. Das 100+ contratacoes que fiz no Upwork, Avner esta no Top 5, se nao o #1."',
+        'testimonials.t1.project': 'Visualizacao de Dados Geograficos - BI',
+        'testimonials.t2.text': '"Avner e uma bencao para trabalhar. Extremamente responsivo e minucioso. Faz tarefas dificeis parecerem faceis e e um verdadeiro profissional."',
+        'testimonials.t2.project': 'Processamento de Terreno LiDAR',
+        'testimonials.t3.text': '"Avner foi atencioso, proativo e muito profissional - tudo o que se espera de um colaborador."',
+        'testimonials.t3.project': 'Regularizacao Fundiaria GIS',
+        'testimonials.t4.text': '"Mostrou grande dedicacao ao trabalho, abordou cada tarefa com paixao e sempre esteve disposto a aprender e tentar diferentes metodos para resolver problemas."',
+        'testimonials.t4.project': 'Cientista de Dados de Marketing',
+        'testimonials.t5.text': '"Avner e muito senior. Entende muito bem a solicitacao. Trabalha rapido e preciso. Se algo nao esta totalmente claro, pergunta diretamente. Estou convencido de que pode fazer trabalho muito mais complexo."',
+        'testimonials.t5.project': 'Mapa de Calor Holanda',
+        'testimonials.t6.text': '"Avner foi incrivel. Entregou antes do prazo e incluiu funcionalidade extra."',
+        'testimonials.t6.project': 'Limpeza de Dados e Mapa Interativo',
+        'testimonials.cta': 'Ver todas as avaliacoes no Upwork',
 
         // Contact
         'contact.title': 'Entre em Contato',
