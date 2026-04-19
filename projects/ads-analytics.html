@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Multi-Channel Ads Analytics - Cross-platform advertising performance analysis for events company">
+    <meta name="description" content="Meta Ads + Ticket Sales Analytics: Streamlit dashboard that merges Meta Ads exports with live ticket sales and converts revenue across currencies in real time.">
     <meta name="robots" content="index,follow">
-    <title>Multi-Channel Ads Analytics | Avner Gomes</title>
+    <title>Meta Ads + Ticket Sales Analytics | Avner Gomes</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,10 @@
         .tech-tag { background: var(--color-bg-alt); color: var(--color-text); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 500; }
         .highlight-box { background: linear-gradient(135deg, #fffaf0 0%, #feebc8 100%); border-left: 4px solid #dd6b20; padding: 1.5rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; }
         .highlight-box p { margin: 0; color: var(--color-text); }
+        .screenshot-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+        .screenshot-card { background: var(--color-bg-alt); border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .screenshot-card img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--color-border); }
+        .screenshot-caption { padding: 0.75rem 1rem; font-size: 0.9rem; color: var(--color-text-light); }
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: white; opacity: 0.9; margin-bottom: 1rem; font-size: 0.875rem; }
         .back-link:hover { opacity: 1; color: white; }
         .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
@@ -74,12 +78,13 @@
     <section class="project-hero">
         <div class="container">
             <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span data-i18n="project.backToProjects">Back to Projects</span></a>
-            <h1 data-i18n="project8.pageTitle">Multi-Channel Ads & Ticket Sales Analytics</h1>
-            <p class="subtitle" data-i18n="project8.heroDesc">Unified advertising analytics across Google, Meta, and TikTok, connecting ad spend to ticket sales performance for an events company.</p>
+            <h1 data-i18n="project8.pageTitle">Meta Ads + Ticket Sales Analytics</h1>
+            <p class="subtitle" data-i18n="project8.heroDesc">Streamlit dashboard that merges Meta Ads exports with live ticket sales from a public Google Sheet and normalizes revenue across currencies in real time.</p>
             <div class="project-meta">
                 <div class="meta-item"><i class="fas fa-folder"></i><span data-i18n="projects.cat.marketing">Marketing Analytics</span></div>
-                <div class="meta-item"><i class="fas fa-calendar"></i><span>2024</span></div>
-                <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="project8.location">Latin America</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2024-2025</span></div>
+                <div class="meta-item"><i class="fab fa-github"></i><a href="https://github.com/avnergomes/ads_analyzer" target="_blank" rel="noopener" style="color: white; text-decoration: underline;">avnergomes/ads_analyzer</a></div>
+                <div class="meta-item"><i class="fas fa-code-branch"></i><a href="https://github.com/avnergomes/ads-analyzer" target="_blank" rel="noopener" style="color: white; text-decoration: underline;" data-i18n="project8.repoV1">v1 archive</a></div>
             </div>
         </div>
     </section>
@@ -88,59 +93,90 @@
         <div class="container">
             <div class="content-section">
                 <h2 data-i18n="project.overview">Project Overview</h2>
-                <p data-i18n="project8.overview1">An events company was running advertising campaigns across Google, Meta, and TikTok but lacked visibility into which platform and campaign was actually driving ticket sales. The project unified data from all ad platforms with ticketing system data to provide clear ROI attribution.</p>
-                <p data-i18n="project8.overview2">The analytics solution enabled the marketing team to identify top-performing campaigns, optimize budget allocation, and understand geographic performance patterns across different cities.</p>
+                <p data-i18n="project8.overview1">An events company was running Meta Ads campaigns across many shows and venues but struggled to connect ad spend to actual ticket revenue, especially when tickets were priced in different currencies. The dashboard ingests the three standard Meta exports (Days, Days + Placement + Device, Days + Time) and pairs them with live ticket sales pulled from a public Google Sheet.</p>
+                <p data-i18n="project8.overview2">A regex-based rules file maps every ad row to its show and funnel stage. Non-USD revenue is converted with live exchange rates (open.er-api.com, with offline fallback), and ticket KPIs reflect the latest snapshot per show, so capacity, tickets sold, revenue, and occupancy always stay current.</p>
                 <div class="highlight-box">
-                    <p data-i18n="project8.highlight">For the first time, the team could see which platform and which city drove the best ROI per ticket sold, enabling data-driven budget optimization.</p>
+                    <p data-i18n="project8.highlight">For the first time the team could see, per show, how Meta spend translated into tickets sold and USD revenue, with funnel decay and pacing alerts surfaced directly in the dashboard.</p>
                 </div>
             </div>
 
             <div class="content-section">
                 <h2 data-i18n="project.keyMetrics">Key Metrics</h2>
                 <div class="kpi-grid">
-                    <div class="kpi-card"><div class="number">3</div><div class="label" data-i18n="project8.metric1">Ad Platforms</div></div>
-                    <div class="kpi-card"><div class="number">ROI</div><div class="label" data-i18n="project8.metric2">Per Ticket Tracking</div></div>
-                    <div class="kpi-card"><div class="number">10+</div><div class="label" data-i18n="project8.metric3">Cities Analyzed</div></div>
+                    <div class="kpi-card"><div class="number">3</div><div class="label" data-i18n="project8.metric1">Meta CSV types ingested</div></div>
+                    <div class="kpi-card"><div class="number">Live</div><div class="label" data-i18n="project8.metric2">FX rates with fallback</div></div>
+                    <div class="kpi-card"><div class="number">Per show</div><div class="label" data-i18n="project8.metric3">Snapshot-aware metrics</div></div>
                 </div>
             </div>
 
             <div class="content-section">
                 <h2 data-i18n="project.technicalApproach">Technical Approach</h2>
-                <h3 data-i18n="project8.extraction">Data Extraction</h3>
+                <h3 data-i18n="project8.extraction">Data Ingestion</h3>
                 <ul>
-                    <li data-i18n="project8.tech1">Google Ads API data extraction</li>
-                    <li data-i18n="project8.tech2">Meta Marketing API integration</li>
-                    <li data-i18n="project8.tech3">TikTok Ads data export processing</li>
-                    <li data-i18n="project8.tech4">Ticketing system sales data integration</li>
+                    <li data-i18n="project8.tech1">Multi-CSV Meta Ads export parser (Days, Days + Placement + Device, Days + Time), auto-detecting file type by column signature</li>
+                    <li data-i18n="project8.tech2">Public Google Sheets connector that stops at the endRow marker to avoid historical noise</li>
+                    <li data-i18n="project8.tech3">Regex rules file (campaign_mapping_fixed.csv) that classifies every ad by show, funnel stage, and legacy tags</li>
+                    <li data-i18n="project8.tech4">Live FX from open.er-api.com with a 6-hour refresh and static-rate fallback when the API is unavailable</li>
                 </ul>
                 <h3 data-i18n="project8.analytics">Analytics Pipeline</h3>
                 <ul>
-                    <li data-i18n="project8.an1">Metric standardization across platforms</li>
-                    <li data-i18n="project8.an2">Cost per ticket sold calculation</li>
-                    <li data-i18n="project8.an3">ROAS analysis by campaign and city</li>
-                    <li data-i18n="project8.an4">Performance trend visualization</li>
+                    <li data-i18n="project8.an1">Revenue normalization to USD for cross-show comparison</li>
+                    <li data-i18n="project8.an2">Snapshot-aware ticket metrics (latest report per show drives capacity, tickets, revenue, and occupancy)</li>
+                    <li data-i18n="project8.an3">Funnel decay across F1 / F2 / AddToCart / Purchase stages</li>
+                    <li data-i18n="project8.an4">Pacing alerts and per-show ROI surfaced next to raw downloadable datasets</li>
                 </ul>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project8.screenshotsTitle">Dashboard Screenshots</h2>
+                <p data-i18n="project8.screenshotsIntro">Running locally with the three Meta exports uploaded and a representative ticket-sales snapshot in place of the revoked live Google Sheet.</p>
+                <div class="screenshot-grid">
+                    <div class="screenshot-card">
+                        <img src="../assets/projects/ads-analyzer/02-full-dashboard.png" alt="Ads Analyzer dashboard landing view with sidebar uploads and performance snapshot KPIs" loading="lazy" />
+                        <div class="screenshot-caption" data-i18n="project8.screenshot1">Landing view: sidebar with the three uploaded Meta exports, performance snapshot (shows, tickets sold, occupancy, revenue) and top performing shows.</div>
+                    </div>
+                    <div class="screenshot-card">
+                        <img src="../assets/projects/ads-analyzer/04-show-health-dashboard.png" alt="Show Health Dashboard tab showing Toronto tickets remaining, daily sales target, occupancy and momentum sparklines" loading="lazy" />
+                        <div class="screenshot-caption" data-i18n="project8.screenshot2">Show Health Dashboard: per-show audit with occupancy, tickets remaining, daily sales target, last 7 days and a sales momentum sparkline.</div>
+                    </div>
+                    <div class="screenshot-card">
+                        <img src="../assets/projects/ads-analyzer/05-funnel-intelligence.png" alt="Funnel Intelligence tab showing spend, impressions, active duration, performance drop detection and Instagram vs Facebook comparison" loading="lazy" />
+                        <div class="screenshot-caption" data-i18n="project8.screenshot3">Funnel Intelligence: spend, results, impressions and active duration for each funnel, with automatic performance-drop detection and Facebook vs Instagram comparison.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="project8.evolutionTitle">Evolution: from regex MVP to production stack</h2>
+                <h3>v1 &mdash; ads-analyzer</h3>
+                <p data-i18n="project8.evolutionV1">First iteration focused only on Meta Ads. A single Streamlit page ingested up to three CSV types and used a regex rules file to classify every ad by show and funnel stage. Designed for quick deployment on Streamlit Community Cloud.</p>
+                <h3>v2 &rarr; v3 &mdash; ads_analyzer</h3>
+                <p data-i18n="project8.evolutionV2">Integrated live ticket sales from a public Google Sheet, added currency-aware revenue handling with live FX, and reworked ticket metrics to be snapshot-aware so every KPI reflects the latest report per show.</p>
+                <h3>optimization_v4</h3>
+                <p data-i18n="project8.evolutionV4">Refactored the data mapper, centralized environment-aware caching and logging in deployment_config.py, and produced deployment checklists for Ubuntu VPS with systemd and for Fly.io, ready for a small-footprint production run.</p>
             </div>
 
             <div class="content-section">
                 <h2 data-i18n="project.technologies">Technologies Used</h2>
                 <div class="tech-stack">
                     <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Google Ads API</span>
-                    <span class="tech-tag">Meta Marketing API</span>
+                    <span class="tech-tag">Streamlit</span>
                     <span class="tech-tag">Pandas</span>
-                    <span class="tech-tag">Power BI</span>
-                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">Plotly</span>
+                    <span class="tech-tag">Altair</span>
+                    <span class="tech-tag">Google Sheets</span>
+                    <span class="tech-tag">open.er-api.com</span>
+                    <span class="tech-tag">Fly.io</span>
                 </div>
             </div>
 
             <div class="content-section">
                 <h2 data-i18n="project.deliverables">Deliverables</h2>
                 <ul>
-                    <li data-i18n="project8.del1">Unified multi-platform analytics dashboard</li>
-                    <li data-i18n="project8.del2">ROI comparison report by platform and city</li>
-                    <li data-i18n="project8.del3">Automated data extraction pipelines</li>
-                    <li data-i18n="project8.del4">Budget optimization recommendations</li>
+                    <li data-i18n="project8.del1">Integrated Streamlit dashboard covering funnel decay, pacing alerts, and FX-aware revenue per show</li>
+                    <li data-i18n="project8.del2">Reusable public Google Sheets connector module with health-check endpoint</li>
+                    <li data-i18n="project8.del3">Human-editable regex rules file that drives show and funnel classification</li>
+                    <li data-i18n="project8.del4">Deployment guides for Ubuntu VPS with systemd and for Fly.io, plus a deployment checklist</li>
                 </ul>
             </div>
 

@@ -776,41 +776,44 @@
                     </div>
                 </div>
 
-                <!-- Project 8: Multi-Channel Ads Analytics -->
+                <!-- Project 8: Meta Ads + Ticket Sales Analytics -->
                 <div class="project-card" data-category="marketing bi">
                     <div class="project-image">
                         <div class="project-placeholder" style="background: linear-gradient(135deg, #7b341e 0%, #dd6b20 100%);">
                             <i class="fas fa-ad"></i>
                         </div>
                         <div class="project-overlay">
-                            <a href="projects/ads-analytics.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="projects/ads-analytics.html" class="project-link" aria-label="View case study"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="https://github.com/avnergomes/ads_analyzer" target="_blank" rel="noopener" class="project-link" aria-label="View on GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="project-content">
                         <span class="project-category" data-i18n="projects.cat.marketing">Marketing Analytics</span>
-                        <h3 data-i18n="project8.title">Multi-Channel Ads & Ticket Sales Analytics</h3>
+                        <h3 data-i18n="project8.title">Meta Ads + Ticket Sales Analytics</h3>
                         <p data-i18n="project8.desc">
-                            End-to-end workflow for multi-platform ad analytics (Google, Meta, TikTok)
-                            with ticket sales performance analysis by show and city.
+                            Streamlit dashboard that merges Meta Ads exports with live ticket sales from a public
+                            Google Sheet and normalizes revenue across currencies in real time.
                         </p>
                         <div class="project-tech">
-                            <span>Google Ads</span>
-                            <span>Meta Ads</span>
-                            <span>TikTok Ads</span>
                             <span>Python</span>
+                            <span>Streamlit</span>
+                            <span>Pandas</span>
+                            <span>Plotly</span>
+                            <span>Google Sheets</span>
                         </div>
                         <div class="project-details">
                             <h4 data-i18n="project.stages">Development Stages</h4>
                             <ul>
-                                <li data-i18n="project8.stage1">Data extraction across ad platforms</li>
-                                <li data-i18n="project8.stage2">Cleaning and integration</li>
-                                <li data-i18n="project8.stage3">Standardized metrics transformation</li>
-                                <li data-i18n="project8.stage4">Performance analysis dashboard</li>
+                                <li data-i18n="project8.stage1">Multi-CSV Meta export parser and Google Sheets connector</li>
+                                <li data-i18n="project8.stage2">Regex-based show and funnel stage classification</li>
+                                <li data-i18n="project8.stage3">Live FX conversion and snapshot-aware ticket metrics</li>
+                                <li data-i18n="project8.stage4">Funnel decay, pacing alerts, and per-show ROI</li>
                             </ul>
                             <h4 data-i18n="project.benefit">Main Benefit</h4>
                             <p data-i18n="project8.benefit">
-                                Clear visibility of ad spend efficiency and ticket sales performance
-                                supporting data-driven ROI optimization.
+                                For the first time the team could see, per show, how Meta spend translated
+                                into tickets sold and USD revenue, with funnel decay and pacing alerts
+                                surfaced directly in the dashboard.
                             </p>
                         </div>
                     </div>
