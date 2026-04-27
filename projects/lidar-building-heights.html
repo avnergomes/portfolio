@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LiDAR Building Heights - Automated extraction of building heights for 27,000+ buildings in Central London using classified airborne LiDAR.">
+    <meta name="robots" content="index,follow">
+    <title>LiDAR Building Heights | Avner Gomes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-hero { background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 100%); color: white; padding: 6rem 0 4rem; margin-top: 80px; }
+        .project-hero .container { max-width: 1080px; }
+        .project-hero h1 { font-family: var(--font-display); font-size: 2.75rem; margin-bottom: 1rem; }
+        .project-hero .subtitle { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; }
+        .project-meta { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item i { opacity: 0.8; }
+        .project-content { padding: 4rem 0; }
+        .project-content .container { max-width: 1080px; }
+        .content-section { margin-bottom: 3rem; }
+        .content-section h2 { font-family: var(--font-display); font-size: 1.75rem; color: var(--color-primary); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border); }
+        .content-section h3 { font-size: 1.25rem; color: var(--color-text); margin: 1.5rem 0 0.75rem; }
+        .content-section p { color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem; }
+        .content-section ul { list-style: none; padding: 0; }
+        .content-section li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--color-text-light); }
+        .content-section li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #0284c7; }
+        .content-section ol { padding-left: 1.25rem; }
+        .content-section ol li { padding-left: 0; color: var(--color-text-light); list-style: decimal; }
+        .content-section ol li::before { content: ""; }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .tech-tag { background: var(--color-bg-alt); color: var(--color-text); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 500; }
+        .highlight-box { background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%); border-left: 4px solid #0284c7; padding: 1.5rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; }
+        .highlight-box p { margin: 0; color: var(--color-text); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: white; opacity: 0.9; margin-bottom: 1rem; font-size: 0.875rem; }
+        .back-link:hover { opacity: 1; color: white; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .kpi-card { background: var(--color-bg-alt); padding: 1.25rem; border-radius: var(--radius-md); text-align: center; }
+        .kpi-card .number { font-size: 2rem; font-weight: 700; color: #0c4a6e; }
+        .kpi-card .label { font-size: 0.875rem; color: var(--color-text-light); margin-top: 0.25rem; }
+        .figure { margin: 1.5rem 0; }
+        .figure img { width: 100%; border: 1px solid var(--color-border); border-radius: var(--radius-md); display: block; background: #fff; }
+        .figure figcaption { font-size: 0.875rem; color: var(--color-text-light); margin-top: 0.5rem; text-align: center; font-style: italic; }
+        .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        @media (max-width: 768px) { .row-2 { grid-template-columns: 1fr; } .project-hero { padding: 4rem 0 3rem; } .project-hero h1 { font-size: 2rem; } }
+        .data-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin-top: 1rem; }
+        .data-table th, .data-table td { padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--color-border); text-align: right; }
+        .data-table th { background: var(--color-bg-alt); color: var(--color-text); font-weight: 600; text-align: right; }
+        .data-table th:first-child, .data-table td:first-child { text-align: left; }
+        .data-table tbody tr:hover { background: var(--color-bg-alt); }
+        .table-wrap { overflow-x: auto; }
+        .badge { display: inline-block; padding: 0.25rem 0.6rem; background: #0284c7; color: white; border-radius: 999px; font-size: 0.75rem; font-weight: 600; margin-left: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Projects</span></a>
+            <h1>LiDAR Building Heights<span class="badge">Case Study</span></h1>
+            <p class="subtitle">Automated extraction of building heights from classified airborne LiDAR — 27,338 buildings measured across 25 km² of Central London in under two minutes.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span>Geospatial / LiDAR</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2026</span></div>
+                <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span>Central London, UK (EPSG:27700)</span></div>
+                <div class="meta-item"><i class="fas fa-database"></i><span>43 M LiDAR returns</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+
+            <div class="content-section">
+                <h2>Project Overview</h2>
+                <p>A client provided a 1.6 GB airborne LiDAR tile and asked whether it was the right way to measure the height of 400 buildings, after attempting to convert the point cloud to a mesh and inspect it manually in a 3D modelling tool.</p>
+                <p>That manual approach does not scale. By treating the <code>.laz</code> file as the primary input and using its ASPRS classification, the same job becomes a one-pass repeatable pipeline that produces a spreadsheet, a GeoPackage and an HTML report from a single command.</p>
+                <div class="highlight-box">
+                    <p><strong>Outcome:</strong> Heights computed for 27,338 buildings (≈ 70× the original target of 400) in 111 seconds end-to-end, with a median building height of 12.9 m and a tallest measurement of 278.4 m.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Key Metrics</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-card"><div class="number">25 km²</div><div class="label">Tile area covered</div></div>
+                    <div class="kpi-card"><div class="number">43.0 M</div><div class="label">LiDAR returns processed</div></div>
+                    <div class="kpi-card"><div class="number">27,338</div><div class="label">Buildings measured</div></div>
+                    <div class="kpi-card"><div class="number">12.9 m</div><div class="label">Median height</div></div>
+                    <div class="kpi-card"><div class="number">278 m</div><div class="label">Tallest building</div></div>
+                    <div class="kpi-card"><div class="number">~111 s</div><div class="label">End-to-end runtime</div></div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Methodology</h2>
+                <ol>
+                    <li>Read the classified <code>.laz</code> file with <code>laspy + lazrs</code> and split returns into <em>ground</em> (class 2) and <em>building</em> (class 6).</li>
+                    <li>Build a 1-metre Digital Terrain Model from class-2 returns using per-cell minimum Z, then fill gaps via nearest-neighbour distance transform.</li>
+                    <li>Fetch building footprints from OpenStreetMap inside the tile bounding box and reproject them to the survey CRS (EPSG:27700, British National Grid).</li>
+                    <li>For every footprint, locate the relevant class-6 returns through 50-metre spatial bins and a vectorised <code>shapely.contains_xy</code> point-in-polygon test.</li>
+                    <li>Compute building height as <code>p95(roof Z) − DTM(centroid)</code>. The 95th percentile suppresses spurious high returns from antennas, edge effects and low-density bins.</li>
+                    <li>Reject footprints with fewer than five returns or non-positive height; export results as XLSX, GeoPackage and a self-contained HTML report.</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2>Footprints Coloured by Height</h2>
+                <figure class="figure">
+                    <img src="../assets/projects/lidar-building-heights/map.png" alt="Building footprints coloured by height across the 5 × 5 km Central London tile" loading="lazy">
+                    <figcaption>5 × 5 km LiDAR tile, EPSG:27700. Footprints from OpenStreetMap, hillshade derived from the LiDAR-built Digital Terrain Model.</figcaption>
+                </figure>
+            </div>
+
+            <div class="row-2">
+                <div class="content-section">
+                    <h2>Height Distribution</h2>
+                    <figure class="figure">
+                        <img src="../assets/projects/lidar-building-heights/histogram.png" alt="Histogram of measured building heights" loading="lazy">
+                        <figcaption>Distribution of measured heights across 27,338 buildings.</figcaption>
+                    </figure>
+                </div>
+                <div class="content-section">
+                    <h2>DTM Cross-section</h2>
+                    <figure class="figure">
+                        <img src="../assets/projects/lidar-building-heights/profile.png" alt="DTM cross-section through the centre of the tile" loading="lazy">
+                        <figcaption>Ground elevation profile derived from class-2 LiDAR returns.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Top 20 Tallest Buildings</h2>
+                <div class="table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Building ID</th>
+                                <th>Easting (m)</th>
+                                <th>Northing (m)</th>
+                                <th>Footprint area (m²)</th>
+                                <th>LiDAR points</th>
+                                <th>Height (m)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr><td>BLD-22199</td><td>533,116.1</td><td>181,241.4</td><td>3,447</td><td>2,624</td><td><strong>278.4</strong></td></tr>
+                                <tr><td>BLD-16318</td><td>533,167.7</td><td>181,181.3</td><td>2,650</td><td>154</td><td><strong>222.9</strong></td></tr>
+                                <tr><td>BLD-6996</td><td>533,255.6</td><td>181,447.7</td><td>1,799</td><td>1,638</td><td><strong>198.6</strong></td></tr>
+                                <tr><td>BLD-11823</td><td>533,052.0</td><td>181,328.0</td><td>1,910</td><td>1,322</td><td><strong>185.0</strong></td></tr>
+                                <tr><td>BLD-0205</td><td>533,302.1</td><td>181,252.2</td><td>2,523</td><td>33</td><td><strong>180.3</strong></td></tr>
+                                <tr><td>BLD-22149</td><td>533,245.0</td><td>181,376.1</td><td>4,913</td><td>1,943</td><td><strong>176.8</strong></td></tr>
+                                <tr><td>BLD-22025</td><td>533,220.0</td><td>181,385.6</td><td>2,873</td><td>1,441</td><td><strong>176.6</strong></td></tr>
+                                <tr><td>BLD-22102</td><td>533,386.4</td><td>182,103.4</td><td>725</td><td>363</td><td><strong>164.2</strong></td></tr>
+                                <tr><td>BLD-18555</td><td>531,619.1</td><td>180,472.8</td><td>1,313</td><td>224</td><td><strong>163.4</strong></td></tr>
+                                <tr><td>BLD-11855</td><td>533,049.0</td><td>181,306.6</td><td>196</td><td>86</td><td><strong>154.5</strong></td></tr>
+                                <tr><td>BLD-19691</td><td>533,322.9</td><td>182,015.6</td><td>1,557</td><td>987</td><td><strong>153.5</strong></td></tr>
+                                <tr><td>BLD-20749</td><td>532,157.6</td><td>182,855.8</td><td>1,041</td><td>222</td><td><strong>150.5</strong></td></tr>
+                                <tr><td>BLD-0407</td><td>531,456.6</td><td>180,445.2</td><td>810</td><td>915</td><td><strong>150.0</strong></td></tr>
+                                <tr><td>BLD-16484</td><td>533,074.7</td><td>180,848.4</td><td>666</td><td>139</td><td><strong>147.5</strong></td></tr>
+                                <tr><td>BLD-13009</td><td>533,088.7</td><td>180,888.0</td><td>3,720</td><td>92</td><td><strong>145.6</strong></td></tr>
+                                <tr><td>BLD-9786</td><td>533,224.1</td><td>181,066.6</td><td>2,176</td><td>1,303</td><td><strong>141.0</strong></td></tr>
+                                <tr><td>BLD-20452</td><td>532,639.0</td><td>181,778.0</td><td>6,297</td><td>8,825</td><td><strong>139.2</strong></td></tr>
+                                <tr><td>BLD-21211</td><td>533,300.6</td><td>181,480.3</td><td>1,184</td><td>1,043</td><td><strong>135.6</strong></td></tr>
+                                <tr><td>BLD-22155</td><td>532,710.8</td><td>182,680.4</td><td>925</td><td>91</td><td><strong>135.3</strong></td></tr>
+                                <tr><td>BLD-4517</td><td>532,275.1</td><td>181,866.4</td><td>613</td><td>895</td><td><strong>129.1</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin-top: 1rem;">Heights range from 1.04 m to 278.37 m; the 95th percentile sits at 28.3 m, while the median is 12.9 m. Ground elevations across the tile span -23.5 m to 49.4 m above the British vertical datum.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Technologies</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python 3.12</span>
+                    <span class="tech-tag">laspy + lazrs</span>
+                    <span class="tech-tag">NumPy / SciPy</span>
+                    <span class="tech-tag">Rasterio</span>
+                    <span class="tech-tag">GeoPandas</span>
+                    <span class="tech-tag">Shapely 2 (vectorised)</span>
+                    <span class="tech-tag">OSMnx / Overpass</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">PROJ / EPSG:27700</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Deliverables</h2>
+                <ul>
+                    <li>Spreadsheet with one row per building (ID, OSM reference, centroid coordinates, footprint area, LiDAR point count, ground elevation, roof elevation, height).</li>
+                    <li>GeoPackage with attributed building footprints, ready for QGIS or ArcGIS.</li>
+                    <li>1-metre Digital Terrain Model as GeoTIFF in the survey CRS.</li>
+                    <li>Self-contained HTML report with map, histogram, top-20 ranking and full table.</li>
+                    <li>Reproducible Python pipeline; the same script reruns from raw <code>.laz</code> in roughly two minutes.</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#projects" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span>Back to Projects</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-mark">
+                        <picture>
+                            <source srcset="../assets/logo2.webp" type="image/webp" />
+                            <img src="../assets/logo2.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                        </picture>
+                        Avner Gomes
+                    </div>
+                    <p>Forest Engineer & Data Scientist</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnergomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Avner Gomes. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

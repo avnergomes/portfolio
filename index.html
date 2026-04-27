@@ -1430,6 +1430,49 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Project: LiDAR Building Heights -->
+                <div class="project-card" data-category="geo">
+                    <div class="project-image">
+                        <div class="project-placeholder" style="background: linear-gradient(135deg, #0c4a6e, #0284c7);">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="projects/lidar-building-heights.html" class="project-link" title="View case study"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Geospatial / LiDAR</span>
+                        <h3>LiDAR Building Heights</h3>
+                        <p>
+                            Automated extraction of building heights from classified airborne LiDAR.
+                            27,338 buildings measured across 25 km&sup2; of Central London in under two minutes.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>laspy</span>
+                            <span>Rasterio</span>
+                            <span>OSMnx</span>
+                            <span>Shapely 2</span>
+                        </div>
+                        <div class="project-details">
+                            <h4>Development Stages</h4>
+                            <ul>
+                                <li>Read classified .laz, split ground vs building returns</li>
+                                <li>Build 1 m DTM via per-cell minimum Z with NN gap-fill</li>
+                                <li>Pull OSM footprints, reproject to EPSG:27700</li>
+                                <li>Vectorised point-in-polygon over class-6 returns</li>
+                                <li>Height = p95(roof Z) - DTM(centroid)</li>
+                            </ul>
+                            <h4>Main Benefit</h4>
+                            <p>
+                                One-pass repeatable pipeline replaces manual mesh inspection,
+                                turning a 400-building task into a 27,000-building dataset with
+                                spreadsheet, GeoPackage and HTML report deliverables.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
