@@ -4,13 +4,13 @@
 
   <url>
     <loc>https://avnergomes.github.io/portfolio/</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://avnergomes.github.io/portfolio/" />
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://avnergomes.github.io/portfolio/?lang=pt" />
     <xhtml:link rel="alternate" hreflang="es" href="https://avnergomes.github.io/portfolio/?lang=es" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://avnergomes.github.io/portfolio/" />
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
 
   <url>
