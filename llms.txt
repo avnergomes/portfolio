@@ -1,0 +1,63 @@
+# Avner Paes Gomes
+
+> Senior Data Scientist and Forest Engineer based in Curitiba, Paraná, Brazil. 11+ years bridging Forest Engineering and advanced analytics. Specializes in geospatial data pipelines, remote sensing, MRV (Monitoring, Reporting, Verification) for carbon and biodiversity, business intelligence, and digital marketing analytics. Top Rated on Upwork with 100% Job Success and clients in 8+ countries (United States, United Kingdom, Germany, Panama, Ecuador, Cambodia, France, Brazil). MSc Data Science from Nuclio Digital School (Barcelona, 2023). B.Sc. Forest Engineering and MBA Precision Forest Management from Universidade Federal do Paraná (UFPR). Works at IDR-Paraná (Instituto de Desenvolvimento Rural do Paraná, IAPAR/EMATER) since 2018, currently as Technical Advisor for Geoprocessing in Area 4 (Information Management) since 2024.
+
+## Identity and contact
+- Full name: Avner Paes Gomes (also known as Avner Gomes)
+- Location: Curitiba, Paraná, Brazil
+- Email: avnerpaesgomes@gmail.com
+- Phone: +55 41 98805-5737
+- LinkedIn: https://www.linkedin.com/in/avnergomes/
+- GitHub: https://github.com/avnergomes
+- Upwork: https://www.upwork.com/freelancers/avnergomes
+- Portfolio: https://avnergomes.github.io/portfolio/
+
+## Featured projects
+- [IoF — Internet of Forests](https://avnergomes.github.io/portfolio/projects/iof-technology.html): MRV framework for the Amazon Basin (Panama region) with 200+ satellite layers, hectare-grid model, 29 environmental KPIs across 6 thematic groups, 100,000+ hectares verified for EUDR compliance. Client: One Amazon Foundation + AECOM.
+- [Capital Certainty — RESEX Verde Para Sempre](https://avnergomes.github.io/portfolio/projects/capital-certainty.html): Territorial intelligence on a 1.3 million-hectare federal extractive reserve in Pará, Brazil. Vector sanitation methodology isolating community zones from conflict claims for CDRU land regularization.
+- [Cityview — Urban Geocoding Pipeline](https://avnergomes.github.io/portfolio/projects/cityview.html): Production-grade geocoding pipeline for the Dallas-Fort Worth metropolitan area. 100,000+ addresses processed with multi-provider API fallback and 98%+ match accuracy.
+- [International Sales BI Dashboard (KOBE Interior Fabrics)](https://avnergomes.github.io/portfolio/projects/bi-international.html): Power BI + GeoPandas dashboard over 1,000+ postal areas across United Kingdom and Germany with daily refresh, adopted in weekly executive reviews.
+- [LiDAR Building Heights — Central London](https://avnergomes.github.io/portfolio/projects/lidar-building-heights.html): Automated extraction of building heights from classified airborne LiDAR. 27,338 buildings measured across 25 km² of Central London in under two minutes. EPSG:27700.
+- [Deep Grain — Agricultural Land Assessment](https://avnergomes.github.io/portfolio/projects/deep-grain.html): Investment-grade agricultural assessment in Ecuador (Esmeraldas, Guayas, El Oro). Geotagged field surveys combined with Sentinel-2 and Landsat NDVI analysis.
+- [Carbon Credit Generation Assessment](https://avnergomes.github.io/portfolio/projects/carbon-credit.html): Multi-temporal Landsat / Sentinel-2 NDVI analysis with biomass and tCO2e sequestration modeling for forest-restoration carbon projects in Brazil.
+- [Flai Data — Multi-Channel Ads Analytics](https://avnergomes.github.io/portfolio/projects/flai-data.html): Streamlit + Python platform unifying Google Ads, Meta Ads, TikTok Ads with live ticket sales across 30+ cities and FX normalization.
+- [WebGIS Platform Consulting — Orbify](https://avnergomes.github.io/portfolio/projects/webgis-consulting.html): UX evaluation and prioritized improvement backlog for a satellite-imagery WebGIS product. Cambodia / remote.
+- [Distance and Duration Matrix](https://avnergomes.github.io/portfolio/projects/route-planning.html): 1.3 million-plus OSM route pairs generated with OSMnx and OpenRouteService fallback, validated GeoPackage output.
+- [DataGeo Paraná](https://datageoparana.github.io): Ecosystem of 9 interactive React dashboards on Paraná agriculture. Built with React, Vite, D3.js, Recharts, Leaflet, Python ETL, Google Apps Script analytics. 50,000+ views.
+- [DSMarket Capstone (MSc)](https://avnergomes.github.io/dsmarket-dashboard/): End-to-end supermarket resupply pipeline. EDA, clustering, time-series forecasting (Random Forest, LSTM), model deployment.
+- [3D Land-Development Visualization](https://avnergomes.github.io/portfolio/projects/land-development.html): LiDAR/DEM pipeline to STL terrain model with schematic and satellite map books.
+
+## Services
+- Geo Data Science: remote sensing, satellite imagery analysis, terrain modeling, WebGIS development, spatial data processing.
+- Forest Resources: forest inventory, management planning, FSC certification support, plantation analysis.
+- Carbon Credits and MRV: carbon sequestration estimation, deforestation analysis, restoration feasibility, EUDR compliance pipelines.
+- Business Intelligence: custom dashboard development, ETL pipelines, automated reporting (Power BI, Tableau, Looker Studio).
+- Digital Marketing Analytics: multi-platform ad analysis (Google Ads, Meta Ads, TikTok Ads), CRM data integration, ROI and ROAS optimization.
+- Route Optimization: distance and duration matrices, multi-stop route planning, logistics cost analysis.
+- Data and AI Strategy: feasibility assessment, solution architecture, data governance, delivery roadmaps.
+- Technical Assessments and Reports: executive briefs, full technical reports with methodology and evidence packs.
+- Technical Advisory (retainer): analysis and model review, experiment design validation, proposal and scope support.
+
+## Skills
+- Programming: Python (pandas, NumPy, scikit-learn, PyTorch, LightGBM, Prophet), R, SQL (PostgreSQL, BigQuery, SQLite, Supabase), Bash, Git.
+- Data engineering: ETL/ELT, Airflow, dbt, Prefect, web scraping (Playwright, BeautifulSoup, Selenium), CI/CD (GitHub Actions).
+- Cloud: Google Cloud (BigQuery, Earth Engine, Cloud Run), AWS (S3, EC2), Supabase, Vercel, Docker.
+- Machine learning and MLOps: time-series forecasting (LSTM, Random Forest, ARIMA, Prophet), clustering (K-Means, HDBSCAN), regression, classification.
+- Business intelligence: Power BI (DAX, Power Query), Tableau, Looker Studio, React + D3.js / Recharts, Plotly, Streamlit.
+- Geospatial: QGIS, ArcGIS, Google Earth Engine, PostGIS, GeoPandas, Leaflet, OSMnx, Sentinel-2, Landsat, LiDAR/DEM processing, NDVI analysis.
+- Forestry and environmental: MRV, EUDR compliance, carbon sequestration, deforestation monitoring, forest inventory, watershed modeling, ESG indicators, SICAR / SIGEF / RESEX / CDRU land regularization.
+
+## Education
+- MSc Data Science, Nuclio Digital School, Barcelona, 2023.
+- MBA Precision Forest Management, UFPR (Universidade Federal do Paraná), 2018.
+- B.Sc. Forest Engineering, UFPR, 2013.
+
+## Languages
+- Portuguese (native)
+- English (C1 Advanced, Oxford-certified)
+- Spanish (B1 intermediate)
+
+## Optional
+- [Sitemap](https://avnergomes.github.io/portfolio/sitemap.xml)
+- [Full portfolio document (EN, PDF)](https://avnergomes.github.io/portfolio/Avner%20Gomes_Portfolio_EN.pdf)
+- [Detailed bio and project descriptions](https://avnergomes.github.io/portfolio/llms-full.txt)
