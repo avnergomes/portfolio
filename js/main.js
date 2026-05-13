@@ -8,7 +8,12 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
 // ===== Current Language =====
-let currentLang = localStorage.getItem('language') || 'en';
+// Priority: ?lang= URL param (for hreflang and deep links) > localStorage > default 'en'
+const _urlLang = new URLSearchParams(window.location.search).get('lang');
+const _allowedLangs = ['en', 'pt', 'es'];
+let currentLang = (_urlLang && _allowedLangs.includes(_urlLang))
+    ? _urlLang
+    : (localStorage.getItem('language') || 'en');
 
 // ===== Initialize =====
 document.addEventListener('DOMContentLoaded', () => {
