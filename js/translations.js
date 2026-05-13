@@ -12,15 +12,16 @@ const translations = {
 
         // Hero
         'hero.greeting': "Hello, I'm",
-        'hero.role1': 'Forest Engineer',
-        'hero.role2': 'Data Scientist',
-        'hero.description': 'I work at the intersection of environmental science and data — building tools, dashboards, and spatial analyses that help teams make better decisions about land, forests, and markets.',
+        'hero.role1': 'Senior Data Scientist',
+        'hero.role2': 'Forest Engineer',
+        'hero.description': 'Senior Data Scientist and Forest Engineer based in Curitiba, Brazil, with 11+ years turning geospatial data into decisions for clients in 8+ countries. MSc Data Science (Nuclio Digital School, Barcelona). Top Rated on Upwork with 100% Job Success.',
         'hero.viewWork': 'View My Work',
         'hero.getInTouch': 'Get In Touch',
         'hero.scroll': 'Scroll Down',
 
         // About
         'about.title': 'About Me',
+        'about.lede': 'Avner Paes Gomes is a Senior Data Scientist and Forest Engineer based in Curitiba, Paraná, Brazil. B.Sc. Forest Engineering (UFPR, 2013), MBA Precision Forest Management (UFPR, 2018), MSc Data Science (Nuclio Digital School, Barcelona, 2023). Works at IDR-Paraná (IAPAR/EMATER) since 2018, coordinating geospatial data across 399 municipalities and 23 regional offices. In parallel, serves international clients on Upwork (Top Rated, 100% Job Success, 8+ countries).',
         'about.p1': 'I started in the forest — literally. My background is in forestry, where I learned to think in layers: soil, terrain, canopy, climate. When I discovered data science, it felt like the same work with sharper tools. Today I build the pipelines, dashboards, and spatial models that turn raw data into something a team can actually act on.',
         'about.p2': 'I\'ve worked with government agencies in Brazil, consulted for European startups, and delivered freelance projects across seven countries. Clients consistently highlight fast turnaround, clear communication, and a habit of going beyond what was asked. What ties it all together is the same thing: someone has messy data and needs a clear answer.',
         'about.education': 'Education',
@@ -725,15 +726,16 @@ const translations = {
 
         // Hero
         'hero.greeting': 'Hola, soy',
-        'hero.role1': 'Ingeniero Forestal',
-        'hero.role2': 'Científico de Datos',
-        'hero.description': 'Trabajo en la intersección entre ciencia ambiental y datos — construyendo herramientas, dashboards y análisis espaciales que ayudan a equipos a tomar mejores decisiones sobre tierra, bosques y mercados.',
+        'hero.role1': 'Científico de Datos Senior',
+        'hero.role2': 'Ingeniero Forestal',
+        'hero.description': 'Científico de Datos Senior e Ingeniero Forestal con base en Curitiba, Brasil, con más de 11 años convirtiendo datos geoespaciales en decisiones para clientes en 8+ países. MSc Data Science (Nuclio Digital School, Barcelona). Top Rated en Upwork con 100% Job Success.',
         'hero.viewWork': 'Ver Mi Trabajo',
         'hero.getInTouch': 'Contáctame',
         'hero.scroll': 'Desplazar',
 
         // About
         'about.title': 'Sobre Mí',
+        'about.lede': 'Avner Paes Gomes es Científico de Datos Senior e Ingeniero Forestal con base en Curitiba, Paraná, Brasil. Ingeniería Forestal (UFPR, 2013), MBA en Manejo Forestal de Precisión (UFPR, 2018), MSc Data Science (Nuclio Digital School, Barcelona, 2023). Trabaja en IDR-Paraná (IAPAR/EMATER) desde 2018, coordinando datos geoespaciales en 399 municipios y 23 regionales. En paralelo, atiende clientes internacionales en Upwork (Top Rated, 100% Job Success, 8+ países).',
         'about.p1': 'Empecé en el bosque — literalmente. Mi formación es en ingeniería forestal, donde aprendí a pensar en capas: suelo, terreno, dosel, clima. Cuando descubrí la ciencia de datos, fue el mismo trabajo con herramientas más afiladas. Hoy construyo los pipelines, dashboards y modelos espaciales que convierten datos brutos en algo que un equipo puede usar.',
         'about.p2': 'He trabajado con agencias gubernamentales en Brasil, consultado para startups europeas y entregado proyectos freelance en siete países. Los clientes destacan consistentemente la entrega rápida, comunicación clara y el hábito de ir más allá de lo solicitado. El hilo común siempre es el mismo: alguien tiene datos desordenados y necesita una respuesta clara.',
         'about.education': 'Educación',
@@ -1438,15 +1440,16 @@ const translations = {
 
         // Hero
         'hero.greeting': 'Olá, sou',
-        'hero.role1': 'Engenheiro Florestal',
-        'hero.role2': 'Cientista de Dados',
-        'hero.description': 'Trabalho na intersecção entre ciência ambiental e dados — construindo ferramentas, dashboards e análises espaciais que ajudam equipes a tomar melhores decisões sobre terra, florestas e mercados.',
+        'hero.role1': 'Cientista de Dados Sênior',
+        'hero.role2': 'Engenheiro Florestal',
+        'hero.description': 'Cientista de Dados Sênior e Engenheiro Florestal baseado em Curitiba, Brasil, com 11+ anos transformando dados geoespaciais em decisões para clientes em 8+ países. MSc em Data Science (Nuclio Digital School, Barcelona). Top Rated no Upwork com 100% Job Success.',
         'hero.viewWork': 'Ver Meus Trabalhos',
         'hero.getInTouch': 'Entre em Contato',
         'hero.scroll': 'Role para Baixo',
 
         // About
         'about.title': 'Sobre Mim',
+        'about.lede': 'Avner Paes Gomes é Cientista de Dados Sênior e Engenheiro Florestal, baseado em Curitiba, Paraná, Brasil. Engenharia Florestal (UFPR, 2013), MBA em Manejo Florestal de Precisão (UFPR, 2018), MSc em Data Science (Nuclio Digital School, Barcelona, 2023). Atua no IDR-Paraná (IAPAR/EMATER) desde 2018, coordenando dados geoespaciais em 399 municípios e 23 regionais. Em paralelo, atende clientes internacionais no Upwork (Top Rated, 100% Job Success, 8+ países).',
         'about.p1': 'Comecei na floresta — literalmente. Minha formação é em engenharia florestal, onde aprendi a pensar em camadas: solo, terreno, dossel, clima. Quando descobri ciência de dados, pareceu o mesmo trabalho com ferramentas mais afiadas. Hoje construo os pipelines, dashboards e modelos espaciais que transformam dados brutos em algo que uma equipe consegue usar.',
         'about.p2': 'Já trabalhei com órgãos de governo no Brasil, consultei para startups europeias e entreguei projetos freelance em sete países. Os clientes destacam consistentemente a entrega rápida, comunicação clara e o hábito de ir além do solicitado. O que conecta tudo é sempre a mesma coisa: alguém tem dados bagunçados e precisa de uma resposta clara.',
         'about.education': 'Educação',
