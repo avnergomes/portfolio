@@ -1,0 +1,4 @@
+Contact: mailto:avnerpaesgomes@gmail.com
+Expires: 2027-05-13T00:00:00Z
+Preferred-Languages: en, pt-BR
+Canonical: https://avnergomes.github.io/portfolio/.well-known/security.txt
