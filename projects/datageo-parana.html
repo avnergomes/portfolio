@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ecosystem of nine React dashboards on Paraná agriculture, built at IDR-Paraná with automated Python ETL pipelines and Google Apps Script analytics.">
+    <meta name="robots" content="index,follow">
+    <title>DataGeo Paraná | Avner Gomes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-hero { background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: 6rem 0 4rem; margin-top: 80px; }
+        .project-hero .container { max-width: 960px; }
+        .live-cta {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            font-family: var(--font-display); font-style: italic; font-weight: 400;
+            font-size: 1.1rem;
+            color: var(--color-ink); text-decoration: none;
+            padding: 0.9rem 1.5rem;
+            border: 1px solid var(--color-accent); border-radius: 999px;
+            background: var(--color-accent-soft);
+            transition: background var(--transition-base), color var(--transition-base);
+        }
+        .live-cta:hover { background: var(--color-accent); color: oklch(18% 0.04 60); }
+        .live-cta i { font-size: 0.9rem; }
+        .live-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 1.5rem 0 2rem; }
+        .live-cta-row .live-url { font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-mute); letter-spacing: 0.04em; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Projects</span></a>
+            <h1>DataGeo Paraná<span class="badge">Case Study</span></h1>
+            <p class="subtitle">Ecosystem of nine React dashboards on Paraná agriculture, built at IDR-Paraná with automated Python ETL pipelines and Google Apps Script analytics.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span>Business Intelligence</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2024 — 2026</span></div>
+                <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span>Paraná, Brazil</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="live-cta-row">
+                <a href="https://datageoparana.github.io" target="_blank" rel="noopener" class="live-cta">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>View live site</span>
+                </a>
+                <span class="live-url">datageoparana.github.io</span>
+            </div>
+
+            <div class="content-section">
+                <h2>Project Overview</h2>
+                <p>DataGeo Paraná is a public ecosystem of nine interactive dashboards covering agriculture, rural credit, foreign trade, employment, prices, and census data for the state of Paraná, Brazil. It was built inside IDR-Paraná with the brief of consolidating institutional data scattered across PDF reports, ad-hoc spreadsheets, and federal APIs into one coherent, citable surface.</p>
+                <p>Each dashboard is a self-contained React app with its own ETL pipeline; together they share a common visual system, automated daily refresh, and a custom analytics layer that records anonymous usage and surfaces it back to the institutional team. The ecosystem has crossed 50,000+ page views and is referenced by state-level planning teams.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Development Stages</h2>
+                <ul>
+                    <li>Data architecture and automated ETL pipelines (Python + GitHub Actions)</li>
+                    <li>Development of nine React dashboards with D3.js / Recharts / Leaflet</li>
+                    <li>Custom analytics system using Google Apps Script and Sheets</li>
+                    <li>SEO and architecture documentation across all sub-sites</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Tech Stack</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">D3.js</span>
+                    <span class="tech-tag">Recharts</span>
+                    <span class="tech-tag">Leaflet</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Google Apps Script</span>
+                    <span class="tech-tag">GitHub Actions</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Outcome</h2>
+                <div class="highlight-box"><p>Public ecosystem of Paraná agricultural data with 50k+ views, referenced in institutional planning and cooperation terms.</p></div>
+            </div>
+
+            <div class="content-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-rule); text-align: center;">
+                <a href="https://datageoparana.github.io" target="_blank" rel="noopener" class="live-cta">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Open the live dashboard</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

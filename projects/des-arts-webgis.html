@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive WebGIS platform for investor due diligence on a wine bar acquisition in Lucca, Italy — spatial analysis, competitive intelligence, and tourism demand modelling.">
+    <meta name="robots" content="index,follow">
+    <title>Des Arts WebGIS — Wine Bar Location | Avner Gomes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-hero { background: linear-gradient(135deg, #722f37 0%, #9b4d54 100%); color: white; padding: 6rem 0 4rem; margin-top: 80px; }
+        .project-hero .container { max-width: 960px; }
+        .live-cta {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            font-family: var(--font-display); font-style: italic; font-weight: 400;
+            font-size: 1.1rem;
+            color: var(--color-ink); text-decoration: none;
+            padding: 0.9rem 1.5rem;
+            border: 1px solid var(--color-accent); border-radius: 999px;
+            background: var(--color-accent-soft);
+            transition: background var(--transition-base), color var(--transition-base);
+        }
+        .live-cta:hover { background: var(--color-accent); color: oklch(18% 0.04 60); }
+        .live-cta i { font-size: 0.9rem; }
+        .live-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 1.5rem 0 2rem; }
+        .live-cta-row .live-url { font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-mute); letter-spacing: 0.04em; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Projects</span></a>
+            <h1>Des Arts WebGIS — Wine Bar Location<span class="badge">Case Study</span></h1>
+            <p class="subtitle">Interactive WebGIS platform for investor due diligence on a wine bar acquisition in Lucca, Italy — spatial analysis, competitive intelligence, and tourism demand modelling.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span>Geospatial</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2025</span></div>
+                <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span>Lucca, Italy</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="live-cta-row">
+                <a href="https://avnergomes.github.io/DesArts-webGIS/" target="_blank" rel="noopener" class="live-cta">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>View live site</span>
+                </a>
+                <span class="live-url">avnergomes.github.io/DesArts-webGIS</span>
+            </div>
+
+            <div class="content-section">
+                <h2>Project Overview</h2>
+                <p>An investor was evaluating the acquisition of a wine bar in Lucca, a tourist-heavy walled town in Tuscany. They wanted a single artefact that combined the location's catchment, the competitive landscape, and the tourist footfall that drives demand — something they could open on a phone in a meeting, not a 60-page PDF.</p>
+                <p>I built an interactive Mapbox WebGIS that overlays walking isochrones around the candidate location, competitor positions with their menu segment, hotel cluster density (proxy for tourist arrivals), and a small spatial demand model. The deliverable is the page itself — open in any browser, no login.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Development Stages</h2>
+                <ul>
+                    <li>Tourism data collection and spatial framework</li>
+                    <li>Walking isochrones and catchment mapping</li>
+                    <li>Competitor positioning and footfall analysis</li>
+                    <li>Interactive WebGIS dashboard with layered storytelling</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Tech Stack</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">Mapbox GL JS</span>
+                    <span class="tech-tag">GeoJSON</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Spatial Analysis</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Outcome</h2>
+                <div class="highlight-box"><p>Investor-ready due diligence artefact with location intelligence, competitive landscape, and demand modelling in a single browser-native deliverable.</p></div>
+            </div>
+
+            <div class="content-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-rule); text-align: center;">
+                <a href="https://avnergomes.github.io/DesArts-webGIS/" target="_blank" rel="noopener" class="live-cta">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Open the live dashboard</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

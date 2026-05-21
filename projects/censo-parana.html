@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard of IBGE census data for Paraná's 399 municipalities — demographic indicators, choropleth maps, and comparative analysis.">
+    <meta name="robots" content="index,follow">
+    <title>Censo Paraná | Avner Gomes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-hero { background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); color: white; padding: 6rem 0 4rem; margin-top: 80px; }
+        .project-hero .container { max-width: 960px; }
+        .live-cta {
+            display: inline-flex; align-items: center; gap: 0.75rem;
+            font-family: var(--font-display); font-style: italic; font-weight: 400;
+            font-size: 1.1rem;
+            color: var(--color-ink); text-decoration: none;
+            padding: 0.9rem 1.5rem;
+            border: 1px solid var(--color-accent); border-radius: 999px;
+            background: var(--color-accent-soft);
+            transition: background var(--transition-base), color var(--transition-base);
+        }
+        .live-cta:hover { background: var(--color-accent); color: oklch(18% 0.04 60); }
+        .live-cta i { font-size: 0.9rem; }
+        .live-cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 1.5rem 0 2rem; }
+        .live-cta-row .live-url { font-family: var(--font-mono); font-size: 0.78rem; color: var(--color-mute); letter-spacing: 0.04em; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Projects</span></a>
+            <h1>Censo Paraná<span class="badge">Case Study</span></h1>
+            <p class="subtitle">Dashboard of IBGE census data for Paraná's 399 municipalities — demographic indicators, choropleth maps, and comparative analysis.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span>Business Intelligence</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2025</span></div>
+                <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span>Paraná, Brazil</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="live-cta-row">
+                <a href="https://avnergomes.github.io/censo-parana/" target="_blank" rel="noopener" class="live-cta">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>View live site</span>
+                </a>
+                <span class="live-url">avnergomes.github.io/censo-parana</span>
+            </div>
+
+            <div class="content-section">
+                <h2>Project Overview</h2>
+                <p>Brazil's IBGE census is the most detailed picture of the country's demographics, but the bulk delivery is technical and the user-facing tools at municipal level are sparse. This dashboard takes the Paraná slice — all 399 municipalities — and gives each one a comparable card across the indicators institutional planning teams actually use.</p>
+                <p>Built with the same dashboard stack as the rest of the ecosystem, with choropleth maps for the spatial story and comparative bars for the ranking story.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Development Stages</h2>
+                <ul>
+                    <li>IBGE census data processing and indicator selection</li>
+                    <li>Demographic indicators calculation and normalisation</li>
+                    <li>Choropleth maps and comparative charts</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Tech Stack</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">IBGE API</span>
+                    <span class="tech-tag">D3.js</span>
+                    <span class="tech-tag">Leaflet</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Outcome</h2>
+                <div class="highlight-box"><p>Demographic analysis of 399 Paraná municipalities in a single comparable surface for planning and policy use.</p></div>
+            </div>
+
+            <div class="content-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-rule); text-align: center;">
+                <a href="https://avnergomes.github.io/censo-parana/" target="_blank" rel="noopener" class="live-cta">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Open the live dashboard</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

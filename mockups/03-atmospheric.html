@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Avner Gomes — Atmospheric / Midnight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: Marquee Hero · genre: atmospheric · theme: Midnight
+ * tone: atmospheric · anchor hue: dusk-blue · diversification: dark/roman-serif/cool
+ * pre-emit critique: P5 H4 E5 S5 R4 V5
+ */
+:root {
+  --color-paper: oklch(14% 0.025 250);
+  --color-paper-2: oklch(18% 0.03 250);
+  --color-paper-3: oklch(22% 0.035 250);
+  --color-ink: oklch(96% 0.01 250);
+  --color-ink-2: oklch(78% 0.015 250);
+  --color-mute: oklch(58% 0.025 250);
+  --color-rule: oklch(28% 0.03 250);
+  --color-accent: oklch(72% 0.14 60);
+  --color-accent-2: oklch(65% 0.18 30);
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", -apple-system, system-ui, sans-serif;
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.5rem; --space-6: 2.5rem; --space-7: 4rem; --space-8: 7rem; --space-9: 11rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-base: 480ms; --dur-slow: 800ms;
+  --rule: 1px solid var(--color-rule);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--color-paper); color: var(--color-ink); overflow-x: clip; }
+body { font-family: var(--font-body); font-weight: 400; font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased; padding-top: 2rem; min-height: 100vh; }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 max(1.5rem, 4vw); position: relative; }
+
+/* ===== Subtle aurora background ===== */
+.aurora {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 10%, oklch(72% 0.14 60 / 0.08), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 10% 80%, oklch(55% 0.18 240 / 0.10), transparent 60%);
+}
+.wrap > * { position: relative; z-index: 1; }
+
+/* ===== Nav N7 — floating minimal ===== */
+nav.top { display: flex; justify-content: space-between; align-items: center; padding: var(--space-5) 0; }
+nav.top .mark { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 1.05rem; letter-spacing: -0.01em; color: var(--color-ink); }
+nav.top ul { display: flex; gap: var(--space-5); list-style: none; }
+nav.top a { color: var(--color-ink-2); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.01em; transition: color 200ms var(--ease-out); }
+nav.top a:hover, nav.top a:focus-visible { color: var(--color-accent); }
+nav.top a:focus-visible { outline: none; }
+
+/* ===== Marquee hero — huge italic display ===== */
+header.hero {
+  padding: var(--space-9) 0 var(--space-8);
+  display: grid; grid-template-columns: 1fr; gap: var(--space-6);
+}
+.kicker { font-family: var(--font-body); font-size: 0.85rem; color: var(--color-mute); letter-spacing: 0.06em; display: flex; align-items: center; gap: var(--space-3); }
+.kicker::before { content: ""; width: 28px; height: 1px; background: var(--color-accent); display: inline-block; }
+h1.title {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: clamp(3rem, 9vw, 7.5rem); line-height: 0.96; letter-spacing: -0.035em;
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  max-width: 14ch; overflow-wrap: anywhere; min-width: 0;
+}
+h1.title em { font-style: normal; color: var(--color-accent); }
+h1.title .nb { white-space: nowrap; }
+.lede { font-size: 1.125rem; line-height: 1.6; max-width: 56ch; color: var(--color-ink-2); margin-top: var(--space-4); }
+
+.meta { display: flex; gap: var(--space-6); flex-wrap: wrap; margin-top: var(--space-6); padding-top: var(--space-5); border-top: var(--rule); font-size: 0.85rem; color: var(--color-mute); letter-spacing: 0.02em; }
+.meta b { color: var(--color-ink); font-weight: 500; }
+
+.cta-row { display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; margin-top: var(--space-5); }
+.cta {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 1.15rem; color: var(--color-ink); text-decoration: none;
+  padding: 0.75rem 1.5rem 0.75rem 0;
+  border-bottom: 1px solid var(--color-accent);
+  transition: color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+.cta:hover, .cta:focus-visible { color: var(--color-accent); border-bottom-color: var(--color-ink); outline: none; }
+.cta-secondary { font-family: var(--font-body); font-size: 0.9rem; color: var(--color-mute); text-decoration: none; padding: 0.75rem 0; }
+.cta-secondary:hover { color: var(--color-ink); }
+
+/* ===== Body sections ===== */
+section { padding: var(--space-8) 0; }
+.section-head { max-width: 60ch; margin-bottom: var(--space-7); }
+.section-head .num { font-family: var(--font-body); font-size: 0.78rem; color: var(--color-mute); letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: var(--space-3); }
+.section-head h2 { font-family: var(--font-display); font-weight: 300; font-style: italic; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.05; letter-spacing: -0.025em; font-variation-settings: "SOFT" 100; }
+.section-head h2 em { font-style: normal; }
+.section-head p { font-size: 1.05rem; color: var(--color-ink-2); margin-top: var(--space-4); line-height: 1.6; }
+
+/* ===== Services as glowing cards ===== */
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--space-4); }
+.service {
+  padding: var(--space-6) var(--space-5);
+  background: linear-gradient(180deg, var(--color-paper-2), var(--color-paper));
+  border: var(--rule); border-radius: 14px;
+  display: flex; flex-direction: column; gap: var(--space-3);
+  transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+  position: relative; overflow: hidden;
+}
+.service::before {
+  content: ""; position: absolute; top: 0; left: var(--space-5); width: 24px; height: 1px; background: var(--color-accent);
+}
+.service:hover { transform: translateY(-2px); border-color: oklch(45% 0.06 250); }
+.service .id { font-family: var(--font-body); font-size: 0.78rem; color: var(--color-mute); letter-spacing: 0.06em; }
+.service h3 { font-family: var(--font-display); font-weight: 400; font-style: italic; font-size: 1.35rem; line-height: 1.2; letter-spacing: -0.01em; color: var(--color-ink); }
+.service p { font-size: 0.92rem; color: var(--color-ink-2); line-height: 1.6; }
+
+/* ===== Quote moment ===== */
+.quote { padding: var(--space-8) 0; max-width: 56ch; }
+.quote q { font-family: var(--font-display); font-weight: 300; font-style: italic; font-size: clamp(1.6rem, 3.2vw, 2.4rem); line-height: 1.3; quotes: none; }
+.quote q::before { content: "\201C"; color: var(--color-accent); margin-right: 0.15em; }
+.quote q::after { content: "\201D"; color: var(--color-accent); margin-left: 0.05em; }
+.quote .src { font-size: 0.85rem; color: var(--color-mute); margin-top: var(--space-4); letter-spacing: 0.04em; }
+
+/* ===== Footer Ft5 statement ===== */
+footer { padding: var(--space-8) 0 var(--space-9); border-top: var(--rule); margin-top: var(--space-6); }
+footer .last {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05; letter-spacing: -0.025em;
+  max-width: 16ch; margin-bottom: var(--space-6);
+}
+footer .last a { color: var(--color-accent); text-decoration: none; border-bottom: 1px solid currentColor; }
+footer .imprint { display: grid; grid-template-columns: 1fr auto; gap: var(--space-5); align-items: end; padding-top: var(--space-5); border-top: var(--rule); font-size: 0.82rem; color: var(--color-mute); letter-spacing: 0.02em; }
+footer .imprint b { color: var(--color-ink); font-weight: 500; }
+footer .langs a { color: var(--color-mute); text-decoration: none; margin-left: var(--space-4); }
+footer .langs a[aria-current] { color: var(--color-ink); }
+
+.banner { position: fixed; top: 0; left: 0; right: 0; background: oklch(8% 0.02 250); color: var(--color-ink-2); font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.1em; padding: 0.5rem 1rem; text-align: center; z-index: 100; text-transform: uppercase; border-bottom: 1px solid var(--color-rule); }
+.banner a { color: var(--color-accent); margin-left: 1rem; }
+
+@media (max-width: 720px) {
+  footer .imprint { grid-template-columns: 1fr; }
+  .meta { gap: var(--space-3); font-size: 0.78rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+<div class="aurora"></div>
+<div class="banner">Mockup 03 · Atmospheric / Midnight <a href="./">← back to index</a></div>
+
+<div class="wrap">
+  <nav class="top">
+    <span class="mark">Avner Gomes</span>
+    <ul>
+      <li><a href="#field">Field</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <p class="kicker">Curitiba, Brazil · 25° 25' S</p>
+    <h1 class="title">Reading the land <em>from orbit,</em> writing the proof <em>by hand.</em></h1>
+    <p class="lede">A senior data scientist working at the seam of satellite imagery, statistical modelling, and the kind of analytics a board will actually act on. Eleven years; eight countries; Top Rated on Upwork; currently with IDR-Paraná.</p>
+
+    <div class="cta-row">
+      <a class="cta" href="mailto:avnerpaesgomes@gmail.com">Start a conversation →</a>
+      <a class="cta-secondary" href="./Avner Gomes_Portfolio_EN.pdf">Download CV (PDF)</a>
+    </div>
+
+    <div class="meta">
+      <span><b>11+</b> years</span>
+      <span><b>50+</b> projects</span>
+      <span><b>8+</b> countries</span>
+      <span><b>100%</b> Upwork JSS</span>
+      <span><b>Top Rated</b></span>
+    </div>
+  </header>
+
+  <section id="field">
+    <div class="section-head">
+      <span class="num">§ I — The field</span>
+      <h2>Geospatial science, <em>read plainly,</em> for decisions that hold up under audit.</h2>
+      <p>Remote sensing, MRV, BI — built so the methodology survives the next quarter, the next analyst, the next certifier. The work isn't the model; the work is whether the person reading the report can defend the decision it led them to.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-head">
+      <span class="num">§ II — Services</span>
+      <h2>What I'm <em>typically hired for.</em></h2>
+    </div>
+    <div class="services">
+      <article class="service">
+        <span class="id">01 · strategy</span>
+        <h3>Data &amp; AI strategy</h3>
+        <p>Feasibility, architecture, phased roadmap. From messy data and constraints to a plan a board will fund.</p>
+      </article>
+      <article class="service">
+        <span class="id">02 · geo</span>
+        <h3>Geo data science</h3>
+        <p>Remote sensing, WebGIS, PostGIS pipelines, LiDAR/PDAL terrain. The toolset, not the buzzword.</p>
+      </article>
+      <article class="service">
+        <span class="id">03 · mrv</span>
+        <h3>Carbon &amp; biodiversity MRV</h3>
+        <p>Deforestation monitoring, sequestration estimation, EUDR-aligned evidence packs. Built for audit.</p>
+      </article>
+      <article class="service">
+        <span class="id">04 · bi</span>
+        <h3>Business intelligence</h3>
+        <p>Power BI, Tableau, Looker Studio. ETL the analyst team can read; refresh that doesn't break Monday.</p>
+      </article>
+      <article class="service">
+        <span class="id">05 · advisory</span>
+        <h3>Technical advisory</h3>
+        <p>Retainer: methodology review, model validation, stakeholder-ready storytelling. Senior review on tap.</p>
+      </article>
+      <article class="service">
+        <span class="id">06 · marketing</span>
+        <h3>Marketing analytics</h3>
+        <p>Multi-platform ads, ROAS, CRM. Honest attribution; useful dashboards; no vanity metrics.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="quote">
+    <q>The work isn't the model. The work is whether the person reading the report can defend the decision it led them to.</q>
+    <p class="src">— Operating principle</p>
+  </section>
+
+  <footer id="contact">
+    <p class="last">Let's <a href="mailto:avnerpaesgomes@gmail.com">talk through your data.</a></p>
+    <div class="imprint">
+      <div>
+        <b>Avner Paes Gomes</b> · Senior Data Scientist &amp; Forest Engineer<br>
+        Curitiba, PR, Brazil · avnerpaesgomes@gmail.com · +55 41 98805 5737
+      </div>
+      <div class="langs">
+        <a href="#" aria-current="page">EN</a>
+        <a href="#">PT</a>
+        <a href="#">ES</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
