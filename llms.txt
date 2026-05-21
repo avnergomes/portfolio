@@ -23,8 +23,18 @@
 - [Flai Data — Multi-Channel Ads Analytics](https://avnergomes.github.io/portfolio/projects/flai-data.html): Streamlit + Python platform unifying Google Ads, Meta Ads, TikTok Ads with live ticket sales across 30+ cities and FX normalization.
 - [WebGIS Platform Consulting — Orbify](https://avnergomes.github.io/portfolio/projects/webgis-consulting.html): UX evaluation and prioritized improvement backlog for a satellite-imagery WebGIS product. Cambodia / remote.
 - [Distance and Duration Matrix](https://avnergomes.github.io/portfolio/projects/route-planning.html): 1.3 million-plus OSM route pairs generated with OSMnx and OpenRouteService fallback, validated GeoPackage output.
-- [DataGeo Paraná](https://datageoparana.github.io): Ecosystem of 9 interactive React dashboards on Paraná agriculture. Built with React, Vite, D3.js, Recharts, Leaflet, Python ETL, Google Apps Script analytics. 50,000+ views.
-- [DSMarket Capstone (MSc)](https://avnergomes.github.io/dsmarket-dashboard/): End-to-end supermarket resupply pipeline. EDA, clustering, time-series forecasting (Random Forest, LSTM), model deployment.
+- [DataGeo Paraná](https://avnergomes.github.io/portfolio/projects/datageo-parana.html): Ecosystem of 9 interactive React dashboards on Paraná agriculture. Built with React, Vite, D3.js, Recharts, Leaflet, Python ETL, Google Apps Script analytics. 50,000+ views. Live: datageoparana.github.io.
+- [Crédito Rural Paraná](https://avnergomes.github.io/portfolio/projects/credito-rural-parana.html): First integrated public visualisation of BCB/SICOR rural credit data for Paraná since 2013. Flows by program (PRONAF, PRONAMP), purpose, and chain with Sankey and treemap.
+- [ComexStat Paraná](https://avnergomes.github.io/portfolio/projects/comexstat-parana.html): Consolidated view of Paraná foreign trade by production chain. MDIC/ComexStat data with NCM-to-chain mapping.
+- [Emprego Agro Paraná](https://avnergomes.github.io/portfolio/projects/emprego-agro-parana.html): Monitoring surface for Paraná's agricultural labour market from CAGED data — seasonality, trends, and chain-level breakdown.
+- [Censo Paraná](https://avnergomes.github.io/portfolio/projects/censo-parana.html): Demographic analysis of 399 Paraná municipalities from IBGE census data — choropleth maps and comparative indicators.
+- [Preços de Terras — Paraná](https://avnergomes.github.io/portfolio/projects/precos-de-terras.html): Historical land prices in Paraná from DERAL public data. PDF parsing pipeline plus React dashboard with territorial filters.
+- [Preços Florestais — Paraná](https://avnergomes.github.io/portfolio/projects/precos-florestais.html): Forest product prices in Paraná, consolidated and normalised across years of scattered official compilations.
+- [Preços Diários](https://avnergomes.github.io/portfolio/projects/precos-diarios.html): Daily agricultural product prices from SEAB/DERAL with automated daily refresh, seasonality, and regional spread.
+- [Água Segura — Water Management WebGIS](https://avnergomes.github.io/portfolio/projects/agua-segura.html): Interactive WebGIS coordinating multi-agency conservation across Paraná microbasins, with Power BI dashboard integration.
+- [Des Arts — Wine Bar WebGIS](https://avnergomes.github.io/portfolio/projects/des-arts-webgis.html): Investor due diligence WebGIS for a wine bar acquisition in Lucca, Italy. Walking isochrones, competitor positioning, tourism demand modelling.
+- [VBP Paraná — Gross Production Value](https://avnergomes.github.io/portfolio/projects/vbp-parana.html): Power BI dashboard over Paraná's official VBP data, backing institutional planning and municipal cooperation terms.
+- [DSMarket Capstone (MSc)](https://avnergomes.github.io/portfolio/projects/dsmarket.html): End-to-end supermarket resupply pipeline. EDA, clustering, time-series forecasting (Random Forest, LSTM), model deployment.
 - [3D Land-Development Visualization](https://avnergomes.github.io/portfolio/projects/land-development.html): LiDAR/DEM pipeline to STL terrain model with schematic and satellite map books.
 
 ## Services

@@ -61,11 +61,11 @@
 
     <section class="project-hero">
         <div class="container">
-            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Projects</span></a>
-            <h1>DSMarket — Master's Capstone<span class="badge">Case Study</span></h1>
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span data-i18n="project.backToProjects">Back to Projects</span></a>
+            <h1>DSMarket — Master's Capstone<span class="badge" data-i18n="project.caseStudy">Case Study</span></h1>
             <p class="subtitle">End-to-end data science pipeline for supermarket re-supply strategy optimisation using clustering and time series forecasting.</p>
             <div class="project-meta">
-                <div class="meta-item"><i class="fas fa-folder"></i><span>Data Science</span></div>
+                <div class="meta-item"><i class="fas fa-folder"></i><span data-i18n="projects.cat.ds">Data Science</span></div>
                 <div class="meta-item"><i class="fas fa-calendar"></i><span>2023</span></div>
                 <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span>Nuclio Digital School, Barcelona</span></div>
             </div>
@@ -77,19 +77,19 @@
             <div class="live-cta-row">
                 <a href="https://avnergomes.github.io/dsmarket-dashboard/" target="_blank" rel="noopener" class="live-cta">
                     <i class="fas fa-external-link-alt"></i>
-                    <span>View live site</span>
+                    <span data-i18n="project.viewLive">View live site</span>
                 </a>
                 <span class="live-url">avnergomes.github.io/dsmarket-dashboard</span>
             </div>
 
             <div class="content-section">
-                <h2>Project Overview</h2>
+                <h2 data-i18n="project.overview">Project Overview</h2>
                 <p>DSMarket was my capstone project for the MSc Data Science at Nuclio Digital School (Barcelona). The brief: take three years of transactional retail data and design a re-supply strategy that beats the supermarket's existing rule of thumb on a held-out test period.</p>
                 <p>The pipeline runs EDA, customer and product clustering, demand forecasting per cluster (LSTM and Random Forest baselines), and ships a small dashboard that lets a category manager pick a store + cluster and see the recommended re-supply curve against the actual sell-through.</p>
             </div>
 
             <div class="content-section">
-                <h2>Development Stages</h2>
+                <h2 data-i18n="project.stages">Development Stages</h2>
                 <ul>
                     <li>Exploratory Data Analysis on three years of transactional history</li>
                     <li>Customer and product clustering (k-means, hierarchical)</li>
@@ -99,7 +99,7 @@
             </div>
 
             <div class="content-section">
-                <h2>Tech Stack</h2>
+                <h2 data-i18n="project.techStack">Tech Stack</h2>
                 <div class="tech-stack">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">LSTM</span>
@@ -111,17 +111,20 @@
             </div>
 
             <div class="content-section">
-                <h2>Outcome</h2>
+                <h2 data-i18n="project.outcome">Outcome</h2>
                 <div class="highlight-box"><p>Pilot re-supply strategy with full end-to-end pipeline from raw transactional data to actionable per-store recommendations.</p></div>
             </div>
 
             <div class="content-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-rule); text-align: center;">
                 <a href="https://avnergomes.github.io/dsmarket-dashboard/" target="_blank" rel="noopener" class="live-cta">
                     <i class="fas fa-external-link-alt"></i>
-                    <span>Open the live dashboard</span>
+                    <span data-i18n="project.openLive">Open the live dashboard</span>
                 </a>
             </div>
         </div>
     </section>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

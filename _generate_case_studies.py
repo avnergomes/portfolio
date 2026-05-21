@@ -346,11 +346,11 @@ TEMPLATE = """<!DOCTYPE html>
 
     <section class="project-hero">
         <div class="container">
-            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Projects</span></a>
-            <h1>{title}<span class="badge">Case Study</span></h1>
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span data-i18n="project.backToProjects">Back to Projects</span></a>
+            <h1>{title}<span class="badge" data-i18n="project.caseStudy">Case Study</span></h1>
             <p class="subtitle">{subtitle}</p>
             <div class="project-meta">
-                <div class="meta-item"><i class="fas fa-folder"></i><span>{category}</span></div>
+                <div class="meta-item"><i class="fas fa-folder"></i><span data-i18n="{category_key}">{category}</span></div>
                 <div class="meta-item"><i class="fas fa-calendar"></i><span>{period}</span></div>
                 <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span>{location}</span></div>
             </div>
@@ -362,46 +362,57 @@ TEMPLATE = """<!DOCTYPE html>
             <div class="live-cta-row">
                 <a href="{live_url}" target="_blank" rel="noopener" class="live-cta">
                     <i class="fas fa-external-link-alt"></i>
-                    <span>View live site</span>
+                    <span data-i18n="project.viewLive">View live site</span>
                 </a>
                 <span class="live-url">{live_label}</span>
             </div>
 
             <div class="content-section">
-                <h2>Project Overview</h2>
+                <h2 data-i18n="project.overview">Project Overview</h2>
 {overview_paragraphs}
             </div>
 
             <div class="content-section">
-                <h2>Development Stages</h2>
+                <h2 data-i18n="project.stages">Development Stages</h2>
                 <ul>
 {stages_html}
                 </ul>
             </div>
 
             <div class="content-section">
-                <h2>Tech Stack</h2>
+                <h2 data-i18n="project.techStack">Tech Stack</h2>
                 <div class="tech-stack">
 {tech_html}
                 </div>
             </div>
 
             <div class="content-section">
-                <h2>Outcome</h2>
+                <h2 data-i18n="project.outcome">Outcome</h2>
                 <div class="highlight-box"><p>{outcome}</p></div>
             </div>
 
             <div class="content-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-rule); text-align: center;">
                 <a href="{live_url}" target="_blank" rel="noopener" class="live-cta">
                     <i class="fas fa-external-link-alt"></i>
-                    <span>Open the live dashboard</span>
+                    <span data-i18n="project.openLive">Open the live dashboard</span>
                 </a>
             </div>
         </div>
     </section>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
 """
+
+CATEGORY_KEYS = {
+    "Business Intelligence": "projects.cat.bi",
+    "Data Science": "projects.cat.ds",
+    "Geospatial": "projects.cat.geo",
+    "Carbon Credits": "projects.cat.carbon",
+    "Marketing Analytics": "projects.cat.marketing",
+}
 
 
 def render(p: dict) -> str:
@@ -413,6 +424,7 @@ def render(p: dict) -> str:
         subtitle=p["subtitle"],
         subtitle_attr=p["subtitle"].replace('"', '&quot;'),
         category=p["category"],
+        category_key=CATEGORY_KEYS.get(p["category"], "projects.cat.bi"),
         location=p["location"],
         period=p["period"],
         live_url=p["live_url"],

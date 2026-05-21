@@ -73,10 +73,37 @@ LiDAR/DEM to STL 3D terrain pipeline with schematic and satellite map books for 
 ## Internal / institutional projects
 
 ### DataGeo Paraná
-Ecosystem of 9 interactive React dashboards on Paraná agriculture. Stack: React, Vite, D3.js, Recharts, Leaflet, Python (ETL), Google Apps Script, GitHub Actions. 50,000+ views. Hosted at datageoparana.github.io.
+Ecosystem of 9 interactive React dashboards on Paraná agriculture. Stack: React, Vite, D3.js, Recharts, Leaflet, Python (ETL), Google Apps Script, GitHub Actions. 50,000+ views. Hosted at datageoparana.github.io. Case study: https://avnergomes.github.io/portfolio/projects/datageo-parana.html
+
+### Crédito Rural Paraná
+First integrated public visualisation of rural credit flows in Paraná from BCB/SICOR data since 2013. Joins SICOR to municipal and regional boundaries; flows by program (PRONAF, PRONAMP, etc.), purpose (custeio, investimento, comercialização), and chain. Stack: React, BCB Olinda API, D3.js (Sankey, Treemap), Python. Case study: https://avnergomes.github.io/portfolio/projects/credito-rural-parana.html
+
+### ComexStat Paraná
+Consolidated view of Paraná foreign trade by production chain, mapping NCM commodity codes to a curated chain taxonomy. Sankey diagrams and time series of exports and imports from MDIC/ComexStat data. Stack: React, ComexStat API, D3.js, Python. Case study: https://avnergomes.github.io/portfolio/projects/comexstat-parana.html
+
+### Emprego Agro Paraná
+Monitoring surface for Paraná's agricultural labour market from CAGED data. CNAE classification by agribusiness chain, seasonality analysis, lollipop/bump charts and time series for harvest-cycle and year-on-year drift. Case study: https://avnergomes.github.io/portfolio/projects/emprego-agro-parana.html
+
+### Censo Paraná
+Demographic analysis of 399 Paraná municipalities from IBGE census data. Choropleth maps and comparative indicators for planning teams. Stack: React, IBGE API, D3.js, Leaflet, Python. Case study: https://avnergomes.github.io/portfolio/projects/censo-parana.html
+
+### Preços de Terras — Paraná
+Historical land price dashboard for Paraná built from DERAL public PDF releases. PDF parsing pipeline plus React dashboard with GeoJSON territorial filters and historical comparison. Case study: https://avnergomes.github.io/portfolio/projects/precos-de-terras.html
+
+### Preços Florestais — Paraná
+Forest product price monitoring for Paraná, consolidating and normalising scattered official compilations across years of shifting units and category names. Used by forestry consultants and timber buyers. Case study: https://avnergomes.github.io/portfolio/projects/precos-florestais.html
+
+### Preços Diários
+Dashboard of daily agricultural product prices from SEAB/DERAL with automated daily refresh via GitHub Actions. Time series, regional spread, and seasonality analysis. Case study: https://avnergomes.github.io/portfolio/projects/precos-diarios.html
+
+### Água Segura — Water Management WebGIS
+Interactive WebGIS coordinating multi-agency conservation across Paraná microbasins. Tracks intervention status from diagnosis through implementation; integrated with a Power BI dashboard for programme-wide metrics. Case study: https://avnergomes.github.io/portfolio/projects/agua-segura.html
+
+### Des Arts — Wine Bar WebGIS (Lucca, Italy)
+Investor due diligence WebGIS for a wine bar acquisition. Walking isochrones, competitor positioning, hotel-cluster density as proxy for tourist demand, all overlaid in an interactive Mapbox GL surface. Case study: https://avnergomes.github.io/portfolio/projects/des-arts-webgis.html
 
 ### Gross Production Value (VBP) Dashboard — Paraná
-End-to-end pipeline (web scraping, ETL, Power BI) supporting the definition of priority production chains for institutional planning and drafting of cooperation terms with municipalities. Reference tool inside IDR-Paraná.
+End-to-end pipeline (web scraping, ETL, Power BI) supporting the definition of priority production chains for institutional planning and drafting of cooperation terms with municipalities. Reference tool inside IDR-Paraná. Case study: https://avnergomes.github.io/portfolio/projects/vbp-parana.html
 
 ### Forest Development Plan
 Multi-layer geospatial analysis to identify optimal areas for forest plantation implementation, considering implementation costs and price decline due to transportation costs. Stack: QGIS, spatial analysis, risk assessment.

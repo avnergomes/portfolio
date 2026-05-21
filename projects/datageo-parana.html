@@ -61,11 +61,11 @@
 
     <section class="project-hero">
         <div class="container">
-            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Projects</span></a>
-            <h1>DataGeo Paraná<span class="badge">Case Study</span></h1>
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span data-i18n="project.backToProjects">Back to Projects</span></a>
+            <h1>DataGeo Paraná<span class="badge" data-i18n="project.caseStudy">Case Study</span></h1>
             <p class="subtitle">Ecosystem of nine React dashboards on Paraná agriculture, built at IDR-Paraná with automated Python ETL pipelines and Google Apps Script analytics.</p>
             <div class="project-meta">
-                <div class="meta-item"><i class="fas fa-folder"></i><span>Business Intelligence</span></div>
+                <div class="meta-item"><i class="fas fa-folder"></i><span data-i18n="projects.cat.bi">Business Intelligence</span></div>
                 <div class="meta-item"><i class="fas fa-calendar"></i><span>2024 — 2026</span></div>
                 <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span>Paraná, Brazil</span></div>
             </div>
@@ -77,19 +77,19 @@
             <div class="live-cta-row">
                 <a href="https://datageoparana.github.io" target="_blank" rel="noopener" class="live-cta">
                     <i class="fas fa-external-link-alt"></i>
-                    <span>View live site</span>
+                    <span data-i18n="project.viewLive">View live site</span>
                 </a>
                 <span class="live-url">datageoparana.github.io</span>
             </div>
 
             <div class="content-section">
-                <h2>Project Overview</h2>
+                <h2 data-i18n="project.overview">Project Overview</h2>
                 <p>DataGeo Paraná is a public ecosystem of nine interactive dashboards covering agriculture, rural credit, foreign trade, employment, prices, and census data for the state of Paraná, Brazil. It was built inside IDR-Paraná with the brief of consolidating institutional data scattered across PDF reports, ad-hoc spreadsheets, and federal APIs into one coherent, citable surface.</p>
                 <p>Each dashboard is a self-contained React app with its own ETL pipeline; together they share a common visual system, automated daily refresh, and a custom analytics layer that records anonymous usage and surfaces it back to the institutional team. The ecosystem has crossed 50,000+ page views and is referenced by state-level planning teams.</p>
             </div>
 
             <div class="content-section">
-                <h2>Development Stages</h2>
+                <h2 data-i18n="project.stages">Development Stages</h2>
                 <ul>
                     <li>Data architecture and automated ETL pipelines (Python + GitHub Actions)</li>
                     <li>Development of nine React dashboards with D3.js / Recharts / Leaflet</li>
@@ -99,7 +99,7 @@
             </div>
 
             <div class="content-section">
-                <h2>Tech Stack</h2>
+                <h2 data-i18n="project.techStack">Tech Stack</h2>
                 <div class="tech-stack">
                     <span class="tech-tag">React</span>
                     <span class="tech-tag">Vite</span>
@@ -113,17 +113,20 @@
             </div>
 
             <div class="content-section">
-                <h2>Outcome</h2>
+                <h2 data-i18n="project.outcome">Outcome</h2>
                 <div class="highlight-box"><p>Public ecosystem of Paraná agricultural data with 50k+ views, referenced in institutional planning and cooperation terms.</p></div>
             </div>
 
             <div class="content-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-rule); text-align: center;">
                 <a href="https://datageoparana.github.io" target="_blank" rel="noopener" class="live-cta">
                     <i class="fas fa-external-link-alt"></i>
-                    <span>Open the live dashboard</span>
+                    <span data-i18n="project.openLive">Open the live dashboard</span>
                 </a>
             </div>
         </div>
     </section>
+
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
