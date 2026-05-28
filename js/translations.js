@@ -8,7 +8,15 @@ const translations = {
         'nav.projects': 'Projects',
         'nav.clients': 'Clients',
         'nav.testimonials': 'Testimonials',
+        'nav.articles': 'Articles',
         'nav.contact': 'Contact',
+        // Articles
+        'articles.title': 'Writing',
+        'articles.subtitle': 'Data-driven essays and interactive reports on the topics I work with: labor markets, geospatial intelligence, and the economy. Published in Portuguese, English and Spanish.',
+        'articles.readmore': 'Read article',
+        'articles.clt.cat': 'Data Storytelling',
+        'articles.clt.title': 'CLT in Motion: Formal Employment in Brazil',
+        'articles.clt.desc': 'Six years of formally registered jobs, from the pandemic collapse to the 2025 slowdown, with forecasts to 2027 and a data dossier on the proposed end of the 6×1 work schedule. Built from Novo CAGED microdata.',
 
         // Hero
         'hero.greeting': "Hello, I'm",
@@ -727,7 +735,15 @@ const translations = {
         'nav.projects': 'Proyectos',
         'nav.clients': 'Clientes',
         'nav.testimonials': 'Testimonios',
+        'nav.articles': 'Artículos',
         'nav.contact': 'Contacto',
+        // Articles
+        'articles.title': 'Publicaciones',
+        'articles.subtitle': 'Ensayos basados en datos e informes interactivos sobre los temas en los que trabajo: mercado laboral, inteligencia geoespacial y economía. Publicados en portugués, inglés y español.',
+        'articles.readmore': 'Leer artículo',
+        'articles.clt.cat': 'Narrativa de Datos',
+        'articles.clt.title': 'CLT en Movimiento: el Empleo Formal en Brasil',
+        'articles.clt.desc': 'Seis años de empleo formal registrado, del colapso de la pandemia a la desaceleración de 2025, con proyecciones hasta 2027 y un dosier de datos sobre el propuesto fin de la jornada 6×1. Elaborado con microdatos del Novo CAGED.',
 
         // Hero
         'hero.greeting': 'Hola, soy',
@@ -1446,7 +1462,15 @@ const translations = {
         'nav.projects': 'Projetos',
         'nav.clients': 'Clientes',
         'nav.testimonials': 'Depoimentos',
+        'nav.articles': 'Artigos',
         'nav.contact': 'Contato',
+        // Articles
+        'articles.title': 'Publicações',
+        'articles.subtitle': 'Ensaios orientados a dados e relatórios interativos sobre os temas com que trabalho: mercado de trabalho, inteligência geoespacial e economia. Publicados em português, inglês e espanhol.',
+        'articles.readmore': 'Ler artigo',
+        'articles.clt.cat': 'Narrativa de Dados',
+        'articles.clt.title': 'CLT em Movimento: o Emprego Formal no Brasil',
+        'articles.clt.desc': 'Seis anos de emprego com carteira assinada, do colapso da pandemia à desaceleração de 2025, com projeções até 2027 e um dossiê de dados sobre o proposto fim da escala 6×1. Elaborado a partir dos microdados do Novo CAGED.',
 
         // Hero
         'hero.greeting': 'Olá, sou',

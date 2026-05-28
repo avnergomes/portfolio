@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CLT in Motion — six years of formal employment in Brazil from Novo CAGED microdata, with forecasts to 2027 and a data dossier on the proposed end of the 6×1 work schedule. Interactive report in Portuguese, English and Spanish.">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="Avner Paes Gomes">
+    <link rel="canonical" href="https://avnergomes.github.io/portfolio/articles/clt-em-movimento.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CLT in Motion — Formal Employment in Brazil">
+    <meta property="og:description" content="Six years of formal jobs from Novo CAGED microdata, forecasts to 2027, and a data dossier on the proposed end of the 6×1 schedule. PT / EN / ES.">
+    <meta property="og:url" content="https://avnergomes.github.io/portfolio/articles/clt-em-movimento.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>CLT in Motion — Formal Employment in Brazil | Avner Gomes</title>
+    <style>
+        /* Per-article hero identity; body contrast is enforced by styles.css subpage overrides */
+        .project-hero { background: linear-gradient(135deg, #0c2a4d 0%, #c2410c 100%); }
+        .lang-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-3); }
+        .lang-cta .btn i.fa-arrow-up-right-from-square { font-size: 0.75rem; }
+        .report-frame {
+            width: 100%; aspect-ratio: 16 / 10; min-height: 460px;
+            border: var(--rule); border-radius: var(--radius-md);
+            background: var(--color-paper-2);
+        }
+    </style>
+</head>
+<body class="subpage-body">
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#articles">Articles</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#articles" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            <h1>CLT in Motion<span class="badge">Article</span></h1>
+            <p class="subtitle">Six years of formally registered employment in Brazil, from the pandemic collapse to the 2025 slowdown, with forecasts to mid-2027 and a data dossier on the proposed end of the 6×1 work schedule. Built end to end from Novo CAGED microdata.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span>Data Storytelling / Labor Economics</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2026</span></div>
+                <div class="meta-item"><i class="fas fa-database"></i><span>Novo CAGED · PDET / MTE</span></div>
+                <div class="meta-item"><i class="fas fa-language"></i><span>PT · EN · ES</span></div>
+            </div>
+            <div class="lang-cta">
+                <a class="btn btn-primary" href="https://avnergomes.github.io/clt-brasil/output/CLT-BRASIL_relatorio_en.html" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i><span>Open interactive report (EN)</span></a>
+                <a class="btn btn-secondary" href="https://avnergomes.github.io/clt-brasil/output/CLT-BRASIL_relatorio_pt.html" target="_blank" rel="noopener">Português</a>
+                <a class="btn btn-secondary" href="https://avnergomes.github.io/clt-brasil/output/CLT-BRASIL_relatorio_es.html" target="_blank" rel="noopener">Español</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+
+            <div class="content-section">
+                <h2>What this is</h2>
+                <p>An editorial, data-driven report on the Brazilian formal labor market, the <em>CLT</em> universe of fully-registered jobs, drawn directly from the official Novo CAGED microdata. It reads the last six years as one continuous story: the pandemic collapse, the V-shaped rebound, and the cooling expansion of 2024–2026, then projects the national and per-state series through June 2027.</p>
+                <p>The closing chapter is a dossier on the most consequential labor debate in Brazil since 1988: the proposal to replace the <strong>6×1</strong> schedule (six workdays, one rest day) with <strong>5×2</strong>. Using contracted-hours data, it maps which sectors are most exposed and weighs the proposal against peer-reviewed economic literature.</p>
+                <div class="highlight-box">
+                    <p><strong>The report is fully interactive and self-contained</strong>, with sortable tables, a per-state explorer and confidence bands, published in Portuguese, English and Spanish. This page is the summary; the buttons above open the live version.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Key figures</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-card"><div class="number">10.0 M</div><div class="label">Net formal jobs since Jan 2020</div></div>
+                    <div class="kpi-card"><div class="number">1.21 M</div><div class="label">Net balance, last 12 months</div></div>
+                    <div class="kpi-card"><div class="number">81%</div><div class="label">of hires contracted at 44h</div></div>
+                    <div class="kpi-card"><div class="number">–902 k</div><div class="label">Worst month (Apr 2020)</div></div>
+                    <div class="kpi-card"><div class="number">→ Jun 2027</div><div class="label">Forecast horizon, 95% CI by state</div></div>
+                    <div class="kpi-card"><div class="number">27</div><div class="label">States modeled individually</div></div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Inside the report</h2>
+                <ul>
+                    <li><strong>Overview & trajectory</strong> — the monthly net balance from 2020 to today, with the 12-month moving average tracing the country's economic arc.</li>
+                    <li><strong>Geography</strong> — regional concentration of job creation and an interactive explorer for the series and forecast of every state.</li>
+                    <li><strong>Seasonality</strong> — a state-by-month heatmap exposing the annual hiring clock and the universal December layoff band.</li>
+                    <li><strong>Forecast</strong> — SARIMA, ETS (Holt-Winters) and Seasonal Naive projections to mid-2027, with the best model selected by out-of-sample validation.</li>
+                    <li><strong>6×1 dossier</strong> — sectoral exposure to the 44-hour week, scenarios for the reform, and a peer-reviewed evidence base with verifiable DOIs.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Methodology</h2>
+                <p>The net balance reproduces the official "unadjusted" Novo CAGED series exactly, as the sum of net movements per reference period. Working time is read from the <code>horascontratuais</code> field, with the 44-hour week used as a proxy for the 6×1 universe. Forecasts come from three classical time-series models, selected per series by RMSE in a 12-month holdout, with explicit diagnostics for seasonality and heteroskedasticity.</p>
+                <p>The literature review behind the dossier was assembled through a scientific paper-lookup protocol over the OpenAlex base, with no fabricated references: every cited study carries a verifiable DOI. The full code and data pipeline are open source.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">pandas</span>
+                    <span class="tech-tag">statsmodels (SARIMA / ETS)</span>
+                    <span class="tech-tag">Plotly</span>
+                    <span class="tech-tag">Novo CAGED microdata</span>
+                    <span class="tech-tag">OpenAlex</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Read the full report</h2>
+                <p>The interactive edition opens in a new tab. Pick a language:</p>
+                <div class="lang-cta">
+                    <a class="btn btn-primary" href="https://avnergomes.github.io/clt-brasil/output/CLT-BRASIL_relatorio_en.html" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>English</span></a>
+                    <a class="btn btn-secondary" href="https://avnergomes.github.io/clt-brasil/output/CLT-BRASIL_relatorio_pt.html" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Português</span></a>
+                    <a class="btn btn-secondary" href="https://avnergomes.github.io/clt-brasil/output/CLT-BRASIL_relatorio_es.html" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Español</span></a>
+                    <a class="btn btn-secondary" href="https://github.com/avnergomes/clt-brasil" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>Source code</span></a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#articles" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-mark">
+                        <picture>
+                            <source srcset="../assets/logo2.webp" type="image/webp" />
+                            <img src="../assets/logo2.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                        </picture>
+                        Avner Gomes
+                    </div>
+                    <p>Forest Engineer &amp; Data Scientist</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/avner-gomes-32556018/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnerpaesgomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="current-year"></span> Avner Gomes. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
