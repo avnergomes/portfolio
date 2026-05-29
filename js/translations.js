@@ -16,7 +16,7 @@ const translations = {
         'articles.readmore': 'Read article',
         'articles.clt.cat': 'Data Storytelling',
         'articles.clt.title': 'CLT in Motion: Formal Employment in Brazil',
-        'articles.clt.desc': 'Six years of formally registered jobs, from the pandemic collapse to the 2025 slowdown, with forecasts to 2027 and a data dossier on the proposed end of the 6×1 work schedule. Built from Novo CAGED microdata.',
+        'articles.clt.desc': 'Six years of formally registered jobs, from the pandemic collapse to the 2025 slowdown, set against a long-run trend back to 2007, with forecasts to 2027 and a data dossier on the proposed end of the 6×1 work schedule. Built from official CAGED microdata (Novo CAGED from 2020, legacy CAGED for 2007–2019 context).',
 
         // Hero
         'hero.greeting': "Hello, I'm",
@@ -743,7 +743,7 @@ const translations = {
         'articles.readmore': 'Leer artículo',
         'articles.clt.cat': 'Narrativa de Datos',
         'articles.clt.title': 'CLT en Movimiento: el Empleo Formal en Brasil',
-        'articles.clt.desc': 'Seis años de empleo formal registrado, del colapso de la pandemia a la desaceleración de 2025, con proyecciones hasta 2027 y un dosier de datos sobre el propuesto fin de la jornada 6×1. Elaborado con microdatos del Novo CAGED.',
+        'articles.clt.desc': 'Seis años de empleo formal registrado, del colapso de la pandemia a la desaceleración de 2025, sobre una tendencia de largo plazo que se remonta a 2007, con proyecciones hasta 2027 y un dosier de datos sobre el propuesto fin de la jornada 6×1. Elaborado con microdatos oficiales del CAGED (Novo CAGED desde 2020, CAGED Antiguo para el contexto 2007–2019).',
 
         // Hero
         'hero.greeting': 'Hola, soy',
@@ -1470,7 +1470,7 @@ const translations = {
         'articles.readmore': 'Ler artigo',
         'articles.clt.cat': 'Narrativa de Dados',
         'articles.clt.title': 'CLT em Movimento: o Emprego Formal no Brasil',
-        'articles.clt.desc': 'Seis anos de emprego com carteira assinada, do colapso da pandemia à desaceleração de 2025, com projeções até 2027 e um dossiê de dados sobre o proposto fim da escala 6×1. Elaborado a partir dos microdados do Novo CAGED.',
+        'articles.clt.desc': 'Seis anos de emprego com carteira assinada, do colapso da pandemia à desaceleração de 2025, sobre uma tendência de longo prazo que recua até 2007, com projeções até 2027 e um dossiê de dados sobre o proposto fim da escala 6×1. Elaborado a partir dos microdados oficiais do CAGED (Novo CAGED desde 2020, CAGED Antigo para o contexto 2007–2019).',
 
         // Hero
         'hero.greeting': 'Olá, sou',

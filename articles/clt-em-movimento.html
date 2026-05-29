@@ -5,14 +5,14 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CLT in Motion — six years of formal employment in Brazil from Novo CAGED microdata, with forecasts to 2027 and a data dossier on the proposed end of the 6×1 work schedule. Interactive report in Portuguese, English and Spanish.">
+    <meta name="description" content="CLT in Motion — formal employment in Brazil from official CAGED microdata: Novo CAGED (2020+) for the core analysis, extended back to 2007 with the legacy CAGED for long-run context, with forecasts to 2027 and a data dossier on the proposed end of the 6×1 work schedule. Interactive report in Portuguese, English and Spanish.">
     <meta name="robots" content="index,follow">
     <meta name="author" content="Avner Paes Gomes">
     <link rel="canonical" href="https://avnergomes.github.io/portfolio/articles/clt-em-movimento.html">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="CLT in Motion — Formal Employment in Brazil">
-    <meta property="og:description" content="Six years of formal jobs from Novo CAGED microdata, forecasts to 2027, and a data dossier on the proposed end of the 6×1 schedule. PT / EN / ES.">
+    <meta property="og:description" content="Formal jobs from official CAGED microdata — Novo CAGED (2020+) plus historical context back to 2007 — forecasts to 2027, and a data dossier on the proposed end of the 6×1 schedule. PT / EN / ES.">
     <meta property="og:url" content="https://avnergomes.github.io/portfolio/articles/clt-em-movimento.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,11 +66,11 @@
         <div class="container">
             <a href="../index.html#articles" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
             <h1>CLT in Motion<span class="badge">Article</span></h1>
-            <p class="subtitle">Six years of formally registered employment in Brazil, from the pandemic collapse to the 2025 slowdown, with forecasts to mid-2027 and a data dossier on the proposed end of the 6×1 work schedule. Built end to end from Novo CAGED microdata.</p>
+            <p class="subtitle">Six years of formally registered employment in Brazil, from the pandemic collapse to the 2025 slowdown, set against a long-run trend reaching back to 2007, with forecasts to mid-2027 and a data dossier on the proposed end of the 6×1 work schedule. Built end to end from official CAGED microdata.</p>
             <div class="project-meta">
                 <div class="meta-item"><i class="fas fa-folder"></i><span>Data Storytelling / Labor Economics</span></div>
                 <div class="meta-item"><i class="fas fa-calendar"></i><span>2026</span></div>
-                <div class="meta-item"><i class="fas fa-database"></i><span>Novo CAGED · PDET / MTE</span></div>
+                <div class="meta-item"><i class="fas fa-database"></i><span>CAGED (Antigo 2007–2019 + Novo) · PDET / MTE</span></div>
                 <div class="meta-item"><i class="fas fa-language"></i><span>PT · EN · ES</span></div>
             </div>
             <div class="lang-cta">
@@ -86,7 +86,7 @@
 
             <div class="content-section">
                 <h2>What this is</h2>
-                <p>An editorial, data-driven report on the Brazilian formal labor market, the <em>CLT</em> universe of fully-registered jobs, drawn directly from the official Novo CAGED microdata. It reads the last six years as one continuous story: the pandemic collapse, the V-shaped rebound, and the cooling expansion of 2024–2026, then projects the national and per-state series through June 2027.</p>
+                <p>An editorial, data-driven report on the Brazilian formal labor market, the <em>CLT</em> universe of fully-registered jobs, drawn directly from the official CAGED microdata. It reads the last six years as one continuous story: the pandemic collapse, the V-shaped rebound, and the cooling expansion of 2024–2026, then projects the national and per-state series through June 2027. A long-run trend line extends the picture back to 2007, using the legacy CAGED to frame the recent cycle against two decades of formal employment.</p>
                 <p>The closing chapter is a dossier on the most consequential labor debate in Brazil since 1988: the proposal to replace the <strong>6×1</strong> schedule (six workdays, one rest day) with <strong>5×2</strong>. Using contracted-hours data, it maps which sectors are most exposed and weighs the proposal against peer-reviewed economic literature.</p>
                 <div class="highlight-box">
                     <p><strong>The report is fully interactive and self-contained</strong>, with sortable tables, a per-state explorer and confidence bands, published in Portuguese, English and Spanish. This page is the summary; the buttons above open the live version.</p>
@@ -111,21 +111,21 @@
                     <li><strong>Overview & trajectory</strong> — the monthly net balance from 2020 to today, with the 12-month moving average tracing the country's economic arc.</li>
                     <li><strong>Geography</strong> — regional concentration of job creation and an interactive explorer for the series and forecast of every state.</li>
                     <li><strong>Seasonality</strong> — a state-by-month heatmap exposing the annual hiring clock and the universal December layoff band.</li>
-                    <li><strong>Forecast</strong> — SARIMA, ETS (Holt-Winters) and Seasonal Naive projections to mid-2027, with the best model selected by out-of-sample validation.</li>
+                    <li><strong>Forecast</strong> — SARIMA, ETS (Holt-Winters), Seasonal Naive and machine-learning (Random Forest, LightGBM) projections to mid-2027, with the best model selected per series by out-of-sample validation.</li>
                     <li><strong>6×1 dossier</strong> — sectoral exposure to the 44-hour week, scenarios for the reform, and a peer-reviewed evidence base with verifiable DOIs.</li>
                 </ul>
             </div>
 
             <div class="content-section">
                 <h2>Methodology</h2>
-                <p>The net balance reproduces the official "unadjusted" Novo CAGED series exactly, as the sum of net movements per reference period. Working time is read from the <code>horascontratuais</code> field, with the 44-hour week used as a proxy for the 6×1 universe. Forecasts come from three classical time-series models, selected per series by RMSE in a 12-month holdout, with explicit diagnostics for seasonality and heteroskedasticity.</p>
+                <p>The net balance reproduces the official "unadjusted" Novo CAGED series exactly, as the sum of net movements per reference period. The core analysis and all forecasts use the Novo CAGED (eSocial-based) from January 2020 onward; the pre-2020 trend line is built from the legacy CAGED (Law 4.923/65 declarations, 2007–2019), shown only as long-run context. The January 2020 switch from the old declarations to eSocial is a methodological break, so the two eras are not strictly comparable and the report marks that boundary explicitly. A handful of legacy months whose MTE archives are corrupt are filled by time interpolation and flagged in the report. Working time is read from the <code>horascontratuais</code> field, with the 44-hour week used as a proxy for the 6×1 universe. Forecasts come from classical and machine-learning time-series models, selected per series by RMSE in a 12-month holdout, with explicit diagnostics for seasonality and heteroskedasticity.</p>
                 <p>The literature review behind the dossier was assembled through a scientific paper-lookup protocol over the OpenAlex base, with no fabricated references: every cited study carries a verifiable DOI. The full code and data pipeline are open source.</p>
                 <div class="tech-stack">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">pandas</span>
                     <span class="tech-tag">statsmodels (SARIMA / ETS)</span>
                     <span class="tech-tag">Plotly</span>
-                    <span class="tech-tag">Novo CAGED microdata</span>
+                    <span class="tech-tag">CAGED microdata (2007–2026)</span>
                     <span class="tech-tag">OpenAlex</span>
                 </div>
             </div>
