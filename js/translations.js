@@ -27,6 +27,16 @@ const translations = {
         'hero.getInTouch': 'Get In Touch',
         'hero.scroll': 'Scroll Down',
 
+        // Flagship — DataGeo Paraná
+        'flagship.eyebrow': 'Flagship · Public Sector',
+        'flagship.lede': 'An ecosystem of nine interactive dashboards mapping the agriculture of Paraná, Brazil: automated ETL pipelines, Google Apps Script analytics, and React front-ends covering all 399 municipalities. Over 50,000 views and counting.',
+        'flagship.m1.lbl': 'Interactive dashboards',
+        'flagship.m2.lbl': 'Views and counting',
+        'flagship.m3.lbl': 'Municipalities covered',
+        'flagship.m4.lbl': 'Regional offices',
+        'flagship.cta1': 'Explore the case study',
+        'flagship.cta2': 'Open live dashboards',
+
         // About
         'about.title': 'About Me',
         'about.lede': 'Avner Paes Gomes is a Senior Data Scientist and Forest Engineer based in Curitiba, Paraná, Brazil. B.Sc. Forest Engineering (UFPR, 2013), MBA Precision Forest Management (UFPR, 2018), MSc Data Science (Nuclio Digital School, Barcelona, 2023). Works at IDR-Paraná (IAPAR/EMATER) since 2018, coordinating geospatial data across 399 municipalities and 23 regional offices. In parallel, serves international clients on Upwork (Top Rated, 100% Job Success, 8+ countries).',
@@ -754,6 +764,16 @@ const translations = {
         'hero.getInTouch': 'Contáctame',
         'hero.scroll': 'Desplazar',
 
+        // Flagship — DataGeo Paraná
+        'flagship.eyebrow': 'Proyecto insignia · Sector público',
+        'flagship.lede': 'Un ecosistema de nueve paneles interactivos que cartografían la agricultura de Paraná, Brasil: pipelines ETL automatizados, analítica con Google Apps Script y front-ends en React que cubren los 399 municipios. Más de 50.000 visitas y subiendo.',
+        'flagship.m1.lbl': 'Paneles interactivos',
+        'flagship.m2.lbl': 'Visitas y subiendo',
+        'flagship.m3.lbl': 'Municipios cubiertos',
+        'flagship.m4.lbl': 'Oficinas regionales',
+        'flagship.cta1': 'Ver el caso de estudio',
+        'flagship.cta2': 'Abrir paneles en vivo',
+
         // About
         'about.title': 'Sobre Mí',
         'about.lede': 'Avner Paes Gomes es Científico de Datos Senior e Ingeniero Forestal con base en Curitiba, Paraná, Brasil. Ingeniería Forestal (UFPR, 2013), MBA en Manejo Forestal de Precisión (UFPR, 2018), MSc Data Science (Nuclio Digital School, Barcelona, 2023). Trabaja en IDR-Paraná (IAPAR/EMATER) desde 2018, coordinando datos geoespaciales en 399 municipios y 23 regionales. En paralelo, atiende clientes internacionales en Upwork (Top Rated, 100% Job Success, 8+ países).',
@@ -1480,6 +1500,16 @@ const translations = {
         'hero.viewWork': 'Ver Meus Trabalhos',
         'hero.getInTouch': 'Entre em Contato',
         'hero.scroll': 'Role para Baixo',
+
+        // Flagship — DataGeo Paraná
+        'flagship.eyebrow': 'Carro-chefe · Setor público',
+        'flagship.lede': 'Um ecossistema de nove painéis interativos que mapeiam a agricultura do Paraná: pipelines de ETL automatizados, analytics com Google Apps Script e front-ends em React cobrindo os 399 municípios. Mais de 50.000 visualizações e crescendo.',
+        'flagship.m1.lbl': 'Painéis interativos',
+        'flagship.m2.lbl': 'Visualizações e crescendo',
+        'flagship.m3.lbl': 'Municípios cobertos',
+        'flagship.m4.lbl': 'Escritórios regionais',
+        'flagship.cta1': 'Ver o estudo de caso',
+        'flagship.cta2': 'Abrir painéis ao vivo',
 
         // About
         'about.title': 'Sobre Mim',
