@@ -205,9 +205,13 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Cinematic hero background (preload for LCP) -->
+    <link rel="preload" href="assets/images/hero-geo.jpg" as="image" fetchpriority="high" />
     <!-- Custom CSS -->
     <link rel="preload" href="css/styles.css" as="style" />
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Cinematic motion layer (see CINEMATIC.md) -->
+    <link rel="stylesheet" href="css/cinematic.css">
     <!-- Google Analytics 4 (descomente e substitua GA_MEASUREMENT_ID para ativar)
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
@@ -272,11 +276,16 @@
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-grade" aria-hidden="true"></div>
         <div class="hero-bg">
             <div class="hero-overlay"></div>
         </div>
+        <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-vignette" aria-hidden="true"></div>
         <div class="hero-content">
             <div class="hero-text">
                 <p class="hero-greeting" data-i18n="hero.greeting">Hello, I'm</p>
@@ -356,21 +365,21 @@
                     </div>
                 </div>
 
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">11+</div>
+                <div class="about-stats" data-reveal-group>
+                    <div class="stat-card" data-reveal-item>
+                        <div class="stat-number" data-count="11+">11+</div>
                         <div class="stat-label" data-i18n="about.stats.years">Years Experience</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">50+</div>
+                    <div class="stat-card" data-reveal-item>
+                        <div class="stat-number" data-count="50+">50+</div>
                         <div class="stat-label" data-i18n="about.stats.projects">Projects Delivered</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">8+</div>
+                    <div class="stat-card" data-reveal-item>
+                        <div class="stat-number" data-count="8+">8+</div>
                         <div class="stat-label" data-i18n="about.stats.countries">Countries Served</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
+                    <div class="stat-card" data-reveal-item>
+                        <div class="stat-number" data-count="100%">100%</div>
                         <div class="stat-label" data-i18n="about.stats.satisfaction">Client Satisfaction</div>
                     </div>
                 </div>
@@ -421,6 +430,41 @@
                             <span>CRM Analytics</span>
                             <span>ROI Analysis</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flagship / Carro-chefe: DataGeo Paraná (cinematic pinned beat) -->
+    <section class="flagship" id="flagship" aria-labelledby="flagship-title">
+        <div class="flagship-stage">
+            <div class="flagship-inner">
+                <div class="flagship-copy">
+                    <p class="flagship-eyebrow" data-flagship-item data-i18n="flagship.eyebrow">Flagship · Public Sector</p>
+                    <h2 class="flagship-title" id="flagship-title" data-flagship-item>DataGeo Paraná</h2>
+                    <p class="flagship-lede" data-flagship-item data-i18n="flagship.lede">An ecosystem of nine interactive dashboards mapping the agriculture of Paraná, Brazil: automated ETL pipelines, Google Apps Script analytics, and React front-ends covering all 399 municipalities. Over 50,000 views and counting.</p>
+                    <div class="flagship-cta" data-flagship-item>
+                        <a href="projects/datageo-parana.html" class="btn btn-primary" data-i18n="flagship.cta1">Explore the case study</a>
+                        <a href="https://datageoparana.github.io" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="flagship.cta2">Open live dashboards</a>
+                    </div>
+                </div>
+                <div class="flagship-metrics" data-flagship-item>
+                    <div class="flagship-metric">
+                        <div class="num" data-count="9">9</div>
+                        <span class="lbl" data-i18n="flagship.m1.lbl">Interactive dashboards</span>
+                    </div>
+                    <div class="flagship-metric">
+                        <div class="num" data-count="50,000+">50,000+</div>
+                        <span class="lbl" data-i18n="flagship.m2.lbl">Views and counting</span>
+                    </div>
+                    <div class="flagship-metric">
+                        <div class="num" data-count="399">399</div>
+                        <span class="lbl" data-i18n="flagship.m3.lbl">Municipalities covered</span>
+                    </div>
+                    <div class="flagship-metric">
+                        <div class="num" data-count="23">23</div>
+                        <span class="lbl" data-i18n="flagship.m4.lbl">Regional offices</span>
                     </div>
                 </div>
             </div>
@@ -1655,52 +1699,22 @@
                 Companies and organizations I've had the pleasure to work with
             </p>
 
-            <div class="clients-grid">
-                <div class="client-logo">
-                    <div class="client-placeholder">J.W. Hulme Co.</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">Orbify</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">aDryada</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">IDR-Paraná</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">Sequoia Highland Camp</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">Doggy Dates</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">KOBE Interior Fabrics</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">One Amazon Foundation</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">Capital Certainty</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">Deep Grain</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">Flai Data</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">QatarEnergy</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">Rebel Group</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">Green Circle</div>
-                </div>
-                <div class="client-logo">
-                    <div class="client-placeholder">Ventura Pet</div>
-                </div>
+            <div class="clients-marquee" data-marquee>
+              <div class="marquee-track" data-marquee-track>
+                <div class="client-logo" data-logo="jw-hulme"><div class="client-placeholder">J.W. Hulme Co.</div></div>
+                <div class="client-logo" data-logo="orbify"><div class="client-placeholder">Orbify</div></div>
+                <div class="client-logo" data-logo="adryada"><div class="client-placeholder">aDryada</div></div>
+                <div class="client-logo" data-logo="idr-parana"><div class="client-placeholder">IDR-Paraná</div></div>
+                <div class="client-logo" data-logo="sequoia-highland-camp"><div class="client-placeholder">Sequoia Highland Camp</div></div>
+                <div class="client-logo" data-logo="doggy-dates"><div class="client-placeholder">Doggy Dates</div></div>
+                <div class="client-logo" data-logo="kobe-interior-fabrics"><div class="client-placeholder">KOBE Interior Fabrics</div></div>
+                <div class="client-logo" data-logo="one-amazon"><div class="client-placeholder">One Amazon Foundation</div></div>
+                <div class="client-logo" data-logo="capital-certainty"><div class="client-placeholder">Capital Certainty</div></div>
+                <div class="client-logo" data-logo="deep-grain"><div class="client-placeholder">Deep Grain</div></div>
+                <div class="client-logo" data-logo="flai-data"><div class="client-placeholder">Flai Data</div></div>
+                <div class="client-logo" data-logo="qatarenergy"><div class="client-placeholder">QatarEnergy</div></div>
+                <div class="client-logo" data-logo="rebel-group"><div class="client-placeholder">Rebel Group</div></div>
+              </div>
             </div>
         </div>
     </section>
@@ -1825,7 +1839,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-text">
-                            <h4 data-i18n="contact.email">Email</h4>
+                            <h3 data-i18n="contact.email">Email</h3>
                             <a href="mailto:avnerpaesgomes@gmail.com">avnerpaesgomes@gmail.com</a>
                         </div>
                     </div>
@@ -1835,7 +1849,7 @@
                             <i class="fab fa-linkedin"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>LinkedIn</h4>
+                            <h3>LinkedIn</h3>
                             <a href="https://www.linkedin.com/in/avner-gomes-32556018/" target="_blank" rel="noopener">
                                 Avner Gomes
                             </a>
@@ -1847,7 +1861,7 @@
                             <i class="fas fa-briefcase"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Upwork</h4>
+                            <h3>Upwork</h3>
                             <a href="https://www.upwork.com/freelancers/avnergomes" target="_blank" rel="noopener">
                                 Avner Gomes - Freelancer
                             </a>
@@ -1859,7 +1873,7 @@
                             <i class="fab fa-github"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>GitHub</h4>
+                            <h3>GitHub</h3>
                             <a href="https://github.com/avnergomes" target="_blank" rel="noopener">
                                 avnergomes
                             </a>
@@ -1883,6 +1897,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1936,6 +1951,11 @@
     </script>
     <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
+    <!-- Cinematic motion stack (vendored, local — no CDN runtime dependency) -->
+    <script defer src="js/vendor/gsap.min.js"></script>
+    <script defer src="js/vendor/ScrollTrigger.min.js"></script>
+    <script defer src="js/vendor/lenis.min.js"></script>
+    <script defer src="js/cinematic.js"></script>
 
 <!-- LGPD Notice Banner (informativo - dados anonimizados) -->
 <div id="lgpd-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#1e293b; color:#e2e8f0; padding:1rem 1.5rem; z-index:9999; font-family:system-ui,sans-serif; font-size:0.875rem; box-shadow:0 -2px 10px rgba(0,0,0,0.2);">

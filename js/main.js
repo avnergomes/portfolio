@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollEffects();
     initProjectFilters();
     initCurrentYear();
-    initRevealAnimations();
+    initA11yLabels();
+    // Reveal animations + smooth scrolling are owned by js/cinematic.js
+    // (GSAP + Lenis). main.js no longer drives scroll motion to avoid conflicts.
     initVisitorCounter();
 });
 
@@ -129,23 +131,8 @@ function initScrollEffects() {
         }
     });
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerOffset = 70;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+    // NOTE: in-page anchor smooth scrolling is handled by js/cinematic.js
+    // (routed through Lenis when active, native fallback otherwise).
 }
 
 // ===== Project Filters =====
@@ -169,6 +156,21 @@ function initProjectFilters() {
                 }
             });
         });
+    });
+}
+
+// ===== Accessibility: label icon-only links =====
+// Project cards expose an icon-only "open" link. Give each a discernible
+// name derived from the card's title so screen readers announce the target.
+function initA11yLabels() {
+    document.querySelectorAll('.project-link').forEach(link => {
+        if (link.getAttribute('aria-label')) return;
+        const card = link.closest('.project-card');
+        const title = card && card.querySelector('h3');
+        link.setAttribute(
+            'aria-label',
+            title ? `Open case study: ${title.textContent.trim()}` : 'Open project case study'
+        );
     });
 }
 
@@ -434,27 +436,6 @@ function getOrCreateSessionId() {
     localStorage.setItem('portfolio_visited', 'true');
 
     return sessionId;
-}
-
-// ===== Reveal Animations =====
-function initRevealAnimations() {
-    const revealElements = document.querySelectorAll('.section-title, .section-subtitle, .service-card, .project-card, .stat-card, .skill-category');
-
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const revealPoint = 150;
-
-        revealElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-
-            if (elementTop < windowHeight - revealPoint) {
-                element.classList.add('reveal', 'active');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Initial check
 }
 
 // ===== Profile Image Error Handler =====

@@ -1,0 +1,277 @@
+/* ============================================================
+ * cinematic.css — motion layer for the cinematic redesign
+ * Loaded AFTER styles.css. See CINEMATIC.md for the rules.
+ *
+ * Golden rule: every "from" state (opacity:0, translate) is gated
+ * behind html.cinematic, which JS adds ONLY after GSAP inits.
+ * No JS / no GSAP / reduced-motion  ->  no .cinematic  ->  all visible.
+ * This keeps the site crawler-safe (LLM crawlers don't run JS).
+ * ============================================================ */
+
+/* ---- Lenis (official recommended styles; only active when JS adds classes) ---- */
+html.lenis,
+html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+/* ============ HERO — Phase 1 ============ */
+
+/* Cinematic background image (aerial rainforest canopy). Extends past the
+ * hero edges so Ken Burns zoom + scroll parallax never expose a gap.
+ * GSAP drives the transform; this is just the resting state. */
+.hero-media {
+  position: absolute;
+  inset: -14%;
+  z-index: 0;
+  background: var(--color-paper) url("../assets/images/hero-geo.jpg") center center / cover no-repeat;
+  transform: scale(1.04);
+  will-change: transform;
+}
+
+/* Cinematic colour grade + legibility wash: darkens the left (where the
+ * headline sits), under the nav, and fades to paper at the bottom so the
+ * image dissolves seamlessly into the next section. */
+.hero-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--color-paper) 0%, oklch(14% 0.025 250 / 0.74) 30%, oklch(14% 0.025 250 / 0.32) 58%, transparent 80%),
+    linear-gradient(180deg, oklch(12% 0.02 250 / 0.72) 0%, transparent 26%, transparent 50%, var(--color-paper) 100%);
+}
+
+/* Full-bleed canvas particle field — the "data mesh" reads as a geospatial
+ * overlay on top of the forest. Above image + grade, below content. */
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  opacity: 0.85;
+  mix-blend-mode: screen; /* points/lines glow over the dark canopy */
+}
+
+/* A soft vignette so text never loses contrast over the imagery */
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 100% 80% at 50% 45%, transparent 45%, oklch(12% 0.02 250 / 0.65) 100%),
+    linear-gradient(180deg, transparent 70%, var(--color-paper) 100%);
+}
+
+/* Hero content stacks above everything */
+.hero-content { position: relative; z-index: 2; }
+.hero-scroll  { z-index: 3; }
+
+/* ---- Hero reveal "from" states (only when cinematic is active) ----
+ * We animate transform + opacity ONLY (GPU-cheap). */
+.cinematic .hero-greeting,
+.cinematic .hero-title,
+.cinematic .hero-subtitle,
+.cinematic .hero-description,
+.cinematic .hero-buttons,
+.cinematic .hero-image {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.cinematic .hero-greeting,
+.cinematic .hero-title,
+.cinematic .hero-subtitle,
+.cinematic .hero-description,
+.cinematic .hero-buttons {
+  transform: translateY(28px);
+}
+.cinematic .hero-image {
+  transform: scale(1.04);
+}
+
+/* Scroll cue fades out as the user descends (opacity driven by GSAP) */
+.cinematic .hero-scroll { will-change: opacity, transform; }
+
+/* ============ GENERIC SCROLL REVEALS — Phases 2 & 3 ============
+ * Any element marked [data-reveal] starts hidden ONLY under .cinematic.
+ * JS clears it via GSAP when it scrolls into view. */
+.cinematic [data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  will-change: transform, opacity;
+}
+.cinematic [data-reveal="fade"]  { transform: none; }
+.cinematic [data-reveal="left"]  { transform: translateX(-36px); }
+.cinematic [data-reveal="right"] { transform: translateX(36px); }
+.cinematic [data-reveal="scale"] { transform: scale(0.96); }
+
+/* ============ FLAGSHIP / DataGeo pinned beat — Phase 2 ============ */
+.flagship {
+  position: relative;
+  background:
+    radial-gradient(ellipse 60% 50% at 75% 30%, oklch(60% 0.18 240 / 0.10), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 20% 80%, var(--color-accent-soft), transparent 60%);
+  border-block: 1px solid var(--color-rule-soft);
+  overflow: clip;
+}
+.flagship-stage {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding-block: var(--space-9);
+}
+.flagship-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+.flagship-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  display: flex; align-items: center; gap: var(--space-3);
+}
+.flagship-eyebrow::before {
+  content: ""; width: 32px; height: 1px; background: var(--color-accent); display: inline-block;
+}
+.flagship-title {
+  font-family: var(--font-display);
+  font-weight: 300; font-style: italic;
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  color: var(--color-ink);
+  margin-block: var(--space-4) var(--space-5);
+}
+.flagship-lede {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--color-ink-2);
+  max-width: 54ch;
+}
+.flagship-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+.flagship-metric {
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  background: oklch(18% 0.03 250 / 0.5);
+  backdrop-filter: blur(2px);
+}
+.flagship-metric .num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1;
+  color: var(--color-accent);
+}
+.flagship-metric .lbl {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-ink-3);
+  line-height: 1.4;
+}
+.flagship-cta { margin-top: var(--space-5); display: flex; gap: var(--space-3); flex-wrap: wrap; }
+
+@media (max-width: 968px) {
+  .flagship-inner { grid-template-columns: 1fr; gap: var(--space-6); }
+  .flagship-stage { min-height: auto; padding-block: var(--space-8); }
+}
+
+/* ============ CLIENT LOGO MARQUEE — Phase 3 ============
+ * Default (no JS / reduced motion): logos wrap into a static panel — fully
+ * visible and crawlable. With .cinematic, the track runs as an infinite
+ * marquee (JS clones the set + drives it with GSAP). */
+.clients-marquee {
+  position: relative;
+  border: none;
+  background: transparent;
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+/* Each client sits on a clean light chip so real brand logos (colour, some on
+ * white backgrounds) read correctly against the dark section. */
+.marquee-track .client-logo {
+  flex: 0 0 auto;
+  width: 210px;
+  min-height: 78px;
+  padding: var(--space-4) var(--space-5);
+  background: oklch(97% 0.004 250);
+  border: 1px solid oklch(100% 0 0 / 0.06);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.marquee-track .client-logo:hover {
+  background: oklch(97% 0.004 250);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px oklch(0% 0 0 / 0.35);
+}
+.client-logo-img {
+  max-height: 44px;
+  max-width: 150px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+/* White/light logos inverted to a dark tone so they read on the light chip. */
+.client-logo-img--invert { filter: invert(1) brightness(0.85); }
+/* Text wordmark fallback now sits on a light chip -> dark ink. */
+.marquee-track .client-placeholder {
+  color: oklch(30% 0.03 250);
+}
+
+/* Marquee mode: single nowrap row, edges fading out, gliding sideways. */
+.cinematic .clients-marquee {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.cinematic .marquee-track {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: max-content;
+  will-change: transform;
+}
+
+/* ============ ACCESSIBILITY — reduced motion is first-class ============
+ * Even if .cinematic somehow gets added, force everything to final state.
+ * JS also bails out of Lenis/GSAP entirely under reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .cinematic .hero-greeting,
+  .cinematic .hero-title,
+  .cinematic .hero-subtitle,
+  .cinematic .hero-description,
+  .cinematic .hero-buttons,
+  .cinematic .hero-image,
+  .cinematic [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto;
+  }
+  .hero-canvas { display: none; }
+}

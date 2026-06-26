@@ -15,8 +15,8 @@
   /* Ink */
   --color-ink: oklch(96% 0.01 250);
   --color-ink-2: oklch(82% 0.015 250);
-  --color-ink-3: oklch(68% 0.02 250);
-  --color-mute: oklch(56% 0.025 250);
+  --color-ink-3: oklch(78% 0.02 250);
+  --color-mute: oklch(72% 0.025 250);
   --color-rule: oklch(28% 0.03 250);
   --color-rule-soft: oklch(22% 0.025 250);
 
@@ -437,7 +437,7 @@ body > * { position: relative; z-index: 1; }
 .filter-btn:hover { color: var(--color-ink); border-color: var(--color-mute); }
 .filter-btn.active { background: var(--color-accent); color: oklch(18% 0.04 60); border-color: var(--color-accent); }
 
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: var(--space-4); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: var(--space-6); }
 .project-card {
   background: var(--color-paper-2);
   border: var(--rule); border-radius: var(--radius-lg);
@@ -473,7 +473,9 @@ body > * { position: relative; z-index: 1; }
 .project-link:hover { background: var(--color-accent); transform: scale(1.05); }
 .project-private { font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-mute); padding: 0.25rem 0.55rem; background: oklch(96% 0.01 250 / 0.1); border-radius: var(--radius-full); }
 
-.project-content { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); flex: 1; }
+/* Scoped to grid cards + !important so the project-detail .project-content
+ * rule (padding: space-8 0 !important, further down) can't zero the sides. */
+.project-card .project-content { padding: var(--space-6) !important; display: flex; flex-direction: column; gap: var(--space-4); flex: 1; }
 .project-category {
   font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em;
   color: var(--color-accent); text-transform: uppercase;
@@ -489,13 +491,13 @@ body > * { position: relative; z-index: 1; }
   padding: 0.2rem 0.55rem; background: var(--color-paper-3);
   color: var(--color-ink-3); border-radius: 3px; letter-spacing: 0.02em;
 }
-.project-details { padding-top: var(--space-3); border-top: var(--rule); }
+.project-details { padding-top: var(--space-5); margin-top: var(--space-2); border-top: var(--rule); }
 .project-details h4 {
   font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em;
   color: var(--color-mute); text-transform: uppercase; margin-bottom: var(--space-2); margin-top: var(--space-3);
 }
 .project-details h4:first-child { margin-top: 0; }
-.project-details ul { display: flex; flex-direction: column; gap: var(--space-1); }
+.project-details ul { display: flex; flex-direction: column; gap: var(--space-2); }
 .project-details li {
   font-size: 0.85rem; color: var(--color-ink-3); line-height: 1.5;
   padding-left: var(--space-4); position: relative;
@@ -635,7 +637,7 @@ body > * { position: relative; z-index: 1; }
   flex-shrink: 0;
 }
 .contact-icon i { font-size: 1.05rem; }
-.contact-text h4 { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-mute); margin-bottom: 4px; }
+.contact-text h3 { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-mute); margin-bottom: 4px; }
 .contact-text a { color: var(--color-ink); font-size: 0.95rem; }
 .contact-text a:hover { color: var(--color-accent); }
 
