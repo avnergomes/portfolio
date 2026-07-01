@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rural Access Equity in Parana: which of the state's municipalities are underserved by rural health, education, and agricultural extension relative to their rural population. An Enhanced 2-Step Floating Catchment Area over official IBGE, CNES, INEP and IDR-Parana data, with an interactive map and a fully reproducible Python pipeline.">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="Avner Paes Gomes">
+    <link rel="canonical" href="https://avnergomes.github.io/portfolio/articles/parana-rural-access-equity.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Rural Access Equity in Parana">
+    <meta property="og:description" content="Which municipalities are underserved by rural health, education, and agricultural extension. An E2SFCA over official IBGE, CNES, INEP and IDR-Parana data, with an interactive map and a reproducible pipeline.">
+    <meta property="og:url" content="https://avnergomes.github.io/portfolio/articles/parana-rural-access-equity.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Rural Access Equity in Parana | Avner Gomes</title>
+    <style>
+        /* Per-article hero identity; body contrast is enforced by styles.css subpage overrides */
+        .project-hero { background: linear-gradient(135deg, #14532d 0%, #c2410c 100%); }
+        .lang-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-3); }
+        .lang-cta .btn i.fa-arrow-up-right-from-square { font-size: 0.75rem; }
+    </style>
+</head>
+<body class="subpage-body">
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#articles">Articles</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#articles" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            <h1>Rural Access Equity in Parana<span class="badge">Article</span></h1>
+            <p class="subtitle">Which of Parana's municipalities are underserved by rural health, education, and agricultural extension relative to the people who actually live in the countryside. A spatial-accessibility model over four official datasets, mapped municipality by municipality, and built end to end as a reproducible Python pipeline.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span>Geospatial Intelligence / Spatial Equity</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2026</span></div>
+                <div class="meta-item"><i class="fas fa-database"></i><span>IBGE Censo 2022 · CNES · INEP · IDR-Parana</span></div>
+                <div class="meta-item"><i class="fas fa-language"></i><span>PT · EN</span></div>
+            </div>
+            <div class="lang-cta">
+                <a class="btn btn-primary" href="https://avnergomes.github.io/parana-rural-access-equity/parana_access_report_en.html" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i><span>Open the interactive report</span></a>
+                <a class="btn btn-secondary" href="https://github.com/avnergomes/parana-rural-access-equity" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>Source code</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+
+            <div class="content-section">
+                <h2>What this is</h2>
+                <p>A spatial-equity study of rural Parana. Roughly 1.26 million people, about 11 percent of the state, live in the countryside and depend on three parallel public networks: primary care from the <em>Sistema Unico de Saude</em> (CNES), rural schools from INEP, and agricultural extension from IDR-Parana. Coverage is universal on paper. In practice, a family in one municipality can reach a health post in minutes while a family in another faces a long drive over unpaved roads. This project turns "everyone is covered" into a measured question: relative to its rural population, how well served is each municipality, and where do the gaps stack up across all three services at once.</p>
+                <p>The answer is a composite accessibility score for every municipality, ranked into quintiles, published as a static choropleth and an interactive map, and documented with a bilingual write-up and a one-command pipeline that reproduces the whole thing from raw public data.</p>
+                <div class="highlight-box">
+                    <p><strong>The full analysis is published as an interactive report</strong>, in Portuguese and English, with a switchable map of the composite and each service, the scatter that reveals how the three networks co-vary, a robustness panel, and a sortable ranking of every municipality. This page is the summary; the button above opens the report.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Key figures</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-card"><div class="number">73</div><div class="label">Municipalities in the underserved bottom quintile</div></div>
+                    <div class="kpi-card"><div class="number">~1 in 4</div><div class="label">Ranked rural residents they hold (338,499)</div></div>
+                    <div class="kpi-card"><div class="number">4,676</div><div class="label">Service points geolocated across three networks</div></div>
+                    <div class="kpi-card"><div class="number">3.3&times;</div><div class="label">Primary-care access gap, best vs worst fifth</div></div>
+                    <div class="kpi-card"><div class="number">364</div><div class="label">Municipalities ranked, of Parana's 399</div></div>
+                    <div class="kpi-card"><div class="number">~20 min</div><div class="label">Full pipeline reproduces from scratch</div></div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Inside the analysis</h2>
+                <ul>
+                    <li><strong>Three service networks.</strong> 3,075 primary-care facilities from CNES, 1,187 active rural schools from the INEP Censo Escolar 2024, and 414 IDR-Parana extension offices, pulled from the institute's official unit shapefile and filtered to the extension network only.</li>
+                    <li><strong>Demand where the people are.</strong> Rural population per municipality from the 2022 Census (IBGE SIDRA table 9923), so a service is scored against the countryside it is meant to serve, not the whole population.</li>
+                    <li><strong>A composite, not a single metric.</strong> Each service is scored on its own, converted to a percentile rank, and averaged into an equal-weight composite. Municipalities are then ranked into quintiles, and the bottom fifth is flagged as underserved.</li>
+                    <li><strong>The finding under the map.</strong> Primary-care access and extension access co-vary across the state (they concentrate in the same more-developed north), while rural-school access is the mirror image, strongest in the center-south. The worst-off fifth is where health and extension are both thin at once, and those places are led by Tibagi in the Campos Gerais interior and a cluster along the Itaipu reservoir and the Paraguay and Argentina border.</li>
+                    <li><strong>Two views, one dataset.</strong> A portfolio-grade static choropleth for slides, and an interactive Folium map for exploration, both generated from the same scored GeoPackage.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Methodology</h2>
+                <p>Access is measured with an Enhanced 2-Step Floating Catchment Area (E2SFCA, Luo and Qi, 2009), the current standard in the peer-reviewed Brazilian health-geography literature. It captures two effects that a naive facilities-per-capita ratio misses: cross-boundary catchment, since a health post just outside a municipal line still serves that municipality, and supply competition, since a facility is shared by everyone who can reach it. Distance is great-circle from each municipal centroid, with Gaussian decay (beta = 30 km) and a 50 km catchment cutoff. The three per-service scores are combined with equal weights, a normative choice grounded in the constitutional framing of health, education and extension, and the sensitivity to that choice is reported honestly rather than assumed away.</p>
+                <p>Every dataset is official and public. The CNES facilities come live from the Ministerio da Saude open-data API; INEP schools are anchored to the municipal centroid because the 2024 microdata no longer ships coordinates; the IDR-Parana layer is the institute's own georeferenced unit shapefile. The full pipeline caches each source to disk and rebuilds the maps from scratch with a single command, and the code and methodology are open source.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">GeoPandas</span>
+                    <span class="tech-tag">Shapely</span>
+                    <span class="tech-tag">E2SFCA (Luo &amp; Qi 2009)</span>
+                    <span class="tech-tag">Folium</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">IBGE · CNES · INEP · IDR-Parana</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Explore the analysis</h2>
+                <p>The interactive report, the quick map and the full pipeline open in a new tab.</p>
+                <div class="lang-cta">
+                    <a class="btn btn-primary" href="https://avnergomes.github.io/parana-rural-access-equity/parana_access_report_en.html" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i><span>Interactive report (EN)</span></a>
+                    <a class="btn btn-secondary" href="https://avnergomes.github.io/parana-rural-access-equity/parana_access_report_pt.html" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Relatorio (PT)</span></a>
+                    <a class="btn btn-secondary" href="https://avnergomes.github.io/parana-rural-access-equity/" target="_blank" rel="noopener"><i class="fas fa-map-location-dot"></i><span>Quick map</span></a>
+                    <a class="btn btn-secondary" href="https://github.com/avnergomes/parana-rural-access-equity" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>Source code</span></a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#articles" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-mark">
+                        <picture>
+                            <source srcset="../assets/logo2.webp" type="image/webp" />
+                            <img src="../assets/logo2.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                        </picture>
+                        Avner Gomes
+                    </div>
+                    <p>Forest Engineer &amp; Data Scientist</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnerpaesgomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="current-year"></span> Avner Gomes. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

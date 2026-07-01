@@ -2,9 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://avnergomes.github.io/portfolio/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://avnergomes.github.io/portfolio/articles/parana-rural-access-equity.html</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://avnergomes.github.io/portfolio/articles/clt-em-movimento.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://avnergomes.github.io/portfolio/projects/iof-technology.html</loc>
