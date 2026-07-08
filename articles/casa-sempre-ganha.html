@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The House Always Wins — the socioeconomic impact of online betting in Brazil: how much the sector extracts from households, from whom, and at what health cost. A self-contained, trilingual interactive report (PT / EN / ES) built from SPA, Central Bank, IEPS, LENAD III, DATASUS, IBGE and Google Trends data, with a Monte Carlo model and a reproducible pipeline.">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="Avner Paes Gomes">
+    <link rel="canonical" href="https://avnergomes.github.io/portfolio/articles/casa-sempre-ganha.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The House Always Wins — The Socioeconomic Impact of Online Betting in Brazil">
+    <meta property="og:description" content="How much online betting extracts from Brazilian households, from whom, and at what health cost. A trilingual interactive report with a Monte Carlo model and a reproducible pipeline. PT / EN / ES.">
+    <meta property="og:url" content="https://avnergomes.github.io/portfolio/articles/casa-sempre-ganha.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>The House Always Wins — Online Betting in Brazil | Avner Gomes</title>
+    <style>
+        /* Per-article hero identity; body contrast is enforced by styles.css subpage overrides */
+        .project-hero { background: linear-gradient(135deg, #5b1414 0%, #b45309 100%); }
+        .lang-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-3); }
+        .lang-cta .btn i.fa-arrow-up-right-from-square { font-size: 0.75rem; }
+        .report-frame {
+            width: 100%; aspect-ratio: 16 / 10; min-height: 460px;
+            border: var(--rule); border-radius: var(--radius-md);
+            background: var(--color-paper-2);
+        }
+    </style>
+</head>
+<body class="subpage-body">
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#articles">Articles</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#articles" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            <h1>The House Always Wins<span class="badge">Article</span></h1>
+            <p class="subtitle">How much online betting extracts from Brazilian households, from whom, and at what cost. The sector drains an enormous volume of money from families, concentrates that extraction among the poorest, returns almost nothing in jobs or useful tax revenue, and leaves behind a health toll larger than what it pays into public coffers. Every section is one argument, with its source and a visual.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span>Data Storytelling / Public Health Economics</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2026</span></div>
+                <div class="meta-item"><i class="fas fa-database"></i><span>SPA/MF · Central Bank · IEPS · LENAD III · DATASUS · IBGE · Google Trends</span></div>
+                <div class="meta-item"><i class="fas fa-language"></i><span>PT · EN · ES</span></div>
+            </div>
+            <div class="lang-cta">
+                <a class="btn btn-primary" href="https://avnergomes.github.io/casa-sempre-ganha/#en" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i><span>Open interactive report (EN)</span></a>
+                <a class="btn btn-secondary" href="https://avnergomes.github.io/casa-sempre-ganha/#pt" target="_blank" rel="noopener">Português</a>
+                <a class="btn btn-secondary" href="https://avnergomes.github.io/casa-sempre-ganha/#es" target="_blank" rel="noopener">Español</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+
+            <div class="content-section">
+                <h2>What this is</h2>
+                <p>An editorial, data-driven report on the socioeconomic impact of online fixed-odds betting, the <em>bets</em>, in Brazil. It follows the money through every link of the chain: how large the market became in a single year of regulation, how the risk concentrates among the poorest households, why the house edge guarantees loss in the aggregate, how few jobs and how little useful revenue the sector actually returns, and what the health toll adds up to. It closes on the regulation being written right now, a rejected parliamentary inquiry, a bill to double the tax, and a queue of more than two hundred thousand people asking to be blocked from themselves.</p>
+                <p>The thesis in one line: the sector extracts a great deal from families, concentrates the extraction among the poorest, gives back almost nothing in employment and useful tax revenue, and generates a social and health cost that exceeds what it collects.</p>
+                <div class="highlight-box">
+                    <p><strong>The report is fully interactive and self-contained</strong>, a single offline HTML file with its own SVG charts, a choropleth of the 27 states, and a sortable table, published in Portuguese, English and Spanish through an in-page language toggle. This page is the summary; the buttons above open the live version.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Key figures</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-card"><div class="number">R$ 37 bn</div><div class="label">Gross gaming revenue (GGR) in 2025</div></div>
+                    <div class="kpi-card"><div class="number">25.2 M</div><div class="label">Brazilians placed bets in 2025</div></div>
+                    <div class="kpi-card"><div class="number">R$ 38.8 bn</div><div class="label">Annual social and health cost (IEPS)</div></div>
+                    <div class="kpi-card"><div class="number">1,144</div><div class="label">Formal jobs in the entire sector</div></div>
+                    <div class="kpi-card"><div class="number">537×</div><div class="label">Health cost vs. the bets' transfer to health</div></div>
+                    <div class="kpi-card"><div class="number">27</div><div class="label">States, cross-read by proxy</div></div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Inside the report</h2>
+                <ul>
+                    <li><strong>Panorama and trajectory.</strong> The size of the market from SPA and Central Bank data, and the rise of a brand-new curve traced by search interest, marked with the events that moved it.</li>
+                    <li><strong>Who pays the bill.</strong> The moral axis: risky gambling concentrates where money is tightest, from LENAD III and from the Central Bank's finding on Bolsa Família money flowing to betting.</li>
+                    <li><strong>The math of loss.</strong> A Monte Carlo simulation of twenty thousand bettors at a 93% return to player, showing the structural loss guaranteed in the aggregate.</li>
+                    <li><strong>The economic void.</strong> The jobs myth and the tax revenue set against the social cost the sector generates.</li>
+                    <li><strong>The human toll.</strong> The health bill from IEPS and the rising suicide curve from DATASUS, the emotional apex of the report.</li>
+                    <li><strong>Geography.</strong> A choropleth by state crossing search intensity, suicide, mental-health capacity and income, built by proxy and honest about the ecological fallacy.</li>
+                    <li><strong>Dossier and robustness.</strong> The regulation in dispute, the sensitivity and the declared limits of the cost estimate, and a sortable state-by-state appendix.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Methodology</h2>
+                <p>The report is built from a reproducible pipeline with live API collection and on-disk caching, so the whole thing rebuilds with a single command. Mortality by suicide (ICD-10 X60–X84) and the mental-health network come from DATASUS (SIM and CNES) via TABNET; household income per capita and population from IBGE (PNAD Contínua) via SIDRA; search interest from Google Trends. The market, flow, cost and prevalence figures are transcribed from the primary sources, the SPA/Ministry of Finance panoramas, the Central Bank's Special Study 119, the IEPS dossier and LENAD III, each with the exact reference. The central statistical model is a Monte Carlo simulation of the bettor's bankroll at a 93% return to player; a seasonal decomposition and Spearman correlations between states, with bootstrap intervals, complete the analysis.</p>
+                <p>Methodological honesty is treated as a feature, not a footnote: the report flags the methodological break of a market only measured from 2025, the geographic proxy that stands in for municipal spend the Central Bank keeps internal, the non-causal nature of the spatial associations, and the cost estimate transferred from the UK OHID by purchasing power parity and treated as a floor, not a ceiling. The academic references were located through a scientific paper-lookup protocol over OpenAlex, each with a DOI verified in OpenAlex and confirmed in CrossRef. The full code and data pipeline are open source.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">pandas / NumPy / SciPy</span>
+                    <span class="tech-tag">statsmodels (Monte Carlo / STL)</span>
+                    <span class="tech-tag">DATASUS (SIM / CNES)</span>
+                    <span class="tech-tag">IBGE SIDRA (PNADC)</span>
+                    <span class="tech-tag">Google Trends</span>
+                    <span class="tech-tag">OpenAlex</span>
+                    <span class="tech-tag">Inline SVG</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Read the full report</h2>
+                <p>The interactive edition opens in a new tab. Pick a language:</p>
+                <div class="lang-cta">
+                    <a class="btn btn-primary" href="https://avnergomes.github.io/casa-sempre-ganha/#en" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>English</span></a>
+                    <a class="btn btn-secondary" href="https://avnergomes.github.io/casa-sempre-ganha/#pt" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Português</span></a>
+                    <a class="btn btn-secondary" href="https://avnergomes.github.io/casa-sempre-ganha/#es" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Español</span></a>
+                    <a class="btn btn-secondary" href="https://github.com/avnergomes/casa-sempre-ganha" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>Source code</span></a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#articles" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-mark">
+                        <picture>
+                            <source srcset="../assets/logo2.webp" type="image/webp" />
+                            <img src="../assets/logo2.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                        </picture>
+                        Avner Gomes
+                    </div>
+                    <p>Forest Engineer &amp; Data Scientist</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnerpaesgomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="current-year"></span> Avner Gomes. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
