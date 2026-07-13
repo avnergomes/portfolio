@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Deadliest Streets of Curitiba: 2,843 georeferenced fatal traffic crashes (2010-2024) clustered into the city's most lethal road segments, and a 3D map where every crash is a human figure. Data from IPPUC / BPTRAN, rendered with MapLibre GL and deck.gl.">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="Avner Paes Gomes">
+    <link rel="canonical" href="https://avnergomes.github.io/portfolio/articles/curitiba-deadliest-streets.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Deadliest Streets of Curitiba">
+    <meta property="og:description" content="Fifteen years of fatal crashes clustered into the city's most lethal segments, plus a 3D map where every crash is a human figure. IPPUC / BPTRAN data, MapLibre GL + deck.gl.">
+    <meta property="og:url" content="https://avnergomes.github.io/portfolio/articles/curitiba-deadliest-streets.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>The Deadliest Streets of Curitiba | Avner Gomes</title>
+    <style>
+        /* Per-article hero identity; body contrast is enforced by styles.css subpage overrides */
+        .project-hero { background: linear-gradient(135deg, #0f172a 0%, #b91c1c 100%); }
+        .lang-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-3); }
+        .lang-cta .btn i.fa-arrow-up-right-from-square { font-size: 0.75rem; }
+    </style>
+</head>
+<body class="subpage-body">
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#articles">Articles</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#articles" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            <h1>The Deadliest Streets of Curitiba<span class="badge">Article</span></h1>
+            <p class="subtitle">Every fatal traffic crash in Curitiba has a coordinate. Stack fifteen years of them on the map and the city's traffic stops being anecdote and becomes geography: a single walkable downtown block emerges as the most lethal spot in town, the world-famous BRT busway shows up seven times in the fifteen worst segments, and the answer to "where is the most dangerous stretch" turns out to be three different questions with three different fixes. Includes a 3D map where every crash is a human figure.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span>Geospatial Intelligence / Road Safety</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2026</span></div>
+                <div class="meta-item"><i class="fas fa-database"></i><span>IPPUC · BPTRAN-SMDT (2010-2024)</span></div>
+                <div class="meta-item"><i class="fas fa-language"></i><span>PT · EN</span></div>
+            </div>
+            <div class="lang-cta">
+                <a class="btn btn-primary" href="https://avnergomes.github.io/curitiba-fatal-crashes/" target="_blank" rel="noopener"><i class="fas fa-cube"></i><span>Open the 3D map</span></a>
+                <a class="btn btn-secondary" href="https://avnergomes.github.io/curitiba-fatal-crashes/relatorio.html" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Reportagem de dados (PT)</span></a>
+                <a class="btn btn-secondary" href="https://avnergomes.github.io/curitiba-fatal-crashes/dashboard.html" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+
+            <div class="content-section">
+                <h2>What this is</h2>
+                <p>A spatial investigation of road deaths in Brazil's model transit city. Curitiba recorded 2,947 fatal traffic crashes between 2010 and 2024, killing 3,073 people; 2,843 of those crashes carry exact coordinates. This project groups them by proximity, so that everything within roughly 140 meters becomes one "segment", then counts, names each segment through reverse geocoding, and asks the question every driver in the city has an opinion about: which stretch of road kills the most?</p>
+                <p>The answer is not a highway curve. It is the block around Rua Barão do Serro Azul, in the dense, walkable historic center: 25 fatal crashes within a 140 meter radius, 19 of them pedestrians struck by vehicles. Below the top spot, two names repeat across the ranking. The exclusive BRT busway, the corridor system that made Curitiba a global planning reference, appears seven times among the fifteen worst segments. The high-speed ring road (Contorno Leste) appears three more. Density, crossing, and speed: three distinct ways the city kills, each demanding a different fix.</p>
+                <div class="highlight-box">
+                    <p><strong>The centerpiece is a 3D crash-density map</strong> in the spirit of ISOTYPE pictograms: one human figure for each fatal crash, stacked over the exact cell where it happened, colored by crash type, filterable, and rendered with MapLibre GL and deck.gl over a light basemap. The numbers stop being numbers when they have shoulders and a head.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Key figures</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-card"><div class="number">2,947</div><div class="label">Fatal crashes in 15 years; 3,073 lives lost</div></div>
+                    <div class="kpi-card"><div class="number">25</div><div class="label">Fatal crashes in the single worst ~140 m segment (downtown)</div></div>
+                    <div class="kpi-card"><div class="number">19 of 25</div><div class="label">Of those were pedestrians struck</div></div>
+                    <div class="kpi-card"><div class="number">7 of 15</div><div class="label">Worst segments sit on the BRT busway</div></div>
+                    <div class="kpi-card"><div class="number">36%</div><div class="label">Of all victims were on foot (1,069 pedestrians)</div></div>
+                    <div class="kpi-card"><div class="number">&minus;51%</div><div class="label">Annual fatal crashes, 2010 (320) to 2024 (156)</div></div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Inside the analysis</h2>
+                <ul>
+                    <li><strong>From dashboard to coordinates.</strong> The source is IPPUC's official "Acidente de Trânsito" panel (BPTRAN / SMDT data), extracted programmatically from the published Tableau visualization, cleaned, and validated: 2,843 of 2,947 fatal crashes (96.5%) carry usable coordinates.</li>
+                    <li><strong>Proximity clustering, then naming.</strong> Crashes are grouped within a ~140 m radius into 1,561 distinct sites; each of the top sites is named by reverse geocoding its centroid against OpenStreetMap, so the ranking reads as streets and neighborhoods, not lat/lon pairs.</li>
+                    <li><strong>The finding.</strong> The most lethal spot is not where intuition points. It is the city's busiest pedestrian area: the historic center, where three in four deaths are people on foot. The BRT busway kills at the crossings between stations; the ring road kills at speed. Same question, three different geometries of risk.</li>
+                    <li><strong>Three problems, three fixes.</strong> Where density kills (downtown), the levers are protected crossings, signal timing and lower speeds. Where crossing kills (busway), they are safe crossings tied to the tube stations. Where speed kills (ring road), they are enforcement and road engineering. A single "most dangerous stretch" headline would flatten exactly the distinction that matters for policy.</li>
+                    <li><strong>Making the numbers human.</strong> The 3D map bins all 2,843 crashes into ~165 m cells and stacks one pictogram figure per crash, colored by type (pedestrians struck, collisions, other), with per-cell tooltips, category filters, and a 2D/3D toggle.</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Methodology</h2>
+                <p>Points were extracted from the IPPUC public panel via its underlying VizQL API, deduplicated and filtered to fatal crashes with valid coordinates inside the municipality. Hotspot detection uses greedy proximity clustering with a ~140 m radius, deliberately simple and auditable: each cluster is a place a traffic engineer can stand in, not a statistical abstraction. Segment names come from reverse geocoding each cluster centroid with OSM Nominatim and indicate the dominant road, not necessarily the exact corner. The 3D density map uses a separate ~165 m grid binning so every crash is drawn exactly once, one figure per crash, stacked bottom-up with the dominant crash type at the base.</p>
+                <p>Honest limits, stated on every page: the analysis covers fatal crashes only (non-fatal crashes follow different spatial patterns), 3.5% of fatal crashes could not be georeferenced, and a crash may kill more than one person, which is why 2,947 crashes correspond to 3,073 deaths. All figures are reproducible from the JSON extracts with two small Python build scripts; the maps are static HTML files with no backend.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">MapLibre GL</span>
+                    <span class="tech-tag">deck.gl</span>
+                    <span class="tech-tag">Leaflet</span>
+                    <span class="tech-tag">OSM / Nominatim</span>
+                    <span class="tech-tag">IPPUC · BPTRAN-SMDT</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Explore the analysis</h2>
+                <p>The 3D map, the narrative data report in Portuguese and the exploratory dashboard open in a new tab.</p>
+                <div class="lang-cta">
+                    <a class="btn btn-primary" href="https://avnergomes.github.io/curitiba-fatal-crashes/" target="_blank" rel="noopener"><i class="fas fa-cube"></i><span>3D crash-density map</span></a>
+                    <a class="btn btn-secondary" href="https://avnergomes.github.io/curitiba-fatal-crashes/relatorio.html" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Reportagem de dados (PT)</span></a>
+                    <a class="btn btn-secondary" href="https://avnergomes.github.io/curitiba-fatal-crashes/dashboard.html" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#articles" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-mark">
+                        <picture>
+                            <source srcset="../assets/logo2.webp" type="image/webp" />
+                            <img src="../assets/logo2.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                        </picture>
+                        Avner Gomes
+                    </div>
+                    <p>Forest Engineer &amp; Data Scientist</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnerpaesgomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="current-year"></span> Avner Gomes. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
