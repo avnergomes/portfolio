@@ -183,8 +183,8 @@ body > * { position: relative; z-index: 1; }
   gap: var(--space-5);
 }
 .nav-logo { display: inline-flex; align-items: center; }
-.logo-img { width: 36px; height: 36px; filter: drop-shadow(0 0 6px oklch(74% 0.14 60 / 0.35)); transition: filter var(--transition-base); }
-.nav-logo:hover .logo-img { filter: drop-shadow(0 0 10px oklch(74% 0.14 60 / 0.6)); }
+.logo-img { width: 36px; height: 36px; filter: brightness(0) invert(1) drop-shadow(0 0 6px oklch(74% 0.14 60 / 0.35)); transition: filter var(--transition-base); }
+.nav-logo:hover .logo-img { filter: brightness(0) invert(1) drop-shadow(0 0 10px oklch(74% 0.14 60 / 0.6)); }
 .logo-text { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: 1.05rem; }
 
 .nav-menu { display: flex; gap: var(--space-5); align-items: center; }
