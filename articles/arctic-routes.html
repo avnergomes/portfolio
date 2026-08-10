@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What 47 years of daily satellite data say about Arctic shipping routes: the Transpolar route has never opened a single day, the NSR swings between 0 and 59 open days a year, bathymetry caps ship size at 16 m channels, and 95% of actual transit cargo runs Russia to China. NOAA/NSIDC CDR v6, IMO POLARIS, optimal routing vs Suez, with a trilingual interactive globe.">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="Avner Paes Gomes">
+    <link rel="canonical" href="https://avnergomes.github.io/portfolio/articles/arctic-routes.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The New Map of Global Trade: Arctic Shipping Routes">
+    <meta property="og:description" content="47 years of daily sea-ice data, cell by cell, over the three Arctic corridors: the route across the Pole has never opened, the coastal route is capped by a 16 m seafloor, and the 'Ice Silk Road' headline gets its numbers checked.">
+    <meta property="og:url" content="https://avnergomes.github.io/portfolio/articles/arctic-routes.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>The New Map of Global Trade: Arctic Shipping Routes | Avner Gomes</title>
+    <style>
+        /* Per-article hero identity; body contrast is enforced by styles.css subpage overrides */
+        .project-hero { background: linear-gradient(135deg, #0f172a 0%, #0369a1 100%); }
+        .lang-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-3); }
+        .lang-cta .btn i.fa-arrow-up-right-from-square { font-size: 0.75rem; }
+        .lang-block { display: none; }
+        .lang-block.active { display: block; }
+        .art-lang-btn.on { pointer-events: none; opacity: 0.65; }
+    </style>
+</head>
+<body class="subpage-body">
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#articles">Articles</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#articles" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            <h1><span class="lang-block active" data-art-lang="en" style="display:inline;">The New Map of Global Trade: Arctic Shipping Routes</span><span class="lang-block" data-art-lang="pt">O Novo Mapa do Comércio Global: as Rotas do Ártico</span><span class="lang-block" data-art-lang="es">El Nuevo Mapa del Comercio Global: las Rutas del Ártico</span><span class="badge">Article</span></h1>
+            <p class="subtitle">
+                <span class="lang-block active" data-art-lang="en">Zero days in 47 years. That is how long the route straight across the North Pole has been navigable in the full satellite record, while a Chinese container ship reached England through the Siberian coast in 20 days. This study runs NOAA/NSIDC's daily sea-ice record cell by cell over the three Arctic corridors, applies the IMO's POLARIS risk index, routes Ningbo to Rotterdam against Suez, and checks the "Ice Silk Road" headline against the seafloor, the calendar and the freight economics.</span>
+                <span class="lang-block" data-art-lang="pt">Zero dias em 47 anos. É quanto tempo a rota que cruza o Polo Norte em linha reta ficou navegável no registro completo dos satélites, enquanto um porta-contêineres chinês chegou à Inglaterra pela costa siberiana em 20 dias. Este estudo roda o registro diário de gelo do NOAA/NSIDC célula por célula sobre os três corredores do Ártico, aplica o índice de risco POLARIS da IMO, roteia Ningbo-Roterdã contra Suez e confere a manchete da "Rota da Seda do Gelo" contra o fundo do mar, o calendário e a economia do frete.</span>
+                <span class="lang-block" data-art-lang="es">Cero días en 47 años. Ese es el tiempo que la ruta que cruza el Polo Norte en línea recta estuvo navegable en el registro satelital completo, mientras un portacontenedores chino llegó a Inglaterra por la costa siberiana en 20 días. Este estudio corre el registro diario de hielo de NOAA/NSIDC celda por celda sobre los tres corredores del Ártico, aplica el índice de riesgo POLARIS de la OMI, rutea Ningbo-Róterdam contra Suez y contrasta el titular de la "Ruta de la Seda del Hielo" con el fondo marino, el calendario y la economía del flete.</span>
+            </p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span>Geospatial Intelligence / Climate &amp; Trade</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2026</span></div>
+                <div class="meta-item"><i class="fas fa-database"></i><span>NOAA/NSIDC CDR v6 · IMO POLARIS · CHNL (1979-2025)</span></div>
+                <div class="meta-item"><i class="fas fa-language"></i><span>PT · EN · ES</span></div>
+            </div>
+            <div class="lang-cta">
+                <a class="btn btn-primary art-lang-btn" href="#en" data-setlang="en"><i class="fas fa-book-open"></i><span>Read in English</span></a>
+                <a class="btn btn-secondary art-lang-btn" href="#pt" data-setlang="pt">Português</a>
+                <a class="btn btn-secondary art-lang-btn" href="#es" data-setlang="es">Español</a>
+                <a class="btn btn-secondary" id="globe-link" href="arctic-routes-globe.html#en" target="_blank" rel="noopener"><i class="fas fa-globe"></i><span>Interactive globe · 47 years of ice</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+
+            <!-- ======================= EN ======================= -->
+            <div class="lang-block active" data-art-lang="en">
+                <div class="content-section">
+                    <h2>What this is</h2>
+                    <p>A reproducible geospatial study of the three Arctic shipping corridors: the Northern Sea Route (NSR) along Russia, the Northwest Passage (NWP) through the Canadian archipelago, and the Transpolar route straight over the Pole. The physical basis is NOAA/NSIDC's Climate Data Record v6, daily sea-ice concentration on a 25 km grid since late 1978, processed cell by cell along each corridor for all 47 years. Every published figure traces to one of 97 verified claims with primary source and confidence level.</p>
+                    <p>The study also puts numbers under a headline. The Financial Times reported that <a href="https://www.ft.com/content/4456f475-f2c8-4cb7-8312-0c47c5f781b8" target="_blank" rel="noopener">China is bypassing shipping chokepoints with an "Ice Silk Road" through the Arctic</a>, the corridor Beijing formally named the Polar Silk Road in its 2018 Arctic policy white paper. The traffic is real: 14 Asia-Europe container voyages in 2025, one of them Ningbo to Felixstowe in 20 days. What the satellite record adds is the fine print: the window is a yearly lottery, the seafloor caps ship size, and less than one tonne in ten on the route actually transits between oceans.</p>
+                    <div class="highlight-box">
+                        <p><strong>The centerpiece is a trilingual interactive globe</strong>: drag the year from 1979 to 2025 and watch the September ice edge retreat over the routes, with China's Arctic Express corridor drawn in gold, the bathymetric chokepoints as clickable dots, and the open-days scoreboard updating per year. Self-contained deck.gl, no backend.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Key figures</h2>
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><div class="number">0 days</div><div class="label">Transpolar route open in 47 years of daily satellite data</div></div>
+                        <div class="kpi-card"><div class="number">&minus;21%</div><div class="label">NSR distance vs Suez, Ningbo-Rotterdam (15,300 vs 19,400 km)</div></div>
+                        <div class="kpi-card"><div class="number">44 days/yr</div><div class="label">NSR average open window in the 2010s (ice-class threshold)</div></div>
+                        <div class="kpi-card"><div class="number">0 vs 43</div><div class="label">2024: NSR shut all year while the NWP had its record season</div></div>
+                        <div class="kpi-card"><div class="number">16 m</div><div class="label">Deepest channel at Dmitry Laptev Strait: the seafloor caps ship size</div></div>
+                        <div class="kpi-card"><div class="number">8%</div><div class="label">Of NSR cargo actually transits (3.07 of 37.9 Mt in 2024); 95% of it Russia to China</div></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Inside the analysis</h2>
+                    <ul>
+                        <li><strong>A strict, auditable window metric.</strong> A corridor counts as open on a day only when every ocean cell along it sits below the ice threshold at once (15% for open-water ships, 50% for ice-class). The NSR went from zero open days in the 1980s to a 44-day average in the 2010s; the Transpolar route never opened once.</li>
+                        <li><strong>The plateau nobody headlines.</strong> September ice declines 12% per decade over the full record, yet 2007-2025 shows no significant trend (p = 0.36). The ice fell to a lower level and now swings hard year to year, which is why 2024 shut the NSR while handing the NWP its best season, and 2025 swapped the two.</li>
+                        <li><strong>Optimal routing with POLARIS gating.</strong> A time-cost graph over the polar grid, with the IMO's Risk Index Outcome deciding cell by cell what each vessel class can enter, against a Suez baseline on the searoute maritime graph. September: the Arctic saves ~6 days. March: it closes for ordinary ships, and even a PC6 takes 45 days at 3 knots through the ice, longer than Suez.</li>
+                        <li><strong>The seafloor gate.</strong> The best channels at the New Siberian Islands straits measure 16-27 m in the sampled sections, against 180-290 m at Vilkitsky and Barrow. Draft, not ice, caps vessel size on the coastal route, and bathymetry does not respond to warming.</li>
+                        <li><strong>Follow the cargo.</strong> The NSR moved a record 37.9 Mt in 2024, but only 3.07 Mt crossed end to end, 95% of it Russia-to-China crude. Container profit per TEU still favors Suez ($1,151 vs $1,124 in the classic operational-data study), which is why the Red Sea crisis pushed global liners around the Cape, not over the Pole.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Methodology</h2>
+                    <p>Sea-ice extent series from the NSIDC Sea Ice Index v4; daily and monthly concentration from the NOAA/NSIDC CDR v6 aggregates (~4.3 GB, cached and never reprocessed); volume from PIOMAS; bathymetry from NOAA's DEM mosaic; traffic statistics from Rosatom and the independent AIS monitoring of CHNL / Nord University. POLARIS follows IMO circular MSC.1/Circ.1519 with the full Risk Index Value table, simplified by inferring ice type from seasonal proxy plus September persistence instead of operational ice charts. Routing is Dijkstra over an ocean-cell graph (depth &le; &minus;15 m) with geodesic edge lengths, never Web Mercator. Eleven sanity tests lock the published numbers to the pipeline outputs.</p>
+                    <p>Honest limits, stated where they bite: the corridor-open criterion is deliberately hard, which is why 97 real transits happened in 2024, a year the strict metric scores as zero for ordinary ships; tactical navigation detours, waits and follows icebreakers. Emissions comparisons use declared consumption assumptions, not engine data, and exclude icebreaker escort. Strait depths come from one sampled section each; the true fairway can run shallower. The 2050 outlook is a declared extrapolation of the observed series, not a climate-model projection, and its answer changes with the fitting period chosen.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">xarray</span>
+                        <span class="tech-tag">NOAA/NSIDC CDR v6</span>
+                        <span class="tech-tag">POLARIS (IMO)</span>
+                        <span class="tech-tag">SciPy · Dijkstra</span>
+                        <span class="tech-tag">searoute</span>
+                        <span class="tech-tag">deck.gl GlobeView</span>
+                        <span class="tech-tag">Blender 4.4</span>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Explore the analysis</h2>
+                    <p>The interactive globe opens in a new tab: 47 years of September ice, five routes including China's Arctic Express corridor, bathymetric chokepoints and per-year open-day counts.</p>
+                    <div class="lang-cta">
+                        <a class="btn btn-primary" href="arctic-routes-globe.html#en" target="_blank" rel="noopener"><i class="fas fa-globe"></i><span>Interactive globe (EN)</span></a>
+                        <a class="btn btn-secondary" href="arctic-routes-globe.html#pt" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Globo (PT)</span></a>
+                        <a class="btn btn-secondary" href="arctic-routes-globe.html#es" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Globo (ES)</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================= PT ======================= -->
+            <div class="lang-block" data-art-lang="pt">
+                <div class="content-section">
+                    <h2>O que é isto</h2>
+                    <p>Um estudo geoespacial reprodutível dos três corredores de navegação do Ártico: a Rota do Mar do Norte (NSR), pela costa russa, a Passagem Noroeste (NWP), pelo arquipélago canadense, e a rota Transpolar, em linha reta sobre o Polo. A base física é o Climate Data Record v6 do NOAA/NSIDC, concentração diária de gelo em grade de 25 km desde o fim de 1978, processada célula por célula ao longo de cada corredor nos 47 anos. Cada número publicado rastreia para uma de 97 afirmações verificadas, com fonte primária e nível de confiança.</p>
+                    <p>O estudo também coloca números sob uma manchete. O Financial Times noticiou que <a href="https://www.ft.com/content/4456f475-f2c8-4cb7-8312-0c47c5f781b8" target="_blank" rel="noopener">a China está contornando os gargalos da navegação com uma "Rota da Seda do Gelo" pelo Ártico</a>, o corredor que Pequim batizou formalmente de Rota da Seda Polar no white paper da sua política ártica de 2018. O tráfego é real: 14 viagens de contêiner Ásia-Europa em 2025, uma delas de Ningbo a Felixstowe em 20 dias. O que o registro de satélite acrescenta são as letras miúdas: a janela é uma loteria anual, o fundo do mar limita o tamanho dos navios e menos de uma tonelada em dez na rota atravessa de fato entre oceanos.</p>
+                    <div class="highlight-box">
+                        <p><strong>A peça central é um globo interativo trilíngue</strong>: arraste o ano de 1979 a 2025 e veja a borda do gelo de setembro recuar sobre as rotas, com o corredor do Arctic Express chinês em dourado, os gargalos batimétricos como pontos clicáveis e o placar de dias abertos por ano. deck.gl autocontido, sem backend.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Números-chave</h2>
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><div class="number">0 dias</div><div class="label">Rota transpolar aberta em 47 anos de dado diário de satélite</div></div>
+                        <div class="kpi-card"><div class="number">&minus;21%</div><div class="label">Distância da NSR vs Suez, Ningbo-Roterdã (15.300 vs 19.400 km)</div></div>
+                        <div class="kpi-card"><div class="number">44 dias/ano</div><div class="label">Janela média da NSR na década de 2010 (limiar ice-class)</div></div>
+                        <div class="kpi-card"><div class="number">0 vs 43</div><div class="label">2024: NSR fechada o ano todo e NWP na melhor temporada do registro</div></div>
+                        <div class="kpi-card"><div class="number">16 m</div><div class="label">Canal mais fundo no estreito de Dmitry Laptev: o fundo limita a escala</div></div>
+                        <div class="kpi-card"><div class="number">8%</div><div class="label">Da carga da NSR atravessa de ponta a ponta (3,07 de 37,9 Mt em 2024); 95% disso Rússia-China</div></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Por dentro da análise</h2>
+                    <ul>
+                        <li><strong>Uma métrica de janela dura e auditável.</strong> O corredor conta como aberto num dia só quando todas as células oceânicas dele estão abaixo do limiar de gelo ao mesmo tempo (15% para navio comum, 50% para ice-class). A NSR saiu de zero dias nos anos 1980 para média de 44 na década de 2010; a Transpolar nunca abriu.</li>
+                        <li><strong>O platô que não vira manchete.</strong> O gelo de setembro cai 12% por década no registro completo, e ainda assim 2007-2025 não tem tendência significativa (p = 0,36). O gelo desceu de patamar e agora oscila forte de ano a ano, e foi assim que 2024 fechou a NSR enquanto dava à NWP a melhor temporada dela, e 2025 inverteu as duas.</li>
+                        <li><strong>Roteamento ótimo com POLARIS.</strong> Um grafo de custo-tempo sobre a grade polar, com o Risk Index Outcome da IMO decidindo célula a célula onde cada classe de navio entra, contra a linha de base de Suez no grafo marítimo searoute. Setembro: o Ártico economiza ~6 dias. Março: fecha para navio comum, e mesmo um PC6 leva 45 dias a 3 nós no gelo, mais que Suez.</li>
+                        <li><strong>O portão do fundo do mar.</strong> Os melhores canais nos estreitos das Ilhas da Nova Sibéria medem 16-27 m nas seções amostradas, contra 180-290 m em Vilkitsky e Barrow. O calado, e não o gelo, limita o tamanho do navio na rota costeira, e batimetria não responde ao aquecimento.</li>
+                        <li><strong>Siga a carga.</strong> A NSR moveu o recorde de 37,9 Mt em 2024, mas só 3,07 Mt atravessaram de ponta a ponta, 95% disso petróleo da Rússia para a China. O lucro por contêiner ainda favorece Suez (US$ 1.151 vs 1.124 no estudo clássico com dados operacionais), e foi por isso que a crise do Mar Vermelho empurrou os armadores globais para o Cabo, e não para o Polo.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Metodologia</h2>
+                    <p>Série de extensão do Sea Ice Index v4 do NSIDC; concentração diária e mensal dos agregados do CDR v6 do NOAA/NSIDC (~4,3 GB, cacheados e nunca reprocessados); volume do PIOMAS; batimetria do mosaico de DEMs da NOAA; estatísticas de tráfego da Rosatom e do monitoramento AIS independente do CHNL / Nord University. O POLARIS segue o circular MSC.1/Circ.1519 da IMO com a tabela completa de Risk Index Values, simplificado ao inferir o tipo de gelo por proxy sazonal e persistência de setembro em vez de cartas de gelo operacionais. O roteamento é Dijkstra sobre um grafo de células oceânicas (profundidade &le; &minus;15 m) com arestas geodésicas, nunca Web Mercator. Onze testes de sanidade travam os números publicados às saídas do pipeline.</p>
+                    <p>Limites honestos, ditos onde doem: o critério de corredor aberto é duro de propósito, e é por isso que 97 trânsitos reais aconteceram em 2024, ano que a métrica estrita pontua como zero para navio comum; a navegação tática desvia, espera e segue quebra-gelo. As comparações de emissões usam premissas declaradas de consumo, não dados de motor, e excluem a escolta. As profundidades vêm de uma seção amostrada por estreito; o talvegue real pode ser mais raso. O cenário 2050 é extrapolação declarada da série observada, não projeção de modelo climático, e a resposta muda com o período de ajuste escolhido.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">xarray</span>
+                        <span class="tech-tag">NOAA/NSIDC CDR v6</span>
+                        <span class="tech-tag">POLARIS (IMO)</span>
+                        <span class="tech-tag">SciPy · Dijkstra</span>
+                        <span class="tech-tag">searoute</span>
+                        <span class="tech-tag">deck.gl GlobeView</span>
+                        <span class="tech-tag">Blender 4.4</span>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Explore a análise</h2>
+                    <p>O globo interativo abre em nova aba: 47 anos de gelo de setembro, cinco rotas incluindo o corredor do Arctic Express chinês, gargalos batimétricos e dias abertos por ano.</p>
+                    <div class="lang-cta">
+                        <a class="btn btn-primary" href="arctic-routes-globe.html#pt" target="_blank" rel="noopener"><i class="fas fa-globe"></i><span>Globo interativo (PT)</span></a>
+                        <a class="btn btn-secondary" href="arctic-routes-globe.html#en" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Globe (EN)</span></a>
+                        <a class="btn btn-secondary" href="arctic-routes-globe.html#es" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Globo (ES)</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================= ES ======================= -->
+            <div class="lang-block" data-art-lang="es">
+                <div class="content-section">
+                    <h2>Qué es esto</h2>
+                    <p>Un estudio geoespacial reproducible de los tres corredores de navegación del Ártico: la Ruta del Mar del Norte (NSR), por la costa rusa, el Paso del Noroeste (NWP), por el archipiélago canadiense, y la ruta Transpolar, en línea recta sobre el Polo. La base física es el Climate Data Record v6 de NOAA/NSIDC, concentración diaria de hielo en cuadrícula de 25 km desde fines de 1978, procesada celda por celda a lo largo de cada corredor durante los 47 años. Cada cifra publicada se rastrea hasta una de 97 afirmaciones verificadas, con fuente primaria y nivel de confianza.</p>
+                    <p>El estudio también pone números bajo un titular. El Financial Times informó que <a href="https://www.ft.com/content/4456f475-f2c8-4cb7-8312-0c47c5f781b8" target="_blank" rel="noopener">China está sorteando los cuellos de botella del transporte marítimo con una "Ruta de la Seda del Hielo" por el Ártico</a>, el corredor que Pekín bautizó formalmente como Ruta de la Seda Polar en el libro blanco de su política ártica de 2018. El tráfico es real: 14 viajes de contenedores Asia-Europa en 2025, uno de ellos de Ningbo a Felixstowe en 20 días. Lo que el registro satelital agrega es la letra chica: la ventana es una lotería anual, el fondo marino limita el tamaño de los buques y menos de una tonelada de cada diez en la ruta cruza realmente entre océanos.</p>
+                    <div class="highlight-box">
+                        <p><strong>La pieza central es un globo interactivo trilingüe</strong>: arrastre el año de 1979 a 2025 y vea el borde del hielo de septiembre retroceder sobre las rutas, con el corredor del Arctic Express chino en dorado, los cuellos de botella batimétricos como puntos clicables y el marcador de días abiertos por año. deck.gl autocontenido, sin backend.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Cifras clave</h2>
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><div class="number">0 días</div><div class="label">Ruta transpolar abierta en 47 años de datos diarios de satélite</div></div>
+                        <div class="kpi-card"><div class="number">&minus;21%</div><div class="label">Distancia de la NSR vs Suez, Ningbo-Róterdam (15.300 vs 19.400 km)</div></div>
+                        <div class="kpi-card"><div class="number">44 días/año</div><div class="label">Ventana media de la NSR en la década de 2010 (umbral ice-class)</div></div>
+                        <div class="kpi-card"><div class="number">0 vs 43</div><div class="label">2024: NSR cerrada todo el año y NWP con su mejor temporada registrada</div></div>
+                        <div class="kpi-card"><div class="number">16 m</div><div class="label">Canal más profundo del estrecho de Dmitry Laptev: el fondo limita la escala</div></div>
+                        <div class="kpi-card"><div class="number">8%</div><div class="label">De la carga de la NSR cruza de punta a punta (3,07 de 37,9 Mt en 2024); 95% de eso Rusia-China</div></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Dentro del análisis</h2>
+                    <ul>
+                        <li><strong>Una métrica de ventana estricta y auditable.</strong> Un corredor cuenta como abierto un día solo cuando todas sus celdas oceánicas están por debajo del umbral de hielo a la vez (15% para buque común, 50% para ice-class). La NSR pasó de cero días en los años 1980 a un promedio de 44 en la década de 2010; la Transpolar nunca abrió.</li>
+                        <li><strong>La meseta que no llega a titular.</strong> El hielo de septiembre cae 12% por década en el registro completo, y aun así 2007-2025 no muestra tendencia significativa (p = 0,36). El hielo bajó de nivel y ahora oscila fuerte de año a año: así 2024 cerró la NSR mientras le daba a la NWP su mejor temporada, y 2025 invirtió a las dos.</li>
+                        <li><strong>Ruteo óptimo con POLARIS.</strong> Un grafo de costo-tiempo sobre la cuadrícula polar, con el Risk Index Outcome de la OMI decidiendo celda por celda dónde entra cada clase de buque, contra la línea de base de Suez en el grafo marítimo searoute. Septiembre: el Ártico ahorra ~6 días. Marzo: se cierra para buques comunes, y hasta un PC6 tarda 45 días a 3 nudos en el hielo, más que Suez.</li>
+                        <li><strong>La puerta del fondo marino.</strong> Los mejores canales de los estrechos de las islas de Nueva Siberia miden 16-27 m en las secciones muestreadas, contra 180-290 m en Vilkitsky y Barrow. El calado, y no el hielo, limita el tamaño del buque en la ruta costera, y la batimetría no responde al calentamiento.</li>
+                        <li><strong>Siga la carga.</strong> La NSR movió un récord de 37,9 Mt en 2024, pero solo 3,07 Mt cruzaron de punta a punta, 95% de eso crudo de Rusia a China. La ganancia por contenedor sigue favoreciendo a Suez (US$ 1.151 vs 1.124 en el estudio clásico con datos operativos), y por eso la crisis del Mar Rojo empujó a las navieras globales hacia el Cabo, no hacia el Polo.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Metodología</h2>
+                    <p>Serie de extensión del Sea Ice Index v4 del NSIDC; concentración diaria y mensual de los agregados del CDR v6 de NOAA/NSIDC (~4,3 GB, en caché y nunca reprocesados); volumen de PIOMAS; batimetría del mosaico de DEMs de la NOAA; estadísticas de tráfico de Rosatom y del monitoreo AIS independiente del CHNL / Nord University. POLARIS sigue la circular MSC.1/Circ.1519 de la OMI con la tabla completa de Risk Index Values, simplificado al inferir el tipo de hielo por proxy estacional y persistencia de septiembre en lugar de cartas de hielo operativas. El ruteo es Dijkstra sobre un grafo de celdas oceánicas (profundidad &le; &minus;15 m) con aristas geodésicas, nunca Web Mercator. Once pruebas de sanidad fijan las cifras publicadas a las salidas del pipeline.</p>
+                    <p>Límites honestos, dichos donde duelen: el criterio de corredor abierto es duro a propósito, y por eso 97 tránsitos reales ocurrieron en 2024, un año que la métrica estricta puntúa como cero para buques comunes; la navegación táctica desvía, espera y sigue rompehielos. Las comparaciones de emisiones usan supuestos declarados de consumo, no datos de motor, y excluyen la escolta. Las profundidades provienen de una sección muestreada por estrecho; el canal real puede ser más somero. El escenario 2050 es una extrapolación declarada de la serie observada, no una proyección de modelo climático, y su respuesta cambia con el período de ajuste elegido.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">xarray</span>
+                        <span class="tech-tag">NOAA/NSIDC CDR v6</span>
+                        <span class="tech-tag">POLARIS (IMO)</span>
+                        <span class="tech-tag">SciPy · Dijkstra</span>
+                        <span class="tech-tag">searoute</span>
+                        <span class="tech-tag">deck.gl GlobeView</span>
+                        <span class="tech-tag">Blender 4.4</span>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Explore el análisis</h2>
+                    <p>El globo interactivo se abre en una pestaña nueva: 47 años de hielo de septiembre, cinco rutas incluido el corredor del Arctic Express chino, cuellos de botella batimétricos y días abiertos por año.</p>
+                    <div class="lang-cta">
+                        <a class="btn btn-primary" href="arctic-routes-globe.html#es" target="_blank" rel="noopener"><i class="fas fa-globe"></i><span>Globo interactivo (ES)</span></a>
+                        <a class="btn btn-secondary" href="arctic-routes-globe.html#en" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Globe (EN)</span></a>
+                        <a class="btn btn-secondary" href="arctic-routes-globe.html#pt" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Globo (PT)</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#articles" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-mark">
+                        <picture>
+                            <source srcset="../assets/logo2.webp" type="image/webp" />
+                            <img src="../assets/logo2.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                        </picture>
+                        Avner Gomes
+                    </div>
+                    <p>Forest Engineer &amp; Data Scientist</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnerpaesgomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="current-year"></span> Avner Gomes. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        (function () {
+            var LANGS = ['en', 'pt', 'es'];
+            function setArtLang(l) {
+                if (LANGS.indexOf(l) === -1) l = 'en';
+                document.querySelectorAll('[data-art-lang]').forEach(function (el) {
+                    var on = el.getAttribute('data-art-lang') === l;
+                    el.classList.toggle('active', on);
+                    if (el.tagName === 'SPAN' && el.parentElement.tagName === 'H1')
+                        el.style.display = on ? 'inline' : 'none';
+                });
+                document.querySelectorAll('.art-lang-btn').forEach(function (b) {
+                    b.classList.toggle('on', b.getAttribute('data-setlang') === l);
+                });
+                var g = document.getElementById('globe-link');
+                if (g) g.href = 'arctic-routes-globe.html#' + l;
+                if (location.hash !== '#' + l) history.replaceState(null, '', '#' + l);
+            }
+            document.querySelectorAll('.art-lang-btn').forEach(function (b) {
+                b.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    setArtLang(b.getAttribute('data-setlang'));
+                });
+            });
+            window.addEventListener('hashchange', function () {
+                setArtLang(location.hash.replace('#', ''));
+            });
+            setArtLang(location.hash.replace('#', '') || 'en');
+        })();
+    </script>
+</body>
+</html>
