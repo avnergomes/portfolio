@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The New Map of Global Trade · O Novo Mapa do Comércio Global · El Nuevo Mapa del Comercio Global</title>
+<meta name="description" content="47 years of daily NOAA/NSIDC sea ice over the three Arctic shipping corridors: the Transpolar route never opened a single day, the NSR swings between 0 and 87 open days a year, a 16 m seafloor caps ship size. Trilingual interactive report (EN/PT/ES) with charts and a 3D globe.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Avner Paes Gomes">
+<link rel="canonical" href="https://avnergomes.github.io/portfolio/articles/arctic-routes-report.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:oklch(14% 0.025 250);--paper-2:oklch(18% 0.028 250);--paper-3:oklch(22% 0.032 250);
+--ink:oklch(96% 0.01 250);--ink-2:oklch(83% 0.014 250);--mut:oklch(62% 0.022 250);
+--line:oklch(28% 0.028 250);--line-soft:oklch(23% 0.024 250);
+--accent:oklch(80% 0.12 85);--accent-soft:oklch(80% 0.12 85 / 0.12);
+--blue:#7aa2f7;--green:oklch(74% 0.15 155);--red:oklch(64% 0.20 25);--violet:#b39cf0;
+--ice:oklch(92% 0.02 240);
+--maxw:1140px;
+--font-display:"Fraunces","Iowan Old Style",Georgia,serif;
+--font-body:"Inter",-apple-system,'Segoe UI',Roboto,system-ui,sans-serif;
+--font-mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);line-height:1.7;
+-webkit-font-smoothing:antialiased;position:relative}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+background:radial-gradient(ellipse 70% 50% at 85% 2%,oklch(70% 0.10 240 / 0.08),transparent 60%),
+ radial-gradient(ellipse 65% 45% at 5% 96%,oklch(52% 0.14 265 / 0.10),transparent 60%)}
+body>*{position:relative;z-index:1}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.prose{max-width:73ch}
+.prose p{margin:0 0 16px;font-size:17px;color:var(--ink-2)}
+.num{font-variant-numeric:tabular-nums}
+b,strong{color:var(--ink)}
+a{color:var(--blue)}
+#prog{position:fixed;top:0;left:0;height:3px;background:var(--blue);width:0;z-index:60}
+nav.top{position:sticky;top:0;z-index:50;background:oklch(12% 0.022 250 / 0.85);
+backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;flex-wrap:wrap;gap:2px 4px;align-items:center;min-height:52px;padding-top:8px;padding-bottom:8px}
+nav.top a{font-size:12px;color:var(--ink-2);text-decoration:none;padding:5px 8px;border-radius:8px;white-space:nowrap;
+font-family:var(--font-mono);transition:background .2s,color .2s}
+nav.top a:hover{background:var(--paper-3);color:var(--ink)}
+nav.top .brand{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:15px;color:var(--ink);
+margin-right:8px;white-space:nowrap}
+nav.top .langs{margin-left:auto;display:flex;gap:2px;flex-shrink:0}
+nav.top .langs button{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;cursor:pointer;
+padding:5px 11px;border-radius:999px;color:var(--mut);background:none;border:1px solid transparent}
+nav.top .langs button.on{background:var(--accent);color:oklch(20% 0.04 85);font-weight:600}
+header.hero{padding:92px 0 66px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+header.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+background:radial-gradient(ellipse 52% 62% at 84% 10%,oklch(70% 0.10 240 / 0.13),transparent 60%),
+ radial-gradient(ellipse 46% 55% at 6% 82%,oklch(52% 0.16 265 / 0.11),transparent 60%)}
+.kicker{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--accent)}
+header.hero h1{font-family:var(--font-display);font-style:italic;font-weight:300;
+font-size:clamp(40px,7vw,78px);line-height:.98;margin:14px 0 6px;letter-spacing:-.03em}
+header.hero .sub{font-family:var(--font-display);font-style:italic;font-weight:300;font-size:clamp(19px,2.6vw,26px);
+color:var(--mut);margin:0 0 22px;letter-spacing:-.01em}
+header.hero .thesis{font-size:20px;max-width:66ch;color:var(--ink-2);line-height:1.5}
+header.hero .src{margin-top:24px;font-family:var(--font-mono);font-size:12px;color:var(--mut);line-height:1.7}
+.hero-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:42px;border-top:1px solid var(--line)}
+.hero-strip .hs{padding:20px 18px 8px;border-right:1px solid var(--line)}
+.hero-strip .hs:last-child{border-right:0}
+.hero-strip .v{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:31px;color:var(--blue);letter-spacing:-.02em}
+.hero-strip .hs.bad .v{color:var(--red)}
+.hero-strip .l{font-size:12.5px;color:var(--mut);margin-top:4px;line-height:1.4}
+section{padding:70px 0}
+section.alt{background:oklch(16.5% 0.026 250);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section h2{font-family:var(--font-display);font-style:italic;font-weight:300;
+font-size:clamp(28px,4vw,46px);line-height:1.06;margin:10px 0 10px;letter-spacing:-.025em}
+.lede{font-size:19px;color:var(--ink-2);max-width:75ch;margin:0 0 24px;line-height:1.55}
+.fig{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:16px 16px 8px;margin:24px 0}
+.fig svg{display:block;width:100%;height:auto;overflow:visible}
+.figcap{font-family:var(--font-mono);font-size:12px;color:var(--mut);padding:8px 4px 8px;line-height:1.55}
+.figcap b{color:var(--ink-2);font-weight:500}
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px;margin:14px 0 6px}
+.stat{background:linear-gradient(180deg,var(--paper-2),var(--paper));border:1px solid var(--line);
+border-left:3px solid var(--blue);border-radius:12px;padding:18px 20px}
+.stat-v{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:32px;letter-spacing:-.02em;color:var(--blue)}
+.stat-l{font-size:14px;color:var(--ink);font-weight:500;margin-top:4px}
+.stat-n{font-family:var(--font-mono);font-size:11.5px;color:var(--mut);margin-top:6px;line-height:1.45}
+.tone-red{border-left-color:var(--red)}.tone-red .stat-v{color:var(--red)}
+.tone-green{border-left-color:var(--green)}.tone-green .stat-v{color:var(--green)}
+.tone-amber{border-left-color:var(--accent)}.tone-amber .stat-v{color:var(--accent)}
+.tone-violet{border-left-color:var(--violet)}.tone-violet .stat-v{color:var(--violet)}
+.callout{border-left:3px solid var(--accent);background:var(--accent-soft);padding:16px 22px;
+border-radius:0 12px 12px 0;margin:26px 0;font-size:16px;color:var(--ink-2)}
+.callout.warn{border-left-color:var(--red);background:oklch(64% 0.20 25 / 0.10)}
+.pull{font-family:var(--font-display);font-style:italic;font-weight:300;font-size:clamp(22px,3vw,29px);line-height:1.3;
+color:var(--ink);border-top:1px solid var(--blue);border-bottom:1px solid var(--line);padding:22px 0;margin:34px 0;max-width:40ch}
+.reveal{background:linear-gradient(160deg,oklch(20% 0.05 250),oklch(17% 0.03 285));border:1px solid oklch(45% 0.10 250);
+border-radius:18px;padding:30px 32px;margin:20px 0 8px;box-shadow:0 30px 80px -46px oklch(70% 0.12 240 / 0.55)}
+.reveal .place{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.reveal .road{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:clamp(26px,4.5vw,40px);
+margin:6px 0 4px;letter-spacing:-.02em;line-height:1.05}
+.reveal .subp{color:var(--mut);font-size:15px}
+table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px;background:var(--paper-2);
+border:1px solid var(--line);border-radius:12px;overflow:hidden;font-family:var(--font-mono)}
+.tbl th,.tbl td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left}
+.tbl th{background:var(--paper-3);color:var(--ink);font-weight:500;letter-spacing:.02em;text-transform:uppercase;font-size:10.5px;white-space:nowrap}
+.tbl td{color:var(--ink-2)}
+.tbl td.num{text-align:right;font-variant-numeric:tabular-nums}
+.tbl tr:hover td{background:oklch(100% 0 0 / 0.02)}
+.tag{display:inline-block;font-size:11px;padding:2px 9px;border-radius:20px;background:oklch(74% 0.15 155 / 0.14);
+color:var(--green);border:1px solid oklch(74% 0.15 155 / 0.3)}
+.tag.no{background:oklch(64% 0.20 25 / 0.14);color:oklch(84% 0.09 25);border-color:oklch(64% 0.20 25 / 0.3)}
+.tblwrap{overflow-x:auto}
+.scn{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.scn .c{background:oklch(20% 0.03 260 / 0.7);border:1px solid var(--line);border-radius:14px;padding:20px}
+.scn .c h4{margin:0 0 8px;font-family:var(--font-display);font-style:italic;font-weight:400;font-size:18px;color:var(--accent)}
+.scn .c p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.6}
+@media(max-width:880px){.scn{grid-template-columns:1fr}.hero-strip{grid-template-columns:repeat(2,1fr)}
+.hero-strip .hs:nth-child(2){border-right:0}}
+.cta3d{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;background:linear-gradient(160deg,oklch(19% 0.045 250),oklch(16% 0.028 265));
+border:1px solid var(--line);border-radius:18px;padding:30px 32px;margin:24px 0}
+@media(max-width:880px){.cta3d{grid-template-columns:1fr}}
+.cta3d h3{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:clamp(22px,3vw,30px);margin:0 0 10px;line-height:1.1}
+.cta3d p{margin:0 0 18px;font-size:15px;color:var(--ink-2)}
+.btn{display:inline-block;background:var(--accent);color:oklch(20% 0.04 85);font-weight:700;font-size:14px;
+padding:12px 22px;border-radius:12px;text-decoration:none}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--ink);margin-left:8px}
+.globe-mock{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a1626;
+display:flex;align-items:center;justify-content:center;min-height:230px}
+footer{border-top:1px solid var(--line);padding:38px 0 70px;color:var(--mut);font-size:13px;line-height:1.75}
+footer b{color:var(--ink-2)}
+footer a{color:var(--blue);text-decoration:none}
+footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<nav class="top"><div class="wrap">
+  <span class="brand" data-i="brand"></span>
+  <a href="#pergunta" data-i="nav1"></a>
+  <a href="#placar" data-i="nav2"></a>
+  <a href="#anormal" data-i="nav3"></a>
+  <a href="#rotas" data-i="nav4"></a>
+  <a href="#fundo" data-i="nav5"></a>
+  <a href="#carga" data-i="nav6"></a>
+  <a href="#globo" data-i="nav7"></a>
+  <a href="#c2050" data-i="nav8"></a>
+  <a href="#metodo" data-i="nav9"></a>
+  <div class="langs">
+    <button data-setlang="en">EN</button>
+    <button data-setlang="pt">PT</button>
+    <button data-setlang="es">ES</button>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="kicker" data-i="kicker"></div>
+  <h1 data-i="h1"></h1>
+  <p class="sub" data-i="sub"></p>
+  <p class="thesis" data-i="thesis"></p>
+  <p class="src" data-i="src"></p>
+  <div class="hero-strip">
+    <div class="hs bad"><div class="v num">0</div><div class="l" data-i="hs1"></div></div>
+    <div class="hs"><div class="v num">&minus;21%</div><div class="l" data-i="hs2"></div></div>
+    <div class="hs"><div class="v num">0&ndash;87</div><div class="l" data-i="hs3"></div></div>
+    <div class="hs bad"><div class="v num">8%</div><div class="l" data-i="hs4"></div></div>
+  </div>
+</div></header>
+
+<section id="pergunta"><div class="wrap">
+  <div class="kicker" data-i="k1"></div>
+  <h2 data-i="h1s"></h2>
+  <div class="prose">
+    <p data-i="p1a"></p>
+    <p data-i="p1b"></p>
+    <p data-i="p1c"></p>
+  </div>
+</div></section>
+
+<section class="alt" id="placar"><div class="wrap">
+  <div class="kicker" data-i="k2"></div>
+  <h2 data-i="h2s"></h2>
+  <div class="reveal">
+    <div class="place" data-i="rvPlace"></div>
+    <div class="road" data-i="rvRoad"></div>
+    <div class="subp" data-i="rvSub"></div>
+    <div class="findings" style="margin-top:20px">
+      <div class="stat tone-red"><div class="stat-v num">0 / 65</div><div class="stat-l" data-i="st1l"></div><div class="stat-n" data-i="st1n"></div></div>
+      <div class="stat"><div class="stat-v num">59 / 0</div><div class="stat-l" data-i="st2l"></div><div class="stat-n" data-i="st2n"></div></div>
+      <div class="stat tone-amber"><div class="stat-v num">97</div><div class="stat-l" data-i="st3l"></div><div class="stat-n" data-i="st3n"></div></div>
+    </div>
+  </div>
+  <div class="fig"><div id="figWindow"></div><p class="figcap" data-i="capWindow"></p></div>
+  <div class="prose"><p data-i="p2a"></p></div>
+</div></section>
+
+<section id="anormal"><div class="wrap">
+  <div class="kicker" data-i="k3"></div>
+  <h2 data-i="h3s"></h2>
+  <p class="lede" data-i="p3a"></p>
+  <div class="fig"><div id="figExtent"></div><p class="figcap" data-i="capExtent"></p></div>
+  <div class="callout warn" data-i="call1"></div>
+</div></section>
+
+<section class="alt" id="rotas"><div class="wrap">
+  <div class="kicker" data-i="k4"></div>
+  <h2 data-i="h4s"></h2>
+  <p class="lede" data-i="p4a"></p>
+  <div class="fig"><div id="figRoutes"></div><p class="figcap" data-i="capRoutes"></p></div>
+  <div class="scn">
+    <div class="c"><h4 data-i="sc1h"></h4><p data-i="sc1p"></p></div>
+    <div class="c"><h4 data-i="sc2h"></h4><p data-i="sc2p"></p></div>
+    <div class="c"><h4 data-i="sc3h"></h4><p data-i="sc3p"></p></div>
+  </div>
+</div></section>
+
+<section id="fundo"><div class="wrap">
+  <div class="kicker" data-i="k5"></div>
+  <h2 data-i="h5s"></h2>
+  <p class="lede" data-i="p5a"></p>
+  <div class="fig"><div id="figDepth"></div><p class="figcap" data-i="capDepth"></p></div>
+  <div class="pull" data-i="pull1"></div>
+</div></section>
+
+<section class="alt" id="carga"><div class="wrap">
+  <div class="kicker" data-i="k6"></div>
+  <h2 data-i="h6s"></h2>
+  <div class="prose"><p data-i="p6a"></p></div>
+  <div class="findings">
+    <div class="stat tone-amber"><div class="stat-v num">37,9 Mt</div><div class="stat-l" data-i="cg1l"></div><div class="stat-n" data-i="cg1n"></div></div>
+    <div class="stat tone-red"><div class="stat-v num">3,07 Mt</div><div class="stat-l" data-i="cg2l"></div><div class="stat-n" data-i="cg2n"></div></div>
+    <div class="stat tone-red"><div class="stat-v num">95%</div><div class="stat-l" data-i="cg3l"></div><div class="stat-n" data-i="cg3n"></div></div>
+    <div class="stat"><div class="stat-v num">14</div><div class="stat-l" data-i="cg4l"></div><div class="stat-n" data-i="cg4n"></div></div>
+  </div>
+  <div class="callout" data-i="call2"></div>
+</div></section>
+
+<section id="globo"><div class="wrap">
+  <div class="kicker" data-i="k7"></div>
+  <h2 data-i="h7s"></h2>
+  <div class="cta3d">
+    <div>
+      <h3 data-i="g3h"></h3>
+      <p data-i="g3p"></p>
+      <a class="btn" id="globeBtn" href="arctic-routes-globe.html#en" target="_blank" rel="noopener" data-i="g3b"></a>
+      <a class="btn ghost" href="arctic-routes.html" data-i="g3b2"></a>
+    </div>
+    <div class="globe-mock">
+      <svg viewBox="0 0 300 220" width="100%" height="220" aria-hidden="true">
+        <circle cx="150" cy="118" r="86" fill="#101a2c" stroke="#31445a"/>
+        <ellipse cx="150" cy="86" rx="40" ry="22" fill="#e8f1fa" opacity="0.95"/>
+        <path d="M60 118 Q110 70 150 64 T240 108" fill="none" stroke="#eda100" stroke-width="2.4"/>
+        <path d="M84 88 Q130 56 190 62" fill="none" stroke="#2a78d6" stroke-width="2.4"/>
+        <path d="M96 74 Q150 40 208 76" fill="none" stroke="#eb6834" stroke-width="2.2"/>
+        <circle cx="188" cy="63" r="4" fill="#e34948" stroke="#fff"/>
+        <text x="150" y="205" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#5c7690">1979 &#8594; 2025</text>
+      </svg>
+    </div>
+  </div>
+</div></section>
+
+<section class="alt" id="c2050"><div class="wrap">
+  <div class="kicker" data-i="k8"></div>
+  <h2 data-i="h8s"></h2>
+  <p class="lede" data-i="p8a"></p>
+  <div class="fig"><div id="figScen"></div><p class="figcap" data-i="capScen"></p></div>
+  <div class="prose"><p data-i="p8b"></p></div>
+</div></section>
+
+<section id="metodo"><div class="wrap">
+  <div class="kicker" data-i="k9"></div>
+  <h2 data-i="h9s"></h2>
+  <div class="prose">
+    <p data-i="p9a"></p>
+    <p data-i="p9b"></p>
+  </div>
+  <div class="tblwrap">
+    <table class="tbl"><thead><tr><th data-i="thStrait"></th><th style="text-align:right" data-i="thDepth"></th><th data-i="thUlcv"></th></tr></thead>
+    <tbody id="tblStraits"></tbody></table>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p data-i="ft1"></p>
+  <p data-i="ft2"></p>
+  <p data-i="ft3"></p>
+</div></footer>
+
+<script>
+/* ======================= dados (pipeline post 37, 2026-08-10) ======================= */
+const YEARS = Array.from({length:47},(_,i)=>1979+i);
+const NSR50 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,0,0,0,0,21,0,0,27,0,0,28,21,34,64,60,0,15,56,55,37,47,73,87,9,38,44,0,59];
+const NWP50 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16,16,0,0,0,0,0,0,0,21,12,0,30,34,43,0,0,18,0,0,0,0,0,0,21,36,65,0];
+const SEP = [7.05,7.67,7.14,7.3,7.39,6.81,6.7,7.41,7.28,7.37,7.01,6.14,6.47,7.47,6.4,7.14,6.08,7.58,6.69,6.54,6.12,6.25,6.73,5.83,6.12,5.98,5.5,5.86,4.27,4.69,5.26,4.87,4.56,3.57,5.21,5.22,4.62,4.53,4.82,4.79,4.36,4.0,4.95,4.9,4.38,4.35,4.75];
+const ROUTES = [
+  { key:'suez',  km:19361, days:31.1, col:'#9aa4ae' },
+  { key:'nwp',   km:16672, days:26.8, col:'#eb6834' },
+  { key:'nsr',   km:15273, days:24.5, col:'#2a78d6' },
+  { key:'mar',   km:15456, days:44.9, col:'oklch(64% 0.20 25)' },
+];
+const STRAITS = [
+  { n:'Dmitry Laptev', d:16,  ok:false },
+  { n:'Sannikov',      d:27,  ok:false },
+  { n:'Bering',        d:64,  ok:true  },
+  { n:'Vilkitsky',     d:182, ok:true  },
+  { n:'Kara Gate',     d:195, ok:true  },
+  { n:'Barrow (NWP)',  d:287, ok:true  },
+];
+const DRAFT_LINE = 19; /* ULCV 16,5 m + 15% UKC */
+const FIT_ALL = { slope:1.23092, x0:2002.0, y0:17.11, ci2050:19.0, start:1979 }; /* 1979-2025 */
+const FIT_NEW = { slope:1.03333, x0:2016.0, y0:38.26, ci2050:78.0, start:2007 }; /* 2007-2025 */
+
+/* ======================= i18n ======================= */
+const I18N = {
+en:{
+ brand:'Arctic 1979-2025', nav1:'The question', nav2:'The scoreboard', nav3:'The plateau', nav4:'The routes',
+ nav5:'The seafloor', nav6:'The cargo', nav7:'3D globe', nav8:'2050', nav9:'Method',
+ kicker:'GEOSPATIAL INTELLIGENCE · 47 YEARS OF SATELLITE DATA',
+ h1:'The New Map of Global Trade',
+ sub:'What 47 years of satellites say about Arctic shipping routes',
+ thesis:'A Chinese container ship reached England through the Arctic in 20 days, and the Financial Times calls it an "Ice Silk Road". The full satellite record says something more precise: the window is real, violent from one year to the next, capped by the seafloor, and the route over the Pole itself has never opened a single day.',
+ src:'Data: NOAA/NSIDC Climate Data Record v6 (daily, 25 km, 1978-2026) · Sea Ice Index v4 · IMO POLARIS (MSC.1/Circ.1519) · CHNL / Nord University · Rosatom · NOAA DEM. 97 verified claims. Analysis: Avner Gomes.',
+ hs1:'days the Transpolar route opened in 47 years',
+ hs2:'NSR distance vs Suez, Ningbo-Rotterdam',
+ hs3:'open days per year on the NSR since 2010 (ice-class)',
+ hs4:'of NSR cargo actually transits between oceans',
+ k1:'THE QUESTION', h1s:'Is the Arctic really opening for trade?',
+ p1a:'In September 2025 the container ship Istanbul Bridge left Ningbo and reached Felixstowe in 20 days, sailing the Northern Sea Route along Siberia. China ran 14 Asia-Europe container voyages up there in 2025, on the corridor Beijing formally named the Polar Silk Road in its 2018 Arctic policy. The Financial Times reported it as China bypassing the world’s shipping chokepoints through the Arctic.',
+ p1b:'This report puts the full observational record under that story. The basis is NOAA/NSIDC’s Climate Data Record: sea-ice concentration measured every day since late 1978 on a 25 km grid. I traced the three corridors, the NSR along Russia, the Northwest Passage through Canada, and the Transpolar route across the Pole, and asked one strict question for every day of 47 years: was the whole corridor below the ice threshold at once?',
+ p1c:'The answer splits into three numbers: a route that swings violently, a route that never opened, and a seafloor that does not care about the climate.',
+ k2:'THE SCOREBOARD', h2s:'One route is a lottery. One never opened.',
+ rvPlace:'THE FULL 47-YEAR RECORD, DAY BY DAY',
+ rvRoad:'Transpolar route: 0 days in 47 years',
+ rvSub:'The straight line over the North Pole, the shortest of all, has never once been navigable in the observational record, at any threshold, for any ship class.',
+ st1l:'NSR vs NWP open days in 2024', st1n:'The NSR froze shut all year while the NWP had its best season in the whole record (ice-class threshold, SIC < 50%).',
+ st2l:'The same two routes in 2025', st2n:'One year later the winners swapped: NSR 59 days, NWP zero. That is the interannual lottery.',
+ st3l:'real transits through the NSR in 2024', st3n:'Ships still crossed: tactical navigation detours, waits and follows icebreakers. Strict corridor metric and real traffic measure different things (CHNL).',
+ capWindow:'<b>Days per year with the whole corridor open</b> (ice concentration below 50% in every ocean cell, daily satellite data). Blue: NSR. Orange: NWP. The Transpolar series is a flat zero. Source: NOAA/NSIDC CDR v6, author’s processing.',
+ p2a:'The Northern Sea Route went from zero open days in the 1980s to a 44-day average in the 2010s, peaking at 87 days in 2020. The window is real. It is also unplannable: no shipping line builds a weekly service on a corridor that gives 87 days one year and 9 the next.',
+ k3:'THE PLATEAU', h3s:'The ice fell hard, then stopped falling in a straight line',
+ p3a:'September sea ice declines 12% per decade over the full record. Almost nobody quotes the second half of the sentence: within 2007-2025 there is no statistically significant trend (p = 0.36). NSIDC calls it the "new abnormal": a lower level, wild swings, no straight line.',
+ capExtent:'<b>September mean sea-ice extent, 1979-2025</b> (million km²). Grey dashes: linear trend over the full record (&minus;12%/decade). Amber line: 2007-2025 mean, a plateau with no significant trend. Source: NSIDC Sea Ice Index v4.',
+ call1:'Anyone extrapolating the 2010s in a straight line is drawing a trend over noise. The honest reading: the door opened between the 1990s and 2007, and since then it swings on a hinge.',
+ k4:'THE ROUTES', h4s:'Shorter, yes. Cheaper, not yet.',
+ p4a:'I built a time-cost graph over the polar grid, with the IMO’s POLARIS risk index deciding cell by cell where each vessel class may sail, and routed Ningbo to Rotterdam. Against the Suez baseline, September through the Arctic saves about 4,100 km and 6 days. March is another planet: the route closes for ordinary ships, and even a Polar Class 6 crawls 45 days through the ice.',
+ capRoutes:'<b>Ningbo &#8594; Rotterdam, four ways</b>: total distance (bars, km) and voyage days (labels) at 14 kn open water. September 2025 optimum for NSR and NWP; March 2025 is only feasible for PC6 at 3 kn in ice. Author’s routing; Suez via the searoute maritime graph.',
+ sc1h:'September', sc1p:'15,300 km and ~25 days via the NSR for an ice-class ship, a 21% shorter path and ~21% less fuel CO2 per container in the modeled assumptions.',
+ sc2h:'March', sc2p:'Closed for ordinary ships and PC7. A PC6 crosses at 3 knots in ice and takes 45 days, longer than Suez. There is no year-round liner schedule on this route.',
+ sc3h:'The margin', sc3p:'With real operational data, profit per container still favored Suez: $1,151 vs $1,124 (Zhang, Meng & Ng 2016). Ice-class capex, escort fees, insurance and no intermediate ports eat the distance saving.',
+ k5:'THE SEAFLOOR', h5s:'The gate that does not melt',
+ p5a:'The coastal NSR passes the straits of the New Siberian Islands. In the sections I sampled from NOAA’s bathymetry, the best channel at Dmitry Laptev is 16 m deep and Sannikov 27 m, against 182-287 m at Vilkitsky and Barrow. With under-keel clearance, big container ships of the 14,000+ TEU class simply do not fit, ice or no ice.',
+ capDepth:'<b>Deepest channel per strait</b> (m, sampled section). Red dashed line: draft of an ultra-large container vessel (16.5 m) plus 15% clearance. Red bars fail it. The true fairway can run shallower than a single section.',
+ pull1:'Warming moves the ice. It does not move the seafloor. The size cap on the coastal route is bathymetric, not glacial.',
+ k6:'THE CARGO', h6s:'Follow the tonnes, not the headline',
+ p6a:'The NSR moved a record 37.9 million tonnes in 2024. The number that matters for "new Suez" claims is smaller: only 3.07 Mt crossed end to end, about 8%, and 95% of that transit was Russia-to-China, mostly crude oil. The rest of the record is Russia exporting its own subsoil from its own ports, led by the Yamal LNG project and its Arc7 ice-class tankers.',
+ cg1l:'total NSR cargo, 2024 (record)', cg1n:'Rosatom / Glavsevmorput official figure.',
+ cg2l:'of it actually transited end-to-end', cg2n:'97 voyages monitored by AIS (CHNL / Nord University).',
+ cg3l:'of transit cargo went Russia → China', cg3n:'2.9 of 3.07 Mt, dominated by crude oil.',
+ cg4l:'Asia-Europe container voyages in 2025', cg4n:'The record so far, including the 20-day Istanbul Bridge run. Niche, not network.',
+ call2:'When the Red Sea crisis knocked 90% off Suez container traffic in 2024, global liners rerouted around the Cape of Good Hope, adding 10-14 days, and not through the Arctic. That was the market’s own stress test.',
+ k7:'EXPLORE', h7s:'Spin the 47 years yourself',
+ g3h:'Interactive 3D globe', g3p:'Drag the year from 1979 to 2025 and watch the September ice edge retreat over the five routes, with China’s Arctic Express corridor in gold, bathymetric chokepoints as clickable dots and the open-days scoreboard per year. Self-contained, no backend.',
+ g3b:'Open the globe', g3b2:'Article page',
+ k8:'2050', h8s:'Pick your past, get your future',
+ p8a:'The same observed series supports two very different 2050s. Fit 1979-2025 and the NSR reaches ~76 open days (57-95). Fit only the post-2007 plateau and the interval explodes to 0-151 days, because that stretch has no trend at all. This is a declared extrapolation, not a climate model.',
+ capScen:'<b>NSR open days, observed and extrapolated to 2050.</b> Grey: fit over 1979-2025 (p < 0.001). Amber: fit over 2007-2025 only (p = 0.36), with its 95% interval ballooning. Model projections (CMIP6/SSP) sit in the article’s references.',
+ p8b:'The model literature (CMIP6) puts the first practically ice-free September before 2050 in most simulations under every emissions scenario, which would change the game again. Between now and then, five things to watch: the September minimum, the July 2029 expiry of the Arctic HFO-ban waivers, the count of Asia-Europe container voyages, the first ice-free September, and Russia’s permit queue.',
+ k9:'METHOD & LIMITS', h9s:'How this was built, and where it bends',
+ p9a:'Extent series from the NSIDC Sea Ice Index v4; daily and monthly concentration from the NOAA/NSIDC CDR v6 aggregates (~4.3 GB, cached); volume from PIOMAS; bathymetry from NOAA’s DEM mosaic; traffic from Rosatom and CHNL. POLARIS follows IMO circular MSC.1/Circ.1519 with the full risk table, simplified with ice type inferred from seasonal proxy and September persistence. Routing is Dijkstra over ocean cells (depth ≤ −15 m) with geodesic edges. Eleven sanity tests lock every published number to the pipeline.',
+ p9b:'Limits, said plainly: the corridor-open criterion is deliberately strict (real 2024 traffic proves ships cross anyway, with escort and detours); emissions use declared consumption assumptions and exclude icebreakers; strait depths come from one sampled section each; the 2050 chart is an extrapolation whose answer depends on the period you choose.',
+ thStrait:'Strait', thDepth:'Deepest channel (m)', thUlcv:'Fits a 16.5 m draft?',
+ tagOk:'clears', tagNo:'blocks',
+ ft1:'<b>The New Map of Global Trade</b> · A study by <a href="https://avnergomes.github.io/portfolio/" >Avner Gomes</a> · reproducible pipeline, 97 verified claims, 62 primary references.',
+ ft2:'Context: the Financial Times, <a href="https://www.ft.com/content/4456f475-f2c8-4cb7-8312-0c47c5f781b8" target="_blank" rel="noopener">"China bypasses shipping chokepoints with ‘Ice Silk Road’ through Arctic"</a>; China’s 2018 Arctic policy white paper (the "Polar Silk Road"); CHNL / Nord University transit monitoring; NOAA/NSIDC CDR v6 (DOI 10.7265/rjzb-pf78).',
+ ft3:'Written in English, Portuguese and Spanish. No trackers beyond the site’s standard analytics. © Avner Gomes.',
+},
+pt:{
+ brand:'Ártico 1979-2025', nav1:'A pergunta', nav2:'O placar', nav3:'O platô', nav4:'As rotas',
+ nav5:'O fundo do mar', nav6:'A carga', nav7:'Globo 3D', nav8:'2050', nav9:'Método',
+ kicker:'INTELIGÊNCIA GEOESPACIAL · 47 ANOS DE SATÉLITE',
+ h1:'O Novo Mapa do Comércio Global',
+ sub:'O que 47 anos de satélite dizem sobre as rotas do Ártico',
+ thesis:'Um porta-contêineres chinês chegou à Inglaterra pelo Ártico em 20 dias, e o Financial Times chama isso de "Rota da Seda do Gelo". O registro completo dos satélites diz algo mais preciso: a janela é real, violenta de um ano para o outro, limitada pelo fundo do mar, e a rota por cima do Polo nunca abriu um único dia.',
+ src:'Dados: NOAA/NSIDC Climate Data Record v6 (diário, 25 km, 1978-2026) · Sea Ice Index v4 · POLARIS da IMO (MSC.1/Circ.1519) · CHNL / Nord University · Rosatom · DEM NOAA. 97 afirmações verificadas. Análise: Avner Gomes.',
+ hs1:'dias de rota Transpolar aberta em 47 anos',
+ hs2:'distância da NSR vs Suez, Ningbo-Roterdã',
+ hs3:'dias abertos por ano na NSR desde 2010 (ice-class)',
+ hs4:'da carga da NSR atravessa de fato entre oceanos',
+ k1:'A PERGUNTA', h1s:'O Ártico está mesmo abrindo para o comércio?',
+ p1a:'Em setembro de 2025 o porta-contêineres Istanbul Bridge saiu de Ningbo e chegou a Felixstowe em 20 dias, navegando a Rota do Mar do Norte pela Sibéria. A China fez 14 viagens de contêiner Ásia-Europa por lá em 2025, no corredor que Pequim batizou formalmente de Rota da Seda Polar na sua política ártica de 2018. O Financial Times noticiou como a China contornando os gargalos da navegação mundial pelo Ártico.',
+ p1b:'Este relatório coloca o registro observacional completo debaixo dessa história. A base é o Climate Data Record do NOAA/NSIDC: concentração de gelo medida todos os dias desde o fim de 1978 numa grade de 25 km. Tracei os três corredores, a NSR pela Rússia, a Passagem Noroeste pelo Canadá e a Transpolar por cima do Polo, e fiz uma pergunta dura para cada dia de 47 anos: o corredor inteiro ficou abaixo do limiar de gelo ao mesmo tempo?',
+ p1c:'A resposta cabe em três números: uma rota que oscila violentamente, uma rota que nunca abriu, e um fundo do mar que não responde ao clima.',
+ k2:'O PLACAR', h2s:'Uma rota é loteria. A outra nunca abriu.',
+ rvPlace:'O REGISTRO COMPLETO DE 47 ANOS, DIA A DIA',
+ rvRoad:'Rota transpolar: 0 dias em 47 anos',
+ rvSub:'A linha reta por cima do Polo Norte, a mais curta de todas, nunca esteve navegável no registro observacional, em nenhum limiar, para nenhuma classe de navio.',
+ st1l:'dias abertos NSR vs NWP em 2024', st1n:'A NSR ficou congelada o ano todo enquanto a NWP teve a melhor temporada do registro inteiro (limiar ice-class, SIC < 50%).',
+ st2l:'as mesmas duas rotas em 2025', st2n:'Um ano depois os vencedores trocaram: NSR 59 dias, NWP zero. Essa é a loteria interanual.',
+ st3l:'trânsitos reais pela NSR em 2024', st3n:'Navios atravessaram mesmo assim: a navegação tática desvia, espera e segue quebra-gelo. Métrica estrita e tráfego real medem coisas diferentes (CHNL).',
+ capWindow:'<b>Dias por ano com o corredor inteiro aberto</b> (concentração abaixo de 50% em todas as células oceânicas, dado diário). Azul: NSR. Laranja: NWP. A série da Transpolar é um zero contínuo. Fonte: NOAA/NSIDC CDR v6, processamento do autor.',
+ p2a:'A Rota do Mar do Norte saiu de zero dias abertos nos anos 1980 para média de 44 na década de 2010, com pico de 87 dias em 2020. A janela é real. E é implanejável: nenhum armador monta serviço semanal num corredor que dá 87 dias num ano e 9 no seguinte.',
+ k3:'O PLATÔ', h3s:'O gelo caiu forte, e parou de cair em linha reta',
+ p3a:'O gelo de setembro cai 12% por década no registro completo. Quase ninguém cita a segunda metade da frase: dentro de 2007-2025 não há tendência estatisticamente significativa (p = 0,36). O NSIDC chama isso de "novo anormal": patamar mais baixo, oscilações fortes, nenhuma linha reta.',
+ capExtent:'<b>Extensão média do gelo em setembro, 1979-2025</b> (milhões de km²). Tracejado cinza: tendência linear do registro completo (&minus;12%/década). Linha âmbar: média 2007-2025, um platô sem tendência significativa. Fonte: NSIDC Sea Ice Index v4.',
+ call1:'Quem extrapola a década de 2010 em linha reta está desenhando tendência sobre ruído. A leitura honesta: a porta abriu entre os anos 1990 e 2007, e desde então balança na dobradiça.',
+ k4:'AS ROTAS', h4s:'Mais curta, sim. Mais barata, ainda não.',
+ p4a:'Construí um grafo de custo-tempo sobre a grade polar, com o índice POLARIS da IMO decidindo célula a célula onde cada classe de navio pode entrar, e roteei Ningbo-Roterdã. Contra a linha de base de Suez, setembro pelo Ártico economiza cerca de 4.100 km e 6 dias. Março é outro planeta: a rota fecha para navio comum, e até um Polar Class 6 rasteja 45 dias no gelo.',
+ capRoutes:'<b>Ningbo &#8594; Roterdã, de quatro jeitos</b>: distância total (barras, km) e dias de viagem (rótulos) a 14 nós em mar aberto. Ótimo de setembro/2025 para NSR e NWP; março/2025 só é viável para PC6 a 3 nós no gelo. Roteamento do autor; Suez pelo grafo marítimo searoute.',
+ sc1h:'Setembro', sc1p:'15.300 km e ~25 dias pela NSR para navio ice-class, caminho 21% mais curto e ~21% menos CO2 de combustível por contêiner nas premissas modeladas.',
+ sc2h:'Março', sc2p:'Fechado para navio comum e PC7. Um PC6 atravessa a 3 nós no gelo e leva 45 dias, mais que Suez. Não existe linha regular o ano inteiro nessa rota.',
+ sc3h:'A margem', sc3p:'Com dados operacionais reais, o lucro por contêiner ainda favorecia Suez: US$ 1.151 vs 1.124 (Zhang, Meng & Ng 2016). Capex ice-class, escolta, seguro e falta de escalas comem a economia de distância.',
+ k5:'O FUNDO DO MAR', h5s:'O portão que não derrete',
+ p5a:'A NSR costeira passa pelos estreitos das Ilhas da Nova Sibéria. Nas seções que amostrei da batimetria da NOAA, o melhor canal do Dmitry Laptev tem 16 m e o do Sannikov 27 m, contra 182-287 m em Vilkitsky e Barrow. Com folga de quilha, os grandes porta-contêineres de 14 mil TEU para cima simplesmente não cabem, com ou sem gelo.',
+ capDepth:'<b>Canal mais fundo por estreito</b> (m, seção amostrada). Tracejado vermelho: calado de um porta-contêiner ultragrande (16,5 m) mais 15% de folga. Barras vermelhas reprovam. O talvegue real pode ser mais raso que uma seção única.',
+ pull1:'O aquecimento move o gelo. Não move o fundo do mar. O teto de escala da rota costeira é batimétrico, não glacial.',
+ k6:'A CARGA', h6s:'Siga as toneladas, não a manchete',
+ p6a:'A NSR moveu o recorde de 37,9 milhões de toneladas em 2024. O número que importa para a tese do "novo Suez" é menor: só 3,07 Mt atravessaram de ponta a ponta, uns 8%, e 95% desse trânsito foi Rússia-China, quase tudo petróleo. O resto do recorde é a Rússia exportando o próprio subsolo pelos próprios portos, puxada pelo projeto Yamal LNG e seus navios-tanque Arc7.',
+ cg1l:'carga total da NSR, 2024 (recorde)', cg1n:'Número oficial Rosatom / Glavsevmorput.',
+ cg2l:'disso atravessou de ponta a ponta', cg2n:'97 viagens monitoradas por AIS (CHNL / Nord University).',
+ cg3l:'do trânsito foi Rússia → China', cg3n:'2,9 de 3,07 Mt, dominado por petróleo cru.',
+ cg4l:'viagens de contêiner Ásia-Europa em 2025', cg4n:'O recorde até aqui, incluindo os 20 dias do Istanbul Bridge. Nicho, não rede.',
+ call2:'Quando a crise do Mar Vermelho derrubou 90% do tráfego de contêineres de Suez em 2024, os armadores globais desviaram pelo Cabo da Boa Esperança, somando 10-14 dias, e não pelo Ártico. Esse foi o teste de estresse do próprio mercado.',
+ k7:'EXPLORE', h7s:'Gire os 47 anos você mesmo',
+ g3h:'Globo 3D interativo', g3p:'Arraste o ano de 1979 a 2025 e veja a borda do gelo de setembro recuar sobre as cinco rotas, com o corredor do Arctic Express chinês em dourado, os gargalos batimétricos como pontos clicáveis e o placar de dias abertos por ano. Autocontido, sem backend.',
+ g3b:'Abrir o globo', g3b2:'Página do artigo',
+ k8:'2050', h8s:'Escolha o passado, receba o futuro',
+ p8a:'A mesma série observada sustenta dois 2050 muito diferentes. Ajuste 1979-2025 e a NSR chega a ~76 dias abertos (57-95). Ajuste só o platô pós-2007 e o intervalo explode para 0-151 dias, porque esse trecho não tem tendência nenhuma. Isto é extrapolação declarada, não modelo climático.',
+ capScen:'<b>Dias abertos da NSR, observados e extrapolados até 2050.</b> Cinza: ajuste 1979-2025 (p < 0,001). Âmbar: ajuste só 2007-2025 (p = 0,36), com o intervalo de 95% explodindo. As projeções de modelo (CMIP6/SSP) estão nas referências do artigo.',
+ p8b:'A literatura de modelos (CMIP6) coloca o primeiro setembro praticamente sem gelo antes de 2050 na maioria das simulações, em qualquer cenário de emissões, o que mudaria o jogo de novo. Até lá, cinco coisas para observar: o mínimo de setembro, o fim dos waivers do banimento de HFO em julho de 2029, a contagem de viagens de contêiner Ásia-Europa, o primeiro setembro sem gelo, e a fila de permissões da Rússia.',
+ k9:'MÉTODO E LIMITES', h9s:'Como isto foi feito, e onde dobra',
+ p9a:'Série de extensão do Sea Ice Index v4 do NSIDC; concentração diária e mensal dos agregados do CDR v6 (~4,3 GB, cacheados); volume do PIOMAS; batimetria do mosaico de DEMs da NOAA; tráfego da Rosatom e do CHNL. O POLARIS segue o circular MSC.1/Circ.1519 da IMO com a tabela de risco completa, simplificado com tipo de gelo por proxy sazonal e persistência de setembro. O roteamento é Dijkstra sobre células oceânicas (profundidade ≤ −15 m) com arestas geodésicas. Onze testes de sanidade travam cada número publicado ao pipeline.',
+ p9b:'Limites, ditos com todas as letras: o critério de corredor aberto é estrito de propósito (o tráfego real de 2024 prova que navios atravessam mesmo assim, com escolta e desvio); as emissões usam premissas declaradas de consumo e excluem o quebra-gelo; as profundidades vêm de uma seção amostrada por estreito; o gráfico de 2050 é extrapolação cuja resposta depende do período escolhido.',
+ thStrait:'Estreito', thDepth:'Canal mais fundo (m)', thUlcv:'Passa calado de 16,5 m?',
+ tagOk:'passa', tagNo:'barra',
+ ft1:'<b>O Novo Mapa do Comércio Global</b> · Um estudo de <a href="https://avnergomes.github.io/portfolio/">Avner Gomes</a> · pipeline reprodutível, 97 afirmações verificadas, 62 referências primárias.',
+ ft2:'Contexto: Financial Times, <a href="https://www.ft.com/content/4456f475-f2c8-4cb7-8312-0c47c5f781b8" target="_blank" rel="noopener">"China bypasses shipping chokepoints with ‘Ice Silk Road’ through Arctic"</a>; white paper da política ártica da China de 2018 (a "Rota da Seda Polar"); monitoramento de trânsitos do CHNL / Nord University; NOAA/NSIDC CDR v6 (DOI 10.7265/rjzb-pf78).',
+ ft3:'Escrito em português, inglês e espanhol. Sem rastreadores além da analytics padrão do site. © Avner Gomes.',
+},
+es:{
+ brand:'Ártico 1979-2025', nav1:'La pregunta', nav2:'El marcador', nav3:'La meseta', nav4:'Las rutas',
+ nav5:'El fondo marino', nav6:'La carga', nav7:'Globo 3D', nav8:'2050', nav9:'Método',
+ kicker:'INTELIGENCIA GEOESPACIAL · 47 AÑOS DE SATÉLITE',
+ h1:'El Nuevo Mapa del Comercio Global',
+ sub:'Lo que 47 años de satélite dicen sobre las rutas del Ártico',
+ thesis:'Un portacontenedores chino llegó a Inglaterra por el Ártico en 20 días, y el Financial Times lo llama "Ruta de la Seda del Hielo". El registro satelital completo dice algo más preciso: la ventana es real, violenta de un año al otro, limitada por el fondo marino, y la ruta sobre el Polo nunca abrió un solo día.',
+ src:'Datos: NOAA/NSIDC Climate Data Record v6 (diario, 25 km, 1978-2026) · Sea Ice Index v4 · POLARIS de la OMI (MSC.1/Circ.1519) · CHNL / Nord University · Rosatom · DEM NOAA. 97 afirmaciones verificadas. Análisis: Avner Gomes.',
+ hs1:'días de ruta Transpolar abierta en 47 años',
+ hs2:'distancia de la NSR vs Suez, Ningbo-Róterdam',
+ hs3:'días abiertos por año en la NSR desde 2010 (ice-class)',
+ hs4:'de la carga de la NSR cruza realmente entre océanos',
+ k1:'LA PREGUNTA', h1s:'¿El Ártico realmente se abre al comercio?',
+ p1a:'En septiembre de 2025 el portacontenedores Istanbul Bridge salió de Ningbo y llegó a Felixstowe en 20 días por la Ruta del Mar del Norte. China hizo 14 viajes de contenedores Asia-Europa por allí en 2025, en el corredor que Pekín bautizó formalmente Ruta de la Seda Polar en su política ártica de 2018. El Financial Times lo reportó como China sorteando los cuellos de botella del transporte marítimo mundial por el Ártico.',
+ p1b:'Este informe pone el registro observacional completo debajo de esa historia. La base es el Climate Data Record de NOAA/NSIDC: concentración de hielo medida cada día desde fines de 1978 en una cuadrícula de 25 km. Tracé los tres corredores, la NSR por Rusia, el Paso del Noroeste por Canadá y la Transpolar sobre el Polo, y le hice una pregunta dura a cada día de 47 años: ¿el corredor entero estuvo bajo el umbral de hielo a la vez?',
+ p1c:'La respuesta cabe en tres números: una ruta que oscila violentamente, una ruta que nunca abrió, y un fondo marino que no responde al clima.',
+ k2:'EL MARCADOR', h2s:'Una ruta es lotería. La otra nunca abrió.',
+ rvPlace:'EL REGISTRO COMPLETO DE 47 AÑOS, DÍA A DÍA',
+ rvRoad:'Ruta transpolar: 0 días en 47 años',
+ rvSub:'La línea recta sobre el Polo Norte, la más corta de todas, nunca estuvo navegable en el registro observacional, con ningún umbral, para ninguna clase de buque.',
+ st1l:'días abiertos NSR vs NWP en 2024', st1n:'La NSR quedó congelada todo el año mientras la NWP tuvo su mejor temporada del registro (umbral ice-class, SIC < 50%).',
+ st2l:'las mismas dos rutas en 2025', st2n:'Un año después los ganadores se invirtieron: NSR 59 días, NWP cero. Esa es la lotería interanual.',
+ st3l:'tránsitos reales por la NSR en 2024', st3n:'Los buques cruzaron igual: la navegación táctica desvía, espera y sigue rompehielos. Métrica estricta y tráfico real miden cosas distintas (CHNL).',
+ capWindow:'<b>Días por año con el corredor entero abierto</b> (concentración bajo 50% en todas las celdas oceánicas, dato diario). Azul: NSR. Naranja: NWP. La serie Transpolar es un cero continuo. Fuente: NOAA/NSIDC CDR v6, procesamiento del autor.',
+ p2a:'La Ruta del Mar del Norte pasó de cero días abiertos en los años 1980 a un promedio de 44 en la década de 2010, con pico de 87 días en 2020. La ventana es real. Y es implaneable: ninguna naviera monta un servicio semanal en un corredor que da 87 días un año y 9 al siguiente.',
+ k3:'LA MESETA', h3s:'El hielo cayó fuerte, y dejó de caer en línea recta',
+ p3a:'El hielo de septiembre cae 12% por década en el registro completo. Casi nadie cita la segunda mitad de la frase: dentro de 2007-2025 no hay tendencia estadísticamente significativa (p = 0,36). El NSIDC lo llama el "nuevo anormal": nivel más bajo, oscilaciones fuertes, ninguna línea recta.',
+ capExtent:'<b>Extensión media del hielo en septiembre, 1979-2025</b> (millones de km²). Trazos grises: tendencia lineal del registro completo (&minus;12%/década). Línea ámbar: media 2007-2025, una meseta sin tendencia significativa. Fuente: NSIDC Sea Ice Index v4.',
+ call1:'Quien extrapola la década de 2010 en línea recta dibuja una tendencia sobre ruido. La lectura honesta: la puerta se abrió entre los años 1990 y 2007, y desde entonces oscila en la bisagra.',
+ k4:'LAS RUTAS', h4s:'Más corta, sí. Más barata, todavía no.',
+ p4a:'Construí un grafo de costo-tiempo sobre la cuadrícula polar, con el índice POLARIS de la OMI decidiendo celda por celda dónde puede entrar cada clase de buque, y ruteé Ningbo-Róterdam. Contra la línea de base de Suez, septiembre por el Ártico ahorra unos 4.100 km y 6 días. Marzo es otro planeta: la ruta se cierra para buques comunes, y hasta un Polar Class 6 se arrastra 45 días en el hielo.',
+ capRoutes:'<b>Ningbo &#8594; Róterdam, de cuatro maneras</b>: distancia total (barras, km) y días de viaje (etiquetas) a 14 nudos en mar abierto. Óptimo de septiembre/2025 para NSR y NWP; marzo/2025 solo es viable para PC6 a 3 nudos en hielo. Ruteo del autor; Suez por el grafo marítimo searoute.',
+ sc1h:'Septiembre', sc1p:'15.300 km y ~25 días por la NSR para un buque ice-class, camino 21% más corto y ~21% menos CO2 por contenedor en los supuestos modelados.',
+ sc2h:'Marzo', sc2p:'Cerrado para buques comunes y PC7. Un PC6 cruza a 3 nudos en hielo y tarda 45 días, más que Suez. No existe línea regular todo el año en esta ruta.',
+ sc3h:'El margen', sc3p:'Con datos operativos reales, la ganancia por contenedor seguía favoreciendo a Suez: US$ 1.151 vs 1.124 (Zhang, Meng & Ng 2016). Capex ice-class, escolta, seguro y falta de escalas se comen el ahorro de distancia.',
+ k5:'EL FONDO MARINO', h5s:'La puerta que no se derrite',
+ p5a:'La NSR costera pasa por los estrechos de las islas de Nueva Siberia. En las secciones que muestreé de la batimetría de la NOAA, el mejor canal del Dmitry Laptev tiene 16 m y el del Sannikov 27 m, contra 182-287 m en Vilkitsky y Barrow. Con margen bajo quilla, los grandes portacontenedores de 14.000+ TEU simplemente no caben, con o sin hielo.',
+ capDepth:'<b>Canal más profundo por estrecho</b> (m, sección muestreada). Trazo rojo: calado de un portacontenedor ultragrande (16,5 m) más 15% de margen. Las barras rojas no pasan. El canal real puede ser más somero que una sección única.',
+ pull1:'El calentamiento mueve el hielo. No mueve el fondo marino. El límite de escala de la ruta costera es batimétrico, no glacial.',
+ k6:'LA CARGA', h6s:'Siga las toneladas, no el titular',
+ p6a:'La NSR movió un récord de 37,9 millones de toneladas en 2024. El número que importa para la tesis del "nuevo Suez" es menor: solo 3,07 Mt cruzaron de punta a punta, cerca del 8%, y el 95% de ese tránsito fue Rusia-China, casi todo crudo. El resto del récord es Rusia exportando su propio subsuelo desde sus propios puertos, liderada por el proyecto Yamal LNG y sus buques tanque Arc7.',
+ cg1l:'carga total de la NSR, 2024 (récord)', cg1n:'Cifra oficial Rosatom / Glavsevmorput.',
+ cg2l:'de eso cruzó de punta a punta', cg2n:'97 viajes monitoreados por AIS (CHNL / Nord University).',
+ cg3l:'del tránsito fue Rusia → China', cg3n:'2,9 de 3,07 Mt, dominado por crudo.',
+ cg4l:'viajes de contenedores Asia-Europa en 2025', cg4n:'El récord hasta ahora, incluidos los 20 días del Istanbul Bridge. Nicho, no red.',
+ call2:'Cuando la crisis del Mar Rojo tumbó el 90% del tráfico de contenedores de Suez en 2024, las navieras globales desviaron por el Cabo de Buena Esperanza, sumando 10-14 días, y no por el Ártico. Ese fue el test de estrés del propio mercado.',
+ k7:'EXPLORE', h7s:'Gire usted mismo los 47 años',
+ g3h:'Globo 3D interactivo', g3p:'Arrastre el año de 1979 a 2025 y vea el borde del hielo de septiembre retroceder sobre las cinco rutas, con el corredor del Arctic Express chino en dorado, los cuellos de botella batimétricos como puntos clicables y el marcador de días abiertos por año. Autocontenido, sin backend.',
+ g3b:'Abrir el globo', g3b2:'Página del artículo',
+ k8:'2050', h8s:'Elija su pasado, reciba su futuro',
+ p8a:'La misma serie observada sostiene dos 2050 muy distintos. Ajuste 1979-2025 y la NSR llega a ~76 días abiertos (57-95). Ajuste solo la meseta pos-2007 y el intervalo explota a 0-151 días, porque ese tramo no tiene tendencia alguna. Esto es extrapolación declarada, no modelo climático.',
+ capScen:'<b>Días abiertos de la NSR, observados y extrapolados hasta 2050.</b> Gris: ajuste 1979-2025 (p < 0,001). Ámbar: ajuste solo 2007-2025 (p = 0,36), con su intervalo de 95% explotando. Las proyecciones de modelos (CMIP6/SSP) están en las referencias del artículo.',
+ p8b:'La literatura de modelos (CMIP6) sitúa el primer septiembre prácticamente sin hielo antes de 2050 en la mayoría de las simulaciones, en cualquier escenario de emisiones, lo que cambiaría el juego otra vez. Hasta entonces, cinco cosas para observar: el mínimo de septiembre, el fin de las exenciones del veto al HFO en julio de 2029, el conteo de viajes de contenedores Asia-Europa, el primer septiembre sin hielo, y la fila de permisos de Rusia.',
+ k9:'MÉTODO Y LÍMITES', h9s:'Cómo se hizo esto, y dónde se dobla',
+ p9a:'Serie de extensión del Sea Ice Index v4 del NSIDC; concentración diaria y mensual de los agregados del CDR v6 (~4,3 GB, en caché); volumen de PIOMAS; batimetría del mosaico de DEMs de la NOAA; tráfico de Rosatom y del CHNL. POLARIS sigue la circular MSC.1/Circ.1519 de la OMI con la tabla completa de riesgo, simplificado con tipo de hielo por proxy estacional y persistencia de septiembre. El ruteo es Dijkstra sobre celdas oceánicas (profundidad ≤ −15 m) con aristas geodésicas. Once pruebas de sanidad fijan cada cifra publicada al pipeline.',
+ p9b:'Límites, dichos claramente: el criterio de corredor abierto es estricto a propósito (el tráfico real de 2024 prueba que los buques cruzan igual, con escolta y desvíos); las emisiones usan supuestos declarados de consumo y excluyen rompehielos; las profundidades vienen de una sección muestreada por estrecho; el gráfico de 2050 es una extrapolación cuya respuesta depende del período elegido.',
+ thStrait:'Estrecho', thDepth:'Canal más profundo (m)', thUlcv:'¿Pasa calado de 16,5 m?',
+ tagOk:'pasa', tagNo:'bloquea',
+ ft1:'<b>El Nuevo Mapa del Comercio Global</b> · Un estudio de <a href="https://avnergomes.github.io/portfolio/">Avner Gomes</a> · pipeline reproducible, 97 afirmaciones verificadas, 62 referencias primarias.',
+ ft2:'Contexto: Financial Times, <a href="https://www.ft.com/content/4456f475-f2c8-4cb7-8312-0c47c5f781b8" target="_blank" rel="noopener">"China bypasses shipping chokepoints with ‘Ice Silk Road’ through Arctic"</a>; libro blanco de la política ártica de China de 2018 (la "Ruta de la Seda Polar"); monitoreo de tránsitos del CHNL / Nord University; NOAA/NSIDC CDR v6 (DOI 10.7265/rjzb-pf78).',
+ ft3:'Escrito en español, inglés y portugués. Sin rastreadores más allá de la analítica estándar del sitio. © Avner Gomes.',
+},
+};
+const HTML_KEYS = new Set(['capWindow','capExtent','capRoutes','capDepth','capScen','ft1','ft2','ft3']);
+let lang = 'en';
+
+/* ======================= gráficos (SVG puro) ======================= */
+const NS = 'http://www.w3.org/2000/svg';
+function sv(tag, attrs, parent){ const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function chartFrame(w, h){ const s = sv('svg', {viewBox:`0 0 ${w} ${h}`}); return s; }
+function axisText(svgEl, x, y, txt, anchor, fill, size){
+  const t = sv('text', {x, y, 'text-anchor':anchor||'start', fill:fill||'oklch(62% 0.022 250)',
+    'font-family':'JetBrains Mono,monospace', 'font-size':size||11}, svgEl); t.textContent = txt; return t; }
+
+function drawWindow(){
+  const W=960,H=330,L=46,R=14,T=16,B=34, w=W-L-R, h=H-T-B, ymax=95;
+  const el=document.getElementById('figWindow'); el.innerHTML='';
+  const s=chartFrame(W,H); el.appendChild(s);
+  const X=i=>L+w*i/(YEARS.length-1), Y=v=>T+h*(1-v/ymax);
+  for (const g of [0,30,60,90]){ sv('line',{x1:L,x2:W-R,y1:Y(g),y2:Y(g),stroke:'oklch(24% 0.024 250)','stroke-width':1},s);
+    axisText(s,L-8,Y(g)+4,String(g),'end'); }
+  for (const yr of [1980,1990,2000,2010,2020]){ const i=yr-1979;
+    axisText(s,X(i),H-10,String(yr),'middle'); }
+  const path=(arr)=>arr.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
+  sv('path',{d:path(NWP50),fill:'none',stroke:'#eb6834','stroke-width':2.2,'stroke-linejoin':'round'},s);
+  sv('path',{d:path(NSR50),fill:'none',stroke:'#7aa2f7','stroke-width':2.6,'stroke-linejoin':'round'},s);
+  sv('line',{x1:L,x2:W-R,y1:Y(0),y2:Y(0),stroke:'#1baf7a','stroke-width':2,'stroke-dasharray':'2 5'},s);
+  axisText(s,W-R,Y(0)-8,'TSR = 0','end','#1baf7a',12);
+  axisText(s,X(41)-6,Y(87)-8,'87 (2020)','end','#7aa2f7',12);
+  axisText(s,X(45),Y(65)-8,'65 (2024)','middle','#eb6834',12);
+  axisText(s,L+4,T+12,'NSR','start','#7aa2f7',12.5);
+  axisText(s,L+44,T+12,'NWP','start','#eb6834',12.5);
+}
+
+function drawExtent(){
+  const W=960,H=330,L=46,R=14,T=16,B=34,w=W-L-R,h=H-T-B,ymin=3,ymax=8;
+  const el=document.getElementById('figExtent'); el.innerHTML='';
+  const s=chartFrame(W,H); el.appendChild(s);
+  const X=i=>L+w*i/(SEP.length-1), Y=v=>T+h*(1-(v-ymin)/(ymax-ymin));
+  for (const g of [3,4,5,6,7,8]){ sv('line',{x1:L,x2:W-R,y1:Y(g),y2:Y(g),stroke:'oklch(24% 0.024 250)','stroke-width':1},s);
+    axisText(s,L-8,Y(g)+4,String(g),'end'); }
+  for (const yr of [1980,1990,2000,2010,2020]){ axisText(s,X(yr-1979),H-10,String(yr),'middle'); }
+  /* tendência linear 1979-2025 por mínimos quadrados */
+  const n=SEP.length, xs=SEP.map((_,i)=>i);
+  const mx=xs.reduce((a,b)=>a+b)/n, my=SEP.reduce((a,b)=>a+b)/n;
+  let num=0,den=0; for(let i=0;i<n;i++){num+=(xs[i]-mx)*(SEP[i]-my);den+=(xs[i]-mx)**2;}
+  const b1=num/den,b0=my-b1*mx;
+  sv('line',{x1:X(0),y1:Y(b0),x2:X(n-1),y2:Y(b0+b1*(n-1)),stroke:'oklch(62% 0.022 250)','stroke-width':1.6,'stroke-dasharray':'6 5'},s);
+  /* platô 2007-2025 */
+  const plat=SEP.slice(28); const pm=plat.reduce((a,b)=>a+b)/plat.length;
+  sv('line',{x1:X(28),x2:X(n-1),y1:Y(pm),y2:Y(pm),stroke:'oklch(80% 0.12 85)','stroke-width':2.4},s);
+  axisText(s,X(33),Y(pm)-10,'2007-2025: p = 0.36','start','oklch(80% 0.12 85)',12);
+  const path=SEP.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
+  sv('path',{d:path,fill:'none',stroke:'#7aa2f7','stroke-width':2.4,'stroke-linejoin':'round'},s);
+  SEP.forEach((v,i)=>sv('circle',{cx:X(i),cy:Y(v),r:2.6,fill:'#7aa2f7'},s));
+  axisText(s,X(33),Y(SEP[33])+22,'2012: 3.57','start','oklch(62% 0.022 250)',11.5);
+}
+
+function drawRoutes(){
+  const W=960,H=250,L=120,R=90,T=18,B=10,w=W-L-R,rowH=(H-T-B)/4;
+  const names={en:{suez:'Suez',nwp:'NWP · Sep',nsr:'NSR · Sep',mar:'NSR · Mar (PC6)'},
+    pt:{suez:'Suez',nwp:'NWP · set',nsr:'NSR · set',mar:'NSR · mar (PC6)'},
+    es:{suez:'Suez',nwp:'NWP · sep',nsr:'NSR · sep',mar:'NSR · mar (PC6)'}}[lang];
+  const dias={en:'days',pt:'dias',es:'días'}[lang];
+  const el=document.getElementById('figRoutes'); el.innerHTML='';
+  const s=chartFrame(W,H); el.appendChild(s);
+  const kmax=20000;
+  ROUTES.forEach((r,i)=>{
+    const y=T+i*rowH+rowH*0.18, bh=rowH*0.56, bw=w*r.km/kmax;
+    axisText(s,L-10,y+bh/2+4,names[r.key],'end','oklch(83% 0.014 250)',13);
+    sv('rect',{x:L,y,width:bw,height:bh,rx:6,fill:r.col,opacity:r.key==='mar'?0.9:0.95},s);
+    const kmTxt=(Math.round(r.km/100)*100).toLocaleString(lang==='en'?'en-US':'pt-BR');
+    axisText(s,L+bw+10,y+bh/2+4,kmTxt+' km · '+r.days.toFixed(0)+' '+dias,'start','oklch(83% 0.014 250)',12.5);
+  });
+}
+
+function drawDepth(){
+  const W=960,H=270,L=130,R=60,T=14,B=30,w=W-L-R,rowH=(H-T-B)/STRAITS.length;
+  const el=document.getElementById('figDepth'); el.innerHTML='';
+  const s=chartFrame(W,H); el.appendChild(s);
+  const dmax=300, X=v=>L+w*v/dmax;
+  STRAITS.forEach((st,i)=>{
+    const y=T+i*rowH+rowH*0.16,bh=rowH*0.6;
+    axisText(s,L-10,y+bh/2+4,st.n,'end','oklch(83% 0.014 250)',13);
+    sv('rect',{x:L,y,width:Math.max(X(st.d)-L,3),height:bh,rx:5,
+      fill:st.d<DRAFT_LINE*1.4?'oklch(64% 0.20 25)':'#7aa2f7',opacity:.95},s);
+    axisText(s,X(st.d)+8,y+bh/2+4,st.d+' m','start','oklch(83% 0.014 250)',12);
+  });
+  sv('line',{x1:X(DRAFT_LINE),x2:X(DRAFT_LINE),y1:T-4,y2:H-B,stroke:'oklch(64% 0.20 25)','stroke-width':1.6,'stroke-dasharray':'5 5'},s);
+  axisText(s,X(DRAFT_LINE)+6,H-14,'16.5 m + 15%','start','oklch(64% 0.20 25)',11.5);
+}
+
+function drawScen(){
+  const W=960,H=340,L=46,R=16,T=16,B=34,w=W-L-R,h=H-T-B,ymax=160,x0=1979,x1=2050;
+  const el=document.getElementById('figScen'); el.innerHTML='';
+  const s=chartFrame(W,H); el.appendChild(s);
+  const X=yr=>L+w*(yr-x0)/(x1-x0), Y=v=>T+h*(1-Math.max(v,0)/ymax);
+  for (const g of [0,40,80,120,160]){ sv('line',{x1:L,x2:W-R,y1:Y(g),y2:Y(g),stroke:'oklch(24% 0.024 250)','stroke-width':1},s);
+    axisText(s,L-8,Y(g)+4,String(g),'end'); }
+  for (const yr of [1980,2000,2020,2035,2050]) axisText(s,X(yr),H-10,String(yr),'middle');
+  function fan(f,col,op){
+    const y25=f.y0+f.slope*(2025-f.x0), y50=f.y0+f.slope*(2050-f.x0);
+    const ci25=f.ci2050*0.12;
+    const p=`M ${X(2025)} ${Y(y25-ci25)} L ${X(2050)} ${Y(y50-f.ci2050)} L ${X(2050)} ${Y(Math.min(y50+f.ci2050,ymax))} L ${X(2025)} ${Y(y25+ci25)} Z`;
+    sv('path',{d:p,fill:col,opacity:op},s);
+    sv('line',{x1:X(f.start),y1:Y(f.y0+f.slope*(f.start-f.x0)),x2:X(2050),y2:Y(y50),
+      stroke:col,'stroke-width':1.8,'stroke-dasharray':'7 5'},s);
+  }
+  fan(FIT_ALL,'oklch(62% 0.022 250)',0.18);
+  fan(FIT_NEW,'oklch(80% 0.12 85)',0.14);
+  const path=NSR50.map((v,i)=>(i?'L':'M')+X(1979+i).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
+  sv('path',{d:path,fill:'none',stroke:'#7aa2f7','stroke-width':2.2,'stroke-linejoin':'round'},s);
+  sv('line',{x1:X(2025.5),x2:X(2025.5),y1:T,y2:H-B,stroke:'oklch(40% 0.02 250)','stroke-width':1,'stroke-dasharray':'3 5'},s);
+  axisText(s,X(2050)-4,Y(76)-38,'57-95','end','oklch(62% 0.022 250)',12);
+  axisText(s,X(2050)-4,Y(10),'0-151','end','oklch(80% 0.12 85)',12);
+}
+
+/* ======================= i18n render ======================= */
+function setLang(l){
+  if(!I18N[l]) l='en';
+  lang=l;
+  document.documentElement.lang = l==='pt'?'pt-BR':l;
+  const T=I18N[l];
+  document.querySelectorAll('[data-i]').forEach(el=>{
+    const k=el.getAttribute('data-i'); if(!(k in T)) return;
+    if (HTML_KEYS.has(k)) el.innerHTML=T[k]; else el.textContent=T[k];
+  });
+  document.querySelectorAll('nav .langs button').forEach(b=>b.classList.toggle('on',b.dataset.setlang===l));
+  const gb=document.getElementById('globeBtn'); gb.href='arctic-routes-globe.html#'+l;
+  const tb=document.getElementById('tblStraits'); tb.innerHTML='';
+  for (const st of STRAITS){
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>'+st.n+'</td><td class="num">'+st.d+'</td>'+
+      '<td><span class="tag'+(st.ok?'':' no')+'">'+(st.ok?T.tagOk:T.tagNo)+'</span></td>';
+    tb.appendChild(tr);
+  }
+  drawWindow(); drawExtent(); drawRoutes(); drawDepth(); drawScen();
+  if (location.hash!=='#'+l) history.replaceState(null,'','#'+l);
+}
+document.querySelectorAll('nav .langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.setlang));
+window.addEventListener('hashchange',()=>setLang((location.hash||'').replace('#','').toLowerCase()));
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  document.getElementById('prog').style.width=(100*d.scrollTop/(d.scrollHeight-d.clientHeight))+'%';
+});
+setLang((location.hash||'').replace('#','').toLowerCase()||'en');
+</script>
+</body>
+</html>
