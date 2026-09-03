@@ -34,17 +34,24 @@ body.arrastando{cursor:grabbing}
 .piso{position:absolute;left:50%;top:50%;width:34000px;height:34000px;
   margin:-17000px 0 0 -17000px;transform:translateY(760px) rotateX(90deg);
   background:
-    repeating-linear-gradient(90deg,rgba(79,214,200,.16) 0 1px,transparent 1px 460px),
-    repeating-linear-gradient(0deg,rgba(79,214,200,.16) 0 1px,transparent 1px 460px);
-  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 0%,#000 32%,transparent 62%);
-  mask-image:radial-gradient(circle at 50% 50%,#000 0%,#000 32%,transparent 62%);
-  opacity:.5;pointer-events:none}
-.anel{position:absolute;left:50%;top:50%;border:1px solid rgba(79,214,200,.20);
-  border-radius:50%;transform:translate(-50%,-50%) rotateX(90deg) translateY(0);
-  pointer-events:none}
-.rotulo-piso{position:absolute;left:50%;top:50%;width:2600px;margin:-90px 0 0 -1300px;
-  text-align:center;font-family:var(--mono);font-size:112px;letter-spacing:.30em;
-  color:rgba(123,240,228,.13);text-transform:uppercase;pointer-events:none;
+    repeating-linear-gradient(90deg,rgba(79,214,200,.30) 0 3px,transparent 3px 1600px),
+    repeating-linear-gradient(0deg,rgba(79,214,200,.30) 0 3px,transparent 3px 1600px);
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 0%,#000 40%,transparent 72%);
+  mask-image:radial-gradient(circle at 50% 50%,#000 0%,#000 40%,transparent 72%);
+  opacity:.55;pointer-events:none}
+.piso.longe{opacity:0;transition:opacity .4s ease;
+  background:
+    repeating-linear-gradient(90deg,rgba(79,214,200,.55) 0 60px,transparent 60px 2200px),
+    repeating-linear-gradient(0deg,rgba(79,214,200,.55) 0 60px,transparent 60px 2200px)}
+body.voo .piso.longe{opacity:.45}
+body.voo .piso.perto{opacity:0}
+.anel{position:absolute;left:50%;top:50%;border:40px solid rgba(79,214,200,.22);
+  opacity:0;transition:opacity .4s ease}
+body.voo .anel{opacity:1}
+.anel{border-radius:50%;pointer-events:none}
+.rotulo-piso{position:absolute;left:50%;top:50%;width:7000px;margin:-200px 0 0 -3500px;
+  text-align:center;font-family:var(--mono);font-size:300px;letter-spacing:.26em;
+  color:rgba(123,240,228,.17);text-transform:uppercase;pointer-events:none;
   white-space:nowrap}
 
 /* ───────────────────────────────────────────────────────────── painéis */
@@ -63,7 +70,9 @@ body.arrastando{cursor:grabbing}
   box-shadow:0 0 0 1px rgba(123,240,228,.16),0 0 90px rgba(79,214,200,.14),
     0 50px 140px rgba(0,0,0,.65),inset 0 1px 0 rgba(123,240,228,.18)}
 .painel.perto{opacity:.62}
-body.voo .painel{opacity:.72;transition:opacity .35s ease}
+body.voo .painel{opacity:.92;transition:opacity .35s ease;
+  box-shadow:0 0 80px rgba(79,214,200,.22),0 40px 120px rgba(0,0,0,.55)}
+
 
 /* cantoneiras */
 .painel .canto{position:absolute;width:34px;height:34px;border:2px solid var(--ciano);
@@ -254,7 +263,8 @@ h2{font-size:52px;line-height:1.10;font-weight:700;letter-spacing:-.012em}
 <body>
 <div id="cena">
   <div id="mundo">
-    <div class="piso"></div>
+    <div class="piso perto"></div>
+    <div class="piso longe"></div>
   </div>
 </div>
 <div id="vinheta"></div>
@@ -414,7 +424,7 @@ const nos = EST.map(function(e, k){
   });
   SECOES.forEach(function(s){
     if(s.ang == null) return;
-    const rad = s.ang * Math.PI / 180, R = 4600;
+    const rad = s.ang * Math.PI / 180, R = 7000;
     const d = document.createElement('div');
     d.className = 'rotulo-piso';
     d.textContent = s.nome;
@@ -455,11 +465,11 @@ function aplicar(){
 function curto(a, b){ let d = (b - a) % 360; if(d > 180) d -= 360; if(d < -180) d += 360; return a + d; }
 
 function escalaPanorama(){
-  return Math.min(innerWidth, innerHeight * 1.45) / (2 * RAIO_MAX + 2400);
+  return Math.min(innerWidth, innerHeight * 1.45) / (2 * RAIO_MAX + 6000);
 }
 function panorama(deRy, paraRy){
   const meio = deRy + (curto(deRy, paraRy) - deRy) / 2;
-  return {x:0, y:-1150, z:0, ry:meio, rx:44, dolly:dollyPara(escalaPanorama())};
+  return {x:0, y:-RAIO_MAX * 0.56, z:0, ry:meio, rx:56, dolly:dollyPara(escalaPanorama())};
 }
 function voar(alvo, ms, fim){
   if(anim) cancelAnimationFrame(anim);
@@ -510,7 +520,8 @@ function ir(k, ms){
 }
 function panoramica(){
   livre = true; hLivre.style.display = 'block';
-  voar({x:0, y:-1400, z:0, ry:cam.ry, rx:46, dolly:dollyPara(0.052)}, 1400);
+  document.body.classList.add('voo');
+  voar(panorama(cam.ry, cam.ry), 1200);
 }
 
 /* trilho */
