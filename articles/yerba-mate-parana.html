@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Four econometric tests on 30 years of IBGE data for Paraná's yerba mate: the native forest led cultivation in 18 of the 20 years to 2023 and 2024 is the first cultivated lead since 2006, supply does not respond to price (Nerlove), native and cultivated leaf prices converged after 2012, an 82-municipality LISA belt holds the crop, and mills settle on top of the stand. Reproducible pipeline, 49 automated checks, trilingual interactive report.">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="Avner Paes Gomes">
+    <link rel="canonical" href="https://avnergomes.github.io/portfolio/articles/yerba-mate-parana.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Yerba Mate in Paraná: Four Econometric Tests">
+    <meta property="og:description" content="775,959 tonnes in 2024, 85.8% of Brazil's native-forest harvest, and a series that does not say what its endpoints suggest: the forest led in 18 of the 20 years to 2023. Nerlove supply response, price convergence, a LISA belt and a mill-location model over IBGE and open CNPJ data.">
+    <meta property="og:url" content="https://avnergomes.github.io/portfolio/articles/yerba-mate-parana.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Yerba Mate in Paraná: Four Econometric Tests | Avner Gomes</title>
+    <style>
+        /* Per-article hero identity; body contrast is enforced by styles.css subpage overrides */
+        .project-hero { background: linear-gradient(135deg, #14532d 0%, #78350f 100%); }
+        .lang-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-3); }
+        .lang-cta .btn i.fa-arrow-up-right-from-square { font-size: 0.75rem; }
+        .lang-block { display: none; }
+        .lang-block.active { display: block; }
+        .art-lang-btn.on { pointer-events: none; opacity: 0.65; }
+        .figure img { display: block; width: 100%; height: auto; padding: 1rem 1rem 0.25rem; }
+        .figure .legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; padding: 0.5rem 1rem 0.25rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-ink-2); }
+        .figure .legend span::before { content: ""; display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; background: var(--sw); }
+    </style>
+</head>
+<body class="subpage-body">
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#articles">Articles</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#articles" class="back-link"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            <h1><span class="lang-block active" data-art-lang="en" style="display:inline;">Yerba Mate in Paraná: Four Econometric Tests</span><span class="lang-block" data-art-lang="pt">Erva-mate no Paraná: quatro testes econométricos</span><span class="lang-block" data-art-lang="es">Yerba mate en Paraná: cuatro pruebas econométricas</span><span class="badge">Article</span></h1>
+            <p class="subtitle">
+                <span class="lang-block active" data-art-lang="en">775,959 tonnes. That was Paraná's yerba mate harvest in 2024, more than double the next state and 85.8% of everything Brazil still picks in native forest. Read from the endpoints, the series looks like a transition from forest to field. Read year by year it says the opposite: the forest led in 18 of the 20 years to 2023. This study puts four econometric tests on 30 years of IBGE data and the open company registry, and keeps the correction it had to make along the way.</span>
+                <span class="lang-block" data-art-lang="pt">775.959 toneladas. Foi a colheita de erva-mate do Paraná em 2024, mais que o dobro do segundo estado e 85,8% de tudo que o Brasil ainda colhe em floresta nativa. Lida pelas duas pontas, a série parece uma transição da floresta para a lavoura. Lida ano a ano, diz o contrário: a floresta liderou em 18 dos 20 anos até 2023. Este estudo aplica quatro testes econométricos a 30 anos de dados do IBGE e ao cadastro CNPJ aberto, e mantém à vista a correção que precisou fazer no caminho.</span>
+                <span class="lang-block" data-art-lang="es">775.959 toneladas. Esa fue la cosecha de yerba mate de Paraná en 2024, más del doble que el segundo estado y el 85,8% de todo lo que Brasil todavía recoge en bosque nativo. Leída por los extremos, la serie parece una transición del bosque al cultivo. Leída año a año dice lo contrario: el bosque lideró en 18 de los 20 años hasta 2023. Este estudio aplica cuatro pruebas econométricas a 30 años de datos del IBGE y al registro abierto de empresas, y deja a la vista la corrección que tuvo que hacer en el camino.</span>
+            </p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span>Agricultural Economics / Geospatial Intelligence</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2026</span></div>
+                <div class="meta-item"><i class="fas fa-database"></i><span>IBGE PAM · PEVS · IPCA · CNPJ open registry (1986-2024)</span></div>
+                <div class="meta-item"><i class="fas fa-language"></i><span>PT · EN · ES</span></div>
+            </div>
+            <div class="lang-cta">
+                <a class="btn btn-primary" id="report-link" href="yerba-mate-parana-report.html#en" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i><span>Open interactive report</span></a>
+                <a class="btn btn-secondary art-lang-btn" href="#en" data-setlang="en">English</a>
+                <a class="btn btn-secondary art-lang-btn" href="#pt" data-setlang="pt">Português</a>
+                <a class="btn btn-secondary art-lang-btn" href="#es" data-setlang="es">Español</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+
+            <!-- ======================= EN ======================= -->
+            <div class="lang-block active" data-art-lang="en">
+                <div class="content-section">
+                    <h2>What this is</h2>
+                    <p>A reproducible econometric study of Paraná's yerba mate chain, the largest in Brazil. The production series come from two IBGE surveys published separately: PAM, which records cultivated stands, and PEVS, which records leaf still picked from trees standing in native araucaria forest. Values are deflated by the IPCA index to 2024 reais. The industrial side comes from the Federal Revenue's open CNPJ registry (2026-07 release), filtered to 228 establishments whose primary activity is yerba mate processing and whose registration is active, all geocoded.</p>
+                    <p>The study asks four questions of the 775,959-tonne headline: does supply respond to price, are native and cultivated leaf one market or two, where exactly does the chain sit on the map, and does industry follow the raw material. It also documents a correction: the first draft read the series from its endpoints and claimed cultivation overtook the forest in 1998 and kept the lead. The year-by-year series contradicts that, and the report says so.</p>
+                    <div class="highlight-box">
+                        <p><strong>The full analysis is a trilingual interactive report</strong> with its own charts drawn from the pipeline data: the year-by-year lead, area versus yield, the two price series and their 2012 convergence, the LISA belt, and the mill-location scatter. This page is the summary; the button above opens the report.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Key figures</h2>
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><div class="number">775,959 t</div><div class="label">Paraná's 2024 harvest: 452,222 t cultivated plus 323,737 t from native forest</div></div>
+                        <div class="kpi-card"><div class="number">85.8%</div><div class="label">Of Brazil's native-forest yerba mate comes from Paraná; RS harvests 302,212 t in total</div></div>
+                        <div class="kpi-card"><div class="number">18 of 20</div><div class="label">Years from 2004 to 2023 with the native forest ahead of cultivation; 2024 is the first cultivated lead since 2006</div></div>
+                        <div class="kpi-card"><div class="number">&minus;0.11</div><div class="label">Short-run price elasticity of cultivated area (Nerlove), p = 0.20: no detectable supply response</div></div>
+                        <div class="kpi-card"><div class="number">122% &rarr; 10%</div><div class="label">Native leaf price premium over cultivated leaf, 1994-2011 vs 2012-2024</div></div>
+                        <div class="kpi-card"><div class="number">82 of 399</div><div class="label">Municipalities in the single High-High LISA belt; Moran's I 0.806, p = 0.001</div></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Inside the analysis</h2>
+                    <ul>
+                        <li><strong>The series, read honestly.</strong> Cultivated output first passed the native harvest in 1998, held the lead until 2003, then fell behind for most of two decades. Native output peaked at 442,189 tonnes in 2021. Cultivated area fell from 43,038 ha in 2003 to 26,086 ha in 2018 before the 2024 record of 45,065 ha; what doubled was yield, from 4,044 to 10,035 kg/ha. The 2024 crossing rides a 23.1% jump in cultivated output and a 12.6% drop in the native harvest, and one year is not a trend.</li>
+                        <li><strong>Test 1, supply.</strong> Nerlove partial adjustment, OLS with Newey-West errors, 1995-2024. Short-run elasticity −0.11 (p = 0.20) for cultivation, −0.02 (p = 0.69) for the native harvest. Growers do not plant more when the price rises: the crop is perennial, and the implicit price (value over quantity) pushes the coefficient down by construction.</li>
+                        <li><strong>Test 2, prices.</strong> No cointegration on the full sample (Engle-Granger p = 0.74), because the series hides a break. Native leaf carried a 122% premium and a 0.46 correlation through 2011; since 2012 the premium is 10% and the correlation 0.82. Two markets became one.</li>
+                        <li><strong>Test 3, the belt.</strong> Moran's I of 0.806 on log municipal output, 999 permutations. LISA draws one contiguous High-High belt of 82 municipalities from Cruz Machado and São Mateus do Sul to Guarapuava and Bituruna: the natural range of the araucaria forest, whose understory yerba mate belongs to. The top 5 municipalities hold 60.1% of state output; the municipal Gini is 0.966.</li>
+                        <li><strong>Test 4, the mills.</strong> A Poisson model of the 228 active mills gives an incidence ratio of 1.37 per unit of own-municipality log output (p = 0.003) and nothing from neighbors (p = 0.78). Leaf oxidizes within hours of the cut, so the mill settles on the stand. Curitiba, with 17 registrations and zero output, is the reminder that the registry places the firm, not the leaf.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Methodology</h2>
+                    <p>Production from SIDRA tables 1613 (PAM) and 289 (PEVS); deflator from table 1737 (annual mean of the IPCA index, 2024 = 1); municipal cut for 2024 on IBGE's official 2024 mesh. Nerlove by OLS with HAC (Newey-West) errors; ADF and Engle-Granger on log prices; Moran's I and LISA implemented from scratch in numpy with conditional permutation inference and queen contiguity; Poisson QMLE with HC1 errors and an OLS robustness check in statsmodels. The pipeline runs in six Python scripts with cached downloads and 49 sanity checks that lock every published number to the generated statistics, including one that fails if the retracted 1998 sentence reappears.</p>
+                    <p>Limits, stated where they bite: the 2024 return of cultivation to the lead is one observation; the implicit price is a state average of declared value and not comparable with DERAL's weekly farm-gate quotation; the Nerlove model rules out a strong response without estimating the true elasticity; an active CNPJ registration is not an operating plant; and LISA on log(1 + output) with 266 municipalities at zero is robust in the belt and soft at its edges.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">pandas</span>
+                        <span class="tech-tag">statsmodels</span>
+                        <span class="tech-tag">GeoPandas</span>
+                        <span class="tech-tag">Moran's I · LISA (numpy)</span>
+                        <span class="tech-tag">IBGE SIDRA API</span>
+                        <span class="tech-tag">CNPJ open registry</span>
+                        <span class="tech-tag">Matplotlib</span>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>The belt on the map</h2>
+                    <figure class="figure">
+                        <img src="../assets/articles/yerba-mate-parana/lisa_map.png" alt="LISA cluster map of 2024 yerba mate output across the 399 municipalities of Paraná: a single High-High belt across the center-south" loading="lazy" width="1530" height="1122">
+                        <div class="legend"><span style="--sw:#1b7837">High-High (82)</span><span style="--sw:#a6dba0">Low-High (3)</span><span style="--sw:#7f3b08">Low-Low (1)</span><span style="--sw:#3a3f47">not significant (313)</span></div>
+                        <figcaption>LISA clusters of 2024 output (log), queen contiguity, 999 conditional permutations, 5% significance. Source: IBGE PAM and PEVS 2024, IBGE 2024 municipal mesh. Author's processing.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="content-section">
+                    <h2>Explore the analysis</h2>
+                    <p>The trilingual interactive report carries the full story with its own charts: the year-by-year lead, area and yield, the price convergence, the LISA belt and the mill-location model, plus the method, the limits and the revision note.</p>
+                    <div class="lang-cta">
+                        <a class="btn btn-primary" href="yerba-mate-parana-report.html#en" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i><span>Interactive report (EN)</span></a>
+                        <a class="btn btn-secondary" href="yerba-mate-parana-report.html#pt" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Relatório (PT)</span></a>
+                        <a class="btn btn-secondary" href="yerba-mate-parana-report.html#es" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Informe (ES)</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================= PT ======================= -->
+            <div class="lang-block" data-art-lang="pt">
+                <div class="content-section">
+                    <h2>O que é isto</h2>
+                    <p>Um estudo econométrico reprodutível da cadeia da erva-mate do Paraná, a maior do Brasil. As séries de produção vêm de duas pesquisas do IBGE publicadas em separado: a PAM, que registra os ervais plantados, e a PEVS, que registra a folha ainda colhida de árvores em pé na floresta com araucária. Os valores são deflacionados pelo IPCA para reais de 2024. O lado industrial vem dos Dados Abertos do CNPJ da Receita Federal (carga 2026-07), filtrados a 228 estabelecimentos com atividade principal de processamento de erva-mate e situação ativa, todos geocodificados.</p>
+                    <p>O estudo faz quatro perguntas à manchete de 775.959 toneladas: a oferta responde ao preço, folha nativa e cultivada são um mercado ou dois, onde exatamente a cadeia está no mapa, e a indústria segue a matéria-prima. Ele também documenta uma correção: o primeiro rascunho leu a série pelas duas pontas e afirmou que o cultivo ultrapassou a floresta em 1998 e manteve a liderança. A série ano a ano contradiz isso, e o relatório diz isso.</p>
+                    <div class="highlight-box">
+                        <p><strong>A análise completa é um relatório interativo trilíngue</strong> com gráficos próprios desenhados a partir dos dados do pipeline: a liderança ano a ano, área contra rendimento, as duas séries de preço e a convergência de 2012, o cinturão LISA e a dispersão das ervateiras. Esta página é o resumo; o botão acima abre o relatório.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Números-chave</h2>
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><div class="number">775.959 t</div><div class="label">Colheita do Paraná em 2024: 452.222 t de cultivo mais 323.737 t de floresta nativa</div></div>
+                        <div class="kpi-card"><div class="number">85,8%</div><div class="label">Da erva-mate de floresta nativa do Brasil sai do Paraná; o RS colhe 302.212 t no total</div></div>
+                        <div class="kpi-card"><div class="number">18 de 20</div><div class="label">Anos de 2004 a 2023 com o erval nativo à frente do cultivo; 2024 é a primeira liderança do cultivo desde 2006</div></div>
+                        <div class="kpi-card"><div class="number">&minus;0,11</div><div class="label">Elasticidade-preço de curto prazo da área cultivada (Nerlove), p = 0,20: sem resposta de oferta detectável</div></div>
+                        <div class="kpi-card"><div class="number">122% &rarr; 10%</div><div class="label">Prêmio de preço da folha nativa sobre a cultivada, 1994-2011 vs 2012-2024</div></div>
+                        <div class="kpi-card"><div class="number">82 de 399</div><div class="label">Municípios no único cinturão Alto-Alto do LISA; I de Moran 0,806, p = 0,001</div></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Por dentro da análise</h2>
+                    <ul>
+                        <li><strong>A série, lida com honestidade.</strong> A produção cultivada passou a nativa pela primeira vez em 1998, segurou a liderança até 2003 e depois ficou atrás na maior parte de duas décadas. A produção nativa teve pico de 442.189 toneladas em 2021. A área cultivada caiu de 43.038 ha em 2003 para 26.086 ha em 2018 antes do recorde de 45.065 ha em 2024; o que dobrou foi o rendimento, de 4.044 para 10.035 kg/ha. O cruzamento de 2024 vem de um salto de 23,1% no cultivo e uma queda de 12,6% na colheita nativa, e um ano não faz tendência.</li>
+                        <li><strong>Teste 1, oferta.</strong> Ajustamento parcial de Nerlove, MQO com erros de Newey-West, 1995-2024. Elasticidade de curto prazo de −0,11 (p = 0,20) no cultivo e −0,02 (p = 0,69) no extrativismo. O produtor não planta mais quando o preço sobe: a cultura é perene, e o preço implícito (valor sobre quantidade) empurra o coeficiente para baixo por construção.</li>
+                        <li><strong>Teste 2, preços.</strong> Sem cointegração na amostra completa (Engle-Granger p = 0,74), porque a série esconde uma quebra. A folha nativa carregou prêmio de 122% e correlação de 0,46 até 2011; de 2012 em diante o prêmio é de 10% e a correlação de 0,82. Dois mercados viraram um.</li>
+                        <li><strong>Teste 3, o cinturão.</strong> I de Moran de 0,806 sobre o log da produção municipal, 999 permutações. O LISA desenha um único cinturão Alto-Alto contíguo de 82 municípios, de Cruz Machado e São Mateus do Sul a Guarapuava e Bituruna: a área natural da floresta com araucária, de cujo sub-bosque a erva-mate faz parte. Os 5 maiores municípios somam 60,1% da produção estadual; o Gini municipal é 0,966.</li>
+                        <li><strong>Teste 4, as ervateiras.</strong> Um modelo de Poisson das 228 ervateiras ativas dá razão de incidência de 1,37 por unidade de log da produção do próprio município (p = 0,003) e nada dos vizinhos (p = 0,78). A folha oxida em horas depois do corte, então o engenho se instala em cima do erval. Curitiba, com 17 cadastros e produção zero, é o lembrete de que o cadastro coloca a empresa, não a folha.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Metodologia</h2>
+                    <p>Produção das tabelas 1613 (PAM) e 289 (PEVS) do SIDRA; deflator da tabela 1737 (média anual do IPCA, 2024 = 1); corte municipal de 2024 sobre a malha oficial 2024 do IBGE. Nerlove por MQO com erros HAC (Newey-West); ADF e Engle-Granger nos log-preços; I de Moran e LISA implementados do zero em numpy com inferência por permutação condicional e contiguidade queen; Poisson QMLE com erros HC1 e robustez em MQO no statsmodels. O pipeline roda em seis scripts Python com downloads em cache e 49 checagens de sanidade que travam cada número publicado às estatísticas geradas, incluindo uma que falha se a frase retirada sobre 1998 reaparecer.</p>
+                    <p>Limites, ditos onde doem: a volta do cultivo à liderança em 2024 é uma observação; o preço implícito é média estadual de valor declarado e não é comparável com a cotação semanal de porteira do DERAL; o modelo de Nerlove descarta resposta forte sem estimar a elasticidade verdadeira; CNPJ ativo não é planta operando; e o LISA sobre log(1 + produção), com 266 municípios em zero, é robusto no cinturão e frágil nas bordas.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">pandas</span>
+                        <span class="tech-tag">statsmodels</span>
+                        <span class="tech-tag">GeoPandas</span>
+                        <span class="tech-tag">I de Moran · LISA (numpy)</span>
+                        <span class="tech-tag">API SIDRA do IBGE</span>
+                        <span class="tech-tag">Dados Abertos do CNPJ</span>
+                        <span class="tech-tag">Matplotlib</span>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>O cinturão no mapa</h2>
+                    <figure class="figure">
+                        <img src="../assets/articles/yerba-mate-parana/lisa_map.png" alt="Mapa de clusters LISA da produção de erva-mate de 2024 nos 399 municípios do Paraná: um único cinturão Alto-Alto no centro-sul" loading="lazy" width="1530" height="1122">
+                        <div class="legend"><span style="--sw:#1b7837">Alto-Alto (82)</span><span style="--sw:#a6dba0">Baixo-Alto (3)</span><span style="--sw:#7f3b08">Baixo-Baixo (1)</span><span style="--sw:#3a3f47">não significativo (313)</span></div>
+                        <figcaption>Clusters LISA da produção 2024 (log), contiguidade queen, 999 permutações condicionais, significância de 5%. Fonte: IBGE PAM e PEVS 2024, malha municipal IBGE 2024. Processamento do autor.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="content-section">
+                    <h2>Explore a análise</h2>
+                    <p>O relatório interativo trilíngue conta a história completa com gráficos próprios: a liderança ano a ano, área e rendimento, a convergência de preços, o cinturão LISA e o modelo de localização das ervateiras, mais o método, os limites e a nota de revisão.</p>
+                    <div class="lang-cta">
+                        <a class="btn btn-primary" href="yerba-mate-parana-report.html#pt" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i><span>Relatório interativo (PT)</span></a>
+                        <a class="btn btn-secondary" href="yerba-mate-parana-report.html#en" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Report (EN)</span></a>
+                        <a class="btn btn-secondary" href="yerba-mate-parana-report.html#es" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Informe (ES)</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================= ES ======================= -->
+            <div class="lang-block" data-art-lang="es">
+                <div class="content-section">
+                    <h2>Qué es esto</h2>
+                    <p>Un estudio econométrico reproducible de la cadena de la yerba mate de Paraná, la mayor de Brasil. Las series de producción vienen de dos encuestas del IBGE publicadas por separado: la PAM, que registra las plantaciones, y la PEVS, que registra la hoja todavía recogida de árboles en pie en el bosque de araucaria. Los valores se deflactan por el IPCA a reales de 2024. El lado industrial viene de los Datos Abiertos del CNPJ de la Receita Federal (carga 2026-07), filtrados a 228 establecimientos con actividad principal de procesamiento de yerba mate y situación activa, todos geocodificados.</p>
+                    <p>El estudio le hace cuatro preguntas al titular de 775.959 toneladas: si la oferta responde al precio, si la hoja nativa y la cultivada son un mercado o dos, dónde exactamente está la cadena en el mapa, y si la industria sigue a la materia prima. También documenta una corrección: el primer borrador leyó la serie por los extremos y afirmó que el cultivo superó al bosque en 1998 y mantuvo el liderazgo. La serie año a año lo contradice, y el informe lo dice.</p>
+                    <div class="highlight-box">
+                        <p><strong>El análisis completo es un informe interactivo trilingüe</strong> con gráficos propios dibujados a partir de los datos del pipeline: el liderazgo año a año, área contra rendimiento, las dos series de precios y su convergencia de 2012, el cinturón LISA y la dispersión de los molinos. Esta página es el resumen; el botón de arriba abre el informe.</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Cifras clave</h2>
+                    <div class="kpi-grid">
+                        <div class="kpi-card"><div class="number">775.959 t</div><div class="label">Cosecha de Paraná en 2024: 452.222 t de cultivo más 323.737 t de bosque nativo</div></div>
+                        <div class="kpi-card"><div class="number">85,8%</div><div class="label">De la yerba mate de bosque nativo de Brasil sale de Paraná; RS cosecha 302.212 t en total</div></div>
+                        <div class="kpi-card"><div class="number">18 de 20</div><div class="label">Años de 2004 a 2023 con el bosque nativo por delante del cultivo; 2024 es el primer liderazgo del cultivo desde 2006</div></div>
+                        <div class="kpi-card"><div class="number">&minus;0,11</div><div class="label">Elasticidad-precio de corto plazo del área cultivada (Nerlove), p = 0,20: sin respuesta de oferta detectable</div></div>
+                        <div class="kpi-card"><div class="number">122% &rarr; 10%</div><div class="label">Prima de precio de la hoja nativa sobre la cultivada, 1994-2011 vs 2012-2024</div></div>
+                        <div class="kpi-card"><div class="number">82 de 399</div><div class="label">Municipios en el único cinturón Alto-Alto del LISA; I de Moran 0,806, p = 0,001</div></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>Dentro del análisis</h2>
+                    <ul>
+                        <li><strong>La serie, leída con honestidad.</strong> La producción cultivada superó a la nativa por primera vez en 1998, sostuvo el liderazgo hasta 2003 y después quedó atrás la mayor parte de dos décadas. La producción nativa alcanzó su pico de 442.189 toneladas en 2021. El área cultivada cayó de 43.038 ha en 2003 a 26.086 ha en 2018 antes del récord de 45.065 ha en 2024; lo que se duplicó fue el rendimiento, de 4.044 a 10.035 kg/ha. El cruce de 2024 viene de un salto del 23,1% en el cultivo y una caída del 12,6% en la cosecha nativa, y un año no hace tendencia.</li>
+                        <li><strong>Prueba 1, oferta.</strong> Ajuste parcial de Nerlove, MCO con errores de Newey-West, 1995-2024. Elasticidad de corto plazo de −0,11 (p = 0,20) en el cultivo y −0,02 (p = 0,69) en la cosecha nativa. El productor no planta más cuando sube el precio: el cultivo es perenne, y el precio implícito (valor sobre cantidad) empuja el coeficiente hacia abajo por construcción.</li>
+                        <li><strong>Prueba 2, precios.</strong> Sin cointegración en la muestra completa (Engle-Granger p = 0,74), porque la serie esconde un quiebre. La hoja nativa llevó una prima del 122% y una correlación de 0,46 hasta 2011; desde 2012 la prima es del 10% y la correlación de 0,82. Dos mercados se volvieron uno.</li>
+                        <li><strong>Prueba 3, el cinturón.</strong> I de Moran de 0,806 sobre el log de la producción municipal, 999 permutaciones. El LISA dibuja un único cinturón Alto-Alto contiguo de 82 municipios, de Cruz Machado y São Mateus do Sul a Guarapuava y Bituruna: el área natural del bosque de araucaria, a cuyo sotobosque pertenece la yerba mate. Los 5 mayores municipios suman el 60,1% de la producción estatal; el Gini municipal es 0,966.</li>
+                        <li><strong>Prueba 4, los molinos.</strong> Un modelo de Poisson de los 228 molinos activos da una razón de incidencia de 1,37 por unidad de log de la producción del propio municipio (p = 0,003) y nada de los vecinos (p = 0,78). La hoja se oxida en horas después del corte, así que el molino se instala sobre la plantación. Curitiba, con 17 registros y producción cero, es el recordatorio de que el registro ubica a la empresa, no a la hoja.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Metodología</h2>
+                    <p>Producción de las tablas 1613 (PAM) y 289 (PEVS) de SIDRA; deflactor de la tabla 1737 (media anual del IPCA, 2024 = 1); corte municipal de 2024 sobre la malla oficial 2024 del IBGE. Nerlove por MCO con errores HAC (Newey-West); ADF y Engle-Granger sobre los log-precios; I de Moran y LISA implementados desde cero en numpy con inferencia por permutación condicional y contigüidad queen; Poisson QMLE con errores HC1 y robustez en MCO en statsmodels. El pipeline corre en seis scripts Python con descargas en caché y 49 verificaciones de sanidad que fijan cada cifra publicada a las estadísticas generadas, incluida una que falla si la frase retirada sobre 1998 reaparece.</p>
+                    <p>Límites, dichos donde duelen: el regreso del cultivo al liderazgo en 2024 es una observación; el precio implícito es un promedio estatal de valor declarado y no es comparable con la cotización semanal a puerta de finca del DERAL; el modelo de Nerlove descarta una respuesta fuerte sin estimar la elasticidad verdadera; un registro CNPJ activo no es una planta operando; y el LISA sobre log(1 + producción), con 266 municipios en cero, es robusto en el cinturón y frágil en los bordes.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">pandas</span>
+                        <span class="tech-tag">statsmodels</span>
+                        <span class="tech-tag">GeoPandas</span>
+                        <span class="tech-tag">I de Moran · LISA (numpy)</span>
+                        <span class="tech-tag">API SIDRA del IBGE</span>
+                        <span class="tech-tag">Registro abierto CNPJ</span>
+                        <span class="tech-tag">Matplotlib</span>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>El cinturón en el mapa</h2>
+                    <figure class="figure">
+                        <img src="../assets/articles/yerba-mate-parana/lisa_map.png" alt="Mapa de clústeres LISA de la producción de yerba mate de 2024 en los 399 municipios de Paraná: un único cinturón Alto-Alto en el centro-sur" loading="lazy" width="1530" height="1122">
+                        <div class="legend"><span style="--sw:#1b7837">Alto-Alto (82)</span><span style="--sw:#a6dba0">Bajo-Alto (3)</span><span style="--sw:#7f3b08">Bajo-Bajo (1)</span><span style="--sw:#3a3f47">no significativo (313)</span></div>
+                        <figcaption>Clústeres LISA de la producción 2024 (log), contigüidad queen, 999 permutaciones condicionales, significancia del 5%. Fuente: IBGE PAM y PEVS 2024, malla municipal IBGE 2024. Procesamiento del autor.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="content-section">
+                    <h2>Explore el análisis</h2>
+                    <p>El informe interactivo trilingüe lleva la historia completa con sus propios gráficos: el liderazgo año a año, área y rendimiento, la convergencia de precios, el cinturón LISA y el modelo de localización de los molinos, más el método, los límites y la nota de revisión.</p>
+                    <div class="lang-cta">
+                        <a class="btn btn-primary" href="yerba-mate-parana-report.html#es" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i><span>Informe interactivo (ES)</span></a>
+                        <a class="btn btn-secondary" href="yerba-mate-parana-report.html#en" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Report (EN)</span></a>
+                        <a class="btn btn-secondary" href="yerba-mate-parana-report.html#pt" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i><span>Relatório (PT)</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#articles" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span>Back to Articles</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-mark">
+                        <picture>
+                            <source srcset="../assets/logo2.webp" type="image/webp" />
+                            <img src="../assets/logo2.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                        </picture>
+                        Avner Gomes
+                    </div>
+                    <p>Forest Engineer &amp; Data Scientist</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnerpaesgomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="current-year"></span> Avner Gomes. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        (function () {
+            var LANGS = ['en', 'pt', 'es'];
+            function setArtLang(l) {
+                if (LANGS.indexOf(l) === -1) l = 'en';
+                document.querySelectorAll('[data-art-lang]').forEach(function (el) {
+                    var on = el.getAttribute('data-art-lang') === l;
+                    el.classList.toggle('active', on);
+                    if (el.tagName === 'SPAN' && el.parentElement.tagName === 'H1')
+                        el.style.display = on ? 'inline' : 'none';
+                });
+                document.querySelectorAll('.art-lang-btn').forEach(function (b) {
+                    b.classList.toggle('on', b.getAttribute('data-setlang') === l);
+                });
+                var r = document.getElementById('report-link');
+                if (r) r.href = 'yerba-mate-parana-report.html#' + l;
+                if (location.hash !== '#' + l) history.replaceState(null, '', '#' + l);
+            }
+            document.querySelectorAll('.art-lang-btn').forEach(function (b) {
+                b.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    setArtLang(b.getAttribute('data-setlang'));
+                });
+            });
+            window.addEventListener('hashchange', function () {
+                setArtLang(location.hash.replace('#', ''));
+            });
+            setArtLang(location.hash.replace('#', '') || 'en');
+        })();
+    </script>
+</body>
+</html>

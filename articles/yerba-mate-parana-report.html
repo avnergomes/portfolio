@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yerba Mate in Paraná · Erva-mate no Paraná · Yerba mate en Paraná</title>
+<meta name="description" content="Four econometric tests on 30 years of IBGE data for Paraná's yerba mate: the native forest led cultivation in 18 of the 20 years to 2023, supply does not respond to price, native and cultivated leaf prices converged after 2012, an 82-municipality belt holds the crop, and mills settle on top of the stand. Trilingual interactive report (EN/PT/ES).">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Avner Paes Gomes">
+<link rel="canonical" href="https://avnergomes.github.io/portfolio/articles/yerba-mate-parana-report.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--paper:oklch(14% 0.02 160);--paper-2:oklch(18% 0.022 160);--paper-3:oklch(22% 0.026 160);
+--ink:oklch(96% 0.01 160);--ink-2:oklch(83% 0.014 160);--mut:oklch(62% 0.02 160);
+--line:oklch(28% 0.026 160);--line-soft:oklch(23% 0.022 160);
+--accent:oklch(82% 0.13 90);--accent-soft:oklch(82% 0.13 90 / 0.12);
+--green:oklch(76% 0.16 150);--amber:oklch(78% 0.12 75);--red:oklch(64% 0.20 25);--violet:#b39cf0;
+--maxw:1140px;
+--font-display:"Fraunces","Iowan Old Style",Georgia,serif;
+--font-body:"Inter",-apple-system,'Segoe UI',Roboto,system-ui,sans-serif;
+--font-mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);line-height:1.7;
+-webkit-font-smoothing:antialiased;position:relative}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+background:radial-gradient(ellipse 70% 50% at 85% 2%,oklch(70% 0.12 150 / 0.08),transparent 60%),
+ radial-gradient(ellipse 65% 45% at 5% 96%,oklch(60% 0.12 75 / 0.10),transparent 60%)}
+body>*{position:relative;z-index:1}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.prose{max-width:73ch}
+.prose p{margin:0 0 16px;font-size:17px;color:var(--ink-2)}
+.num{font-variant-numeric:tabular-nums}
+b,strong{color:var(--ink)}
+a{color:var(--green)}
+#prog{position:fixed;top:0;left:0;height:3px;background:var(--green);width:0;z-index:60}
+nav.top{position:sticky;top:0;z-index:50;background:oklch(12% 0.02 160 / 0.85);
+backdrop-filter:saturate(140%) blur(14px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;flex-wrap:wrap;gap:2px 4px;align-items:center;min-height:52px;padding-top:8px;padding-bottom:8px}
+nav.top a{font-size:12px;color:var(--ink-2);text-decoration:none;padding:5px 8px;border-radius:8px;white-space:nowrap;
+font-family:var(--font-mono);transition:background .2s,color .2s}
+nav.top a:hover{background:var(--paper-3);color:var(--ink)}
+nav.top .brand{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:15px;color:var(--ink);
+margin-right:8px;white-space:nowrap}
+nav.top .langs{margin-left:auto;display:flex;gap:2px;flex-shrink:0}
+nav.top .langs button{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;cursor:pointer;
+padding:5px 11px;border-radius:999px;color:var(--mut);background:none;border:1px solid transparent}
+nav.top .langs button.on{background:var(--accent);color:oklch(20% 0.04 90);font-weight:600}
+header.hero{padding:92px 0 66px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+header.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+background:radial-gradient(ellipse 52% 62% at 84% 10%,oklch(70% 0.12 150 / 0.13),transparent 60%),
+ radial-gradient(ellipse 46% 55% at 6% 82%,oklch(60% 0.12 75 / 0.11),transparent 60%)}
+.kicker{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--accent)}
+header.hero h1{font-family:var(--font-display);font-style:italic;font-weight:300;
+font-size:clamp(40px,7vw,78px);line-height:.98;margin:14px 0 6px;letter-spacing:-.03em}
+header.hero .sub{font-family:var(--font-display);font-style:italic;font-weight:300;font-size:clamp(19px,2.6vw,26px);
+color:var(--mut);margin:0 0 22px;letter-spacing:-.01em}
+header.hero .thesis{font-size:20px;max-width:66ch;color:var(--ink-2);line-height:1.5}
+header.hero .src{margin-top:24px;font-family:var(--font-mono);font-size:12px;color:var(--mut);line-height:1.7}
+.hero-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:42px;border-top:1px solid var(--line)}
+.hero-strip .hs{padding:20px 18px 8px;border-right:1px solid var(--line)}
+.hero-strip .hs:last-child{border-right:0}
+.hero-strip .v{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:31px;color:var(--green);letter-spacing:-.02em}
+.hero-strip .hs.amber .v{color:var(--amber)}
+.hero-strip .l{font-size:12.5px;color:var(--mut);margin-top:4px;line-height:1.4}
+section{padding:70px 0}
+section.alt{background:oklch(16.5% 0.024 160);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section h2{font-family:var(--font-display);font-style:italic;font-weight:300;
+font-size:clamp(28px,4vw,46px);line-height:1.06;margin:10px 0 10px;letter-spacing:-.025em}
+.lede{font-size:19px;color:var(--ink-2);max-width:75ch;margin:0 0 24px;line-height:1.55}
+.fig{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:16px 16px 8px;margin:24px 0}
+.fig svg{display:block;width:100%;height:auto;overflow:visible}
+.fig img{display:block;width:100%;height:auto;max-width:860px;margin:0 auto}
+.figcap{font-family:var(--font-mono);font-size:12px;color:var(--mut);padding:8px 4px 8px;line-height:1.55}
+.figcap b{color:var(--ink-2);font-weight:500}
+.legend{display:flex;flex-wrap:wrap;gap:14px 22px;padding:6px 4px 2px;font-family:var(--font-mono);font-size:12px;color:var(--ink-2)}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:7px;vertical-align:-2px;background:var(--sw)}
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px;margin:14px 0 6px}
+.stat{background:linear-gradient(180deg,var(--paper-2),var(--paper));border:1px solid var(--line);
+border-left:3px solid var(--green);border-radius:12px;padding:18px 20px}
+.stat-v{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:32px;letter-spacing:-.02em;color:var(--green)}
+.stat-l{font-size:14px;color:var(--ink);font-weight:500;margin-top:4px}
+.stat-n{font-family:var(--font-mono);font-size:11.5px;color:var(--mut);margin-top:6px;line-height:1.45}
+.tone-red{border-left-color:var(--red)}.tone-red .stat-v{color:var(--red)}
+.tone-amber{border-left-color:var(--amber)}.tone-amber .stat-v{color:var(--amber)}
+.tone-mute{border-left-color:var(--mut)}.tone-mute .stat-v{color:var(--ink-2)}
+.callout{border-left:3px solid var(--accent);background:var(--accent-soft);padding:16px 22px;
+border-radius:0 12px 12px 0;margin:26px 0;font-size:16px;color:var(--ink-2)}
+.callout.warn{border-left-color:var(--red);background:oklch(64% 0.20 25 / 0.10)}
+.pull{font-family:var(--font-display);font-style:italic;font-weight:300;font-size:clamp(22px,3vw,29px);line-height:1.3;
+color:var(--ink);border-top:1px solid var(--green);border-bottom:1px solid var(--line);padding:22px 0;margin:34px 0;max-width:40ch}
+.reveal{background:linear-gradient(160deg,oklch(20% 0.05 160),oklch(17% 0.03 120));border:1px solid oklch(45% 0.10 150);
+border-radius:18px;padding:30px 32px;margin:20px 0 8px;box-shadow:0 30px 80px -46px oklch(70% 0.12 150 / 0.55)}
+.reveal .place{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.reveal .road{font-family:var(--font-display);font-style:italic;font-weight:400;font-size:clamp(26px,4.5vw,40px);
+margin:6px 0 4px;letter-spacing:-.02em;line-height:1.05}
+.reveal .subp{color:var(--mut);font-size:15px}
+table.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px;background:var(--paper-2);
+border:1px solid var(--line);border-radius:12px;overflow:hidden;font-family:var(--font-mono)}
+.tbl th,.tbl td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left}
+.tbl th{background:var(--paper-3);color:var(--ink);font-weight:500;letter-spacing:.02em;text-transform:uppercase;font-size:10.5px;white-space:nowrap}
+.tbl td{color:var(--ink-2)}
+.tbl td.num{text-align:right;font-variant-numeric:tabular-nums}
+.tbl tr:hover td{background:oklch(100% 0 0 / 0.02)}
+.tblwrap{overflow-x:auto}
+.scn{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.scn .c{background:oklch(20% 0.03 160 / 0.7);border:1px solid var(--line);border-radius:14px;padding:20px}
+.scn .c h4{margin:0 0 8px;font-family:var(--font-display);font-style:italic;font-weight:400;font-size:18px;color:var(--accent)}
+.scn .c p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.6}
+@media(max-width:880px){.scn{grid-template-columns:1fr}.hero-strip{grid-template-columns:repeat(2,1fr)}
+.hero-strip .hs:nth-child(2){border-right:0}}
+.btn{display:inline-block;background:var(--accent);color:oklch(20% 0.04 90);font-weight:700;font-size:14px;
+padding:12px 22px;border-radius:12px;text-decoration:none}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--ink);margin-left:8px}
+footer{border-top:1px solid var(--line);padding:38px 0 70px;color:var(--mut);font-size:13px;line-height:1.75}
+footer b{color:var(--ink-2)}
+footer a{color:var(--green);text-decoration:none}
+footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<nav class="top"><div class="wrap">
+  <span class="brand" data-i="brand"></span>
+  <a href="#pergunta" data-i="nav1"></a>
+  <a href="#serie" data-i="nav2"></a>
+  <a href="#oferta" data-i="nav3"></a>
+  <a href="#precos" data-i="nav4"></a>
+  <a href="#mapa" data-i="nav5"></a>
+  <a href="#industria" data-i="nav6"></a>
+  <a href="#limites" data-i="nav7"></a>
+  <div class="langs">
+    <button data-setlang="en">EN</button>
+    <button data-setlang="pt">PT</button>
+    <button data-setlang="es">ES</button>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="kicker" data-i="kicker"></div>
+  <h1 data-i="h1"></h1>
+  <p class="sub" data-i="sub"></p>
+  <p class="thesis" data-i="thesis"></p>
+  <p class="src" data-i="src"></p>
+  <div class="hero-strip">
+    <div class="hs"><div class="v num" data-i="hs1v"></div><div class="l" data-i="hs1"></div></div>
+    <div class="hs"><div class="v num" data-i="v_share"></div><div class="l" data-i="hs2"></div></div>
+    <div class="hs amber"><div class="v num">18 / 20</div><div class="l" data-i="hs3"></div></div>
+    <div class="hs"><div class="v num">82 / 399</div><div class="l" data-i="hs4"></div></div>
+  </div>
+</div></header>
+
+<section id="pergunta"><div class="wrap">
+  <div class="kicker" data-i="k1"></div>
+  <h2 data-i="h1s"></h2>
+  <div class="prose">
+    <p data-i="p1a"></p>
+    <p data-i="p1b"></p>
+    <p data-i="p1c"></p>
+  </div>
+</div></section>
+
+<section class="alt" id="serie"><div class="wrap">
+  <div class="kicker" data-i="k2"></div>
+  <h2 data-i="h2s"></h2>
+  <p class="lede" data-i="p2a"></p>
+  <div class="reveal">
+    <div class="place" data-i="rvPlace"></div>
+    <div class="road" data-i="rvRoad"></div>
+    <div class="subp" data-i="rvSub"></div>
+    <div class="findings" style="margin-top:20px">
+      <div class="stat tone-amber"><div class="stat-v num">18 / 20</div><div class="stat-l" data-i="st1l"></div><div class="stat-n" data-i="st1n"></div></div>
+      <div class="stat tone-amber"><div class="stat-v num" data-i="st2v"></div><div class="stat-l" data-i="st2l"></div><div class="stat-n" data-i="st2n"></div></div>
+      <div class="stat"><div class="stat-v num">2024</div><div class="stat-l" data-i="st3l"></div><div class="stat-n" data-i="st3n"></div></div>
+    </div>
+  </div>
+  <div class="fig"><div id="figSeries"></div><p class="figcap" data-i="capSeries"></p></div>
+  <div class="prose"><p data-i="p2b"></p></div>
+  <div class="fig"><div id="figArea"></div><p class="figcap" data-i="capArea"></p></div>
+  <div class="callout warn" data-i="call1"></div>
+</div></section>
+
+<section id="oferta"><div class="wrap">
+  <div class="kicker" data-i="k3"></div>
+  <h2 data-i="h3s"></h2>
+  <p class="lede" data-i="p3a"></p>
+  <div class="findings">
+    <div class="stat tone-mute"><div class="stat-v num" data-i="v_ne1"></div><div class="stat-l" data-i="ne1l"></div><div class="stat-n" data-i="ne1n"></div></div>
+    <div class="stat tone-mute"><div class="stat-v num" data-i="v_ne2"></div><div class="stat-l" data-i="ne2l"></div><div class="stat-n" data-i="ne2n"></div></div>
+    <div class="stat"><div class="stat-v num" data-i="v_ne3"></div><div class="stat-l" data-i="ne3l"></div><div class="stat-n" data-i="ne3n"></div></div>
+  </div>
+  <div class="prose" style="margin-top:22px"><p data-i="p3b"></p><p data-i="p3c"></p></div>
+  <div class="callout" data-i="call2"></div>
+</div></section>
+
+<section class="alt" id="precos"><div class="wrap">
+  <div class="kicker" data-i="k4"></div>
+  <h2 data-i="h4s"></h2>
+  <p class="lede" data-i="p4a"></p>
+  <div class="fig"><div id="figPrices"></div><p class="figcap" data-i="capPrices"></p></div>
+  <div class="scn">
+    <div class="c"><h4>1994 - 2011</h4><p data-i="sc1p"></p></div>
+    <div class="c"><h4>2012 - 2024</h4><p data-i="sc2p"></p></div>
+    <div class="c"><h4 data-i="sc3h"></h4><p data-i="sc3p"></p></div>
+  </div>
+  <div class="prose" style="margin-top:22px"><p data-i="p4b"></p></div>
+</div></section>
+
+<section id="mapa"><div class="wrap">
+  <div class="kicker" data-i="k5"></div>
+  <h2 data-i="h5s"></h2>
+  <p class="lede" data-i="p5a"></p>
+  <div class="fig">
+    <img src="../assets/articles/yerba-mate-parana/lisa_map.png" alt="" data-i-alt="mapAlt" loading="lazy" width="1530" height="1122">
+    <div class="legend">
+      <span style="--sw:#1b7837" data-i="lgHH"></span>
+      <span style="--sw:#a6dba0" data-i="lgLH"></span>
+      <span style="--sw:#7f3b08" data-i="lgLL"></span>
+      <span style="--sw:#3a3f47" data-i="lgNS"></span>
+    </div>
+    <p class="figcap" data-i="capMap"></p>
+  </div>
+  <div class="findings">
+    <div class="stat"><div class="stat-v num" data-i="v_moran"></div><div class="stat-l" data-i="mp1l"></div><div class="stat-n" data-i="mp1n"></div></div>
+    <div class="stat"><div class="stat-v num">82</div><div class="stat-l" data-i="mp2l"></div><div class="stat-n" data-i="mp2n"></div></div>
+    <div class="stat tone-amber"><div class="stat-v num" data-i="v_cr5"></div><div class="stat-l" data-i="mp3l"></div><div class="stat-n" data-i="mp3n"></div></div>
+    <div class="stat tone-amber"><div class="stat-v num" data-i="v_gini"></div><div class="stat-l" data-i="mp4l"></div><div class="stat-n" data-i="mp4n"></div></div>
+  </div>
+  <div class="prose" style="margin-top:22px"><p data-i="p5b"></p></div>
+  <div class="tblwrap">
+    <table class="tbl"><thead><tr><th data-i="thMun"></th><th style="text-align:right" data-i="thT"></th><th style="text-align:right" data-i="thShare"></th><th style="text-align:right" data-i="thMills"></th></tr></thead>
+    <tbody id="tblTop"></tbody></table>
+  </div>
+  <div class="pull" data-i="pull1"></div>
+</div></section>
+
+<section class="alt" id="industria"><div class="wrap">
+  <div class="kicker" data-i="k6"></div>
+  <h2 data-i="h6s"></h2>
+  <p class="lede" data-i="p6a"></p>
+  <div class="fig"><div id="figScatter"></div><p class="figcap" data-i="capScatter"></p></div>
+  <div class="findings">
+    <div class="stat"><div class="stat-v num" data-i="v_irr1"></div><div class="stat-l" data-i="in1l"></div><div class="stat-n" data-i="in1n"></div></div>
+    <div class="stat tone-mute"><div class="stat-v num" data-i="v_irr2"></div><div class="stat-l" data-i="in2l"></div><div class="stat-n" data-i="in2n"></div></div>
+    <div class="stat tone-amber"><div class="stat-v num">228</div><div class="stat-l" data-i="in3l"></div><div class="stat-n" data-i="in3n"></div></div>
+    <div class="stat tone-red"><div class="stat-v num">17 / 0</div><div class="stat-l" data-i="in4l"></div><div class="stat-n" data-i="in4n"></div></div>
+  </div>
+  <div class="prose" style="margin-top:22px"><p data-i="p6b"></p><p data-i="p6c"></p></div>
+  <div class="callout" data-i="call3"></div>
+</div></section>
+
+<section id="limites"><div class="wrap">
+  <div class="kicker" data-i="k7"></div>
+  <h2 data-i="h7s"></h2>
+  <div class="prose">
+    <p data-i="p7a"></p>
+    <p data-i="p7b"></p>
+    <p data-i="p7c"></p>
+  </div>
+  <div class="callout warn" data-i="call4"></div>
+  <p style="margin-top:26px"><a class="btn ghost" href="yerba-mate-parana.html" data-i="btnBack" style="margin-left:0"></a></p>
+</div></section>
+
+<footer><div class="wrap">
+  <p data-i="ft1"></p>
+  <p data-i="ft2"></p>
+  <p data-i="ft3"></p>
+</div></footer>
+
+<script>
+/* ======================= dados (pipeline post 36, re-executado em 2026-09-07) ======================= */
+const D = {"years_q":[1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"pam_t":[160,324,699,1120,6106,5628,6222,8308,17246,20277,34677,43725,167509,167509,206188,339139,221779,201694,133449,164752,165076,136266,132556,135000,123132,122202,180853,195403,225078,217851,242009,238244,182285,197352,228382,238050,316615,367281,452222],"pevs_t":[40192,55511,53729,54830,51695,49229,48524,64016,61875,59022,77052,100640,104811,106978,109575,122695,109798,105867,137809,139657,152971,156444,154701,156563,166682,169549,193636,254915,287334,295341,299735,324959,299136,323242,372315,442189,379476,370438,323737],"area_ha":[36,55,88,156,881,885,1200,1138,2713,2907,4712,5610,23507,23507,28944,42658,39260,43038,37023,38654,39092,33573,31695,31976,30447,31773,36688,29643,28309,27526,30878,33368,26086,26476,29876,30353,33811,37897,45065],"yield_kg_ha":[4444,5891,7943,7179,6930,6359,5185,7300,6356,6975,7359,7794,7125,7125,7123,7950,5648,4686,3604,4262,4222,4058,4182,4221,4044,3846,4929,6592,7951,7914,7838,7140,6988,7454,7644,7843,9364,9692,10035],"years_p":[1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"pam_price":[1.21,0.82,0.67,0.62,0.65,0.78,0.66,0.78,0.83,0.68,0.67,0.69,0.74,0.72,0.75,0.75,0.73,0.77,1.0,1.48,2.22,1.84,1.74,1.49,1.46,1.45,1.6,1.81,1.67,1.45,1.23],"pevs_price":[4.44,3.54,3.52,1.99,2.0,2.0,2.02,2.13,2.09,1.14,1.09,1.0,1.09,1.06,1.25,0.94,1.01,1.13,1.31,2.02,2.23,1.95,1.75,1.88,1.66,1.5,1.75,1.84,1.63,1.45,1.39],"scatter":[{"n":"Abatiá","t":0,"m":0,"c":"ns"},{"n":"Adrianópolis","t":0,"m":0,"c":"ns"},{"n":"Agudos do Sul","t":172,"m":0,"c":"HH"},{"n":"Almirante Tamandaré","t":11,"m":1,"c":"ns"},{"n":"Altamira do Paraná","t":0,"m":0,"c":"ns"},{"n":"Altônia","t":0,"m":1,"c":"ns"},{"n":"Alto Paraná","t":0,"m":0,"c":"ns"},{"n":"Alto Piquiri","t":0,"m":0,"c":"ns"},{"n":"Alvorada do Sul","t":0,"m":0,"c":"ns"},{"n":"Amaporã","t":0,"m":0,"c":"ns"},{"n":"Ampére","t":58,"m":0,"c":"HH"},{"n":"Anahy","t":16,"m":0,"c":"ns"},{"n":"Andirá","t":0,"m":0,"c":"ns"},{"n":"Ângulo","t":0,"m":0,"c":"ns"},{"n":"Antonina","t":0,"m":0,"c":"ns"},{"n":"Antônio Olinto","t":6000,"m":0,"c":"HH"},{"n":"Apucarana","t":0,"m":0,"c":"ns"},{"n":"Arapongas","t":0,"m":1,"c":"ns"},{"n":"Arapoti","t":0,"m":0,"c":"ns"},{"n":"Arapuã","t":0,"m":0,"c":"ns"},{"n":"Araruna","t":0,"m":0,"c":"ns"},{"n":"Araucária","t":34,"m":1,"c":"ns"},{"n":"Ariranha do Ivaí","t":0,"m":0,"c":"ns"},{"n":"Assaí","t":0,"m":0,"c":"ns"},{"n":"Assis Chateaubriand","t":0,"m":0,"c":"ns"},{"n":"Astorga","t":0,"m":0,"c":"ns"},{"n":"Atalaia","t":0,"m":0,"c":"ns"},{"n":"Balsa Nova","t":18,"m":0,"c":"HH"},{"n":"Bandeirantes","t":0,"m":2,"c":"ns"},{"n":"Barbosa Ferraz","t":0,"m":0,"c":"ns"},{"n":"Barracão","t":150,"m":0,"c":"ns"},{"n":"Barra do Jacaré","t":0,"m":0,"c":"ns"},{"n":"Bela Vista da Caroba","t":33,"m":0,"c":"ns"},{"n":"Bela Vista do Paraíso","t":0,"m":0,"c":"ns"},{"n":"Bituruna","t":85000,"m":14,"c":"HH"},{"n":"Boa Esperança","t":0,"m":0,"c":"ns"},{"n":"Boa Esperança do Iguaçu","t":8,"m":0,"c":"ns"},{"n":"Boa Ventura de São Roque","t":3130,"m":0,"c":"HH"},{"n":"Boa Vista da Aparecida","t":25,"m":0,"c":"ns"},{"n":"Bocaiúva do Sul","t":149,"m":0,"c":"ns"},{"n":"Bom Jesus do Sul","t":120,"m":0,"c":"HH"},{"n":"Bom Sucesso","t":0,"m":0,"c":"ns"},{"n":"Bom Sucesso do Sul","t":224,"m":0,"c":"HH"},{"n":"Borrazópolis","t":0,"m":0,"c":"ns"},{"n":"Braganey","t":22,"m":0,"c":"ns"},{"n":"Brasilândia do Sul","t":0,"m":0,"c":"ns"},{"n":"Cafeara","t":0,"m":0,"c":"ns"},{"n":"Cafelândia","t":15,"m":0,"c":"ns"},{"n":"Cafezal do Sul","t":0,"m":0,"c":"ns"},{"n":"Califórnia","t":0,"m":0,"c":"ns"},{"n":"Cambará","t":0,"m":0,"c":"ns"},{"n":"Cambé","t":0,"m":0,"c":"ns"},{"n":"Cambira","t":0,"m":0,"c":"ns"},{"n":"Campina da Lagoa","t":0,"m":0,"c":"ns"},{"n":"Campina do Simão","t":0,"m":1,"c":"LH"},{"n":"Campina Grande do Sul","t":85,"m":0,"c":"ns"},{"n":"Campo Bonito","t":170,"m":0,"c":"HH"},{"n":"Campo do Tenente","t":35,"m":1,"c":"HH"},{"n":"Campo Largo","t":725,"m":3,"c":"ns"},{"n":"Campo Magro","t":11,"m":0,"c":"ns"},{"n":"Campo Mourão","t":0,"m":0,"c":"ns"},{"n":"Cândido de Abreu","t":30,"m":0,"c":"HH"},{"n":"Candói","t":240,"m":0,"c":"HH"},{"n":"Cantagalo","t":5000,"m":0,"c":"HH"},{"n":"Capanema","t":137,"m":0,"c":"ns"},{"n":"Capitão Leônidas Marques","t":58,"m":0,"c":"ns"},{"n":"Carambeí","t":24,"m":0,"c":"ns"},{"n":"Carlópolis","t":0,"m":0,"c":"ns"},{"n":"Cascavel","t":2070,"m":4,"c":"ns"},{"n":"Castro","t":239,"m":0,"c":"ns"},{"n":"Catanduvas","t":150,"m":1,"c":"HH"},{"n":"Centenário do Sul","t":0,"m":0,"c":"ns"},{"n":"Cerro Azul","t":0,"m":0,"c":"ns"},{"n":"Céu Azul","t":36,"m":0,"c":"ns"},{"n":"Chopinzinho","t":517,"m":1,"c":"HH"},{"n":"Cianorte","t":0,"m":0,"c":"ns"},{"n":"Cidade Gaúcha","t":0,"m":0,"c":"ns"},{"n":"Clevelândia","t":3602,"m":6,"c":"HH"},{"n":"Colombo","t":0,"m":1,"c":"ns"},{"n":"Colorado","t":0,"m":0,"c":"ns"},{"n":"Congonhinhas","t":0,"m":0,"c":"ns"},{"n":"Conselheiro Mairinck","t":0,"m":0,"c":"ns"},{"n":"Contenda","t":4,"m":2,"c":"ns"},{"n":"Corbélia","t":123,"m":1,"c":"ns"},{"n":"Cornélio Procópio","t":0,"m":0,"c":"ns"},{"n":"Coronel Domingos Soares","t":10262,"m":0,"c":"HH"},{"n":"Coronel Vivida","t":280,"m":0,"c":"HH"},{"n":"Corumbataí do Sul","t":0,"m":0,"c":"ns"},{"n":"Cruzeiro do Iguaçu","t":8,"m":0,"c":"ns"},{"n":"Cruzeiro do Oeste","t":0,"m":0,"c":"ns"},{"n":"Cruzeiro do Sul","t":0,"m":0,"c":"ns"},{"n":"Cruz Machado","t":148000,"m":11,"c":"HH"},{"n":"Cruzmaltina","t":0,"m":0,"c":"ns"},{"n":"Curitiba","t":0,"m":17,"c":"ns"},{"n":"Curiúva","t":0,"m":0,"c":"ns"},{"n":"Diamante do Norte","t":0,"m":1,"c":"ns"},{"n":"Diamante do Sul","t":40,"m":0,"c":"ns"},{"n":"Diamante D'Oeste","t":0,"m":0,"c":"ns"},{"n":"Dois Vizinhos","t":110,"m":0,"c":"ns"},{"n":"Douradina","t":0,"m":0,"c":"ns"},{"n":"Doutor Camargo","t":0,"m":0,"c":"ns"},{"n":"Enéas Marques","t":16,"m":0,"c":"HH"},{"n":"Engenheiro Beltrão","t":0,"m":0,"c":"ns"},{"n":"Esperança Nova","t":0,"m":0,"c":"ns"},{"n":"Entre Rios do Oeste","t":0,"m":0,"c":"ns"},{"n":"Espigão Alto do Iguaçu","t":110,"m":3,"c":"HH"},{"n":"Farol","t":0,"m":0,"c":"ns"},{"n":"Faxinal","t":0,"m":0,"c":"ns"},{"n":"Fazenda Rio Grande","t":0,"m":1,"c":"ns"},{"n":"Fênix","t":0,"m":0,"c":"ns"},{"n":"Fernandes Pinheiro","t":1714,"m":1,"c":"HH"},{"n":"Figueira","t":0,"m":0,"c":"ns"},{"n":"Floraí","t":0,"m":0,"c":"ns"},{"n":"Flor da Serra do Sul","t":230,"m":0,"c":"HH"},{"n":"Floresta","t":0,"m":0,"c":"ns"},{"n":"Florestópolis","t":0,"m":0,"c":"ns"},{"n":"Flórida","t":0,"m":0,"c":"ns"},{"n":"Formosa do Oeste","t":0,"m":0,"c":"ns"},{"n":"Foz do Iguaçu","t":0,"m":3,"c":"ns"},{"n":"Francisco Alves","t":0,"m":0,"c":"ns"},{"n":"Francisco Beltrão","t":600,"m":1,"c":"HH"},{"n":"Foz do Jordão","t":100,"m":0,"c":"HH"},{"n":"General Carneiro","t":50000,"m":6,"c":"HH"},{"n":"Godoy Moreira","t":0,"m":0,"c":"ns"},{"n":"Goioerê","t":0,"m":0,"c":"ns"},{"n":"Goioxim","t":0,"m":0,"c":"LH"},{"n":"Grandes Rios","t":0,"m":0,"c":"ns"},{"n":"Guaíra","t":0,"m":0,"c":"ns"},{"n":"Guairaçá","t":0,"m":0,"c":"ns"},{"n":"Guamiranga","t":1305,"m":2,"c":"HH"},{"n":"Guapirama","t":0,"m":0,"c":"ns"},{"n":"Guaporema","t":0,"m":0,"c":"ns"},{"n":"Guaraci","t":0,"m":0,"c":"ns"},{"n":"Guaraniaçu","t":500,"m":0,"c":"HH"},{"n":"Guarapuava","t":46100,"m":15,"c":"HH"},{"n":"Guaraqueçaba","t":0,"m":0,"c":"ns"},{"n":"Guaratuba","t":0,"m":1,"c":"ns"},{"n":"Honório Serpa","t":595,"m":0,"c":"HH"},{"n":"Ibaiti","t":0,"m":0,"c":"ns"},{"n":"Ibema","t":855,"m":0,"c":"HH"},{"n":"Ibiporã","t":0,"m":0,"c":"ns"},{"n":"Icaraíma","t":0,"m":0,"c":"ns"},{"n":"Iguaraçu","t":0,"m":0,"c":"ns"},{"n":"Iguatu","t":0,"m":0,"c":"ns"},{"n":"Imbaú","t":0,"m":0,"c":"ns"},{"n":"Imbituva","t":5180,"m":3,"c":"HH"},{"n":"Inácio Martins","t":50,"m":0,"c":"HH"},{"n":"Inajá","t":0,"m":0,"c":"ns"},{"n":"Indianópolis","t":0,"m":0,"c":"ns"},{"n":"Ipiranga","t":2240,"m":0,"c":"HH"},{"n":"Iporã","t":0,"m":0,"c":"ns"},{"n":"Iracema do Oeste","t":0,"m":0,"c":"ns"},{"n":"Irati","t":3450,"m":2,"c":"HH"},{"n":"Iretama","t":35,"m":0,"c":"ns"},{"n":"Itaguajé","t":0,"m":0,"c":"ns"},{"n":"Itaipulândia","t":0,"m":0,"c":"ns"},{"n":"Itambaracá","t":0,"m":0,"c":"ns"},{"n":"Itambé","t":0,"m":0,"c":"ns"},{"n":"Itapejara d'Oeste","t":133,"m":0,"c":"HH"},{"n":"Itaperuçu","t":0,"m":0,"c":"ns"},{"n":"Itaúna do Sul","t":0,"m":0,"c":"ns"},{"n":"Ivaí","t":6246,"m":0,"c":"HH"},{"n":"Ivaiporã","t":0,"m":1,"c":"ns"},{"n":"Ivaté","t":0,"m":0,"c":"ns"},{"n":"Ivatuba","t":0,"m":0,"c":"ns"},{"n":"Jaboti","t":0,"m":0,"c":"ns"},{"n":"Jacarezinho","t":0,"m":0,"c":"ns"},{"n":"Jaguapitã","t":0,"m":0,"c":"ns"},{"n":"Jaguariaíva","t":14,"m":0,"c":"ns"},{"n":"Jandaia do Sul","t":0,"m":1,"c":"ns"},{"n":"Janiópolis","t":0,"m":0,"c":"ns"},{"n":"Japira","t":0,"m":0,"c":"ns"},{"n":"Japurá","t":0,"m":0,"c":"ns"},{"n":"Jardim Alegre","t":0,"m":0,"c":"ns"},{"n":"Jardim Olinda","t":0,"m":0,"c":"ns"},{"n":"Jataizinho","t":0,"m":0,"c":"ns"},{"n":"Jesuítas","t":0,"m":0,"c":"ns"},{"n":"Joaquim Távora","t":0,"m":0,"c":"ns"},{"n":"Jundiaí do Sul","t":0,"m":0,"c":"ns"},{"n":"Juranda","t":0,"m":0,"c":"ns"},{"n":"Jussara","t":0,"m":0,"c":"ns"},{"n":"Kaloré","t":0,"m":0,"c":"ns"},{"n":"Lapa","t":406,"m":1,"c":"HH"},{"n":"Laranjal","t":16,"m":0,"c":"ns"},{"n":"Laranjeiras do Sul","t":950,"m":4,"c":"HH"},{"n":"Leópolis","t":0,"m":0,"c":"ns"},{"n":"Lidianópolis","t":0,"m":0,"c":"ns"},{"n":"Lindoeste","t":0,"m":0,"c":"ns"},{"n":"Loanda","t":0,"m":0,"c":"ns"},{"n":"Lobato","t":0,"m":0,"c":"ns"},{"n":"Londrina","t":0,"m":3,"c":"ns"},{"n":"Luiziana","t":0,"m":0,"c":"ns"},{"n":"Lunardelli","t":0,"m":0,"c":"ns"},{"n":"Lupionópolis","t":0,"m":0,"c":"ns"},{"n":"Mallet","t":5400,"m":4,"c":"HH"},{"n":"Mamborê","t":82,"m":0,"c":"ns"},{"n":"Mandaguaçu","t":0,"m":0,"c":"ns"},{"n":"Mandaguari","t":0,"m":0,"c":"ns"},{"n":"Mandirituba","t":65,"m":13,"c":"HH"},{"n":"Manfrinópolis","t":12,"m":0,"c":"HH"},{"n":"Mangueirinha","t":3138,"m":0,"c":"HH"},{"n":"Manoel Ribas","t":38,"m":0,"c":"ns"},{"n":"Marechal Cândido Rondon","t":0,"m":1,"c":"ns"},{"n":"Maria Helena","t":0,"m":0,"c":"ns"},{"n":"Marialva","t":0,"m":0,"c":"ns"},{"n":"Marilândia do Sul","t":0,"m":0,"c":"ns"},{"n":"Marilena","t":0,"m":0,"c":"ns"},{"n":"Mariluz","t":0,"m":0,"c":"ns"},{"n":"Maringá","t":0,"m":2,"c":"LL"},{"n":"Mariópolis","t":275,"m":0,"c":"HH"},{"n":"Maripá","t":0,"m":0,"c":"ns"},{"n":"Marmeleiro","t":120,"m":2,"c":"HH"},{"n":"Marquinho","t":25,"m":0,"c":"HH"},{"n":"Marumbi","t":0,"m":0,"c":"ns"},{"n":"Matelândia","t":0,"m":0,"c":"ns"},{"n":"Matinhos","t":0,"m":0,"c":"ns"},{"n":"Mato Rico","t":37,"m":0,"c":"HH"},{"n":"Mauá da Serra","t":0,"m":0,"c":"ns"},{"n":"Medianeira","t":0,"m":1,"c":"ns"},{"n":"Mercedes","t":0,"m":0,"c":"ns"},{"n":"Mirador","t":0,"m":0,"c":"ns"},{"n":"Miraselva","t":0,"m":1,"c":"ns"},{"n":"Missal","t":0,"m":1,"c":"ns"},{"n":"Moreira Sales","t":0,"m":0,"c":"ns"},{"n":"Morretes","t":0,"m":0,"c":"ns"},{"n":"Munhoz de Melo","t":0,"m":0,"c":"ns"},{"n":"Nossa Senhora das Graças","t":0,"m":0,"c":"ns"},{"n":"Nova Aliança do Ivaí","t":0,"m":0,"c":"ns"},{"n":"Nova América da Colina","t":0,"m":0,"c":"ns"},{"n":"Nova Aurora","t":0,"m":0,"c":"ns"},{"n":"Nova Cantu","t":0,"m":0,"c":"ns"},{"n":"Nova Esperança","t":0,"m":0,"c":"ns"},{"n":"Nova Esperança do Sudoeste","t":10,"m":0,"c":"HH"},{"n":"Nova Fátima","t":0,"m":0,"c":"ns"},{"n":"Nova Laranjeiras","t":150,"m":0,"c":"HH"},{"n":"Nova Londrina","t":0,"m":0,"c":"ns"},{"n":"Nova Olímpia","t":0,"m":0,"c":"ns"},{"n":"Nova Santa Bárbara","t":0,"m":0,"c":"ns"},{"n":"Nova Santa Rosa","t":0,"m":0,"c":"ns"},{"n":"Nova Prata do Iguaçu","t":137,"m":0,"c":"ns"},{"n":"Nova Tebas","t":18,"m":0,"c":"ns"},{"n":"Novo Itacolomi","t":0,"m":0,"c":"ns"},{"n":"Ortigueira","t":0,"m":0,"c":"ns"},{"n":"Ourizona","t":0,"m":0,"c":"ns"},{"n":"Ouro Verde do Oeste","t":0,"m":0,"c":"ns"},{"n":"Paiçandu","t":0,"m":0,"c":"ns"},{"n":"Palmas","t":4907,"m":5,"c":"HH"},{"n":"Palmeira","t":260,"m":0,"c":"HH"},{"n":"Palmital","t":1185,"m":0,"c":"HH"},{"n":"Palotina","t":0,"m":1,"c":"ns"},{"n":"Paraíso do Norte","t":0,"m":0,"c":"ns"},{"n":"Paranacity","t":0,"m":0,"c":"ns"},{"n":"Paranaguá","t":0,"m":0,"c":"ns"},{"n":"Paranapoema","t":0,"m":0,"c":"ns"},{"n":"Paranavaí","t":0,"m":1,"c":"ns"},{"n":"Pato Bragado","t":0,"m":1,"c":"ns"},{"n":"Pato Branco","t":485,"m":0,"c":"HH"},{"n":"Paula Freitas","t":55000,"m":4,"c":"HH"},{"n":"Paulo Frontin","t":16900,"m":3,"c":"HH"},{"n":"Peabiru","t":0,"m":0,"c":"ns"},{"n":"Perobal","t":0,"m":0,"c":"ns"},{"n":"Pérola","t":0,"m":0,"c":"ns"},{"n":"Pérola d'Oeste","t":69,"m":1,"c":"ns"},{"n":"Piên","t":204,"m":0,"c":"ns"},{"n":"Pinhais","t":0,"m":0,"c":"ns"},{"n":"Pinhalão","t":0,"m":0,"c":"ns"},{"n":"Pinhal de São Bento","t":51,"m":0,"c":"ns"},{"n":"Pinhão","t":34900,"m":7,"c":"HH"},{"n":"Piraí do Sul","t":10,"m":0,"c":"ns"},{"n":"Piraquara","t":0,"m":3,"c":"ns"},{"n":"Pitanga","t":9140,"m":3,"c":"HH"},{"n":"Pitangueiras","t":0,"m":0,"c":"ns"},{"n":"Planaltina do Paraná","t":0,"m":0,"c":"ns"},{"n":"Planalto","t":249,"m":0,"c":"ns"},{"n":"Ponta Grossa","t":369,"m":1,"c":"HH"},{"n":"Pontal do Paraná","t":0,"m":0,"c":"ns"},{"n":"Porecatu","t":0,"m":0,"c":"ns"},{"n":"Porto Amazonas","t":70,"m":0,"c":"ns"},{"n":"Porto Barreiro","t":40,"m":1,"c":"HH"},{"n":"Porto Rico","t":0,"m":0,"c":"ns"},{"n":"Porto Vitória","t":19200,"m":3,"c":"HH"},{"n":"Prado Ferreira","t":0,"m":0,"c":"ns"},{"n":"Pranchita","t":111,"m":0,"c":"ns"},{"n":"Presidente Castelo Branco","t":0,"m":0,"c":"ns"},{"n":"Primeiro de Maio","t":0,"m":0,"c":"ns"},{"n":"Prudentópolis","t":12190,"m":5,"c":"HH"},{"n":"Quarto Centenário","t":0,"m":0,"c":"ns"},{"n":"Quatiguá","t":0,"m":0,"c":"ns"},{"n":"Quatro Barras","t":56,"m":0,"c":"ns"},{"n":"Quatro Pontes","t":0,"m":0,"c":"ns"},{"n":"Quedas do Iguaçu","t":400,"m":4,"c":"HH"},{"n":"Querência do Norte","t":0,"m":2,"c":"ns"},{"n":"Quinta do Sol","t":0,"m":0,"c":"ns"},{"n":"Quitandinha","t":204,"m":1,"c":"HH"},{"n":"Ramilândia","t":50,"m":0,"c":"ns"},{"n":"Rancho Alegre","t":0,"m":1,"c":"ns"},{"n":"Rancho Alegre D'Oeste","t":0,"m":0,"c":"ns"},{"n":"Realeza","t":48,"m":0,"c":"HH"},{"n":"Rebouças","t":3971,"m":1,"c":"HH"},{"n":"Renascença","t":180,"m":0,"c":"HH"},{"n":"Reserva","t":0,"m":0,"c":"ns"},{"n":"Reserva do Iguaçu","t":4900,"m":0,"c":"HH"},{"n":"Ribeirão Claro","t":0,"m":0,"c":"ns"},{"n":"Ribeirão do Pinhal","t":0,"m":0,"c":"ns"},{"n":"Rio Azul","t":6165,"m":1,"c":"HH"},{"n":"Rio Bom","t":0,"m":0,"c":"ns"},{"n":"Rio Bonito do Iguaçu","t":240,"m":1,"c":"HH"},{"n":"Rio Branco do Ivaí","t":0,"m":0,"c":"ns"},{"n":"Rio Branco do Sul","t":0,"m":0,"c":"ns"},{"n":"Rio Negro","t":92,"m":0,"c":"ns"},{"n":"Rolândia","t":0,"m":0,"c":"ns"},{"n":"Roncador","t":201,"m":1,"c":"HH"},{"n":"Rondon","t":0,"m":0,"c":"ns"},{"n":"Rosário do Ivaí","t":0,"m":0,"c":"ns"},{"n":"Sabáudia","t":0,"m":0,"c":"ns"},{"n":"Salgado Filho","t":50,"m":0,"c":"ns"},{"n":"Salto do Itararé","t":0,"m":0,"c":"ns"},{"n":"Salto do Lontra","t":186,"m":0,"c":"ns"},{"n":"Santa Amélia","t":0,"m":0,"c":"ns"},{"n":"Santa Cecília do Pavão","t":0,"m":0,"c":"ns"},{"n":"Santa Cruz de Monte Castelo","t":0,"m":0,"c":"ns"},{"n":"Santa Fé","t":0,"m":0,"c":"ns"},{"n":"Santa Helena","t":0,"m":0,"c":"ns"},{"n":"Santa Inês","t":0,"m":0,"c":"ns"},{"n":"Santa Isabel do Ivaí","t":0,"m":0,"c":"ns"},{"n":"Santa Izabel do Oeste","t":107,"m":0,"c":"ns"},{"n":"Santa Lúcia","t":0,"m":0,"c":"ns"},{"n":"Santa Maria do Oeste","t":10000,"m":1,"c":"HH"},{"n":"Santa Mariana","t":0,"m":0,"c":"ns"},{"n":"Santa Mônica","t":0,"m":0,"c":"ns"},{"n":"Santana do Itararé","t":0,"m":0,"c":"ns"},{"n":"Santa Tereza do Oeste","t":57,"m":0,"c":"ns"},{"n":"Santa Terezinha de Itaipu","t":0,"m":0,"c":"ns"},{"n":"Santo Antônio da Platina","t":0,"m":0,"c":"ns"},{"n":"Santo Antônio do Caiuá","t":0,"m":0,"c":"ns"},{"n":"Santo Antônio do Paraíso","t":0,"m":0,"c":"ns"},{"n":"Santo Antônio do Sudoeste","t":166,"m":5,"c":"ns"},{"n":"Santo Inácio","t":0,"m":0,"c":"ns"},{"n":"São Carlos do Ivaí","t":0,"m":0,"c":"ns"},{"n":"São Jerônimo da Serra","t":0,"m":0,"c":"ns"},{"n":"São João","t":204,"m":0,"c":"HH"},{"n":"São João do Caiuá","t":0,"m":0,"c":"ns"},{"n":"São João do Ivaí","t":0,"m":0,"c":"ns"},{"n":"São João do Triunfo","t":9480,"m":2,"c":"HH"},{"n":"São Jorge d'Oeste","t":70,"m":0,"c":"HH"},{"n":"São Jorge do Ivaí","t":0,"m":0,"c":"ns"},{"n":"São Jorge do Patrocínio","t":0,"m":0,"c":"ns"},{"n":"São José da Boa Vista","t":0,"m":0,"c":"ns"},{"n":"São José das Palmeiras","t":0,"m":0,"c":"ns"},{"n":"São José dos Pinhais","t":260,"m":2,"c":"ns"},{"n":"São Manoel do Paraná","t":0,"m":0,"c":"ns"},{"n":"São Mateus do Sul","t":128000,"m":5,"c":"HH"},{"n":"São Miguel do Iguaçu","t":0,"m":0,"c":"ns"},{"n":"São Pedro do Iguaçu","t":0,"m":0,"c":"ns"},{"n":"São Pedro do Ivaí","t":0,"m":0,"c":"ns"},{"n":"São Pedro do Paraná","t":0,"m":0,"c":"ns"},{"n":"São Sebastião da Amoreira","t":0,"m":0,"c":"ns"},{"n":"São Tomé","t":0,"m":0,"c":"ns"},{"n":"Sapopema","t":0,"m":0,"c":"ns"},{"n":"Sarandi","t":0,"m":0,"c":"ns"},{"n":"Saudade do Iguaçu","t":9,"m":0,"c":"ns"},{"n":"Sengés","t":4,"m":0,"c":"ns"},{"n":"Serranópolis do Iguaçu","t":0,"m":0,"c":"ns"},{"n":"Sertaneja","t":0,"m":0,"c":"ns"},{"n":"Sertanópolis","t":0,"m":0,"c":"ns"},{"n":"Siqueira Campos","t":0,"m":0,"c":"ns"},{"n":"Sulina","t":18,"m":0,"c":"HH"},{"n":"Tamarana","t":0,"m":0,"c":"ns"},{"n":"Tamboara","t":0,"m":0,"c":"ns"},{"n":"Tapejara","t":0,"m":0,"c":"ns"},{"n":"Tapira","t":0,"m":0,"c":"ns"},{"n":"Teixeira Soares","t":1500,"m":0,"c":"HH"},{"n":"Telêmaco Borba","t":0,"m":0,"c":"ns"},{"n":"Terra Boa","t":0,"m":0,"c":"ns"},{"n":"Terra Rica","t":0,"m":0,"c":"ns"},{"n":"Terra Roxa","t":0,"m":1,"c":"ns"},{"n":"Tibagi","t":0,"m":1,"c":"ns"},{"n":"Tijucas do Sul","t":647,"m":1,"c":"ns"},{"n":"Toledo","t":0,"m":0,"c":"ns"},{"n":"Tomazina","t":0,"m":0,"c":"ns"},{"n":"Três Barras do Paraná","t":4,"m":0,"c":"LH"},{"n":"Tunas do Paraná","t":0,"m":0,"c":"ns"},{"n":"Tuneiras do Oeste","t":0,"m":0,"c":"ns"},{"n":"Tupãssi","t":0,"m":0,"c":"ns"},{"n":"Turvo","t":22600,"m":8,"c":"HH"},{"n":"Ubiratã","t":0,"m":1,"c":"ns"},{"n":"Umuarama","t":0,"m":0,"c":"ns"},{"n":"União da Vitória","t":33001,"m":6,"c":"HH"},{"n":"Uniflor","t":0,"m":0,"c":"ns"},{"n":"Uraí","t":0,"m":0,"c":"ns"},{"n":"Wenceslau Braz","t":0,"m":0,"c":"ns"},{"n":"Ventania","t":0,"m":0,"c":"ns"},{"n":"Vera Cruz do Oeste","t":0,"m":0,"c":"ns"},{"n":"Verê","t":100,"m":1,"c":"HH"},{"n":"Alto Paraíso","t":0,"m":0,"c":"ns"},{"n":"Doutor Ulysses","t":0,"m":0,"c":"ns"},{"n":"Virmond","t":100,"m":0,"c":"HH"},{"n":"Vitorino","t":60,"m":0,"c":"HH"},{"n":"Xambrê","t":0,"m":0,"c":"ns"}],"stats":{"descritivo":{"preco_cultivo_2024":1.23,"preco_cultivo_min":0.62,"ano_preco_min":1997,"preco_cultivo_max":2.22,"ano_preco_max":2014,"area_2024_ha":45065,"qtd_cultivo_2024_t":452222,"qtd_extrativismo_2024_t":323737,"share_pr_pevs_2024":0.858,"share_pr_pam_2024":0.538,"valor_total_pr_2024_mi":1007.3,"ano_cultivo_ultrapassa_extrativismo":1998,"anos_cultivo_lidera":[1998,1999,2000,2001,2002,2003,2005,2006,2024],"anos_extrativismo_lidera_2004_2023":18,"ultimo_ano_cultivo_lidera_antes_2024":2006,"cultivo_lidera_2024":true,"share_cultivo_total_pr_2024":0.583,"share_cultivo_total_pr_2021":0.35,"pico_extrativismo_t":442189,"ano_pico_extrativismo":2021,"var_extrativismo_2023_2024_pct":-12.6,"var_cultivo_2023_2024_pct":23.1,"area_1994_ha":2713,"area_pico_pre2024_ha":43038,"ano_area_pico_pre2024":2003,"area_vale_pos2001_ha":26086,"ano_area_vale_pos2001":2018,"rendimento_2010_kg_ha":4044,"rendimento_2024_kg_ha":10035,"var_preco_cultivo_2019_2024_pct":-14.8},"precos":{"adf_p_cultivo":0.4451,"adf_p_extrativismo":0.0548,"engle_granger_t":-1.543,"engle_granger_p":0.7442,"correlacao_log_precos":0.227,"correlacao_1994_2011":0.46,"correlacao_2012_2024":0.822,"gap_medio_1994_2011_pct":121.8,"gap_medio_2012_2024_pct":10.0,"n":31},"nerlove_cultivo":{"modelo":"cultivo: área ~ preço","n":30,"periodo":"1995-2024","elast_curto_prazo":-0.1104,"ep_curto":0.0869,"p_curto":0.2042,"coef_ajustamento":0.2059,"elast_longo_prazo":-0.5361,"ep_longo":0.4531,"r2_ajustado":0.8492,"dw":2.248},"nerlove_extrativismo":{"modelo":"extrativismo: quantidade ~ preço","n":30,"periodo":"1995-2024","elast_curto_prazo":-0.0202,"ep_curto":0.0497,"p_curto":0.6851,"coef_ajustamento":0.0658,"elast_longo_prazo":-0.3067,"ep_longo":0.778,"r2_ajustado":0.9563,"dw":1.715},"moran":{"moran_i":0.806,"esperado":-0.0025,"p_permutacao":0.001,"n_permutacoes":999},"lisa":{"HH":82,"LL":1,"HL":0,"LH":3},"poisson":{"n":399,"irr_prod_propria":1.3707,"p_prod_propria":0.0033,"irr_prod_vizinha":1.0261,"p_prod_vizinha":0.7838,"dispersao_pearson":6.63,"pseudo_r2_cs":0.625},"concentracao":{"cr5":0.601,"cr10":0.801,"gini":0.966,"municipios_com_producao":133,"top5":[{"municipio":"Cruz Machado","qtd_total_t":148000.0},{"municipio":"São Mateus do Sul","qtd_total_t":128000.0},{"municipio":"Bituruna","qtd_total_t":85000.0},{"municipio":"Paula Freitas","qtd_total_t":55000.0},{"municipio":"General Carneiro","qtd_total_t":50000.0}]}}};
+
+/* ======================= i18n ======================= */
+const I18N = {
+en:{
+ brand:'Yerba mate · Paraná', nav1:'The question', nav2:'The series', nav3:'Supply', nav4:'Prices',
+ nav5:'The belt', nav6:'The mills', nav7:'Limits',
+ kicker:'AGRICULTURAL ECONOMICS · 30 YEARS OF IBGE DATA · 399 MUNICIPALITIES',
+ h1:'Yerba Mate in Paraná',
+ sub:'Four econometric tests, and one reading I had to retract',
+ thesis:'Paraná harvested 775,959 tonnes of yerba mate in 2024, more than double the next state, and 85.8% of everything Brazil still picks in native forest. Read from the endpoints, the series looks like a clean transition from forest to field. Read year by year, it says the opposite: the forest led in 18 of the 20 years to 2023, and 2024 is the first cultivated lead since 2006.',
+ src:'Data: IBGE PAM (table 1613, 1974-2024) · IBGE PEVS (table 289, 1986-2024) · IPCA (table 1737) · IBGE 2024 municipal mesh · Federal Revenue open CNPJ registry, 2026-07 release. 49 automated checks. Analysis: Avner Gomes.',
+ hs1v:'775,959 t', hs1:'harvested in Paraná in 2024, cultivated plus native forest',
+ v_share:'85.8%', v_ne1:'−0.11', v_ne2:'−0.02', v_ne3:'0.21', v_moran:'0.806', v_cr5:'60.1%', v_gini:'0.966', v_irr1:'1.37', v_irr2:'1.03',
+ hs2:'of Brazil’s native-forest yerba mate comes from Paraná',
+ hs3:'years between 2004 and 2023 with the native forest ahead of cultivation',
+ hs4:'municipalities form the single High-High belt (LISA)',
+ k1:'THE QUESTION', h1s:'What does a 775,959-tonne number actually say?',
+ p1a:'Yerba mate is one of the few crops in Brazil that is still harvested in two ways at once: pruned from planted stands, which IBGE’s Municipal Agricultural Production survey (PAM) records, and picked from trees standing in native araucaria forest, which the Vegetal Extraction and Silviculture survey (PEVS) records separately. Adding the two gives Paraná 775,959 tonnes in 2024, against 302,212 for Rio Grande do Sul and 139,764 for Santa Catarina.',
+ p1b:'This study asks four questions of that number. Does supply respond to price? Are native leaf and cultivated leaf one market or two? Where exactly does the chain sit on the map? And does the processing industry follow the raw material? Every value in this report is computed by a five-script Python pipeline from the public SIDRA API and the open CNPJ registry, and validated by 49 automated checks before it reaches the page.',
+ p1c:'Before the four tests, one correction that the pipeline did not catch and a reader did.',
+ k2:'THE SERIES', h2s:'The forest kept the lead for most of two decades',
+ p2a:'In 1994 Paraná harvested cultivated yerba mate on 2,713 hectares. In 2024 it is 45,065 hectares and 452,222 tonnes, against 323,737 tonnes from native stands. The first version of this study read those two endpoints as a transition and wrote that cultivation overtook the forest in 1998 and never gave the lead back. The year-by-year series says otherwise.',
+ rvPlace:'THE SAME SERIES, READ YEAR BY YEAR',
+ rvRoad:'Native forest ahead in 18 of the 20 years from 2004 to 2023',
+ rvSub:'Cultivated output first passed the native harvest in 1998, held the lead until 2003, and then fell behind. The only exceptions in the next two decades were 2005 and 2006.',
+ st1l:'years with the forest ahead, 2004-2023', st1n:'Cultivation led only in 2005 and 2006. Native output peaked at 442,189 tonnes in 2021.',
+ st2v:'43,038 → 26,086', st2l:'cultivated hectares, 2003 to 2018', st2n:'Area fell for fifteen years before the 2024 record of 45,065 ha. Yield went from 4,044 kg/ha in 2010 to 10,035 in 2024.',
+ st3l:'first cultivated lead since 2006', st3n:'On a 23.1% jump in cultivated output and a 12.6% drop in the native harvest, in a single year.',
+ capSeries:'<b>Yerba mate output in Paraná, thousand tonnes, 1986-2024.</b> Green: cultivated (PAM). Amber: native forest (PEVS). Shaded band: 2004-2023, when the forest was ahead in 18 of 20 years. Source: IBGE SIDRA, tables 1613 and 289.',
+ p2b:'What changed inside the cultivated stands was not area but yield. Harvested area went from a first peak of 43,038 hectares in 2003 down to 26,086 in 2018, and only reached its record in 2024. Over the same span yield went from about 4 tonnes per hectare to 10. So 2024 is the first year since 2006 with cultivation in front, on a 23.1% jump in cultivated output and a 12.6% drop in the native harvest over a single year. One year is a data point. Whether it marks a durable shift is a question for the 2025 release, not for this one.',
+ capArea:'<b>Cultivated area (thousand ha) and yield (kg/ha), 1994-2024.</b> Area fell from 2003 to 2018 while yield more than doubled after 2011. Source: IBGE PAM, harvested area and average yield.',
+ call1:'A caution on the 1998 jump itself: cultivated output goes from 43,725 tonnes in 1997 to 167,509 in 1998, and the 1999 figure is identical to 1998 to the tonne. That pattern looks more like a survey revision carried forward than a planting wave, so the first crossing should not be over-read either.',
+ k3:'TEST 1 · SUPPLY', h3s:'Supply does not respond to price',
+ p3a:'The classic model for agricultural supply response is Nerlove’s partial adjustment: this year’s harvested area as a function of last year’s real price and the lagged area itself. Estimated by OLS with Newey-West errors, 1995 to 2024, 30 observations.',
+ ne1l:'short-run price elasticity, cultivation', ne1n:'Standard error 0.087, p = 0.20. Not different from zero.',
+ ne2l:'short-run price elasticity, native harvest', ne2n:'Quantity in place of area. p = 0.69.',
+ ne3l:'adjustment coefficient', ne3n:'Area closes about a fifth of the distance to its long-run level per year.',
+ p3b:'In plain terms: there is no evidence that yerba mate growers plant more when the price rises. The area series above is consistent with that. Harvested area was falling through the 2012 to 2014 price peak and only recovered a decade later.',
+ p3c:'Two mechanisms explain this without mystery. The first is biological: yerba mate is a perennial, a seedling takes years to reach its first commercial pruning, so today’s planting decision only becomes supply much later, and installed area keeps producing even at low prices. The second is statistical, and it costs something to admit.',
+ call2:'The price in the model is implicit: production value divided by quantity. A harvest shock that raises quantity mechanically lowers that price, pushing the coefficient downward. What this test supports is the absence of a detectable response, not a negative one, and it does not estimate the true elasticity.',
+ k4:'TEST 2 · PRICES', h4s:'Two markets that became one around 2012',
+ p4a:'If cultivated and native leaf were perfect substitutes, the two prices would move together. On the full sample they do not: Engle-Granger rejects cointegration (p = 0.74) and the log-price correlation is only 0.23. The full series hides the break.',
+ capPrices:'<b>Real implicit price, 2024 BRL per kg of green leaf, 1994-2024.</b> Green: cultivated (PAM). Amber: native forest (PEVS). Dashed line: the 2011/2012 break. Values are production value divided by quantity, deflated by the annual mean of the IPCA index.',
+ sc1p:'Native leaf sold at an average premium of 122% over cultivated leaf. Log-price correlation 0.46. Two markets.',
+ sc2p:'The premium falls to 10% and the correlation rises to 0.82. The two series practically move together.',
+ sc3h:'The open question', sc3p:'With 31 annual observations there is no comfortable formal test for the break date, so this stays descriptive. What happened around 2012 that let cultivated leaf catch up with native leaf is the right question for the chain.',
+ p4b:'For almost twenty years, leaf from native stands, prized by the traditional industry, was priced on another level. In the last decade the two prices converged. Note that these are state averages of declared value, not the weekly farm-gate quotation surveyed by DERAL, so the levels are not comparable with current market prices; the comparison that holds is between the two series themselves.',
+ k5:'TEST 3 · THE BELT', h5s:'A single belt, and it is araucaria country',
+ p5a:'Municipal production in 2024 shows very strong spatial autocorrelation: Moran’s I of 0.806 on log output, against an expected value of −0.0025 under randomness, pseudo p of 0.001 across 999 permutations. Yerba mate is not scattered across the state. It sits in one contiguous belt.',
+ mapAlt:'LISA cluster map of 2024 yerba mate output across the 399 municipalities of Paraná: a single High-High belt across the center-south',
+ lgHH:'High-High (82)', lgLH:'Low-High (3)', lgLL:'Low-Low (1)', lgNS:'not significant (313)',
+ capMap:'<b>LISA clusters of 2024 output (log), queen contiguity, 999 conditional permutations, 5% significance.</b> The High-High belt runs from Cruz Machado and São Mateus do Sul to Guarapuava, Bituruna and the surroundings of Irati. Mesh: IBGE 2024, minimal quality.',
+ mp1l:'Moran’s I, log output', mp1n:'Expected −0.0025 under randomness. Pseudo p = 0.001, 999 permutations.',
+ mp2l:'High-High municipalities of 399', mp2n:'Plus 3 Low-High and 1 Low-Low. 313 not significant, most of them at zero output.',
+ mp3l:'of state output in the top 5 municipalities', mp3n:'Top 10 hold 80.1%. 133 of 399 municipalities report any output.',
+ mp4l:'municipal Gini of output', mp4n:'Extreme concentration even inside the belt.',
+ p5b:'The belt is the natural range of Araucaria angustifolia, which makes botanical sense: yerba mate is an understory species of the araucaria forest. Production follows the biome, not the administrative grid. Cruz Machado alone harvested 148 thousand tonnes in 2024, more than the whole state of Santa Catarina.',
+ thMun:'Municipality', thT:'Output 2024 (t)', thShare:'Share of state', thMills:'Active mills',
+ pull1:'The map of yerba mate is the map of the araucaria forest. Draw one and you have drawn the other.',
+ k6:'TEST 4 · THE MILLS', h6s:'Industry follows the leaf, and follows it closely',
+ p6a:'The industrial side comes from a different source: the Federal Revenue’s open CNPJ registry, 2026-07 release, filtered to establishments whose primary activity is yerba mate processing (CNAE 1099605 or 1122402) and whose registration is active. That gives 228 mills, all geocoded, crossed here with municipal production.',
+ capScatter:'<b>Active mills per municipality against 2024 output (tonnes, log scale), 399 municipalities.</b> Green: municipalities in the High-High belt. Grey: the rest. Points at the left edge report zero output. Poisson QMLE with robust errors: incidence ratio 1.37 per unit of log output (p = 0.003).',
+ in1l:'incidence ratio, own-municipality output', in1n:'Poisson QMLE, HC1 errors, p = 0.003. Each unit of log output raises the expected mill count by 37%.',
+ in2l:'incidence ratio, neighbors’ output', in2n:'Spatial lag of log output. p = 0.78. Adds nothing.',
+ in3l:'active mills in the registry', in3n:'Primary CNAE 1099605 or 1122402, active status. 1,539 establishments carry the code in any position.',
+ in4l:'Curitiba: registrations vs output', in4n:'17 active processing registrations and zero agricultural output.',
+ p6b:'What predicts industry is the leaf of the municipality itself, and the neighbor’s production adds nothing. The mechanism is the processing window: green leaf starts oxidizing after the cut and the flash-drying step, the sapeco, has to happen within hours, so the economic radius between stand and mill is short, and industry settles on top of its raw material. An OLS robustness check on log(1 + mills) confirms the pattern (p = 0.0003).',
+ p6c:'Two municipalities read against the grain and explain the caveat. Curitiba has 17 active processing registrations and zero output: head offices and brands, not plants. Mandirituba, in the metropolitan belt, has 13 registrations on 65 tonnes. The registry places the firm where it is registered, not where the leaf is cut, and the fiscal address needs careful reading before it becomes a map.',
+ call3:'The model pseudo-R² is 0.63, but the Pearson dispersion is 6.6, so the Poisson standard errors are only trustworthy because they are robust. A negative binomial was tried and degenerated (alpha to zero); the OLS check is the second opinion.',
+ k7:'LIMITS, METHOD, REVISION', h7s:'What this study does not support',
+ p7a:'Five limits, stated plainly. The 2024 return of cultivation to the lead is one observation and is not evidence of a trend. The PAM and PEVS implicit price is a state average of declared value, not the weekly farm-gate price surveyed by DERAL, so levels are not comparable with current quotations. The Nerlove model with implicit prices inherits endogeneity and the sample is short (30 years), so it rules out a strong response but does not estimate the true elasticity. The CNPJ registry is declaratory: an active registration is not an operating plant. And LISA on log(1 + output), with 266 municipalities at zero, is sensitive to that mass of zeros; the belt is robust, its edges are not.',
+ p7b:'Method: production series from SIDRA tables 1613 and 289, deflator from table 1737 (annual mean of the index, 2024 = 1), municipal cut for 2024 on IBGE’s official 2024 mesh at minimal quality. Nerlove by OLS with HAC (Newey-West, 2 lags) errors; ADF and Engle-Granger on log prices; Moran’s I and LISA implemented from scratch in numpy with permutation inference, queen contiguity, no PySAL dependency; Poisson QMLE with HC1 errors in statsmodels. The whole pipeline runs in six Python scripts with cached downloads, and 49 sanity checks lock every published number to the generated statistics.',
+ p7c:'Revision, 2026-09-07. The first version of this study, written 2026-08-06, claimed that cultivation overtook the forest in 1998 and kept the lead. The code had recorded the first crossing year and nothing checked whether the lead persisted. The error was caught on the chart by the author before publication. The series section, figure 1 and the test suite were rewritten around the measured year-by-year lead, and a test now fails if the retracted sentence reappears in any text. The econometric results were unchanged by the revision.',
+ call4:'On 2026-09-07 the pipeline was re-run against a fresh SIDRA download. PAM and PEVS still end in 2024; every statistic came out identical to the August run. The 2025 release will be the first real test of the 2024 crossing.',
+ btnBack:'Article page',
+ ft1:'<b>Yerba Mate in Paraná</b> · A study by <a href="https://avnergomes.github.io/portfolio/">Avner Gomes</a> · reproducible pipeline, 49 automated checks, revised 2026-09-07.',
+ ft2:'Sources: IBGE PAM (SIDRA 1613), PEVS (SIDRA 289), IPCA (SIDRA 1737), IBGE municipal mesh 2024; Receita Federal, Dados Abertos do CNPJ, 2026-07 release. Municipal aggregates only; no personal data enters this page.',
+ ft3:'Written in English, Portuguese and Spanish. No trackers beyond the site’s standard analytics. © Avner Gomes.',
+},
+pt:{
+ brand:'Erva-mate · Paraná', nav1:'A pergunta', nav2:'A série', nav3:'Oferta', nav4:'Preços',
+ nav5:'O cinturão', nav6:'As ervateiras', nav7:'Limites',
+ kicker:'ECONOMIA AGRÍCOLA · 30 ANOS DE IBGE · 399 MUNICÍPIOS',
+ h1:'Erva-mate no Paraná',
+ sub:'Quatro testes econométricos, e uma leitura que tive de retirar',
+ thesis:'O Paraná colheu 775.959 toneladas de erva-mate em 2024, mais que o dobro do segundo estado, e 85,8% de tudo que o Brasil ainda colhe em floresta nativa. Lida pelas duas pontas, a série parece uma transição limpa da floresta para a lavoura. Lida ano a ano, diz o contrário: a floresta liderou em 18 dos 20 anos até 2023, e 2024 é a primeira liderança do cultivo desde 2006.',
+ src:'Dados: IBGE PAM (tabela 1613, 1974-2024) · IBGE PEVS (tabela 289, 1986-2024) · IPCA (tabela 1737) · malha municipal IBGE 2024 · Dados Abertos do CNPJ da Receita Federal, carga 2026-07. 49 checagens automáticas. Análise: Avner Gomes.',
+ hs1v:'775.959 t', hs1:'colhidas no Paraná em 2024, cultivo mais erval nativo',
+ v_share:'85,8%', v_ne1:'−0,11', v_ne2:'−0,02', v_ne3:'0,21', v_moran:'0,806', v_cr5:'60,1%', v_gini:'0,966', v_irr1:'1,37', v_irr2:'1,03',
+ hs2:'da erva-mate de floresta nativa do Brasil sai do Paraná',
+ hs3:'anos entre 2004 e 2023 com o erval nativo à frente do cultivo',
+ hs4:'municípios formam o único cinturão Alto-Alto (LISA)',
+ k1:'A PERGUNTA', h1s:'O que um número de 775.959 toneladas diz de fato?',
+ p1a:'A erva-mate é uma das poucas culturas do Brasil que ainda é colhida de dois jeitos ao mesmo tempo: podada de ervais plantados, o que a Produção Agrícola Municipal do IBGE (PAM) registra, e colhida de árvores em pé na floresta com araucária, o que a Produção da Extração Vegetal e da Silvicultura (PEVS) registra em separado. Somando as duas, o Paraná chega a 775.959 toneladas em 2024, contra 302.212 do Rio Grande do Sul e 139.764 de Santa Catarina.',
+ p1b:'Este estudo faz quatro perguntas a esse número. A oferta responde ao preço? Folha nativa e folha cultivada são um mercado ou dois? Onde exatamente a cadeia está no mapa? E a indústria de processamento segue a matéria-prima? Cada valor deste relatório é calculado por um pipeline Python de cinco scripts a partir da API pública do SIDRA e do cadastro CNPJ aberto, e validado por 49 checagens automáticas antes de chegar à página.',
+ p1c:'Antes dos quatro testes, uma correção que o pipeline não pegou e um leitor pegou.',
+ k2:'A SÉRIE', h2s:'A floresta manteve a liderança na maior parte de duas décadas',
+ p2a:'Em 1994 o Paraná colhia erva-mate cultivada em 2.713 hectares. Em 2024 são 45.065 hectares e 452.222 toneladas, contra 323.737 toneladas vindas de ervais nativos. A primeira versão deste estudo leu essas duas pontas como uma transição e escreveu que o cultivo ultrapassou a floresta em 1998 e manteve a liderança desde então. A série ano a ano diz outra coisa.',
+ rvPlace:'A MESMA SÉRIE, LIDA ANO A ANO',
+ rvRoad:'Erval nativo à frente em 18 dos 20 anos de 2004 a 2023',
+ rvSub:'A produção cultivada passou a colheita nativa pela primeira vez em 1998, segurou a liderança até 2003 e depois ficou atrás. As únicas exceções nas duas décadas seguintes foram 2005 e 2006.',
+ st1l:'anos com a floresta à frente, 2004-2023', st1n:'O cultivo liderou só em 2005 e 2006. A produção nativa teve pico de 442.189 toneladas em 2021.',
+ st2v:'43.038 → 26.086', st2l:'hectares cultivados, 2003 a 2018', st2n:'A área caiu por quinze anos antes do recorde de 45.065 ha em 2024. O rendimento foi de 4.044 kg/ha em 2010 para 10.035 em 2024.',
+ st3l:'primeira liderança do cultivo desde 2006', st3n:'Com salto de 23,1% na produção cultivada e queda de 12,6% na colheita nativa, em um único ano.',
+ capSeries:'<b>Produção de erva-mate no Paraná, mil toneladas, 1986-2024.</b> Verde: cultivo (PAM). Âmbar: floresta nativa (PEVS). Faixa sombreada: 2004-2023, quando a floresta ficou à frente em 18 dos 20 anos. Fonte: IBGE SIDRA, tabelas 1613 e 289.',
+ p2b:'O que mudou dentro dos ervais plantados não foi a área, foi o rendimento. A área colhida foi de um primeiro pico de 43.038 hectares em 2003 para 26.086 em 2018, e só chegou ao recorde em 2024. No mesmo intervalo o rendimento foi de cerca de 4 toneladas por hectare para 10. Então 2024 é o primeiro ano desde 2006 com o cultivo na frente, com salto de 23,1% na produção cultivada e queda de 12,6% na colheita nativa em um único ano. Um ano é um ponto. Se ele marca uma virada durável é pergunta para a divulgação de 2025, não para esta.',
+ capArea:'<b>Área cultivada (mil ha) e rendimento (kg/ha), 1994-2024.</b> A área caiu de 2003 a 2018 enquanto o rendimento mais que dobrou depois de 2011. Fonte: IBGE PAM, área colhida e rendimento médio.',
+ call1:'Uma cautela sobre o próprio salto de 1998: a produção cultivada vai de 43.725 toneladas em 1997 para 167.509 em 1998, e o valor de 1999 é idêntico ao de 1998 até a tonelada. Esse padrão parece mais uma revisão de levantamento carregada adiante do que uma onda de plantio, então o primeiro cruzamento também não deve ser lido além do que vale.',
+ k3:'TESTE 1 · OFERTA', h3s:'A oferta não responde ao preço',
+ p3a:'O modelo clássico para resposta de oferta agrícola é o de Nerlove, de ajustamento parcial: a área colhida deste ano em função do preço real do ano anterior e da própria área defasada. Estimado por MQO com erros de Newey-West, 1995 a 2024, 30 observações.',
+ ne1l:'elasticidade-preço de curto prazo, cultivo', ne1n:'Erro-padrão 0,087, p = 0,20. Não é diferente de zero.',
+ ne2l:'elasticidade-preço de curto prazo, extrativismo', ne2n:'Quantidade no lugar de área. p = 0,69.',
+ ne3l:'coeficiente de ajustamento', ne3n:'A área fecha cerca de um quinto da distância ao nível de longo prazo por ano.',
+ p3b:'Em português: não há evidência de que produtor de erva-mate plante mais quando o preço sobe. A série de área acima é coerente com isso. A área colhida estava caindo durante o pico de preço de 2012 a 2014 e só se recuperou uma década depois.',
+ p3c:'Dois mecanismos explicam isso sem mistério. O primeiro é biológico: a erva-mate é perene, a muda leva anos até a primeira poda comercial, então a decisão de plantio de hoje só vira oferta lá na frente, e a área instalada continua produzindo mesmo com preço baixo. O segundo é estatístico, e custa admitir.',
+ call2:'O preço do modelo é implícito: valor da produção dividido por quantidade. Um choque de safra que aumenta a quantidade derruba esse preço mecanicamente, empurrando o coeficiente para baixo. O que este teste sustenta é a ausência de resposta detectável, não uma resposta negativa, e ele não estima a elasticidade verdadeira.',
+ k4:'TESTE 2 · PREÇOS', h4s:'Dois mercados que viraram um por volta de 2012',
+ p4a:'Se folha cultivada e folha nativa fossem substitutas perfeitas, os dois preços andariam juntos. Na amostra completa não andam: Engle-Granger rejeita cointegração (p = 0,74) e a correlação dos logs é de apenas 0,23. A série inteira esconde a quebra.',
+ capPrices:'<b>Preço implícito real, R$ de 2024 por kg de folha verde, 1994-2024.</b> Verde: cultivo (PAM). Âmbar: floresta nativa (PEVS). Tracejado: a quebra de 2011/2012. Valores são valor da produção dividido por quantidade, deflacionados pela média anual do IPCA.',
+ sc1p:'A folha nativa foi vendida com prêmio médio de 122% sobre a cultivada. Correlação dos log-preços de 0,46. Dois mercados.',
+ sc2p:'O prêmio cai para 10% e a correlação sobe para 0,82. As duas séries passam a andar praticamente juntas.',
+ sc3h:'A pergunta em aberto', sc3p:'Com 31 observações anuais não há teste formal confortável para a data da quebra, então isto fica descritivo. O que aconteceu por volta de 2012 que fez a folha cultivada alcançar a nativa é a pergunta certa para a cadeia.',
+ p4b:'Durante quase vinte anos a folha de erval nativo, mais valorizada pela indústria tradicional, foi precificada em outro patamar. Na última década os dois preços convergiram. Note que estas são médias estaduais de valor declarado, não a cotação semanal de porteira que o DERAL levanta, então os níveis não são comparáveis com o preço corrente de mercado; a comparação que vale é entre as duas séries.',
+ k5:'TESTE 3 · O CINTURÃO', h5s:'Um único cinturão, e ele é a região da araucária',
+ p5a:'A produção municipal de 2024 tem autocorrelação espacial altíssima: I de Moran de 0,806 sobre o log da produção, contra −0,0025 esperado sob aleatoriedade, pseudo p de 0,001 em 999 permutações. A erva-mate não está espalhada pelo estado. Está num único cinturão contíguo.',
+ mapAlt:'Mapa de clusters LISA da produção de erva-mate de 2024 nos 399 municípios do Paraná: um único cinturão Alto-Alto no centro-sul',
+ lgHH:'Alto-Alto (82)', lgLH:'Baixo-Alto (3)', lgLL:'Baixo-Baixo (1)', lgNS:'não significativo (313)',
+ capMap:'<b>Clusters LISA da produção 2024 (log), contiguidade queen, 999 permutações condicionais, significância de 5%.</b> O cinturão Alto-Alto vai de Cruz Machado e São Mateus do Sul a Guarapuava, Bituruna e o entorno de Irati. Malha: IBGE 2024, qualidade mínima.',
+ mp1l:'I de Moran, log da produção', mp1n:'Esperado −0,0025 sob aleatoriedade. Pseudo p = 0,001, 999 permutações.',
+ mp2l:'municípios Alto-Alto de 399', mp2n:'Mais 3 Baixo-Alto e 1 Baixo-Baixo. 313 não significativos, a maioria com produção zero.',
+ mp3l:'da produção estadual nos 5 maiores municípios', mp3n:'Os 10 maiores somam 80,1%. 133 dos 399 municípios declaram alguma produção.',
+ mp4l:'Gini municipal da produção', mp4n:'Concentração extrema mesmo dentro do cinturão.',
+ p5b:'O cinturão é a área de ocorrência natural da Araucaria angustifolia, o que faz sentido botânico: a erva-mate é espécie do sub-bosque da floresta com araucária. A produção segue o bioma, não a divisão administrativa. Cruz Machado sozinha colheu 148 mil toneladas em 2024, mais do que o estado inteiro de Santa Catarina.',
+ thMun:'Município', thT:'Produção 2024 (t)', thShare:'Parte do estado', thMills:'Ervateiras ativas',
+ pull1:'O mapa da erva-mate é o mapa da floresta com araucária. Desenhe um e terá desenhado o outro.',
+ k6:'TESTE 4 · AS ERVATEIRAS', h6s:'A indústria segue a folha, e segue de perto',
+ p6a:'O lado industrial vem de outra fonte: os Dados Abertos do CNPJ da Receita Federal, carga 2026-07, filtrados aos estabelecimentos com atividade principal de processamento de erva-mate (CNAE 1099605 ou 1122402) e situação cadastral ativa. São 228 ervateiras, todas geocodificadas, cruzadas aqui com a produção municipal.',
+ capScatter:'<b>Ervateiras ativas por município contra a produção de 2024 (toneladas, escala log), 399 municípios.</b> Verde: municípios do cinturão Alto-Alto. Cinza: os demais. Pontos na borda esquerda declaram produção zero. Poisson QMLE com erros robustos: razão de incidência 1,37 por unidade de log da produção (p = 0,003).',
+ in1l:'razão de incidência, produção do próprio município', in1n:'Poisson QMLE, erros HC1, p = 0,003. Cada unidade de log da produção eleva o número esperado de ervateiras em 37%.',
+ in2l:'razão de incidência, produção dos vizinhos', in2n:'Defasagem espacial do log da produção. p = 0,78. Não acrescenta nada.',
+ in3l:'ervateiras ativas no cadastro', in3n:'CNAE principal 1099605 ou 1122402, situação ativa. 1.539 estabelecimentos têm o código em qualquer posição.',
+ in4l:'Curitiba: cadastros vs produção', in4n:'17 CNPJs ativos de processamento e produção agrícola zero.',
+ p6b:'O que prevê a presença de indústria é a folha do próprio município, e a produção do vizinho não acrescenta nada. O mecanismo é a janela de processamento: a folha verde começa a oxidar depois do corte e o sapeco precisa acontecer em horas, então o raio econômico entre erval e engenho é curto, e a indústria se instala em cima da matéria-prima. Uma robustez em MQO sobre log(1 + ervateiras) confirma o padrão (p = 0,0003).',
+ p6c:'Dois municípios vão contra a corrente e explicam o cuidado com a leitura. Curitiba tem 17 CNPJs ativos de processamento e produção zero: sedes e marcas, não plantas. Mandirituba, na região metropolitana, tem 13 cadastros sobre 65 toneladas. O cadastro coloca a empresa onde ela está registrada, não onde a folha é cortada, e o endereço fiscal precisa ser lido com cuidado antes de virar mapa.',
+ call3:'O pseudo-R² do modelo é 0,63, mas a dispersão de Pearson é 6,6, então os erros-padrão do Poisson só são confiáveis porque são robustos. Uma binomial negativa foi tentada e degenerou (alfa para zero); a checagem em MQO é a segunda opinião.',
+ k7:'LIMITES, MÉTODO, REVISÃO', h7s:'O que este estudo não sustenta',
+ p7a:'Cinco limites, ditos sem rodeio. A volta do cultivo à liderança em 2024 é uma observação e não é evidência de tendência. O preço implícito da PAM e da PEVS é uma média estadual de valor declarado, não o preço de porteira que o DERAL levanta semanalmente, então os níveis não são comparáveis com as cotações correntes. O modelo de Nerlove com preço implícito herda endogeneidade e a amostra é curta (30 anos), então ele descarta resposta forte, mas não estima a elasticidade verdadeira. O cadastro CNPJ é declaratório: CNPJ ativo não é planta operando. E o LISA sobre log(1 + produção), com 266 municípios em zero, é sensível a essa massa de zeros; o cinturão é robusto, as bordas dele não.',
+ p7b:'Método: séries de produção das tabelas 1613 e 289 do SIDRA, deflator da tabela 1737 (média anual do índice, 2024 = 1), corte municipal de 2024 sobre a malha oficial 2024 do IBGE em qualidade mínima. Nerlove por MQO com erros HAC (Newey-West, 2 defasagens); ADF e Engle-Granger nos log-preços; I de Moran e LISA implementados do zero em numpy com inferência por permutação, contiguidade queen, sem dependência de PySAL; Poisson QMLE com erros HC1 no statsmodels. O pipeline inteiro roda em seis scripts Python com downloads em cache, e 49 checagens de sanidade travam cada número publicado às estatísticas geradas.',
+ p7c:'Revisão, 2026-09-07. A primeira versão deste estudo, escrita em 2026-08-06, afirmava que o cultivo ultrapassou a floresta em 1998 e manteve a liderança. O código registrava o primeiro ano de cruzamento e nada conferia se a liderança persistia. O erro foi pego no gráfico pelo autor antes da publicação. A seção da série, a figura 1 e a suíte de testes foram reescritas em torno da liderança medida ano a ano, e um teste agora falha se a frase retirada reaparecer em qualquer texto. Os resultados econométricos não mudaram com a revisão.',
+ call4:'Em 2026-09-07 o pipeline foi rodado de novo sobre um download novo do SIDRA. PAM e PEVS ainda terminam em 2024; cada estatística saiu idêntica à rodada de agosto. A divulgação de 2025 será o primeiro teste real do cruzamento de 2024.',
+ btnBack:'Página do artigo',
+ ft1:'<b>Erva-mate no Paraná</b> · Um estudo de <a href="https://avnergomes.github.io/portfolio/">Avner Gomes</a> · pipeline reprodutível, 49 checagens automáticas, revisado em 2026-09-07.',
+ ft2:'Fontes: IBGE PAM (SIDRA 1613), PEVS (SIDRA 289), IPCA (SIDRA 1737), malha municipal IBGE 2024; Receita Federal, Dados Abertos do CNPJ, carga 2026-07. Só agregados municipais; nenhum dado pessoal entra nesta página.',
+ ft3:'Escrito em português, inglês e espanhol. Sem rastreadores além da analítica padrão do site. © Avner Gomes.',
+},
+es:{
+ brand:'Yerba mate · Paraná', nav1:'La pregunta', nav2:'La serie', nav3:'Oferta', nav4:'Precios',
+ nav5:'El cinturón', nav6:'Los molinos', nav7:'Límites',
+ kicker:'ECONOMÍA AGRÍCOLA · 30 AÑOS DE IBGE · 399 MUNICIPIOS',
+ h1:'Yerba mate en Paraná',
+ sub:'Cuatro pruebas econométricas, y una lectura que tuve que retirar',
+ thesis:'Paraná cosechó 775.959 toneladas de yerba mate en 2024, más del doble que el segundo estado, y el 85,8% de todo lo que Brasil todavía recoge en bosque nativo. Leída por los extremos, la serie parece una transición limpia del bosque al cultivo. Leída año a año, dice lo contrario: el bosque lideró en 18 de los 20 años hasta 2023, y 2024 es el primer liderazgo del cultivo desde 2006.',
+ src:'Datos: IBGE PAM (tabla 1613, 1974-2024) · IBGE PEVS (tabla 289, 1986-2024) · IPCA (tabla 1737) · malla municipal IBGE 2024 · registro abierto CNPJ de la Receita Federal, carga 2026-07. 49 verificaciones automáticas. Análisis: Avner Gomes.',
+ hs1v:'775.959 t', hs1:'cosechadas en Paraná en 2024, cultivo más bosque nativo',
+ v_share:'85,8%', v_ne1:'−0,11', v_ne2:'−0,02', v_ne3:'0,21', v_moran:'0,806', v_cr5:'60,1%', v_gini:'0,966', v_irr1:'1,37', v_irr2:'1,03',
+ hs2:'de la yerba mate de bosque nativo de Brasil sale de Paraná',
+ hs3:'años entre 2004 y 2023 con el bosque nativo por delante del cultivo',
+ hs4:'municipios forman el único cinturón Alto-Alto (LISA)',
+ k1:'LA PREGUNTA', h1s:'¿Qué dice realmente una cifra de 775.959 toneladas?',
+ p1a:'La yerba mate es uno de los pocos cultivos de Brasil que todavía se cosecha de dos maneras a la vez: podada de plantaciones, lo que registra la Producción Agrícola Municipal del IBGE (PAM), y recogida de árboles en pie en el bosque de araucaria, lo que la Producción de la Extracción Vegetal y de la Silvicultura (PEVS) registra por separado. Sumando las dos, Paraná llega a 775.959 toneladas en 2024, contra 302.212 de Rio Grande do Sul y 139.764 de Santa Catarina.',
+ p1b:'Este estudio le hace cuatro preguntas a esa cifra. ¿La oferta responde al precio? ¿La hoja nativa y la hoja cultivada son un mercado o dos? ¿Dónde exactamente está la cadena en el mapa? ¿Y la industria de procesamiento sigue a la materia prima? Cada valor de este informe lo calcula un pipeline Python de cinco scripts a partir de la API pública de SIDRA y del registro abierto CNPJ, y lo validan 49 verificaciones automáticas antes de llegar a la página.',
+ p1c:'Antes de las cuatro pruebas, una corrección que el pipeline no detectó y un lector sí.',
+ k2:'LA SERIE', h2s:'El bosque mantuvo el liderazgo la mayor parte de dos décadas',
+ p2a:'En 1994 Paraná cosechaba yerba mate cultivada en 2.713 hectáreas. En 2024 son 45.065 hectáreas y 452.222 toneladas, contra 323.737 toneladas de bosque nativo. La primera versión de este estudio leyó esos dos extremos como una transición y escribió que el cultivo superó al bosque en 1998 y mantuvo el liderazgo desde entonces. La serie año a año dice otra cosa.',
+ rvPlace:'LA MISMA SERIE, LEÍDA AÑO A AÑO',
+ rvRoad:'Bosque nativo por delante en 18 de los 20 años de 2004 a 2023',
+ rvSub:'La producción cultivada superó a la cosecha nativa por primera vez en 1998, sostuvo el liderazgo hasta 2003 y después quedó atrás. Las únicas excepciones de las dos décadas siguientes fueron 2005 y 2006.',
+ st1l:'años con el bosque por delante, 2004-2023', st1n:'El cultivo lideró solo en 2005 y 2006. La producción nativa alcanzó su pico de 442.189 toneladas en 2021.',
+ st2v:'43.038 → 26.086', st2l:'hectáreas cultivadas, 2003 a 2018', st2n:'El área cayó durante quince años antes del récord de 45.065 ha en 2024. El rendimiento pasó de 4.044 kg/ha en 2010 a 10.035 en 2024.',
+ st3l:'primer liderazgo del cultivo desde 2006', st3n:'Con un salto del 23,1% en la producción cultivada y una caída del 12,6% en la cosecha nativa, en un solo año.',
+ capSeries:'<b>Producción de yerba mate en Paraná, miles de toneladas, 1986-2024.</b> Verde: cultivo (PAM). Ámbar: bosque nativo (PEVS). Franja sombreada: 2004-2023, cuando el bosque estuvo por delante en 18 de 20 años. Fuente: IBGE SIDRA, tablas 1613 y 289.',
+ p2b:'Lo que cambió dentro de las plantaciones no fue el área sino el rendimiento. El área cosechada pasó de un primer pico de 43.038 hectáreas en 2003 a 26.086 en 2018, y solo alcanzó su récord en 2024. En el mismo lapso el rendimiento pasó de unas 4 toneladas por hectárea a 10. Así que 2024 es el primer año desde 2006 con el cultivo por delante, con un salto del 23,1% en la producción cultivada y una caída del 12,6% en la cosecha nativa en un solo año. Un año es un punto. Si marca un giro duradero es una pregunta para la divulgación de 2025, no para esta.',
+ capArea:'<b>Área cultivada (miles de ha) y rendimiento (kg/ha), 1994-2024.</b> El área cayó de 2003 a 2018 mientras el rendimiento más que se duplicó después de 2011. Fuente: IBGE PAM, área cosechada y rendimiento medio.',
+ call1:'Una cautela sobre el propio salto de 1998: la producción cultivada pasa de 43.725 toneladas en 1997 a 167.509 en 1998, y la cifra de 1999 es idéntica a la de 1998 hasta la tonelada. Ese patrón se parece más a una revisión de encuesta arrastrada hacia adelante que a una ola de plantación, así que el primer cruce tampoco debe leerse más allá de lo que vale.',
+ k3:'PRUEBA 1 · OFERTA', h3s:'La oferta no responde al precio',
+ p3a:'El modelo clásico de respuesta de oferta agrícola es el de Nerlove, de ajuste parcial: el área cosechada de este año en función del precio real del año anterior y del propio área rezagada. Estimado por MCO con errores de Newey-West, 1995 a 2024, 30 observaciones.',
+ ne1l:'elasticidad-precio de corto plazo, cultivo', ne1n:'Error estándar 0,087, p = 0,20. No es distinta de cero.',
+ ne2l:'elasticidad-precio de corto plazo, cosecha nativa', ne2n:'Cantidad en lugar de área. p = 0,69.',
+ ne3l:'coeficiente de ajuste', ne3n:'El área cierra cerca de un quinto de la distancia a su nivel de largo plazo por año.',
+ p3b:'En términos llanos: no hay evidencia de que los productores de yerba mate planten más cuando sube el precio. La serie de área de arriba es coherente con eso. El área cosechada venía cayendo durante el pico de precios de 2012 a 2014 y solo se recuperó una década después.',
+ p3c:'Dos mecanismos lo explican sin misterio. El primero es biológico: la yerba mate es perenne, un plantín tarda años en llegar a su primera poda comercial, así que la decisión de plantar de hoy solo se vuelve oferta mucho después, y el área instalada sigue produciendo incluso con precios bajos. El segundo es estadístico, y cuesta admitirlo.',
+ call2:'El precio del modelo es implícito: valor de la producción dividido por cantidad. Un choque de cosecha que aumenta la cantidad baja ese precio mecánicamente, empujando el coeficiente hacia abajo. Lo que esta prueba sostiene es la ausencia de una respuesta detectable, no una respuesta negativa, y no estima la elasticidad verdadera.',
+ k4:'PRUEBA 2 · PRECIOS', h4s:'Dos mercados que se volvieron uno alrededor de 2012',
+ p4a:'Si la hoja cultivada y la hoja nativa fueran sustitutos perfectos, los dos precios se moverían juntos. En la muestra completa no lo hacen: Engle-Granger rechaza la cointegración (p = 0,74) y la correlación de los logaritmos es de apenas 0,23. La serie entera esconde el quiebre.',
+ capPrices:'<b>Precio implícito real, R$ de 2024 por kg de hoja verde, 1994-2024.</b> Verde: cultivo (PAM). Ámbar: bosque nativo (PEVS). Línea discontinua: el quiebre de 2011/2012. Los valores son valor de la producción dividido por cantidad, deflactados por la media anual del IPCA.',
+ sc1p:'La hoja nativa se vendió con una prima media del 122% sobre la cultivada. Correlación de los log-precios de 0,46. Dos mercados.',
+ sc2p:'La prima cae al 10% y la correlación sube a 0,82. Las dos series pasan a moverse prácticamente juntas.',
+ sc3h:'La pregunta abierta', sc3p:'Con 31 observaciones anuales no hay una prueba formal cómoda para la fecha del quiebre, así que esto queda descriptivo. Qué pasó alrededor de 2012 para que la hoja cultivada alcanzara a la nativa es la pregunta correcta para la cadena.',
+ p4b:'Durante casi veinte años la hoja de bosque nativo, más valorada por la industria tradicional, se fijó en otro nivel. En la última década los dos precios convergieron. Nótese que son promedios estatales de valor declarado, no la cotización semanal a puerta de finca que releva el DERAL, así que los niveles no son comparables con el precio corriente de mercado; la comparación que vale es entre las dos series.',
+ k5:'PRUEBA 3 · EL CINTURÓN', h5s:'Un único cinturón, y es la región de la araucaria',
+ p5a:'La producción municipal de 2024 muestra una autocorrelación espacial muy fuerte: I de Moran de 0,806 sobre el log de la producción, contra −0,0025 esperado bajo aleatoriedad, pseudo p de 0,001 en 999 permutaciones. La yerba mate no está dispersa por el estado. Está en un único cinturón contiguo.',
+ mapAlt:'Mapa de clústeres LISA de la producción de yerba mate de 2024 en los 399 municipios de Paraná: un único cinturón Alto-Alto en el centro-sur',
+ lgHH:'Alto-Alto (82)', lgLH:'Bajo-Alto (3)', lgLL:'Bajo-Bajo (1)', lgNS:'no significativo (313)',
+ capMap:'<b>Clústeres LISA de la producción 2024 (log), contigüidad queen, 999 permutaciones condicionales, significancia del 5%.</b> El cinturón Alto-Alto va de Cruz Machado y São Mateus do Sul a Guarapuava, Bituruna y los alrededores de Irati. Malla: IBGE 2024, calidad mínima.',
+ mp1l:'I de Moran, log de la producción', mp1n:'Esperado −0,0025 bajo aleatoriedad. Pseudo p = 0,001, 999 permutaciones.',
+ mp2l:'municipios Alto-Alto de 399', mp2n:'Más 3 Bajo-Alto y 1 Bajo-Bajo. 313 no significativos, la mayoría con producción cero.',
+ mp3l:'de la producción estatal en los 5 mayores municipios', mp3n:'Los 10 mayores suman el 80,1%. 133 de 399 municipios declaran alguna producción.',
+ mp4l:'Gini municipal de la producción', mp4n:'Concentración extrema incluso dentro del cinturón.',
+ p5b:'El cinturón es el área de distribución natural de Araucaria angustifolia, lo que tiene sentido botánico: la yerba mate es una especie del sotobosque del bosque de araucaria. La producción sigue al bioma, no a la división administrativa. Cruz Machado sola cosechó 148 mil toneladas en 2024, más que todo el estado de Santa Catarina.',
+ thMun:'Municipio', thT:'Producción 2024 (t)', thShare:'Parte del estado', thMills:'Molinos activos',
+ pull1:'El mapa de la yerba mate es el mapa del bosque de araucaria. Dibuje uno y habrá dibujado el otro.',
+ k6:'PRUEBA 4 · LOS MOLINOS', h6s:'La industria sigue a la hoja, y la sigue de cerca',
+ p6a:'El lado industrial viene de otra fuente: los Datos Abiertos del CNPJ de la Receita Federal, carga 2026-07, filtrados a los establecimientos con actividad principal de procesamiento de yerba mate (CNAE 1099605 o 1122402) y situación registral activa. Son 228 molinos, todos geocodificados, cruzados aquí con la producción municipal.',
+ capScatter:'<b>Molinos activos por municipio contra la producción de 2024 (toneladas, escala log), 399 municipios.</b> Verde: municipios del cinturón Alto-Alto. Gris: los demás. Los puntos del borde izquierdo declaran producción cero. Poisson QMLE con errores robustos: razón de incidencia 1,37 por unidad de log de la producción (p = 0,003).',
+ in1l:'razón de incidencia, producción del propio municipio', in1n:'Poisson QMLE, errores HC1, p = 0,003. Cada unidad de log de la producción eleva el número esperado de molinos en un 37%.',
+ in2l:'razón de incidencia, producción de los vecinos', in2n:'Rezago espacial del log de la producción. p = 0,78. No agrega nada.',
+ in3l:'molinos activos en el registro', in3n:'CNAE principal 1099605 o 1122402, situación activa. 1.539 establecimientos llevan el código en cualquier posición.',
+ in4l:'Curitiba: registros vs producción', in4n:'17 registros activos de procesamiento y producción agrícola cero.',
+ p6b:'Lo que predice la presencia de industria es la hoja del propio municipio, y la producción del vecino no agrega nada. El mecanismo es la ventana de procesamiento: la hoja verde empieza a oxidarse después del corte y el secado rápido, el sapeco, tiene que ocurrir en horas, así que el radio económico entre plantación y molino es corto, y la industria se instala sobre su materia prima. Una robustez en MCO sobre log(1 + molinos) confirma el patrón (p = 0,0003).',
+ p6c:'Dos municipios van contra la corriente y explican la cautela. Curitiba tiene 17 registros activos de procesamiento y producción cero: sedes y marcas, no plantas. Mandirituba, en el cinturón metropolitano, tiene 13 registros sobre 65 toneladas. El registro ubica a la empresa donde está inscrita, no donde se corta la hoja, y la dirección fiscal necesita leerse con cuidado antes de volverse mapa.',
+ call3:'El pseudo-R² del modelo es 0,63, pero la dispersión de Pearson es 6,6, así que los errores estándar del Poisson solo son confiables porque son robustos. Se probó una binomial negativa y degeneró (alfa a cero); la verificación en MCO es la segunda opinión.',
+ k7:'LÍMITES, MÉTODO, REVISIÓN', h7s:'Lo que este estudio no sostiene',
+ p7a:'Cinco límites, dichos sin rodeos. El regreso del cultivo al liderazgo en 2024 es una observación y no es evidencia de tendencia. El precio implícito de PAM y PEVS es un promedio estatal de valor declarado, no el precio a puerta de finca que el DERAL releva semanalmente, así que los niveles no son comparables con las cotizaciones corrientes. El modelo de Nerlove con precio implícito hereda endogeneidad y la muestra es corta (30 años), así que descarta una respuesta fuerte pero no estima la elasticidad verdadera. El registro CNPJ es declarativo: un registro activo no es una planta operando. Y el LISA sobre log(1 + producción), con 266 municipios en cero, es sensible a esa masa de ceros; el cinturón es robusto, sus bordes no.',
+ p7b:'Método: series de producción de las tablas 1613 y 289 de SIDRA, deflactor de la tabla 1737 (media anual del índice, 2024 = 1), corte municipal de 2024 sobre la malla oficial 2024 del IBGE en calidad mínima. Nerlove por MCO con errores HAC (Newey-West, 2 rezagos); ADF y Engle-Granger sobre los log-precios; I de Moran y LISA implementados desde cero en numpy con inferencia por permutación, contigüidad queen, sin dependencia de PySAL; Poisson QMLE con errores HC1 en statsmodels. Todo el pipeline corre en seis scripts Python con descargas en caché, y 49 verificaciones de sanidad fijan cada cifra publicada a las estadísticas generadas.',
+ p7c:'Revisión, 2026-09-07. La primera versión de este estudio, escrita el 2026-08-06, afirmaba que el cultivo superó al bosque en 1998 y mantuvo el liderazgo. El código registraba el primer año de cruce y nada verificaba si el liderazgo persistía. El error lo detectó el autor en el gráfico antes de publicar. La sección de la serie, la figura 1 y la suite de pruebas se reescribieron en torno al liderazgo medido año a año, y una prueba ahora falla si la frase retirada reaparece en cualquier texto. Los resultados econométricos no cambiaron con la revisión.',
+ call4:'El 2026-09-07 el pipeline se volvió a ejecutar sobre una descarga nueva de SIDRA. PAM y PEVS todavía terminan en 2024; cada estadística salió idéntica a la corrida de agosto. La divulgación de 2025 será la primera prueba real del cruce de 2024.',
+ btnBack:'Página del artículo',
+ ft1:'<b>Yerba mate en Paraná</b> · Un estudio de <a href="https://avnergomes.github.io/portfolio/">Avner Gomes</a> · pipeline reproducible, 49 verificaciones automáticas, revisado el 2026-09-07.',
+ ft2:'Fuentes: IBGE PAM (SIDRA 1613), PEVS (SIDRA 289), IPCA (SIDRA 1737), malla municipal IBGE 2024; Receita Federal, Dados Abertos do CNPJ, carga 2026-07. Solo agregados municipales; ningún dato personal entra en esta página.',
+ ft3:'Escrito en español, inglés y portugués. Sin rastreadores más allá de la analítica estándar del sitio. © Avner Gomes.',
+},
+};
+const HTML_KEYS = new Set(['capSeries','capArea','capPrices','capMap','capScatter','ft1','ft2','ft3']);
+let lang = 'en';
+const LOC = {en:'en-US',pt:'pt-BR',es:'es-ES'};
+const fmt = (v,d) => Number(v).toLocaleString(LOC[lang], {minimumFractionDigits:d||0, maximumFractionDigits:d||0});
+
+/* ======================= gráficos (SVG puro) ======================= */
+const NS = 'http://www.w3.org/2000/svg';
+const C_PAM = 'oklch(76% 0.16 150)', C_PEVS = 'oklch(78% 0.12 75)', C_GRID = 'oklch(24% 0.022 160)', C_MUT = 'oklch(62% 0.02 160)', C_INK2 = 'oklch(83% 0.014 160)';
+function sv(tag, attrs, parent){ const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function chartFrame(w, h){ return sv('svg', {viewBox:`0 0 ${w} ${h}`, role:'img'}); }
+function axisText(svgEl, x, y, txt, anchor, fill, size, weight){
+  const t = sv('text', {x, y, 'text-anchor':anchor||'start', fill:fill||C_MUT,
+    'font-family':'JetBrains Mono,monospace', 'font-size':size||11, 'font-weight':weight||400}, svgEl); t.textContent = txt; return t; }
+const LBL = {
+  en:{pam:'cultivated (PAM)', pevs:'native forest (PEVS)', band:'forest ahead, 18 of 20 years', first:'2024: first cultivated | lead since 2006', area:'harvested area (thousand ha)', yld:'yield (kg/ha)', brk:'2011 | 2012', pre:'premium 122%', post:'premium 10%', zero:'zero output', mills:'active mills', out:'output 2024 (t, log)'},
+  pt:{pam:'cultivo (PAM)', pevs:'floresta nativa (PEVS)', band:'floresta à frente, 18 de 20 anos', first:'2024: primeira liderança | do cultivo desde 2006', area:'área colhida (mil ha)', yld:'rendimento (kg/ha)', brk:'2011 | 2012', pre:'prêmio 122%', post:'prêmio 10%', zero:'produção zero', mills:'ervateiras ativas', out:'produção 2024 (t, log)'},
+  es:{pam:'cultivo (PAM)', pevs:'bosque nativo (PEVS)', band:'bosque por delante, 18 de 20 años', first:'2024: primer liderazgo | del cultivo desde 2006', area:'área cosechada (miles de ha)', yld:'rendimiento (kg/ha)', brk:'2011 | 2012', pre:'prima 122%', post:'prima 10%', zero:'producción cero', mills:'molinos activos', out:'producción 2024 (t, log)'},
+};
+
+function drawSeries(){
+  const L_=LBL[lang]; const W=960,H=360,L=52,R=170,T=18,B=34,w=W-L-R,h=H-T-B,ymax=460;
+  const el=document.getElementById('figSeries'); el.innerHTML='';
+  const s=chartFrame(W,H); el.appendChild(s);
+  const yrs=D.years_q, n=yrs.length;
+  const X=i=>L+w*i/(n-1), Y=v=>T+h*(1-v/ymax);
+  const i04=yrs.indexOf(2004), i23=yrs.indexOf(2023);
+  sv('rect',{x:X(i04)-w/(n-1)/2,y:T,width:X(i23)-X(i04)+w/(n-1),height:h,fill:'oklch(100% 0 0 / 0.045)'},s);
+  for (const g of [0,100,200,300,400]){ sv('line',{x1:L,x2:W-R,y1:Y(g),y2:Y(g),stroke:C_GRID,'stroke-width':1},s);
+    axisText(s,L-8,Y(g)+4,String(g),'end'); }
+  for (const yr of [1990,2000,2010,2020]) axisText(s,X(yrs.indexOf(yr)),H-10,String(yr),'middle');
+  const path=(arr)=>arr.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v/1000).toFixed(1)).join(' ');
+  sv('path',{d:path(D.pevs_t),fill:'none',stroke:C_PEVS,'stroke-width':2.4,'stroke-linejoin':'round'},s);
+  sv('path',{d:path(D.pam_t),fill:'none',stroke:C_PAM,'stroke-width':2.6,'stroke-linejoin':'round'},s);
+  axisText(s,X(n-1)+8,Y(D.pam_t[n-1]/1000)+4,L_.pam,'start',C_PAM,12.5,600);
+  axisText(s,X(n-1)+8,Y(D.pevs_t[n-1]/1000)+4,L_.pevs,'start',C_PEVS,12.5,600);
+  L_.first.split('|').forEach((ln,k)=>axisText(s,X(n-1)+8,Y(D.pam_t[n-1]/1000)+20+k*13,ln.trim(),'start',C_MUT,10.5));
+  axisText(s,(X(i04)+X(i23))/2,Y(20),L_.band,'middle',C_INK2,11.5);
+  axisText(s,X(yrs.indexOf(2021)),Y(D.pevs_t[yrs.indexOf(2021)]/1000)-9,'442 (2021)','middle',C_PEVS,11);
+  axisText(s,X(yrs.indexOf(2001)),Y(D.pam_t[yrs.indexOf(2001)]/1000)-9,'339 (2001)','middle',C_PAM,11);
+}
+
+function drawArea(){
+  const L_=LBL[lang]; const W=960,H=300,T=30,B=34,gap=70;
+  const el=document.getElementById('figArea'); el.innerHTML='';
+  const s=chartFrame(W,H); el.appendChild(s);
+  const i94=D.years_q.indexOf(1994); const yrs=D.years_q.slice(i94), n=yrs.length;
+  const area=D.area_ha.slice(i94).map(v=>v/1000), yld=D.yield_kg_ha.slice(i94);
+  const pw=(W-gap)/2-40;
+  function panel(x0,vals,ymax,ticks,color,label){
+    const L=x0+40,w=pw,h=H-T-B; const X=i=>L+w*i/(n-1), Y=v=>T+h*(1-v/ymax);
+    for (const g of ticks){ sv('line',{x1:L,x2:L+w,y1:Y(g),y2:Y(g),stroke:C_GRID,'stroke-width':1},s); axisText(s,L-8,Y(g)+4,fmt(g),'end'); }
+    for (const yr of [1995,2005,2015,2024]) axisText(s,X(yrs.indexOf(yr)),H-10,String(yr),yr===2024?'end':'middle');
+    const path=vals.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
+    sv('path',{d:path,fill:'none',stroke:color,'stroke-width':2.4,'stroke-linejoin':'round'},s);
+    vals.forEach((v,i)=>sv('circle',{cx:X(i),cy:Y(v),r:2.4,fill:color},s));
+    axisText(s,L,T-12,label,'start',C_INK2,12.5,600);
+    return {X,Y};
+  }
+  const a=panel(0,area,50,[0,10,20,30,40,50],C_PAM,L_.area);
+  axisText(s,a.X(yrs.indexOf(2003)),a.Y(area[yrs.indexOf(2003)])-9,'43,0 (2003)'.replace(',',lang==='en'?'.':','),'middle',C_MUT,10.5);
+  axisText(s,a.X(yrs.indexOf(2018)),a.Y(area[yrs.indexOf(2018)])+16,'26,1 (2018)'.replace(',',lang==='en'?'.':','),'middle',C_MUT,10.5);
+  const b=panel(pw+gap+40,yld,11000,[0,2500,5000,7500,10000],C_PAM,L_.yld);
+  axisText(s,b.X(n-1)-6,b.Y(yld[n-1])-9,fmt(10035)+' (2024)','end',C_MUT,10.5);
+  axisText(s,b.X(yrs.indexOf(2010)),b.Y(yld[yrs.indexOf(2010)])+16,fmt(4044)+' (2010)','middle',C_MUT,10.5);
+}
+
+function drawPrices(){
+  const L_=LBL[lang]; const W=960,H=340,L=52,R=170,T=18,B=34,w=W-L-R,h=H-T-B,ymax=4.6;
+  const el=document.getElementById('figPrices'); el.innerHTML='';
+  const s=chartFrame(W,H); el.appendChild(s);
+  const yrs=D.years_p, n=yrs.length;
+  const X=i=>L+w*i/(n-1), Y=v=>T+h*(1-v/ymax);
+  for (const g of [0,1,2,3,4]){ sv('line',{x1:L,x2:W-R,y1:Y(g),y2:Y(g),stroke:C_GRID,'stroke-width':1},s);
+    axisText(s,L-8,Y(g)+4,fmt(g,2),'end'); }
+  for (const yr of [1995,2000,2005,2010,2015,2020,2024]) axisText(s,X(yrs.indexOf(yr)),H-10,String(yr),'middle');
+  const xb=(X(yrs.indexOf(2011))+X(yrs.indexOf(2012)))/2;
+  sv('line',{x1:xb,x2:xb,y1:T,y2:H-B,stroke:C_MUT,'stroke-width':1,'stroke-dasharray':'4 5'},s);
+  axisText(s,xb-8,T+12,L_.pre,'end',C_INK2,11.5);
+  axisText(s,xb+8,T+12,L_.post,'start',C_INK2,11.5);
+  const path=(arr)=>arr.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)).join(' ');
+  sv('path',{d:path(D.pevs_price),fill:'none',stroke:C_PEVS,'stroke-width':2.4,'stroke-linejoin':'round'},s);
+  sv('path',{d:path(D.pam_price),fill:'none',stroke:C_PAM,'stroke-width':2.6,'stroke-linejoin':'round'},s);
+  axisText(s,X(n-1)+8,Y(D.pevs_price[n-1])-4,L_.pevs,'start',C_PEVS,12.5,600);
+  axisText(s,X(n-1)+8,Y(D.pam_price[n-1])+12,L_.pam,'start',C_PAM,12.5,600);
+  axisText(s,X(0)+8,Y(D.pevs_price[0])+4,fmt(4.44,2),'start',C_PEVS,11);
+  const i14=yrs.indexOf(2014);
+  axisText(s,X(i14),Y(D.pevs_price[i14])-10,fmt(2.22,2)+' (2014)','middle',C_MUT,11);
+}
+
+function drawScatter(){
+  const L_=LBL[lang]; const W=960,H=400,L=52,R=20,T=18,B=44,w=W-L-R,h=H-T-B,ymax=18;
+  const el=document.getElementById('figScatter'); el.innerHTML='';
+  const s=chartFrame(W,H); el.appendChild(s);
+  const zeroW=60; const lx0=L+zeroW; const lw=w-zeroW; const lmin=0, lmax=5.3; /* log10 t: 1 .. 200k */
+  const X=t=>t<=0? L+zeroW*0.45 : lx0+lw*(Math.log10(t)-lmin)/(lmax-lmin);
+  const Y=v=>T+h*(1-v/ymax);
+  for (const g of [0,4,8,12,16]){ sv('line',{x1:L,x2:W-R,y1:Y(g),y2:Y(g),stroke:C_GRID,'stroke-width':1},s); axisText(s,L-8,Y(g)+4,String(g),'end'); }
+  sv('line',{x1:lx0-4,x2:lx0-4,y1:T,y2:H-B,stroke:C_GRID,'stroke-width':1,'stroke-dasharray':'3 4'},s);
+  axisText(s,L+zeroW*0.45,H-22,L_.zero,'middle',C_MUT,10.5);
+  for (const e of [1,2,3,4,5]){ axisText(s,X(Math.pow(10,e)),H-22,fmt(Math.pow(10,e)),'middle'); }
+  axisText(s,lx0+lw/2,H-6,L_.out,'middle',C_MUT,11);
+  axisText(s,L,T-6,L_.mills,'start',C_INK2,12,600);
+  const rows=D.scatter.slice().sort((a,b)=>(a.c==='HH')-(b.c==='HH'));
+  rows.forEach((r,i)=>{ const jitter=r.t<=0?((i%7)-3)*3.2:0;
+    sv('circle',{cx:X(r.t)+jitter,cy:Y(r.m),r:4.2,fill:r.c==='HH'?C_PAM:C_MUT,opacity:r.c==='HH'?0.85:0.55,stroke:'oklch(14% 0.02 160)','stroke-width':0.6},s); });
+  const tag=(name,dx,dy,anchor)=>{ const r=D.scatter.find(q=>q.n===name); if(!r) return;
+    axisText(s,X(r.t)+dx,Y(r.m)+dy,name,anchor||'start',C_INK2,11); };
+  tag('Curitiba',10,4); tag('Mandirituba',10,4); tag('Guarapuava',-10,-6,'end'); tag('Bituruna',-10,-6,'end');
+  tag('Cruz Machado',-10,-6,'end'); tag('São Mateus do Sul',-10,14,'end');
+}
+
+/* ======================= i18n render ======================= */
+function setLang(l){
+  if(!I18N[l]) l='en';
+  lang=l;
+  document.documentElement.lang = l==='pt'?'pt-BR':l;
+  const T=I18N[l];
+  document.querySelectorAll('[data-i]').forEach(el=>{
+    const k=el.getAttribute('data-i'); if(!(k in T)) return;
+    if (HTML_KEYS.has(k)) el.innerHTML=T[k]; else el.textContent=T[k];
+  });
+  document.querySelectorAll('[data-i-alt]').forEach(el=>{ el.alt=T[el.getAttribute('data-i-alt')]||''; });
+  document.querySelectorAll('nav .langs button').forEach(b=>b.classList.toggle('on',b.dataset.setlang===l));
+  const tb=document.getElementById('tblTop'); tb.innerHTML='';
+  const tot=D.scatter.reduce((a,r)=>a+r.t,0);
+  for (const r of D.stats.concentracao.top5){
+    const row=D.scatter.find(q=>q.n===r.municipio);
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td>'+r.municipio+'</td><td class="num">'+fmt(r.qtd_total_t)+'</td><td class="num">'+fmt(100*r.qtd_total_t/tot,1)+'%</td><td class="num">'+(row?row.m:'')+'</td>';
+    tb.appendChild(tr);
+  }
+  drawSeries(); drawArea(); drawPrices(); drawScatter();
+  if (location.hash!=='#'+l) history.replaceState(null,'','#'+l);
+}
+document.querySelectorAll('nav .langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.setlang));
+window.addEventListener('hashchange',()=>setLang((location.hash||'').replace('#','').toLowerCase()));
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  document.getElementById('prog').style.width=(100*d.scrollTop/(d.scrollHeight-d.clientHeight))+'%';
+});
+setLang((location.hash||'').replace('#','').toLowerCase()||'en');
+</script>
+</body>
+</html>
