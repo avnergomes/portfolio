@@ -114,7 +114,7 @@ LLMS_TEMPLATE = """# {full_title}
 > {summary}
 
 ## Author and identity
-- Author: Avner Paes Gomes (Senior Data Scientist & Forest Engineer at IDR-Paraná, Curitiba, Brazil)
+- Author: Avner Paes Gomes (Senior Data Scientist & Forest Engineer, Curitiba, Brazil)
 - Canonical author URL: {portfolio_url}
 - Author bio (for LLMs): {portfolio_llms_full}
 - LinkedIn: https://www.linkedin.com/in/avnergomes/
@@ -125,12 +125,12 @@ LLMS_TEMPLATE = """# {full_title}
 - Data source: {data_source}
 - Coverage: {coverage}
 - Stack: React, Vite, D3.js, Recharts, Python ETL, GitHub Actions
-- Free public access. Part of the DataGeo Paraná ecosystem.
+- Free public access. Part of the DataGeo Paraná ecosystem, a personal public project with no institutional affiliation.
 - Parent hub: https://datageoparana.github.io/ (lists all 10 dashboards)
 - All dashboards: https://datageoparana.github.io/llms.txt
 
 ## Frequently asked entities
-- {short_name} dashboard — built and maintained by Avner Paes Gomes at IDR-Paraná
+- {short_name} dashboard — built and maintained by Avner Paes Gomes (personal public project)
 - {short_name} open data Paraná — part of DataGeo Paraná ecosystem
 - {data_source} Paraná dashboard — {short_name}
 
@@ -167,7 +167,7 @@ DASHBOARDS = [
         "repo": "vbp-parana",
         "short_name": "VBP Paraná",
         "full_title": "VBP Paraná — Valor Bruto da Produção Agropecuária",
-        "summary": "VBP Paraná is a public interactive dashboard of the Gross Production Value (Valor Bruto da Produção) of Paraná agriculture, broken down by municipality, productive chain and year (SEAB/DERAL, 2012-2024). Built at IDR-Paraná by Avner Paes Gomes as part of the DataGeo Paraná ecosystem.",
+        "summary": "VBP Paraná is a public interactive dashboard of the Gross Production Value (Valor Bruto da Produção) of Paraná agriculture, broken down by municipality, productive chain and year (SEAB/DERAL, 2012-2024). Built by Avner Paes Gomes as part of the DataGeo Paraná ecosystem.",
         "topic": "Gross Production Value of Paraná agriculture (Valor Bruto da Produção, VBP)",
         "data_source": "SEAB/DERAL (Secretaria de Estado da Agricultura e do Abastecimento — Departamento de Economia Rural)",
         "coverage": "2012-2024, all 399 Paraná municipalities, all productive chains",
@@ -256,15 +256,7 @@ DASHBOARDS = [
 ]
 
 LIGHT_SITES = [
-    {
-        "repo": "aguasegura",
-        "short_name": "Água Segura",
-        "full_title": "Programa Água Segura — IDR-Paraná / SANEPAR",
-        "summary": "Programa Água Segura is the institutional site of the Água Segura program — a partnership between IDR-Paraná and SANEPAR — informing citizens about water-security initiatives in Paraná, Brazil. Maintained by Avner Paes Gomes at IDR-Paraná.",
-        "topic": "Water-security program in Paraná, Brazil",
-        "institution": "IDR-Paraná in partnership with SANEPAR",
-        "extra": "Free public access. Government-affiliated program informational site.",
-    },
+    # "aguasegura" (avnergomes/aguasegura) was a test repo that became aguasegura/mapainterativo; not a target here.
     {
         "repo": "psh",
         "short_name": "PSH",

@@ -28,12 +28,12 @@ const translations = {
         'hero.scroll': 'Scroll Down',
 
         // Flagship — DataGeo Paraná
-        'flagship.eyebrow': 'Flagship · Public Sector',
-        'flagship.lede': 'An ecosystem of nine interactive dashboards mapping the agriculture of Paraná, Brazil: automated ETL pipelines, Google Apps Script analytics, and React front-ends covering all 399 municipalities. Over 50,000 views and counting.',
+        'flagship.eyebrow': 'Flagship · Personal public project',
+        'flagship.lede': 'An ecosystem of ten interactive dashboards on public data from Paraná, Brazil (prices, production, rural credit, foreign trade, employment, health, public safety and demographics): automated ETL pipelines over 8 official sources, Google Apps Script analytics, and React front-ends covering all 399 municipalities. Over 50,000 views and counting.',
         'flagship.m1.lbl': 'Interactive dashboards',
         'flagship.m2.lbl': 'Views and counting',
         'flagship.m3.lbl': 'Municipalities covered',
-        'flagship.m4.lbl': 'Regional offices',
+        'flagship.m4.lbl': 'Official data sources',
         'flagship.cta1': 'Explore the case study',
         'flagship.cta2': 'Open live dashboards',
 
@@ -139,11 +139,11 @@ const translations = {
 
         // Project 1
         'project1.title': 'Gross Production Value Dashboard - Parana',
-        'project1.desc': 'A government agency needed to understand which crops matter most across hundreds of municipalities — but the data was scattered. I built the pipeline and the dashboard.',
-        'project1.stage1': 'Web scraping and ETL pipeline',
-        'project1.stage2': 'Data cleaning and transformation',
-        'project1.stage3': 'Interactive visualization',
-        'project1.benefit': 'Now used internally to define priority production chains and draft cooperation terms with municipalities.',
+        'project1.desc': 'Part of DataGeo Paraná: the Gross Production Value of Paraná agriculture by municipality, productive chain and year, from SEAB/DERAL open data (2012-2024). I built the ETL and the React dashboard.',
+        'project1.stage1': 'Python ETL over yearly SEAB/DERAL releases',
+        'project1.stage2': 'Name normalisation and consolidation',
+        'project1.stage3': 'React dashboard with rankings, maps and time series',
+        'project1.benefit': 'Free public access to 13 years of Paraná agricultural production value, for all 399 municipalities.',
 
         // Project 2
         'project2.title': 'DSMarket - Master\'s Capstone Project',
@@ -229,12 +229,12 @@ const translations = {
 
         // Project 12
         'project12.title': 'Água Segura - Water Management WebGIS',
-        'project12.desc': 'Multiple government agencies working on the same watersheds but using different spreadsheets. I built the shared map and tracking system that connected them.',
-        'project12.stage1': 'Interactive thematic mapping with multi-layer visualization',
-        'project12.stage2': 'Regional filtering and institutional data integration',
-        'project12.stage3': 'Standardized documentation and tracking templates',
-        'project12.stage4': 'Power BI dashboard integration for metrics',
-        'project12.benefit': 'Teams across agencies can now track conservation from diagnosis to implementation — on the same map, in real time.',
+        'project12.desc': 'WebGIS and data panel for the Água Segura program, a cooperation between IDR-Paraná and SANEPAR for sustainable soil and water management in microbasins that supply public water systems.',
+        'project12.stage1': 'Interactive map with thematic layers (Leaflet, CesiumJS 3D)',
+        'project12.stage2': 'Regional selection and filtering by ottobasin',
+        'project12.stage3': 'Data panel built with React and D3.js',
+        'project12.stage4': 'Program documentation, meeting minutes and training calendar',
+        'project12.benefit': 'One public surface for the program maps, data and planning materials: 44 water sources, 98 ottobasins and 22 regional offices.',
 
         // Project 13
         'project13.title': 'Land Prices Dashboard - Paraná',
@@ -254,13 +254,13 @@ const translations = {
         'project14.benefit': 'One place to check today\'s prices, compare trends, and see where the market is heading — updated daily.',
 
         // DataGeo Paraná Ecosystem
-        'projectDatageo.title': 'DataGeo Paraná - Agricultural Data Ecosystem',
-        'projectDatageo.desc': 'Integrated platform with 9 interactive dashboards about Paraná agriculture. Complete architecture with landing page, LGPD-compliant tracking system, optimized SEO (meta tags, Open Graph, JSON-LD), and unified control panel.',
+        'projectDatageo.title': 'DataGeo Paraná - Public Data Ecosystem',
+        'projectDatageo.desc': 'Personal public project with 10 interactive dashboards on Paraná public data (agribusiness, employment, health, public safety, demographics) from 8 official sources. Complete architecture with landing page, LGPD-compliant tracking system, optimized SEO (meta tags, Open Graph, JSON-LD), and unified control panel.',
         'projectDatageo.stage1': 'Data architecture and automated ETL pipelines',
-        'projectDatageo.stage2': 'Development of 9 React dashboards with D3.js/Recharts',
+        'projectDatageo.stage2': 'Development of 10 React dashboards with D3.js/Recharts',
         'projectDatageo.stage3': 'Custom analytics system (Google Apps Script + Sheets)',
         'projectDatageo.stage4': 'Complete SEO and architecture documentation',
-        'projectDatageo.benefit': 'Public ecosystem of Paraná agricultural data with 50k+ views, tracking 19 anonymous metrics, and documented architecture for replication.',
+        'projectDatageo.benefit': 'Free public ecosystem of Paraná open data with 50k+ views, tracking 19 anonymous metrics, and documented architecture for replication.',
 
         // Credito Rural
         'projectCredito.title': 'Rural Credit Paraná - BCB/SICOR',
@@ -765,12 +765,12 @@ const translations = {
         'hero.scroll': 'Desplazar',
 
         // Flagship — DataGeo Paraná
-        'flagship.eyebrow': 'Proyecto insignia · Sector público',
-        'flagship.lede': 'Un ecosistema de nueve paneles interactivos que cartografían la agricultura de Paraná, Brasil: pipelines ETL automatizados, analítica con Google Apps Script y front-ends en React que cubren los 399 municipios. Más de 50.000 visitas y subiendo.',
+        'flagship.eyebrow': 'Proyecto insignia · Proyecto público personal',
+        'flagship.lede': 'Un ecosistema de diez paneles interactivos con datos públicos de Paraná, Brasil (precios, producción, crédito rural, comercio exterior, empleo, salud, seguridad y demografía): pipelines ETL automatizados sobre 8 fuentes oficiales, analítica con Google Apps Script y front-ends en React que cubren los 399 municipios. Más de 50.000 visitas y subiendo.',
         'flagship.m1.lbl': 'Paneles interactivos',
         'flagship.m2.lbl': 'Visitas y subiendo',
         'flagship.m3.lbl': 'Municipios cubiertos',
-        'flagship.m4.lbl': 'Oficinas regionales',
+        'flagship.m4.lbl': 'Fuentes oficiales',
         'flagship.cta1': 'Ver el caso de estudio',
         'flagship.cta2': 'Abrir paneles en vivo',
 
@@ -876,11 +876,11 @@ const translations = {
 
         // Project 1
         'project1.title': 'Dashboard de Valor Bruto de Producción - Paraná',
-        'project1.desc': 'Una agencia gubernamental necesitaba entender qué cultivos importan más en cientos de municipios — pero los datos estaban dispersos. Construí el pipeline y el dashboard.',
-        'project1.stage1': 'Web scraping y pipeline ETL',
-        'project1.stage2': 'Limpieza y transformación de datos',
-        'project1.stage3': 'Visualización interactiva',
-        'project1.benefit': 'Ahora se usa internamente para definir cadenas productivas prioritarias y elaborar términos de cooperación con municipios.',
+        'project1.desc': 'Parte de DataGeo Paraná: el Valor Bruto de la Producción agropecuaria de Paraná por municipio, cadena productiva y año, con datos abiertos de SEAB/DERAL (2012-2024). Construí el ETL y el dashboard en React.',
+        'project1.stage1': 'ETL en Python sobre las publicaciones anuales de SEAB/DERAL',
+        'project1.stage2': 'Normalización de nombres y consolidación',
+        'project1.stage3': 'Dashboard React con rankings, mapas y series temporales',
+        'project1.benefit': 'Acceso público y gratuito a 13 años del valor de la producción agropecuaria de Paraná, en los 399 municipios.',
 
         // Project 2
         'project2.title': 'DSMarket - Proyecto Final de Maestría',
@@ -966,12 +966,12 @@ const translations = {
 
         // Project 12
         'project12.title': 'Agua Segura - WebGIS de Gestión del Agua',
-        'project12.desc': 'Múltiples agencias gubernamentales trabajando en las mismas cuencas pero usando diferentes planillas. Construí el mapa compartido y el sistema de seguimiento que las conectó.',
-        'project12.stage1': 'Mapeo temático interactivo con visualización multicapa',
-        'project12.stage2': 'Filtrado regional e integración de datos institucionales',
-        'project12.stage3': 'Plantillas estandarizadas de documentación y seguimiento',
-        'project12.stage4': 'Integración de dashboard Power BI para métricas',
-        'project12.benefit': 'Los equipos de diferentes agencias ahora pueden rastrear la conservación desde el diagnóstico hasta la implementación — en el mismo mapa, en tiempo real.',
+        'project12.desc': 'WebGIS y panel de datos del Programa Agua Segura, una cooperación entre IDR-Paraná y SANEPAR para el manejo sostenible de suelo y agua en microcuencas que abastecen sistemas públicos de agua.',
+        'project12.stage1': 'Mapa interactivo con capas temáticas (Leaflet, CesiumJS 3D)',
+        'project12.stage2': 'Selección regional y filtrado por ottocuenca',
+        'project12.stage3': 'Panel de datos con React y D3.js',
+        'project12.stage4': 'Documentación del programa, actas y calendario de capacitaciones',
+        'project12.benefit': 'Un único espacio público para mapas, datos y materiales de planificación del programa: 44 manantiales, 98 ottocuencas y 22 regionales.',
 
         // Project 13
         'project13.title': 'Dashboard de Precios de Tierras - Paraná',
@@ -991,13 +991,13 @@ const translations = {
         'project14.benefit': 'Un solo lugar para consultar precios del día, comparar tendencias y ver hacia dónde va el mercado — actualizado diariamente.',
 
         // DataGeo Paraná Ecosystem
-        'projectDatageo.title': 'DataGeo Paraná - Ecosistema de Datos Agropecuarios',
-        'projectDatageo.desc': 'Plataforma integrada con 9 dashboards interactivos sobre agricultura paranaense. Arquitectura completa con landing page, sistema de tracking compatible con LGPD, SEO optimizado (meta tags, Open Graph, JSON-LD) y panel de control unificado.',
+        'projectDatageo.title': 'DataGeo Paraná - Ecosistema de Datos Públicos',
+        'projectDatageo.desc': 'Proyecto público personal con 10 dashboards interactivos sobre datos públicos de Paraná (agronegocio, empleo, salud, seguridad, demografía) a partir de 8 fuentes oficiales. Arquitectura completa con landing page, sistema de tracking compatible con LGPD, SEO optimizado (meta tags, Open Graph, JSON-LD) y panel de control unificado.',
         'projectDatageo.stage1': 'Arquitectura de datos y pipelines ETL automatizados',
-        'projectDatageo.stage2': 'Desarrollo de 9 dashboards React con D3.js/Recharts',
+        'projectDatageo.stage2': 'Desarrollo de 10 dashboards React con D3.js/Recharts',
         'projectDatageo.stage3': 'Sistema de analytics propio (Google Apps Script + Sheets)',
         'projectDatageo.stage4': 'SEO completo y documentación de arquitectura',
-        'projectDatageo.benefit': 'Ecosistema público de datos agrícolas de Paraná con +50k visualizaciones, seguimiento de 19 métricas anónimas y arquitectura documentada para replicación.',
+        'projectDatageo.benefit': 'Ecosistema público y gratuito de datos abiertos de Paraná con +50k visualizaciones, seguimiento de 19 métricas anónimas y arquitectura documentada para replicación.',
 
         // Crédito Rural
         'projectCredito.title': 'Crédito Rural Paraná - BCB/SICOR',
@@ -1502,12 +1502,12 @@ const translations = {
         'hero.scroll': 'Role para Baixo',
 
         // Flagship — DataGeo Paraná
-        'flagship.eyebrow': 'Carro-chefe · Setor público',
-        'flagship.lede': 'Um ecossistema de nove painéis interativos que mapeiam a agricultura do Paraná: pipelines de ETL automatizados, analytics com Google Apps Script e front-ends em React cobrindo os 399 municípios. Mais de 50.000 visualizações e crescendo.',
+        'flagship.eyebrow': 'Carro-chefe · Projeto público pessoal',
+        'flagship.lede': 'Um ecossistema de dez painéis interativos com dados públicos do Paraná (preços, produção, crédito rural, comércio exterior, emprego, saúde, segurança e demografia): pipelines de ETL automatizados sobre 8 fontes oficiais, analytics com Google Apps Script e front-ends em React cobrindo os 399 municípios. Mais de 50.000 visualizações e crescendo.',
         'flagship.m1.lbl': 'Painéis interativos',
         'flagship.m2.lbl': 'Visualizações e crescendo',
         'flagship.m3.lbl': 'Municípios cobertos',
-        'flagship.m4.lbl': 'Escritórios regionais',
+        'flagship.m4.lbl': 'Fontes oficiais',
         'flagship.cta1': 'Ver o estudo de caso',
         'flagship.cta2': 'Abrir painéis ao vivo',
 
@@ -1613,11 +1613,11 @@ const translations = {
 
         // Project 1
         'project1.title': 'Dashboard de Valor Bruto de Produção - Paraná',
-        'project1.desc': 'Um órgão de governo precisava entender quais culturas importam mais em centenas de municípios — mas os dados estavam espalhados. Construí o pipeline e o dashboard.',
-        'project1.stage1': 'Web scraping e pipeline ETL',
-        'project1.stage2': 'Limpeza e transformação de dados',
-        'project1.stage3': 'Visualização interativa',
-        'project1.benefit': 'Agora é usado internamente para definir cadeias produtivas prioritárias e elaborar termos de cooperação com municípios.',
+        'project1.desc': 'Parte do DataGeo Paraná: o Valor Bruto da Produção agropecuária do Paraná por município, cadeia produtiva e ano, com dados abertos da SEAB/DERAL (2012-2024). Construí o ETL e o dashboard em React.',
+        'project1.stage1': 'ETL em Python sobre as publicações anuais da SEAB/DERAL',
+        'project1.stage2': 'Normalização de nomes e consolidação',
+        'project1.stage3': 'Dashboard React com rankings, mapas e séries temporais',
+        'project1.benefit': 'Acesso público e gratuito a 13 anos do valor da produção agropecuária do Paraná, nos 399 municípios.',
 
         // Project 2
         'project2.title': 'DSMarket - Projeto de Conclusão de Mestrado',
@@ -1703,12 +1703,12 @@ const translations = {
 
         // Project 12
         'project12.title': 'Água Segura - WebGIS de Gestão Hídrica',
-        'project12.desc': 'Vários órgãos de governo trabalhando nas mesmas bacias mas usando planilhas diferentes. Construí o mapa compartilhado e o sistema de acompanhamento que conectou todos.',
-        'project12.stage1': 'Mapeamento temático interativo com visualização multicamada',
-        'project12.stage2': 'Filtragem regional e integração de dados institucionais',
-        'project12.stage3': 'Templates padronizados de documentação e acompanhamento',
-        'project12.stage4': 'Integração de dashboard Power BI para métricas',
-        'project12.benefit': 'Equipes de diferentes órgãos agora acompanham a conservação do diagnóstico à implementação — no mesmo mapa, em tempo real.',
+        'project12.desc': 'WebGIS e painel de dados do Programa Água Segura, cooperação entre IDR-Paraná e SANEPAR para manejo sustentável de solo e água em microbacias que abastecem sistemas públicos de água.',
+        'project12.stage1': 'Mapa interativo com camadas temáticas (Leaflet, CesiumJS 3D)',
+        'project12.stage2': 'Seleção de regional e filtragem por ottobacia',
+        'project12.stage3': 'Painel de dados em React e D3.js',
+        'project12.stage4': 'Documentação do programa, atas e calendário de capacitações',
+        'project12.benefit': 'Um espaço público único para mapas, dados e materiais de planejamento do programa: 44 mananciais, 98 ottobacias e 22 regionais.',
 
         // Project 13
         'project13.title': 'Dashboard de Preços de Terras - Paraná',
@@ -1728,13 +1728,13 @@ const translations = {
         'project14.benefit': 'Um lugar só pra checar preços do dia, comparar tendências e ver pra onde o mercado aponta — atualizado diariamente.',
 
         // DataGeo Paraná Ecosystem
-        'projectDatageo.title': 'DataGeo Paraná - Ecossistema de Dados Agropecuários',
-        'projectDatageo.desc': 'Plataforma integrada com 9 dashboards interativos sobre agropecuária paranaense. Arquitetura completa com landing page, sistema de tracking LGPD-compliant, SEO otimizado (meta tags, Open Graph, JSON-LD) e painel de controle unificado.',
+        'projectDatageo.title': 'DataGeo Paraná - Ecossistema de Dados Públicos',
+        'projectDatageo.desc': 'Projeto público pessoal com 10 dashboards interativos sobre dados públicos do Paraná (agronegócio, emprego, saúde, segurança, demografia) a partir de 8 fontes oficiais. Arquitetura completa com landing page, sistema de tracking LGPD-compliant, SEO otimizado (meta tags, Open Graph, JSON-LD) e painel de controle unificado.',
         'projectDatageo.stage1': 'Arquitetura de dados e ETL pipelines automatizados',
-        'projectDatageo.stage2': 'Desenvolvimento de 9 dashboards React com D3.js/Recharts',
+        'projectDatageo.stage2': 'Desenvolvimento de 10 dashboards React com D3.js/Recharts',
         'projectDatageo.stage3': 'Sistema de analytics próprio (Google Apps Script + Sheets)',
         'projectDatageo.stage4': 'SEO completo e documentação de arquitetura',
-        'projectDatageo.benefit': 'Ecossistema público de dados agrícolas do Paraná com +50k visualizações, tracking de 19 métricas anônimas e arquitetura documentada para replicação.',
+        'projectDatageo.benefit': 'Ecossistema público e gratuito de dados abertos do Paraná com +50k visualizações, tracking de 19 métricas anônimas e arquitetura documentada para replicação.',
 
         // Crédito Rural
         'projectCredito.title': 'Crédito Rural Paraná - BCB/SICOR',
