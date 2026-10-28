@@ -30,7 +30,6 @@
     'doggy-dates': 'doggydates.png',
     'kobe-interior-fabrics': 'kobe.png',
     'one-amazon': 'one-amazon.jpg',
-    'capital-certainty': 'capitalcertainty.png',
     'deep-grain': 'deepgrain.png',
     'flai-data': 'flaidata.svg',
     'qatarenergy': 'qatarenergy.jpg',
@@ -38,7 +37,7 @@
     // green-circle, ventura-pet: no file provided -> text wordmark.
   };
   // White/very-light logos (built for dark backgrounds) -> invert on the light chip.
-  var CLIENT_LOGO_INVERT = { 'capital-certainty': 1, 'deep-grain': 1 };
+  var CLIENT_LOGO_INVERT = { 'deep-grain': 1 };
 
   /* ---------- Anchor scrolling (runs in EVERY path) ----------
    * We own all in-page anchor scrolling here so main.js's smooth-scroll

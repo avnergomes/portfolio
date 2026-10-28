@@ -22,7 +22,7 @@ const translations = {
         'hero.greeting': "Hello, I'm",
         'hero.role1': 'Senior Data Scientist',
         'hero.role2': 'Forest Engineer',
-        'hero.description': 'Senior Data Scientist and Forest Engineer based in Curitiba, Brazil, with 11+ years turning geospatial data into decisions for clients in 8+ countries. MSc Data Science (Nuclio Digital School, Barcelona). Top Rated on Upwork with 100% Job Success.',
+        'hero.description': 'Senior Data Scientist and Forest Engineer based in Curitiba, Brazil, with 11+ years turning geospatial data into decisions for clients in 15+ countries. MSc Data Science (Nuclio Digital School, Barcelona). Top Rated on Upwork with 100% Job Success.',
         'hero.viewWork': 'View My Work',
         'hero.getInTouch': 'Get In Touch',
         'hero.scroll': 'Scroll Down',
@@ -39,7 +39,7 @@ const translations = {
 
         // About
         'about.title': 'About Me',
-        'about.lede': 'Avner Paes Gomes is a Senior Data Scientist and Forest Engineer based in Curitiba, Paraná, Brazil. B.Sc. Forest Engineering (UFPR, 2013), MBA Precision Forest Management (UFPR, 2018), MSc Data Science (Nuclio Digital School, Barcelona, 2023). Works at IDR-Paraná (IAPAR/EMATER) since 2018, coordinating geospatial data across 399 municipalities and 23 regional offices. In parallel, serves international clients on Upwork (Top Rated, 100% Job Success, 8+ countries).',
+        'about.lede': 'Avner Paes Gomes is a Senior Data Scientist and Forest Engineer based in Curitiba, Paraná, Brazil. B.Sc. Forest Engineering (UFPR, 2013), MBA Precision Forest Management (UFPR, 2018), MSc Data Science (Nuclio Digital School, Barcelona, 2023). Works at IDR-Paraná (IAPAR/EMATER) since 2018, coordinating geospatial data across 399 municipalities and 23 regional offices. In parallel, serves international clients on Upwork (Top Rated, 100% Job Success, 15+ countries).',
         'about.p1': 'I started in the forest — literally. My background is in forestry, where I learned to think in layers: soil, terrain, canopy, climate. When I discovered data science, it felt like the same work with sharper tools. Today I build the pipelines, dashboards, and spatial models that turn raw data into something a team can actually act on.',
         'about.p2': 'I\'ve worked with government agencies in Brazil, consulted for European startups, and delivered freelance projects across seven countries. Clients consistently highlight fast turnaround, clear communication, and a habit of going beyond what was asked. What ties it all together is the same thing: someone has messy data and needs a clear answer.',
         'about.education': 'Education',
@@ -311,9 +311,9 @@ const translations = {
         'projectIOF.stage4': 'Documentation and knowledge transfer',
         'projectIOF.benefit': 'Scalable technology foundation enabling data-driven conservation decisions across multiple Amazon initiatives.',
 
-        // Capital Certainty
-        'projectCapital.title': 'Capital Certainty - Amazon Extractive Reserve',
-        'projectCapital.desc': 'Geospatial analysis and carbon assessment for RESEX Verde Para Sempre, one of the largest extractive reserves in the Brazilian Amazon.',
+        // Amazon extractive reserve (NDA)
+        'projectCapital.title': 'Amazon Extractive Reserve Assessment',
+        'projectCapital.desc': 'Geospatial analysis and carbon assessment for one of the largest extractive reserves in the Brazilian Amazon.',
         'projectCapital.stage1': 'Satellite imagery processing and land cover analysis',
         'projectCapital.stage2': 'Carbon stock estimation and deforestation baseline',
         'projectCapital.stage3': 'Economic viability assessment and reporting',
@@ -387,11 +387,11 @@ const translations = {
         'projectIOF.del4': 'Technical documentation and architecture specifications',
         'projectIOF.del5': 'Smart contract design for data provenance anchoring',
 
-        // Capital Certainty Detail Page
-        'projectCapital.pageTitle': 'Capital Certainty - Amazon Extractive Reserve',
+        // Amazon extractive reserve (NDA) Detail Page
+        'projectCapital.pageTitle': 'Amazon Extractive Reserve Assessment',
         'projectCapital.heroDesc': 'Territorial intelligence package for land regularization of one of the largest extractive reserves in the Brazilian Amazon.',
         'projectCapital.location': 'Pará, Brazil',
-        'projectCapital.overview1': 'Developed a comprehensive territorial intelligence package for RESEX Verde Para Sempre, a federal extractive reserve in the Brazilian Amazon. The project aimed to support land regularization efforts by demonstrating a "vector sanitation" approach that isolates consolidated community areas from conflict zones.',
+        'projectCapital.overview1': 'Developed a comprehensive territorial intelligence package for a federal extractive reserve in the Brazilian Amazon. The project aimed to support land regularization efforts by demonstrating a "vector sanitation" approach that isolates consolidated community areas from conflict zones.',
         'projectCapital.overview2': 'The analysis involved cross-referencing multiple public spatial databases to identify and separate "clean" areas where communities live from overlapping claims by third parties (CAR/SIGEF registrations).',
         'projectCapital.highlight': 'Supporting bioeconomy initiatives by providing data-driven insights for land regularization in a 1.3 million hectare protected area.',
         'projectCapital.metric1': 'Hectares Analyzed',
@@ -759,7 +759,7 @@ const translations = {
         'hero.greeting': 'Hola, soy',
         'hero.role1': 'Científico de Datos Senior',
         'hero.role2': 'Ingeniero Forestal',
-        'hero.description': 'Científico de Datos Senior e Ingeniero Forestal con base en Curitiba, Brasil, con más de 11 años convirtiendo datos geoespaciales en decisiones para clientes en 8+ países. MSc Data Science (Nuclio Digital School, Barcelona). Top Rated en Upwork con 100% Job Success.',
+        'hero.description': 'Científico de Datos Senior e Ingeniero Forestal con base en Curitiba, Brasil, con más de 11 años convirtiendo datos geoespaciales en decisiones para clientes en 15+ países. MSc Data Science (Nuclio Digital School, Barcelona). Top Rated en Upwork con 100% Job Success.',
         'hero.viewWork': 'Ver Mi Trabajo',
         'hero.getInTouch': 'Contáctame',
         'hero.scroll': 'Desplazar',
@@ -776,7 +776,7 @@ const translations = {
 
         // About
         'about.title': 'Sobre Mí',
-        'about.lede': 'Avner Paes Gomes es Científico de Datos Senior e Ingeniero Forestal con base en Curitiba, Paraná, Brasil. Ingeniería Forestal (UFPR, 2013), MBA en Manejo Forestal de Precisión (UFPR, 2018), MSc Data Science (Nuclio Digital School, Barcelona, 2023). Trabaja en IDR-Paraná (IAPAR/EMATER) desde 2018, coordinando datos geoespaciales en 399 municipios y 23 regionales. En paralelo, atiende clientes internacionales en Upwork (Top Rated, 100% Job Success, 8+ países).',
+        'about.lede': 'Avner Paes Gomes es Científico de Datos Senior e Ingeniero Forestal con base en Curitiba, Paraná, Brasil. Ingeniería Forestal (UFPR, 2013), MBA en Manejo Forestal de Precisión (UFPR, 2018), MSc Data Science (Nuclio Digital School, Barcelona, 2023). Trabaja en IDR-Paraná (IAPAR/EMATER) desde 2018, coordinando datos geoespaciales en 399 municipios y 23 regionales. En paralelo, atiende clientes internacionales en Upwork (Top Rated, 100% Job Success, 15+ países).',
         'about.p1': 'Empecé en el bosque — literalmente. Mi formación es en ingeniería forestal, donde aprendí a pensar en capas: suelo, terreno, dosel, clima. Cuando descubrí la ciencia de datos, fue el mismo trabajo con herramientas más afiladas. Hoy construyo los pipelines, dashboards y modelos espaciales que convierten datos brutos en algo que un equipo puede usar.',
         'about.p2': 'He trabajado con agencias gubernamentales en Brasil, consultado para startups europeas y entregado proyectos freelance en siete países. Los clientes destacan consistentemente la entrega rápida, comunicación clara y el hábito de ir más allá de lo solicitado. El hilo común siempre es el mismo: alguien tiene datos desordenados y necesita una respuesta clara.',
         'about.education': 'Educación',
@@ -1048,9 +1048,9 @@ const translations = {
         'projectIOF.stage4': 'Documentación y transferencia de conocimiento',
         'projectIOF.benefit': 'Base tecnológica escalable que permite decisiones de conservación basadas en datos en múltiples iniciativas amazónicas.',
 
-        // Capital Certainty
-        'projectCapital.title': 'Capital Certainty - Reserva Extractivista Amazónica',
-        'projectCapital.desc': 'Análisis geoespacial y evaluación de carbono para RESEX Verde Para Sempre, una de las mayores reservas extractivistas de la Amazonía brasileña.',
+        // Amazon extractive reserve (NDA)
+        'projectCapital.title': 'Evaluación de Reserva Extractivista Amazónica',
+        'projectCapital.desc': 'Análisis geoespacial y evaluación de carbono para una de las mayores reservas extractivistas de la Amazonía brasileña.',
         'projectCapital.stage1': 'Procesamiento de imágenes satelitales y análisis de cobertura',
         'projectCapital.stage2': 'Estimación de stock de carbono y línea base de deforestación',
         'projectCapital.stage3': 'Evaluación de viabilidad económica y reportes',
@@ -1124,11 +1124,11 @@ const translations = {
         'projectIOF.del4': 'Documentación técnica y especificaciones de arquitectura',
         'projectIOF.del5': 'Diseño de contrato inteligente para anclaje de procedencia de datos',
 
-        // Capital Certainty Detail Page
-        'projectCapital.pageTitle': 'Capital Certainty - Reserva Extractivista Amazónica',
+        // Amazon extractive reserve (NDA) Detail Page
+        'projectCapital.pageTitle': 'Evaluación de Reserva Extractivista Amazónica',
         'projectCapital.heroDesc': 'Paquete de inteligencia territorial para regularización de tierras de una de las mayores reservas extractivistas de la Amazonía brasileña.',
         'projectCapital.location': 'Pará, Brasil',
-        'projectCapital.overview1': 'Desarrollé un paquete integral de inteligencia territorial para RESEX Verde Para Sempre, una reserva extractivista federal en la Amazonía brasileña. El proyecto buscó apoyar esfuerzos de regularización de tierras demostrando un enfoque de "saneamiento vectorial" que aísla áreas consolidadas de comunidades de zonas de conflicto.',
+        'projectCapital.overview1': 'Desarrollé un paquete integral de inteligencia territorial para una reserva extractivista federal en la Amazonía brasileña. El proyecto buscó apoyar esfuerzos de regularización de tierras demostrando un enfoque de "saneamiento vectorial" que aísla áreas consolidadas de comunidades de zonas de conflicto.',
         'projectCapital.overview2': 'El análisis involucró cruzar múltiples bases de datos espaciales públicas para identificar y separar áreas "limpias" donde viven las comunidades de reclamos superpuestos de terceros (registros CAR/SIGEF).',
         'projectCapital.highlight': 'Apoyando iniciativas de bioeconomía proporcionando insights basados en datos para regularización de tierras en un área protegida de 1.3 millones de hectáreas.',
         'projectCapital.metric1': 'Hectáreas Analizadas',
@@ -1496,7 +1496,7 @@ const translations = {
         'hero.greeting': 'Olá, sou',
         'hero.role1': 'Cientista de Dados Sênior',
         'hero.role2': 'Engenheiro Florestal',
-        'hero.description': 'Cientista de Dados Sênior e Engenheiro Florestal baseado em Curitiba, Brasil, com 11+ anos transformando dados geoespaciais em decisões para clientes em 8+ países. MSc em Data Science (Nuclio Digital School, Barcelona). Top Rated no Upwork com 100% Job Success.',
+        'hero.description': 'Cientista de Dados Sênior e Engenheiro Florestal baseado em Curitiba, Brasil, com 11+ anos transformando dados geoespaciais em decisões para clientes em 15+ países. MSc em Data Science (Nuclio Digital School, Barcelona). Top Rated no Upwork com 100% Job Success.',
         'hero.viewWork': 'Ver Meus Trabalhos',
         'hero.getInTouch': 'Entre em Contato',
         'hero.scroll': 'Role para Baixo',
@@ -1513,7 +1513,7 @@ const translations = {
 
         // About
         'about.title': 'Sobre Mim',
-        'about.lede': 'Avner Paes Gomes é Cientista de Dados Sênior e Engenheiro Florestal, baseado em Curitiba, Paraná, Brasil. Engenharia Florestal (UFPR, 2013), MBA em Manejo Florestal de Precisão (UFPR, 2018), MSc em Data Science (Nuclio Digital School, Barcelona, 2023). Atua no IDR-Paraná (IAPAR/EMATER) desde 2018, coordenando dados geoespaciais em 399 municípios e 23 regionais. Em paralelo, atende clientes internacionais no Upwork (Top Rated, 100% Job Success, 8+ países).',
+        'about.lede': 'Avner Paes Gomes é Cientista de Dados Sênior e Engenheiro Florestal, baseado em Curitiba, Paraná, Brasil. Engenharia Florestal (UFPR, 2013), MBA em Manejo Florestal de Precisão (UFPR, 2018), MSc em Data Science (Nuclio Digital School, Barcelona, 2023). Atua no IDR-Paraná (IAPAR/EMATER) desde 2018, coordenando dados geoespaciais em 399 municípios e 23 regionais. Em paralelo, atende clientes internacionais no Upwork (Top Rated, 100% Job Success, 15+ países).',
         'about.p1': 'Comecei na floresta — literalmente. Minha formação é em engenharia florestal, onde aprendi a pensar em camadas: solo, terreno, dossel, clima. Quando descobri ciência de dados, pareceu o mesmo trabalho com ferramentas mais afiadas. Hoje construo os pipelines, dashboards e modelos espaciais que transformam dados brutos em algo que uma equipe consegue usar.',
         'about.p2': 'Já trabalhei com órgãos de governo no Brasil, consultei para startups europeias e entreguei projetos freelance em sete países. Os clientes destacam consistentemente a entrega rápida, comunicação clara e o hábito de ir além do solicitado. O que conecta tudo é sempre a mesma coisa: alguém tem dados bagunçados e precisa de uma resposta clara.',
         'about.education': 'Educação',
@@ -1785,9 +1785,9 @@ const translations = {
         'projectIOF.stage4': 'Documentação e transferência de conhecimento',
         'projectIOF.benefit': 'Base tecnológica escalável permitindo decisões de conservação baseadas em dados em múltiplas iniciativas amazônicas.',
 
-        // Capital Certainty
-        'projectCapital.title': 'Capital Certainty - Reserva Extrativista Amazônica',
-        'projectCapital.desc': 'Análise geoespacial e avaliação de carbono para RESEX Verde Para Sempre, uma das maiores reservas extrativistas da Amazônia brasileira.',
+        // Amazon extractive reserve (NDA)
+        'projectCapital.title': 'Avaliação de Reserva Extrativista Amazônica',
+        'projectCapital.desc': 'Análise geoespacial e avaliação de carbono para uma das maiores reservas extrativistas da Amazônia brasileira.',
         'projectCapital.stage1': 'Processamento de imagens de satélite e análise de cobertura',
         'projectCapital.stage2': 'Estimativa de estoque de carbono e baseline de desmatamento',
         'projectCapital.stage3': 'Avaliação de viabilidade econômica e relatórios',
@@ -1861,11 +1861,11 @@ const translations = {
         'projectIOF.del4': 'Documentação técnica e especificações de arquitetura',
         'projectIOF.del5': 'Design de contrato inteligente para ancoragem de procedência de dados',
 
-        // Capital Certainty Detail Page
-        'projectCapital.pageTitle': 'Capital Certainty - Reserva Extrativista Amazônica',
+        // Amazon extractive reserve (NDA) Detail Page
+        'projectCapital.pageTitle': 'Avaliação de Reserva Extrativista Amazônica',
         'projectCapital.heroDesc': 'Pacote de inteligência territorial para regularização fundiária de uma das maiores reservas extrativistas da Amazônia brasileira.',
         'projectCapital.location': 'Pará, Brasil',
-        'projectCapital.overview1': 'Desenvolvi um pacote abrangente de inteligência territorial para RESEX Verde Para Sempre, uma reserva extrativista federal na Amazônia brasileira. O projeto visou apoiar esforços de regularização fundiária demonstrando uma abordagem de "saneamento vetorial" que isola áreas consolidadas de comunidades de zonas de conflito.',
+        'projectCapital.overview1': 'Desenvolvi um pacote abrangente de inteligência territorial para uma reserva extrativista federal na Amazônia brasileira. O projeto visou apoiar esforços de regularização fundiária demonstrando uma abordagem de "saneamento vetorial" que isola áreas consolidadas de comunidades de zonas de conflito.',
         'projectCapital.overview2': 'A análise envolveu cruzamento de múltiplas bases de dados espaciais públicas para identificar e separar áreas "limpas" onde vivem as comunidades de reivindicações sobrepostas de terceiros (registros CAR/SIGEF).',
         'projectCapital.highlight': 'Apoiando iniciativas de bioeconomia fornecendo insights baseados em dados para regularização fundiária em área protegida de 1,3 milhão de hectares.',
         'projectCapital.metric1': 'Hectares Analisados',

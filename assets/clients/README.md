@@ -22,7 +22,6 @@ text wordmark instead — no broken images.
 | Doggy Dates | `doggy-dates.svg` |
 | KOBE Interior Fabrics | `kobe-interior-fabrics.svg` |
 | One Amazon Foundation | `one-amazon.svg` |
-| Capital Certainty | `capital-certainty.svg` |
 | Deep Grain | `deep-grain.svg` |
 | Flai Data | `flai-data.svg` |
 | QatarEnergy | `qatarenergy.svg` |

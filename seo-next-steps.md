@@ -58,7 +58,7 @@ python -m http.server 8000
 7. URLs para submissão manual no painel "Submit URLs" (até 10/dia gratuito):
    - https://avnergomes.github.io/portfolio/
    - https://avnergomes.github.io/portfolio/projects/iof-technology.html
-   - https://avnergomes.github.io/portfolio/projects/capital-certainty.html
+   - https://avnergomes.github.io/portfolio/projects/amazon-extractive-reserve.html
    - https://avnergomes.github.io/portfolio/projects/lidar-building-heights.html
    - https://avnergomes.github.io/portfolio/projects/cityview.html
    - https://avnergomes.github.io/portfolio/projects/bi-international.html

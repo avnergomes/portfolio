@@ -933,6 +933,16 @@ body > * { position: relative; z-index: 1; }
 /* Hide nav toggle button if it uses subpage button structure */
 .nav-toggle button, button.nav-toggle { background: transparent; border: none; cursor: pointer; }
 
+/* Subpages have no drawer JS: keep only the language selector inline on small screens */
+@media (max-width: 900px) {
+  .navbar > .container .nav-menu {
+    position: static; transform: none; flex-direction: row;
+    padding: 0; background: none; backdrop-filter: none; border: 0;
+  }
+  .navbar > .container .nav-list,
+  .navbar > .container .nav-toggle { display: none; }
+}
+
 @media (max-width: 768px) {
   .project-hero { padding: 6rem 0 3rem !important; }
   .project-meta { gap: var(--space-3) !important; font-size: 0.75rem; }

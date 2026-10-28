@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UAV photogrammetry over a 4,132 ha agricultural estate in the Campos Gerais region of Paraná: orthomosaics, elevation model, 11-class land-use map, Forest Code regularity of APP and legal reserve, and a field-ready erosion inventory.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://avnergomes.github.io/portfolio/projects/drone-farm-environmental-assessment.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Drone Survey and Environmental Assessment of a 4,132 ha Farm | Avner Gomes">
+    <meta property="og:description" content="UAV photogrammetry over a 4,132 ha agricultural estate in the Campos Gerais region of Paraná: orthomosaics, elevation model, 11-class land-use map, Forest Code regularity of APP and legal reserve, and a field-ready erosion inventory.">
+    <meta property="og:url" content="https://avnergomes.github.io/portfolio/projects/drone-farm-environmental-assessment.html">
+    <meta property="og:image" content="https://avnergomes.github.io/portfolio/assets/og-image.png">
+    <title>Drone Survey and Environmental Assessment of a 4,132 ha Farm | Avner Gomes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .project-hero { background: linear-gradient(135deg, #3f6212 0%, #65a30d 100%); color: white; padding: 6rem 0 4rem; margin-top: 80px; }
+        .project-hero .container { max-width: 1080px; }
+        .project-hero h1 { font-family: var(--font-display); font-size: 2.75rem; margin-bottom: 1rem; }
+        .project-hero .subtitle { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; }
+        .project-meta { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+        .meta-item { display: flex; align-items: center; gap: 0.5rem; }
+        .meta-item i { opacity: 0.8; }
+        .project-content { padding: 4rem 0; }
+        .project-content .container { max-width: 1080px; }
+        .content-section { margin-bottom: 3rem; }
+        .content-section h2 { font-family: var(--font-display); font-size: 1.75rem; color: var(--color-primary); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-border); }
+        .content-section p { color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem; }
+        .content-section ul { list-style: none; padding: 0; }
+        .content-section li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: var(--color-text-light); }
+        .content-section li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #4d7c0f; }
+        .content-section ol { padding-left: 1.25rem; }
+        .content-section ol li { padding-left: 0; color: var(--color-text-light); list-style: decimal; }
+        .content-section ol li::before { content: ""; }
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+        .tech-tag { background: var(--color-bg-alt); color: var(--color-text); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 500; }
+        .highlight-box { background: var(--color-bg-alt); border-left: 4px solid #4d7c0f; padding: 1.5rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 1.5rem 0; }
+        .highlight-box p { margin: 0; color: var(--color-text); }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: white; opacity: 0.9; margin-bottom: 1rem; font-size: 0.875rem; }
+        .back-link:hover { opacity: 1; color: white; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .kpi-card { background: var(--color-bg-alt); padding: 1.25rem; border-radius: var(--radius-md); text-align: center; }
+        .kpi-card .number { font-size: 1.75rem; font-weight: 700; color: #4d7c0f; }
+        .kpi-card .label { font-size: 0.875rem; color: var(--color-text-light); margin-top: 0.25rem; }
+        .figure { margin: 1.5rem 0; }
+        .figure img { width: 100%; height: auto; border: 1px solid var(--color-border); border-radius: var(--radius-md); display: block; }
+        .figure figcaption { font-size: 0.875rem; color: var(--color-text-light); margin-top: 0.5rem; text-align: center; font-style: italic; }
+        .badge { display: inline-block; padding: 0.25rem 0.6rem; background: rgba(255,255,255,0.2); color: white; border-radius: 999px; font-size: 0.75rem; font-weight: 600; margin-left: 0.5rem; vertical-align: middle; }
+        .cs-note { font-size: 0.875rem; color: var(--color-text-light); font-style: italic; text-align: center; margin-top: 2rem; }
+        @media (max-width: 768px) { .project-hero { padding: 4rem 0 3rem; } .project-hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">
+                <picture>
+                    <source srcset="../assets/logo1.webp" type="image/webp" />
+                    <img src="../assets/logo1.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                </picture>
+                <span class="logo-text">Avner Gomes</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="../index.html#services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="language-selector">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <button class="lang-btn" data-lang="pt">PT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i><span data-i18n="cs.ui.back">Back to Projects</span></a>
+            <h1><span data-i18n="cs.drone-farm-environmental-assessment.title">Drone Survey and Environmental Assessment of a 4,132 ha Farm</span><span class="badge" data-i18n="cs.ui.badge">Case Study</span></h1>
+            <p class="subtitle" data-i18n="cs.drone-farm-environmental-assessment.subtitle">UAV photogrammetry over a 4,132 ha agricultural estate in the Campos Gerais region of Paraná: orthomosaics, elevation model, 11-class land-use map, Forest Code regularity of APP and legal reserve, and a field-ready erosion inventory.</p>
+            <div class="project-meta">
+                <div class="meta-item"><i class="fas fa-folder"></i><span data-i18n="cs.drone-farm-environmental-assessment.category">Geospatial / Drone Survey</span></div>
+                <div class="meta-item"><i class="fas fa-calendar"></i><span>2022 - 2023</span></div>
+                <div class="meta-item"><i class="fas fa-map-marker-alt"></i><span data-i18n="cs.drone-farm-environmental-assessment.location">Campos Gerais, Paraná, Brazil</span></div>
+                <div class="meta-item"><i class="fas fa-database"></i><span data-i18n="cs.drone-farm-environmental-assessment.scale">18,780 aerial photos</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+
+            <div class="content-section">
+                <h2 data-i18n="cs.ui.overview">Project Overview</h2>
+                <p data-i18n="cs.drone-farm-environmental-assessment.overview1">A farm group needed two answers about one of its estates: whether its permanent preservation areas (APP) and legal reserve were in order under the Forest Code, and where soil erosion was eating into productive land. Satellite imagery is too coarse for rills and gullies, so the whole property was flown with a drone.</p>
+                <p data-i18n="cs.drone-farm-environmental-assessment.overview2">18,780 aerial photos taken over 14 field days were processed into orthomosaics and an elevation model, and every hectare was mapped into 11 land-use classes. APP along watercourses, native vegetation and consolidated areas were delineated and tested against the 22 July 2008 cut-off of the Forest Code; erosion features were digitised by type (sheet, rill and gully) and cross-tabulated with land use.</p>
+                <div class="highlight-box"><p data-i18n="cs.drone-farm-environmental-assessment.outcome">The estate was confirmed in regularity: 1,511.5 ha of native vegetation, of which 493.2 ha are riparian APP, with only 56.7 ha of consolidated use inside APP, all opened before 2008. The erosion inventory located 19.8 ha of active erosion and showed pasture as the most affected use (3.3% of its area), giving the farm a prioritised list for soil conservation work.</p></div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="cs.ui.metrics">Key Metrics</h2>
+                <div class="kpi-grid">
+                    <div class="kpi-card"><div class="number">4,132 ha</div><div class="label" data-i18n="cs.drone-farm-environmental-assessment.kpi1">Area flown</div></div>
+                    <div class="kpi-card"><div class="number">18,780</div><div class="label" data-i18n="cs.drone-farm-environmental-assessment.kpi2">Aerial photos</div></div>
+                    <div class="kpi-card"><div class="number">14</div><div class="label" data-i18n="cs.drone-farm-environmental-assessment.kpi3">Field days</div></div>
+                    <div class="kpi-card"><div class="number">11</div><div class="label" data-i18n="cs.drone-farm-environmental-assessment.kpi4">Land-use classes</div></div>
+                    <div class="kpi-card"><div class="number">493.2 ha</div><div class="label" data-i18n="cs.drone-farm-environmental-assessment.kpi5">Riparian APP</div></div>
+                    <div class="kpi-card"><div class="number">19.8 ha</div><div class="label" data-i18n="cs.drone-farm-environmental-assessment.kpi6">Erosion mapped</div></div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="cs.ui.method">Methodology</h2>
+                <ol>
+                    <li data-i18n="cs.drone-farm-environmental-assessment.method1">Flight planning over the property boundary and 14 days of drone flights (18,780 photos).</li>
+                    <li data-i18n="cs.drone-farm-environmental-assessment.method2">Photogrammetric processing into orthomosaics and an elevation model, with slope and contours.</li>
+                    <li data-i18n="cs.drone-farm-environmental-assessment.method3">Land-use mapping in 11 classes: agriculture 40.8%, native vegetation 36.4%, planted forest 13.7%, pasture 7.8%, plus roads, buildings, ponds and fallow.</li>
+                    <li data-i18n="cs.drone-farm-environmental-assessment.method4">APP delineation along watercourses and comparison of native vegetation and consolidated areas against the 2008 cut-off, cross-checked with the CAR.</li>
+                    <li data-i18n="cs.drone-farm-environmental-assessment.method5">Erosion inventory by type (sheet, rill, gully) cross-tabulated with land use, with management recommendations per class.</li>
+                </ol>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="cs.ui.tech">Technologies</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">Drone photogrammetry</span>
+                    <span class="tech-tag">QGIS</span>
+                    <span class="tech-tag">PyQGIS</span>
+                    <span class="tech-tag">GeoPackage / Shapefile</span>
+                    <span class="tech-tag">KML</span>
+                    <span class="tech-tag">Excel</span>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 data-i18n="cs.ui.deliverables">Deliverables</h2>
+                <ul>
+                    <li data-i18n="cs.drone-farm-environmental-assessment.deliverables1">Environmental assessment report with land-use, APP and erosion tables.</li>
+                    <li data-i18n="cs.drone-farm-environmental-assessment.deliverables2">A3 thematic map atlas (overview, agriculture, pasture, planted forest, native vegetation, erosion).</li>
+                    <li data-i18n="cs.drone-farm-environmental-assessment.deliverables3">Orthomosaics, elevation model, shapefiles and KML for field teams.</li>
+                </ul>
+            </div>
+
+            <p class="cs-note"><span data-i18n="cs.drone-farm-environmental-assessment.note">Farm and owner identity are withheld.</span></p>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../index.html#projects" class="btn btn-primary"><i class="fas fa-arrow-left"></i><span data-i18n="cs.ui.back">Back to Projects</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-mark">
+                        <picture>
+                            <source srcset="../assets/logo2.webp" type="image/webp" />
+                            <img src="../assets/logo2.png" alt="Avner Gomes" class="logo-img" width="32" height="32" />
+                        </picture>
+                        Avner Gomes
+                    </div>
+                    <p>Forest Engineer & Data Scientist</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/avnergomes" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/avnergomes" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:avnergomes@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Avner Gomes. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/translations-cs2026.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

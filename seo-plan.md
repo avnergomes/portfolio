@@ -39,7 +39,7 @@ Restrição: o portfolio é HTML estático, não React/Vite. Plano adaptado para
 ### 1.6 Project cards — densidade
 Adicionar 1 frase-fato âncora em cada `data-i18n="*.desc"` quando falta. Exemplos:
 - **IoF Technology**: "200+ satellite layers, 29 environmental KPIs across 6 thematic groups, 100,000+ hectares verified for EUDR compliance."
-- **Capital Certainty**: "Vector sanitation methodology applied to 1.3 million-hectare federal extractive reserve (RESEX Verde Para Sempre, Pará, Brazil), supporting CDRU land regularization."
+- **Amazon Extractive Reserve**: "Vector sanitation methodology applied to 1.3 million-hectare federal extractive reserve (Pará, Brazil), supporting CDRU land regularization."
 - **Cityview**: "100,000+ addresses processed with multi-provider fallback, 98%+ match accuracy across Dallas–Fort Worth."
 - **LiDAR Building Heights**: já tem "27,338 buildings / 25 km²". OK.
 - **BI International (KOBE)**: "1,000+ postal areas across UK and Germany, daily refresh, adopted in weekly executive reviews."
@@ -184,7 +184,7 @@ Todos inline no `<head>` do `index.html`, separados por tipo, com `@type` único
 Adicionar JSON-LD para 4 projetos âncora no `<head>` do index (não em cada projects/*.html nesta fase, para limitar escopo):
 - DataGeo Paraná
 - IoF — Internet of Forests
-- Capital Certainty — RESEX
+- Amazon Extractive Reserve (NDA)
 - LiDAR Building Heights
 
 Cada um com `@type: CreativeWork`, `creator: @id Person`, `about`, `keywords`, `url` para a página interna.
@@ -272,7 +272,7 @@ Estrutura prevista (~80 linhas):
 
 ## Featured Projects
 - [IoF — Internet of Forests](https://avnergomes.github.io/portfolio/projects/iof-technology.html): MRV framework with 200+ satellite layers, 29 KPIs, 100,000+ hectares verified for EUDR.
-- [Capital Certainty — RESEX Verde Para Sempre](https://avnergomes.github.io/portfolio/projects/capital-certainty.html): vector sanitation on 1.3M ha federal reserve, Pará, Brazil.
+- [Amazon Extractive Reserve (NDA)](https://avnergomes.github.io/portfolio/projects/amazon-extractive-reserve.html): vector sanitation on 1.3M ha federal reserve, Pará, Brazil.
 - [DataGeo Paraná](https://datageoparana.github.io): 9 React dashboards, 50k+ views, public Paraná agricultural data ecosystem.
 - [LiDAR Building Heights, Central London](https://avnergomes.github.io/portfolio/projects/lidar-building-heights.html): 27,338 buildings extracted from 25 km² of LAS point cloud.
 - [Cityview — Urban Geocoding (Dallas-Fort Worth)](https://avnergomes.github.io/portfolio/projects/cityview.html): 100k+ addresses, 98%+ match accuracy.

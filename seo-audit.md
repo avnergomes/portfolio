@@ -40,7 +40,7 @@ Faltam:
 - `Person` (você como entidade autônoma, com `sameAs` para LinkedIn/GitHub/Upwork, `alumniOf` UFPR + Nuclio, `worksFor` IDR-Paraná, `jobTitle` atualizado, `knowsAbout` técnico).
 - `WebSite` com `SearchAction` (não há busca interna, mas a entidade serve para o Google Knowledge Graph).
 - `BreadcrumbList` nas 14 páginas de projeto.
-- `CreativeWork` ou `Article` por projeto destacado (DataGeo, IOF, Capital Certainty, LiDAR Building Heights).
+- `CreativeWork` ou `Article` por projeto destacado (DataGeo, IOF, Amazon Extractive Reserve, LiDAR Building Heights).
 - `Organization` para IDR-Paraná como entidade citável (opcional, mas reforça mapeamento).
 
 ### A.3 robots.txt
@@ -90,7 +90,7 @@ Faltam fatos verificáveis citados em prosa:
 - 200+ camadas satélite no IoF
 - 100.000+ hectares verificados
 - 29 KPIs ambientais
-- 1,3 milhão de hectares na RESEX Verde Para Sempre
+- 1,3 milhão de hectares em reserva extrativista federal no Pará
 - 27.338 prédios em 25 km² (LiDAR Central London)
 - 100.000+ endereços com 98%+ match (Cityview)
 - 1.000+ áreas postais (KOBE)
@@ -136,7 +136,7 @@ Cruzando CV (EN) com `projects/*.html`:
 | Projeto no CV | No portfolio? |
 |---|---|
 | IOF — Internet of Forests (Panama / Amazon Basin) | ✅ `iof-technology.html` |
-| Capital Certainty — RESEX Verde Para Sempre | ✅ `capital-certainty.html` |
+| Amazon Extractive Reserve (NDA) | ✅ `amazon-extractive-reserve.html` |
 | Cityview — Urban Geocoding (Dallas-Fort Worth) | ✅ `cityview.html` |
 | International Sales BI (UK/DE — KOBE) | ✅ `bi-international.html` |
 | LiDAR Building Heights (Central London) | ✅ `lidar-building-heights.html` |
