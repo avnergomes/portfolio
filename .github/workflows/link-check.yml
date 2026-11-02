@@ -33,6 +33,8 @@ jobs:
             --exclude "^https://cdnjs.cloudflare.com"
             --exclude "^https://www.googletagmanager.com"
             --exclude "^https://(www\\.)?planalto\\.gov\\.br"
+            --exclude "^https://github.com/avnergomes/ads[-_]analyzer"
+            --exclude "^https://www.merkle.com"
             --timeout 30
             "./**/*.html"
             "./**/*.md"
